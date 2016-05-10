@@ -1,0 +1,43 @@
+<div class="floor">
+     <div class="top">
+          <h3>{$widget_data.model_name}</h3>
+             <div class="keysword"> 
+             	<!--{foreach from=$widget_data.keyword_list item=keyword}-->
+             	<a href="{url app=search&keyword=$keyword}">{$keyword}</a>
+             	<!--{/foreach}-->
+             </div>  
+             <div class="clr"></div>          
+     </div>
+     <div class="content">
+          <div  class="left">
+                 <a target="_blank" title="{$widget_data.ad1_title}" href="{$widget_data.ad1_link_url}">
+                       <img width="203" height="203" src="{$widget_data.ad1_image_url}"/></a>
+            </div>
+          <div class="center"> 
+            	<!--{foreach from=$widget_data.goodslist item=goods}-->
+            	<dl>
+                	<dt><a target="_blank" title="{$goods.goods_name}" href="{url app=goods&id=$goods.goods_id}"><img alt="{$goods.goods_name}" src="{$goods.default_image}" width="124" height="124"/></a></dt>
+                    <dd class="name"><a href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name}</a></dd>
+                    <dd class="price">{$goods.price|price}</dd>
+                </dl>
+                <!--{/foreach}-->  
+      	</div>            
+      	  <div class="right">                
+                 <div class="s-box">
+                     <a target="_blank" title="{$widget_data.ad2_title}" href="{$widget_data.ad2_link_url}">
+                       <img width="208" height="63" src="{$widget_data.ad2_image_url}"/>
+                     </a>
+                 </div>
+                 <div class="s-box">
+                     <a target="_blank" title="{$widget_data.ad3_title}" href="{$widget_data.ad3_link_url}">
+                        <img width="208" height="63" src="{$widget_data.ad3_image_url}">
+                     </a>
+                 </div>
+                 <div class="s-box">
+                      <a target="_blank" title="{$widget_data.ad4_title}" href="{$widget_data.ad4_link_url}">
+                         <img width="208" height="63" src="{$widget_data.ad4_image_url}">
+                     </a>
+                 </div>
+     </div>
+     </div>
+</div>

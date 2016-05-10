@@ -1,0 +1,12 @@
+<div class="notice">
+    <div class="title">
+    	<span class="title1" >商城动态</span>
+        <span class="more" ><a href="{url app=article&cate_id=2}">更多</a></span>
+        <div class="clr"></div>
+    </div>
+            <ul>
+                <!--{foreach from=$widget_data item=article}-->
+                <li>{$article.add_time|date:m-d} <a href="{url app=article&act=view&article_id=$article.article_id}" title="{$article.title|escape}">{$article.title|escape}</a></li>
+                <!--{/foreach}-->
+            </ul>
+</div>

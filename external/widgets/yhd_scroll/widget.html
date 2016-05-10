@@ -1,0 +1,19 @@
+<div id="scroll" >
+    <!--{if !$widget_data}-->
+    <div style="padding:10px; text-align:center;">«Î≈‰÷√</div>
+    <!--{/if}-->        
+     <div class="content">
+            <a href="javascript:;" class="go-left"></a>
+            <div class="p-box">
+            <div class="ibox-1">
+               <div class="showbox-1">
+                    <!-- {foreach from=$widget_data item=image} -->
+    				<a href="{$image.ad_link_url}"><img src="{$image.ad_image_url}" width="120" height="140" /></a>
+    				<!-- {/foreach} -->
+                  <div class="clr"></div>
+               </div>
+            </div>
+            </div>
+            <a href="javascript:;" class="go-right"></a>
+     </div>
+</div>

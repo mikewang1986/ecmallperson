@@ -1,0 +1,37 @@
+<div id="category">
+   	<h2 class="title"><a target="_blank" href="{url app=category}">所有商品分类</a></h2>
+   	<div class="content">
+      	<!-- {foreach from=$widget_data.gcategories item=category name=fe_gcate} -->
+        <!--{if $smarty.foreach.fe_gcate.iteration le 10}-->
+      		<div class="item">
+      			<h2><a target="_blank" href="{url app=search&cate_id=$category.id}">{$category.value|escape}</a><b></b></h2>
+      			<div class="out">
+        			<div class="subcategory">
+        					<!-- {foreach from=$category.children item=child name=fe_children} -->
+        					  <div class="dl">
+            					<dt><a title="{$child.value|escape}" target="_blank" href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a></dt>
+            					<dd>
+               						<!-- {foreach from=$child.children item=child2 name=fe_child2} -->
+               						<a target="_blank" title="{$child2.value}" href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a>
+               						<!--{/foreach}-->
+                                    <div class="clr"></div>
+            					</dd>
+        					  </div>
+         					<!--{/foreach}-->
+         			</div>	
+                    <div class="hotview">
+            			<h3>热门品牌</h3> 
+            			<div>
+             			<!-- {foreach from=$widget_data.brands item=brand name=fe_brand} -->
+             			<!--{if $brand.tag == $category.value}-->
+             			<a target="_blank" title="{$brand.brand_name}" href="{url app=search&brand=$brand.brand_name}">{$brand.brand_name}</a>         
+             			<!--{/if}-->
+             			<!--{/foreach}-->  
+            			</div>
+         			</div>
+      			</div>
+      		</div>
+         <!--{/if}-->
+      	 <!--{/foreach}-->
+    </div>
+</div>

@@ -1,0 +1,102 @@
+{include file=header.html}
+{include file=curlocal.html}
+<script type="text/javascript">
+//<!CDATA[
+$(function (){
+    var order = '{$smarty.get.order}';
+    var arrow = '';
+
+    switch (order){
+        case 'credit_value desc' : order = '';
+        arrow = '{$lang.down_arrow}';
+        break;
+        default : order = 'credit_value desc';
+    }
+    $('#credit_grade').html('{$lang.credit_grade}' + arrow);
+    $('#credit_grade').click(function(){query('order', order);return false;});
+	$("#show_scategory").click(function(){
+        $("dl[ectype='dl_scategory'] dd").show();
+		$("dl[ectype='dl_scategory']").show();
+        //$(this).hide();
+		$("#show_scategory").hide();
+		$("#hide_scategory").show();
+    });
+	$("#hide_scategory").click(function(){document.location.reload()});
+  }
+);
+function query(name, value){
+    $("input[name='"+name+"']").val(value);
+    $('#search').submit();
+}
+
+//]]>
+</script>
+
+
+
+<div id="main-store">
+   <div class="scatalog">
+        <!--{foreach from=$scategorys item=scategory name=fe_scategory}-->
+        <dl ectype="dl_scategory" {if $smarty.foreach.fe_scategory.iteration ge 5} style="display:none"{/if}>
+            <dt><a href="{url app=search&act=store&cate_id=$scategory.id}">{$scategory.value|escape}</a></dt>
+            <!--{foreach from=$scategory.children item=child name=fe_child}-->
+            <!-- {if $smarty.foreach.fe_child.iteration le 2} -->
+            <dd><a href="{url app=search&act=store&cate_id=$child.id}">{$child.value|escape}</a></dd>
+            <!--{else}-->
+            <dd style="display:none"><a href="{url app=search&act=store&cate_id=$child.id}">{$child.value|escape}</a></dd>
+            <!--{/if}-->
+            <!--{/foreach}-->
+       </dl>
+       <!--{/foreach}-->
+       <div class="clr"></div>
+       <div class="smore"><div class="smore2" id="show_scategory">显示更多</div><div class="smore2" id="hide_scategory" style="display:none">收起</div></div>
+   </div>
+   <div class="s-conditions">
+   <form id="search" method="GET" action="index.php">
+       <input type="hidden" name="order" value="{$smarty.get.order|escape}"/>
+       <input type="hidden" name="app" value="search"/>
+       <input type="hidden" name="act" value="store"/>
+       <input type="hidden" name="cate_id" value="{$smarty.get.cate_id|escape}"/>{$lang.store_name}：
+       <input type="text" name="keyword" value="{$query.keyword|escape}" class="keyword" />{$lang.user_name}：
+       <input type="text" name="user_name" value="{$query.user_name|escape}" />{$lang.region_name}：
+       <select id="region_id" name="region_id" class="display_select">
+            <option value="">{$lang.region_name}</option>
+            {html_options options=$regions selected=$query.region_id}
+       </select>
+       <input class="btn-searchstore" type="submit" name="Submit" value="{$lang.search}" />
+   </form>
+   </div>
+   <div class="bar">{include file=page.top.html}</div>
+   <!--{foreach from=$stores item=store}-->
+   <div class="each">
+      <div class="store-info">
+         <div class="store-name"><b></b><a href="{url app=store&id=$store.store_id}">{$store.store_name|escape}</a></div>
+         <div class="goods-amount">商&nbsp;品&nbsp;数：<font color="#CC6600"><b>{$store.goods_count}</b></font> 件</div>
+         <div class="store-credit">{$lang.credit_value}：{$store.credit_value}
+            <!--{if $store.credit_value ge 0}--><img src="{$store.credit_image}" alt="" align="absmiddle" /><!--{/if}-->
+         </div>
+         <div class="store-add_time">{$lang.store_add_time}：{$store.add_time|date}</div>
+         <div class="store-owner">{$lang.seller}：{$store.user_name|escape}&nbsp;<a target="_blank" class="email" href="{$site_url}/index.php?app=message&amp;act=send&amp;to_id={$store.user_id}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" align="absmiddle" /></a></div>
+         <div class="store-region">{$lang.region_name}：{$store.region_name|escape}</div>
+         <a class="store-enter" href="{url app=store&id=$store.store_id}" hidefocus="true"></a>
+         
+         
+      </div>
+      <div class="store-goods">        
+         <!-- {foreach from=$store.regoods item=item} -->
+         <dl class="each">
+            <dt><a href="{url app=goods&id=$item.goods_id}"><img src="{$item.default_image}" width="160" height="160" /></a></dt>
+            <dd class="price">{$item.price}</dd>
+            <dd><a href="{url app=goods&id=$item.goods_id}">{$item.goods_name}</a></dd>
+         </dl>
+         <!--{/foreach}-->
+         <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+   </div>
+   <!--{/foreach}-->
+   <div class="page-bottom">{include file=page.bottom.html}</div>
+   <div class="clr"></div>
+</div>
+
+{include file=footer.html}

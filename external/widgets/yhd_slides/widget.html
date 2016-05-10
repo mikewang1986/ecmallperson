@@ -1,0 +1,26 @@
+<div id="lek_slides">
+    <!--{if !$widget_data}-->
+    <div style="padding:10px; text-align:center;">«Î≈‰÷√</div>
+    <!--{/if}-->
+    <div id="slide_img_b">  
+    	<div id="slide_img">
+    		<!-- {foreach from=$widget_data item=image} -->
+    		<a href="{$image.ad_link_url}"><img src="{$image.ad_image_url}" width="550" height="175" /></a>
+    		<!-- {/foreach} -->
+   		</div>
+    </div>
+    <div id="slide_pager">
+        	<!-- {foreach from=$widget_data item=image name=fe_image} -->
+            <!-- {if $smarty.foreach.fe_image.first} -->
+        	<a href="javascript:" class="activeSlide">1</a>
+            <!-- {else} -->
+            <a href="javascript:">{$smarty.foreach.fe_image.iteration}</a>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+    </div>   
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#slide_img_b").PicScroll({fx:"0",width:175,timeout:3000,timescroll:800,imgId:"#slide_img",titleId:"",pagerId:"#slide_pager"});
+});
+</script>

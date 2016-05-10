@@ -1,0 +1,73 @@
+<script language="JavaScript" type="text/javascript">
+/*
+计算时间差
+*/
+Date.prototype.diff=function (date)
+{
+	var y=date-this,x=Math.abs(y),d,h,m,s;
+
+	d=parseInt(x/86400000);
+	x%=86400000;
+	h=parseInt(x/3600000) + d*24;
+	x%=3600000;
+	m=parseInt(x/60000);
+	x%=60000;
+	s=parseInt(x/1000);
+	return {
+		text:('<div class=h> '+h+' </div>小时<div class=m> '+m+' </div>分<div class=s> '+s+' </div>秒').replace(/0(\d\d)/g,'$1')
+		,value:y
+	};
+}
+
+/*
+计时器类
+*/
+timer=function (from,shower)
+{
+
+	var T=document.getElementById(from).value;
+	T=new Date(T.replace(/-/g,'/'));
+	var P=document.getElementById(shower);
+
+	(function ()
+	{
+		var diff=new Date().diff(T);
+		if(diff.value<0){return alert('end!')}
+		P.innerHTML=diff.text;
+		setTimeout(arguments.callee,1000)
+	})()
+
+}
+</script>
+<div id="tuan">
+	<h3>{$widget_data.model_name}</h3>
+	 <!--{if !$widget_data.groupbuy_list}-->
+    <div style="padding:10px; text-align:center;">没有数据，请配置</div>
+    <!--{else if}-->      
+     <!--{foreach from=$widget_data.groupbuy_list item=groupbuy name=fe_group}-->     
+     <div class="each">
+   		  <dl>
+     		 <dt><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank">{$groupbuy.group_name|escape}</a></dt>
+        	 <dd class="image"><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank"><img src="{$groupbuy.default_image}" width="120" height="120" /></a></dd> 
+             <dd class="goods_info">
+              	<img class="img" src="themes/mall/yhd/styles/default/images/icon_star.jpg" />            
+           	    <span><em class="color">{$groupbuy.discount}</em>折</span>
+                <span>已有<em class="color">{$groupbuy.quantity}</em>人购买</span><div class="clr"></div></dd> 
+              <dd class="time">
+              			<img class="img" src="themes/mall/yhd/styles/default/images/icon_star.jpg" />
+                         <span class="timetitle">剩余</span>
+                         <span class="timenum" id="tuan-content{$smarty.foreach.fe_group.iteration}">
+                            <input type="hidden" id="tuan{$smarty.foreach.fe_group.iteration}" value="{$groupbuy.end_time|date:Y-m-d h:i:s}" />
+                            <script language="javascript">$(function(){new timer('tuan{$smarty.foreach.fe_group.iteration}','tuan-content{$smarty.foreach.fe_group.iteration}')})</script>
+                         </span>
+                         <div class="clr"></div>
+			 </dd>
+             <dd class="buy">
+             	<span class="price"><del>{$groupbuy.price|price}</del><b>{$groupbuy.group_price|price}</b></span>
+             </dd>       
+    	 </dl>
+      </div>
+     <!--{/foreach}-->
+     <!--{/if}-->  
+     <div class="clr"></div>
+</div>

@@ -1,0 +1,72 @@
+<div id="recommend">
+	<!--{if !$widget_data.cate_name_1}-->
+    <div style="padding:10px; text-align:center;">请配置</div>
+    <!--{/if}-->
+   <div class="title">
+	            <a href="#" id="hot-1" onmouseover="stab(1,'hot');">{$widget_data.cate_name_1}</a>
+	            <a href="#" id="hot-2" onmouseover="stab(2,'hot');">{$widget_data.cate_name_2}</a>
+	            <a href="#" id="hot-3" onmouseover="stab(3,'hot');">{$widget_data.cate_name_3}</a>
+	            <a href="#" id="hot-4" onmouseover="stab(4,'hot');">{$widget_data.cate_name_4}</a>
+	</div>
+   <div class="content" id="hot-content-1">
+      	<!-- {foreach from=$widget_data.goods_list_1 item=goods} -->
+      <dl>
+      	<dt>
+         	<a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">
+            	<img src="{$goods.default_image}" width="115" height="115" />
+         	</a>
+      	</dt>
+      	<dd class="name"><a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a>
+      	</dd>
+      	<dd class="price">特价：<em>{$goods.price|price}</em></dd>
+      </dl>       
+      <!--{/foreach}-->
+      <div class="clr"></div>
+   </div>
+   <div class="content" id="hot-content-2" style="display:none">
+      <!-- {foreach from=$widget_data.goods_list_2 item=goods} -->
+      <dl>
+      	<dt>
+         	<a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">
+            	<img src="{$goods.default_image}" width="115" height="115" />
+         	</a>
+      	</dt>
+      	<dd class="name"><a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a>
+      	</dd>
+      	<dd class="price">特价：<em>{$goods.price|price}</em></dd>
+      </dl>       
+      <!--{/foreach}-->
+      <div class="clr"></div>
+   </div>
+   <div class="content" id="hot-content-3" style="display:none">
+      <!-- {foreach from=$widget_data.goods_list_3 item=goods} -->
+      <dl>
+      	<dt>
+         	<a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">
+            	<img src="{$goods.default_image}" width="115" height="115" />
+         	</a>
+      	</dt>
+      	<dd class="name"><a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a>
+      	</dd>
+      	<dd class="price">特价：<em>{$goods.price|price}</em></dd>
+      </dl>       
+      <!--{/foreach}-->
+      <div class="clr"></div>
+   </div>
+   <div class="content" id="hot-content-4" style="display:none">
+      <!-- {foreach from=$widget_data.goods_list_4 item=goods} -->
+      <dl>
+      	<dt>
+         	<a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">
+            	<img src="{$goods.default_image}" width="115" height="115" />
+         	</a>
+      	</dt>
+      	<dd class="name"><a href="{url app=goods&id=$goods.goods_id}" title="{$goods.goods_name|escape}">{$goods.goods_name|escape}</a>
+      	</dd>
+      	<dd class="price">特价：<em>{$goods.price|price}</em></dd>
+      </dl>       
+      <!--{/foreach}-->
+      <div class="clr"></div>
+   </div>
+</div>
+<script type="text/javascript">$(function(){stab(1,'hot');});</script>
