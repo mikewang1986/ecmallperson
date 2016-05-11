@@ -84,20 +84,20 @@
     </div>
     <div class="footerbanner">
          <ul>
-		            <li><a href="http://www.psmoban.com"><img src="ads/footer_pic_01.gif"></a></li>
-		            <li><a href="http://www.psmoban.com" target="_blank"><img src="ads/footer_pic_02.gif"></a></li>
-		            <li><a href="http://www.psmoban.com" target="_blank"><img src="ads/footer_pic_03.gif"></a></li>
+		            <li><a href="http://www.unn114.com"><img src="ads/footer_pic_01.gif"></a></li>
+		            <li><a href="http://www.unn114.com/buy/" target="_blank"><img src="ads/footer_pic_02.gif"></a></li>
+		            <li><a href="http://idc.unn114.com" target="_blank"><img src="ads/footer_pic_03.gif"></a></li>
          </ul>
      </div>
      <div>
 		<div class="map">
           <ul>
             <li>
-              <a target="_blank" href="http://www.psmoban.com">关于1号店</a>
+              <a target="_blank" href="http://www.unn114.com">关于1号店</a>
             </li>
               |
             <li>
-              <a target="_blank" href="http://www.psmoban.com">我们的团队</a>
+              <a target="_blank" href="http://www.unn114.com">我们的团队</a>
             </li>
               |
             <li>
@@ -105,15 +105,15 @@
             </li>
               |
             <li>
-              <a target="_blank" href="http://www.psmoban.com/">诚征英才</a>
+              <a target="_blank" href="http://www.gooxao.com/">诚征英才</a>
             </li>
               |
             <li>
-              <a target="_blank" href="http://www.psmoban.com">媒体报道</a>
+              <a target="_blank" href="http://www.adminbuy.cn">媒体报道</a>
             </li>
               |
             <li>
-              <a target="_blank" href="http://www.psmoban.com/">加盟标准</a>
+              <a target="_blank" href="http://www.gooxao.com/">加盟标准</a>
             </li>
               |
             <li>
@@ -133,7 +133,7 @@
 	
     <div class="footerbanner2">
          <ul>
-		     <li><a target="_blank" href="http://www.psmoban.com"><img src="ads/footer_pic_09.gif"></a></li>
+		     <li><a target="_blank" href="http://www.unn114.com"><img src="ads/footer_pic_09.gif"></a></li>
 			 <li><a target="_blank" href="http://creditcard.pingan.com/index.shtml"><img src="ads/footer_pic_04.gif"></a></li>
 			 <li><a href="https://www.alipay.com/aip/aip_validate_list.htm?trustId=AIP10038885" target="_blank" rel="nofollow"><img src="ads/footer_pic_05.gif"></a></li>
 			 <li><a href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20088493" target="_blank" rel="nofollow"><img src="ads/footer_pic_06.gif"></a></li>

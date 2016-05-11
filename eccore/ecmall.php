@@ -148,7 +148,7 @@ class Object
      *    @author    Garbin
      *    @return    array
      */
-    function get_error()
+     function get_error()
     {
         return $this->_errors;
     }
@@ -285,7 +285,7 @@ class Conf
      *    @param     string $k
      *    @return    mixed
      */
-    function get($key = '')
+    static function get($key = '')
     {
         $vkey = $key ? strtokey("{$key}", '$GLOBALS[\'ECMALL_CONFIG\']') : '$GLOBALS[\'ECMALL_CONFIG\']';
 
