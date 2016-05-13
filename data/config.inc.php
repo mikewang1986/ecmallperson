@@ -1,8 +1,8 @@
 <?php
 
 return array (
-  'SITE_URL' => 'http://ecmjx.jyds95.com',
-  'DB_CONFIG' => 'mysql://ecmjx:12344321Aa@localhost:3306/ecmjx',
+  'SITE_URL' => 'http://ecmall.com.cn/',
+  'DB_CONFIG' => 'mysql://root:root@localhost:3306/ecmall',
   'DB_PREFIX' => 'ecm_',
   'LANG' => 'sc-utf-8',
   'COOKIE_DOMAIN' => '',
