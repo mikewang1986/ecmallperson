@@ -1,0 +1,33 @@
+<div class="content clearfix">
+    <!--{foreach from=$widget_data.gcategories item=category name=fe_category}-->
+    <div class="item">
+        <div class="pborder">
+            <p><a href="{url app=search&cate_id=$category.id}" target="_blank">
+                    <s class="menu-nav-icon fp-iconfont">&#x<!--{if $category.iconfonts.iconfont}-->{$category.iconfonts.iconfont}<!--{else}-->3451;<!--{/if}--></s>
+                    {$category.value|escape}
+                </a>
+            </p>
+            <i class="menu-nav-arrow"></i>
+        </div>
+        <div class="pop">
+            <div class="catlist float-left">
+                <!--{foreach from=$category.children item=child name=fe_child}--> 
+                <!--{if $smarty.foreach.fe_child.index lt 3}-->
+                <dl class="clearfix" {if $smarty.foreach.fe_child.last} style="border-bottom:0"{/if}>
+                    <dt class="float-left">
+                    <a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a>
+                    <a class="category-more" href="{url app=search&cate_id=$child.id}" target="_blank">更多<span class="fp-iconfont">&#xf004d;</span></a>
+                    </dt>
+                    <dd class="float-left">
+                        <!--{foreach from=$child.children item=child2 name=fe_child2}-->
+                        <a {if $smarty.foreach.fe_child2.iteration % 3 ==1 } style="color:#df3f4e;"{/if} href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a>
+                        <!--{/foreach}-->
+                    </dd>
+                </dl>
+                <!--{/if}-->
+                <!--{/foreach}-->
+            </div>
+        </div>
+    </div>
+    <!--{/foreach}-->
+</div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        {$page_seo}
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+        <link href="{res file=css/user.css}" type="text/css" rel="stylesheet" />
+<script>
+$(function(){
+	$('.detail-more').click(function(){
+		$(this).find('em').toggleClass('arrow-down');
+		$('#depopay-order-detail').toggle();
+	})
+	$('.depay-form input[type="password"]').change(function(){
+		$('.depay-form .notice-word').hide();
+	});
+});
+</script>
+</head>
+<body>
+<div class="depopay">
+	<div class="order-info">
+    	<div class="order-base">
+        	<div class="explain">
+            	<p>您正在使用{$lang.deposit}即时到账付款</p>
+                <span></span>
+            </div>
+            <div class="goods-message clearfix">
+            	<h3 class="float-left">{$order_info.first_goods_name}</h3>
+                <span class="float-left">卖家：{$order_info.seller_name}</span>
+            </div>
+            <div class="payAmount">
+            	<strong>{$order_info.order_amount}</strong> 元
+                <a href="javascript:window.location.reload();" class="f60">刷新</a>
+           </div>
+        </div>
+        <div class="order-detail hidden" id="depopay-order-detail">
+        	<dl class="clearfix">
+        	<dt>订单编号：</dt>
+            <dd>{$order_info.order_sn}</dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt>商品名称：</dt>
+            <dd>
+            	<!--{foreach from=$order_info.ordergoods item=goods}-->
+            	{$goods.goods_name}<br />
+                <!--{/foreach}-->
+            </dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt>交易金额：</dt>
+            <dd>{$order_info.order_amount} 元</dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt>购买时间：</dt>
+            <dd>{$order_info.add_time|date:Y年m月d日 H:i:s}</dd>
+        </dl>
+        <dl class="clearfix">
+        	<dt>收货地址：</dt>
+            <dd>{$order_info.region_name}{$order_info.address}，{$order_info.zipcode}（邮编），{$order_info.consignee}（收）{$order_info.phone_mob}</dd>
+        </dl>
+       
+        </div>
+    	<div class="detail-more">
+        	<em class="arrow-down"></em>
+            <a href="javascript:;">订单详情</a>
+        </div>
+    </div>
+    <div class="account-detail">
+    	<div class="detail-line"><span><strong>{$lang.deposit_account}</strong>( {$deposit_account.account} )</span><span>可支付余额：<strong>{$deposit_account.money}</strong> 元</span></div>
+        <!--{if  ($deposit_account.money <=0) || ($deposit_account.money < $order_info.order_amount)}-->
+        <div class="notice-word mt10">您目前的账户余额不足，请先<a href="{url app=deposit&act=recharge}" target="_blank">充值</a>后再付款</div>
+        <!--{/if}-->
+        <form method="post" id="depayform">
+        	<div class="depay-form">
+            	<dl class="clearfix">
+                	<dt class="float-left">支付密码：</dt>
+                    <dd class="float-left"><input type="password" class="text" name="password" /></dd>
+                </dl>
+                <dl class="clearfix">
+                	<dt class="float-left">&nbsp;</dt> 
+                    <dd class="float-left"><span class="btn-alipay"><input type="submit" value="确认付款" {if ($deposit_account.money <=0) || ($deposit_account.money < $order_info.order_amount)}disabled="disabled"{/if} /></span></dd>
+                </dl>
+            </div>
+        </form>
+    </div>
+</div>
+ {include file="member.footer.html"}

@@ -1,0 +1,290 @@
+{include file=member.header.html}
+<style type="text/css">
+.fleft{float:left;}
+.align2 { text-align: center; }
+.table table { width: 100%; border-collapse: collapse; font-size:12px; }
+.table th { font-weight: normal; height: 29px; }
+.table td { padding:8px 0 5px 2px; }
+.table th label{margin-left:8px;}
+
+.table .sep-row td{padding:0;margin:0; height:5px; overflow:hidden}
+
+.table .operations th{border:1px #DEDEE0 solid; background:#F3F3F3;text-align:left;padding-left:8px;}
+
+.table .line-hd{ background:#E8F2FF;text-align:left;color:#404040}
+.table .line-hd th{border:1px #D4E7FF solid;}
+.table .line-hd th p{padding-left:8px;}
+.table .line td,.table .line_bold td{border-left:1px #EEEEEE solid;border-bottom:1px #EEEEEE solid}
+.table .last_line td,.table .line .bottom-blue,.table .line-blue td{border-bottom:1px #D4E7FF solid}
+.table .line .bottom-blue{line-height:18px;}
+.table .line td.first{border-left:1px #D4E7FF solid;}
+.table .line td.last{border-right:1px #D4E7FF solid; line-height:22px}
+
+.table .pic-info img{ display:inline-block;border:1px #EEEEEE solid;margin-left:5px;margin-right:5px;}
+.table .txt-info{width:200px;}
+.table .txt-info .txt{ line-height:18px; height:36px;}
+.table .txt-info p{color:#808080;}
+
+.table .line_bold {  }
+.table .line_bottom td { border:1px #D4E7FF solid; background:#F2F2FF}
+.line_head { background: url(../images/member/line_head.gif) repeat-x 0 bottom; }
+.line_normal td { border-top: 1px solid #e2e2e2; }
+
+.table_head_line { background: url(../images/member/table_line.gif) repeat-x 0 64px; }
+
+.table .all { margin-right: 10px; cursor: pointer; }
+.table .edit { padding-left: 25px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -604px; }
+.table .delete { padding-left: 25px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -631px; }
+
+.table .user { color: #3e3e3e; }
+.table .user:hover { color: #ff4f01; }
+.table .set_up { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -701px; }
+.table .default { float: left; padding-left: 23px; color: #333; text-decoration: none; }
+.table .edit1 { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -729px; }
+.table .export { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -1997px; }
+.table .extend { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -1875px; }
+.table .add1_ico { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -1180px; }
+.table .add2_ico { float: left; padding-left: 23px; color: #919191; background: url(../images/member/ico.gif) no-repeat 10px -1772px; }
+.table .edit:hover, .table .edit1:hover, .table .set_up:hover, .table .delete:hover, .table .export:hover, .table .extend:hover, .table .add1_ico:hover, .table .add2_ico:hover { color: #ff4f01; }
+
+.table .email { display:inline-block; vertical-align:middle; width: 47px; height: 17px; background: url(../images/member/btn.gif) no-repeat 0 -41px; margin:0 auto }
+</style>
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+    $('.checkall_s').click(function(){
+        var if_check = $(this).attr('checked');
+        $('.checkitem').each(function(){
+            if(!this.disabled)
+            {
+                $(this).attr('checked', if_check);
+            }
+        });
+        $('.checkall_s').attr('checked', if_check);
+    });
+    $('a[ectype="batchcancel"]').click(function(){
+        if($('.checkitem:checked').length == 0){
+            return false;
+        }
+        if($(this).attr('presubmit')){
+            if(!eval($(this).attr('presubmit'))){
+                return false;
+            }
+        }
+        var items = '';
+        $('.checkitem:checked').each(function(){
+            items += this.value + ',';
+        });
+        items = items.substr(0, (items.length - 1));
+
+        var uri = $(this).attr('uri');
+        uri = uri + '&' + $(this).attr('name') + '=' + items;
+        var id = 'seller_order_cancel_order';
+        var title = $(this).attr('dialog_title') ? $(this).attr('dialog_title') : '';
+        //var url = $(this).attr('uri');
+        var width = '500';
+        ajax_form(id, title, uri, width);
+    });
+	$('.batchprint').click(function(){
+        if($('.checkitem:checked').length == 0){
+            return false;
+        }
+        if($(this).attr('presubmit')){
+            if(!eval($(this).attr('presubmit'))){
+                return false;
+            }
+        }
+        var items = '';
+        $('.checkitem:checked').each(function(){
+            items += this.value + ',';
+        });
+        items = items.substr(0, (items.length - 1));
+        var url = "{url app=seller_order}"+'&'+'act=shipped_print'+'&order_id='+items;
+		window.open(url);		
+    });
+	$('.postprint').click(function(){
+        if($('.checkitem:checked').length == 0){
+            return false;
+        }
+        if($(this).attr('presubmit')){
+            if(!eval($(this).attr('presubmit'))){
+                return false;
+            }
+        }
+        var items = '';
+        $('.checkitem:checked').each(function(){
+            items += this.value + ',';
+        });
+        items = items.substr(0, (items.length - 1));
+        var url = "{url app=seller_order}"+'&'+'act=post_print'+'&order_id='+items;
+		window.open(url);		
+    });
+});
+</script>
+<div class="content">
+    {include file=member.menu.html}
+  <div id="right">
+    	
+    	{include file=member.submenu.html}
+        <div class="wrap">
+         	<div class="public_index table">
+                <table>
+                	<tr class="line_bold">
+                        <th colspan="8">
+                            <div class="search_order clearfix">
+                				<form method="get" class="clearfix">
+               						<div style="float:left;">
+                						<span class="title">{$lang.order_sn}:</span>
+                						<input class="text_normal" type="text" name="order_sn" value="{$query.order_sn|escape}" />
+                						<span class="title">{$lang.add_time}:</span>
+                						<input class="text_normal width2" type="text" name="add_time_from" id="add_time_from" value="{$query.add_time_from}" /> &#8211; <input class="text_normal width2" id="add_time_to" type="text" name="add_time_to" value="{$query.add_time_to}" />
+                						<span class="title">{$lang.buyer_name}:</span>
+                						<input class="text_normal" type="text" name="buyer_name" value="{$query.buyer_name|escape}" />
+                						<input type="hidden" name="app" value="seller_order" />
+                						<input type="hidden" name="act" value="index" />
+                						<input type="hidden" name="type" value="{$type}" />
+                						<input type="submit" class="btn" value="{$lang.search}" />
+                					</div>
+                					<!--{if $query.buyer_name or $query.add_time_from or $query.add_time_to or $query.order_sn}-->
+                    				<a class="detlink" href="{url app=seller_order&type=$query.type}">{$lang.cancel_query}</a>
+                					<!--{/if}-->
+								</form>
+        					</div>
+                        </th>
+                    </tr>
+                	<tr class="sep-row" height="20"><td colspan="8"></td></tr>
+                    <tr class="line gray">
+                        <th>{$lang.goods_name}</th>
+                        <th>{$lang.price}</th>
+                        <th>{$lang.quantity}</th>
+                        <th>{$lang.payment_name}</th>
+                        <th>{$lang.buyer_name}</th>
+                        <th>{$lang.order_amount}</th>
+                        <th>{$lang.order_status}</th>
+                        <th>{$lang.evaluation}</th>
+                    </tr>
+                    <!--{if $orders}-->
+                    <tr class="sep-row"><td colspan="8"></td></tr>
+                    <tr class="operations">
+                        <th colspan="8">
+                            <p class="position1 clearfix"><input type="checkbox" id="all" class="checkall"/></p>
+                            <p class="position1 clearfix">
+                        		<label for="all">{$lang.checkall}</label>
+                            	<a href="javascript:;" class="delete" ectype="batchcancel" uri="index.php?app=seller_order&act=cancel_order" name="order_id">{$lang.cancel_order}</a>
+                                 <input type="button" id="batchprint" value="批量打印发货单" class="sm_dayin1 batchprint"/>
+                                 <input type="button" id="postprint" value="post打印发货单" class="sm_dayin1 postprint"/>
+                            </p>
+                            <p class="position2 clearfix">
+                                {include file=member.page.top.html}
+                            </p>
+                        </th>
+                    </tr>
+                    <!--{/if}-->
+                    
+                    <!-- 循环开始 -->
+                    <!--{foreach from=$orders item=order name=fe_order}-->
+                    <tr class="sep-row"><td colspan="8"></td></tr>
+                    <tr class="line-hd">
+                    	<th colspan="8">
+                        	<p>
+                            	<input type="checkbox" value="{$order.order_id}" class="checkitem" <!--{if $order.status eq ORDER_FINISHED || $order.status eq ORDER_CANCELED}--> disabled="disabled" <!--{/if}-->/>
+                            	<label>订单号：</label>{$order.order_sn}
+                            	<label>成交时间：</label>{$order.add_time|date:Y-m-d H:i:s}
+                            </p>
+                        </th>
+                    </tr>
+                    <!--{foreach from=$order.order_goods item=goods name=fe_goods}-->
+                    <tr class="line<!--{if $smarty.foreach.fe_goods.last}--> last_line<!--{/if}-->">
+                        <td valign="top" class="first clearfix">
+                        	<div class="pic-info fleft">
+                            	<a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img src="{$goods.goods_image}" width="50" height="50" /></a>
+                            </div>
+                            <div class="txt-info fleft">
+                            	<div class="txt">
+                                	<a href="{url app=goods&id=$goods.goods_id}" target="_blank">{$goods.goods_name}</a>
+                                </div>
+                                <!--{if $goods.specification}--><p class="gray-color mt5">{$goods.specification}</p><!--{/if}-->
+                            </div>
+                        </td>
+                        <td valign="top" class="align2">{$goods.price}</td>
+                        <td valign="top" class="align2"><strong>{$goods.quantity}</strong></td>
+                        <!--{if $smarty.foreach.fe_goods.first}-->
+                        <td valign="top" class="align2 bottom-blue" rowspan="{$order.goods_quantities}">
+                        	{$order.payment_name|escape}
+                        </td>
+                        <td valign="top" class="align2 bottom-blue" rowspan="{$order.goods_quantities}">
+                        	<a href="{url app=message&act=send&to_id=$order.buyer_id}" target="_blank">{$order.buyer_name|escape}</a>
+                            <br />
+                            <!--{if $order.buyer_info.real_name}-->{$order.buyer_info.real_name|escape|truncate:14}<!--{else}-->----<!--{/if}-->
+                            <br />
+                            <!--{if $order.buyer_info.im_qq}-->
+                            <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$order.buyer_info.im_qq|escape}&amp;Site={$store.store_name|escape}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$order.buyer_info.im_qq|escape}:5" alt="QQ"></a>
+                            <!--{elseif $order.buyer_info.im_aliww}-->
+                            <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid={ $order.buyer_info.im_aliww|escape:url}&site=cntaobao&s=2&charset={$charset}" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid={ $order.buyer_info.im_aliww|escape:url}&site=cntaobao&s=2&charset={$charset}" alt="Wang Wang" /></a>
+                            <!--{elseif $order.buyer_info.im_msn}-->
+                            <a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee={$order.buyer_info.im_msn|escape}"><img src="http://messenger.services.live.com/users/{$order.buyer_info.im_msn|escape}/presenceimage/" alt="im_msn" /></a>
+                            <!--{else}-->
+                            <a target="_blank" href="{url app=message&act=send&to_id=$order.buyer_id}" class="email"></a>
+                            <!--{/if}-->
+                        </td>
+                        <td class="align2 padding1"><strong>{$order.order_amount}</strong><br />
+                            <span class="gray-color">(含运费:{$order.shipping_fee})</span></td>
+                        <td class="align2"><span class="color4">{$order.status|modifier:order_status}<!--{if $order.evaluation_status}-->,&nbsp;{$lang.already_evaluate}<!--{/if}--></span></td>
+                        <td valign="top" width="54" class="align2 bottom-blue last" rowspan="{$order.goods_quantities}">
+                            <!--{if $order.evaluation_status}--><p class="gray-color">{$lang.already_evaluate}</p><!--{/if}-->
+                        </td>
+                        <!--{/if}-->
+                    </tr>
+                    <!--{/foreach}-->
+                    <tr class="line_bottom">
+                        <td colspan="8" align="right" class="order_form1"><div class="button_wrap">
+                        <input type="button" value="{$lang.received_pay}" class="btn" ectype="dialog" dialog_id="seller_order_received_pay" dialog_width="400" uri="index.php?app=seller_order&amp;act=received_pay&amp;order_id={$order.order_id}&ajax" dialog_title="{$lang.received_pay}" id="order{$order.order_id}_action_received_pay"{if $order.status neq ORDER_PENDING} style="display:none"{/if} />
+                        <input type="button" value="{$lang.confirm_cod_order}" class="btn1" ectype="dialog" uri="index.php?app=seller_order&amp;act=confirm_order&amp;order_id={$order.order_id}&ajax" dialog_id="seller_order_confirm_order" dialog_title="{$lang.confirm_cod_order}"  dialog_width="400" id="order{$order.order_id}_action_confirm"{if $order.status neq ORDER_SUBMITTED} style="display:none"{/if} />
+                        <input type="button" value="{$lang.adjust_fee}" class="btn1" uri="index.php?app=seller_order&amp;act=adjust_fee&amp;order_id={$order.order_id}&ajax" dialog_width="450" dialog_title="{$lang.adjust_fee}" ectype="dialog"  dialog_id="seller_order_adjust_fee" id="order{$order.order_id}_action_adjust_fee"{if $order.status neq ORDER_PENDING and $order.status neq ORDER_SUBMITTED} style="display:none"{/if} />
+                        <input type="button" value="{$lang.shipped_order}" class="btn1" ectype="dialog" dialog_title="{$lang.shipped_order}" dialog_id="seller_order_shipped" uri="index.php?app=seller_order&amp;act=shipped&amp;order_id={$order.order_id}&ajax"  dialog_width="400" id="order{$order.order_id}_action_shipped"{if $order.status neq ORDER_ACCEPTED} style="display:none"{/if} />
+                        <!--//已发货-->
+                        
+                                <!--{if $enable_express}-->
+                        <a target="_blank" class="btn1" href="{url app=order_express&amp;order_id=$order.order_id}" {if $order.status neq ORDER_SHIPPED && $order.status neq ORDER_FINISHED} style="display:none"{/if}>{$lang.view_delivery_track}</a>
+                        <!--{/if}-->
+                        
+                        <input type="button" value="{$lang.finish_order}" class="btn1" ectype="dialog" dialog_id="seller_order_finished"  dialog_title="{$lang.finish_order}" uri="index.php?app=seller_order&amp;act=finished&order_id={$order.order_id}&ajax" dialog_width="400"  id="order{$order.order_id}_action_finish"{if $order.payment_code neq 'cod' or $order.status neq ORDER_SHIPPED} style="display:none"{/if} />
+                        <input type="button" value="{$lang.edit_invoice_no}" class="btn1" ectype="dialog" dialog_title="{$lang.edit_invoice_no}" uri="index.php?app=seller_order&amp;act=shipped&amp;order_id={$order.order_id}&ajax" dialog_id="seller_order_shipped" dialog_width="400" id="order{$order.order_id}_action_edit_invoice_no"{if $order.status neq ORDER_SHIPPED} style="display:none"{/if} />
+                        <!-- //不是取消和完成的订单就可以取消-->
+                        <input type="button" value="{$lang.cancel_order}" class="btn1" ectype="dialog" uri="index.php?app=seller_order&amp;act=cancel_order&order_id={$order.order_id}&ajax" dialog_title="{$lang.cancel_order}" dialog_id="seller_order_cancel_order" dialog_width="400" id="order{$order.order_id}_action_cancel"{if $order.status eq ORDER_CANCELED or $order.status eq ORDER_FINISHED} style="display:none"{/if} />
+                        <a class="btn1" href="{url app=seller_order&act=view&order_id=$order.order_id}" target="_blank">{$lang.view_order}</a>
+                       </div> </td>
+            </tr>
+                    <!--{foreachelse}-->
+                    <tr><td class="member_no_records" colspan="8">{$lang.no_records}</td></tr>
+                    <!--{/foreach}-->
+                    <!--{if $orders}-->
+                    <tr class="sep-row">
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr class="operations">
+                        <th colspan="8">
+                            <p class="position1 clearfix"><input type="checkbox" id="all2" class="checkall"/></p>
+                            <p class="position1 clearfix">
+                        		<label for="all2">{$lang.checkall}</label>
+                            	<a href="javascript:;" class="delete" ectype="batchcancel" uri="index.php?app=seller_order&act=cancel_order" name="order_id">{$lang.cancel_order}</a>
+                                 <input type="button" id="batchprint" value="批量打印发货单" class="sm_dayin1 batchprint"/>
+                                 <input type="button" id="postprint" value="post打印发货单" class="sm_dayin1 postprint"/>
+                            </p>
+                            <p class="position2 clearfix">
+                                {include file=member.page.bottom.html}
+                            </p>
+                        </th>
+                    </tr>
+                    <!--{/if}-->
+                    </table>
+                    <iframe name="seller_order" style="display:none;"></iframe>
+        </div>
+    
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+{include file=footer.html}

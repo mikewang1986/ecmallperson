@@ -1,0 +1,82 @@
+<div class="tmall-floor w fp-floor-{$widget_data.floor_id} carousel-{$widget_data.model_id} mb30">
+    <div class="floor-show">
+        <ul class="floor-title">
+            <li>
+                <a href="{$widget_data.cate_url1}" target="_blank"><span class="floor-icon fp-iconfont">&#x<!--{if $widget_data.iconfont1}-->{$widget_data.iconfont1}<!--{else}-->345c;<!--{/if}--></span></a>
+                <span class="floor-key">{$widget_data.cate_name1}</span>
+            </li>
+            <li> <b class="floor-title-separator"></b> </li>
+            <li>
+                <a href="{$widget_data.cate_url2}" target="_blank"><span class="floor-icon fp-iconfont">&#x<!--{if $widget_data.iconfont2}-->{$widget_data.iconfont2}<!--{else}-->345c;<!--{/if}--></span></span></a>
+                <span class="floor-key">{$widget_data.cate_name2}</span>
+            </li>
+        </ul>
+
+        <div class="floor-brand-slide">
+            <a href="javascript:void(0);" title="下一个" target="_self" class="brand-trigger brand-trigger-next"></a>
+            <a href="javascript:void(0);" title="上一个" target="_self" class="brand-trigger brand-trigger-prev"></a>
+            <div class="brand-slide-content">
+                <ul class="ks-switchable-content">
+                        <!--{foreach from=$widget_data.brands item=brand name=fe_brand}-->
+                        <!--{if $smarty.foreach.fe_brand.first}-->
+                        <li>
+                        <!--{/if}-->
+                        <!--{if $smarty.foreach.fe_brand.iteration % 3 eq 1 && !$smarty.foreach.fe_brand.first}-->
+                        </li>
+                        <li>
+                        <!---{/if}-->
+                        <a href="{url app=search&brand=$brand.brand_name}" target="_blank"><img src="{$brand.brand_logo}" width="90" height="45" alt="{$brand.brand_name}"></a>
+                        <!--{if $smarty.foreach.fe_brand.last}-->
+                        </li>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
+                </ul>
+                <ul class="ks-switchable-nav"><li class="ks-active">1</li></ul>
+            </div>
+        </div>
+
+        <div class="floor-show-bottom">
+            <ul class="floor-label-list clearfix"> 
+                <!--{foreach from=$widget_data.gcategories item=gcategorie name=fe_gcategorie}-->
+                <!--{if $smarty.foreach.fe_gcategorie.index lt 8}-->
+                <li><a href="{url app=search&cate_id=$gcategorie.cate_id}" target="_blank">{$gcategorie.cate_name}</a></li>
+                <!--{/if}-->
+                <!--{/foreach}-->
+            </ul>
+        </div>
+    </div>
+
+    <div class="floor-banner-container">
+        <div class="grid-col-400">
+            <a class="floor-banner grid-row-422" href="{$widget_data.ad1_link_url}"> <img src="{$widget_data.ad1_image_url}" width="399" height="422" > </a>
+        </div>
+        <div class="grid-col-202">
+            <a class="grid-row-255 floor-banner" href="{$widget_data.ad2_link_url}"> <img src="{$widget_data.ad2_image_url}" width="199" height="255" > </a>
+            <a class="grid-row-166 floor-banner" href="{$widget_data.ad5_link_url}"> <img src="{$widget_data.ad5_image_url}" width="199" height="166" > </a>
+        </div>
+        <div class="grid-col-202">
+            <a class="grid-row-255 floor-banner" href="{$widget_data.ad3_link_url}"> <img src="{$widget_data.ad3_image_url}" width="199" height="255" > </a>
+            <a class="grid-row-166 floor-banner" href="{$widget_data.ad6_link_url}"> <img src="{$widget_data.ad6_image_url}" width="199" height="166" > </a>
+        </div>
+        <div class="grid-col-202">
+            <a class="grid-row-255 floor-banner" href="{$widget_data.ad4_link_url}"> <img src="{$widget_data.ad4_image_url}" width="199" height="255" > </a>
+            <a class="grid-row-166 floor-banner" href="{$widget_data.ad7_link_url}"> <img src="{$widget_data.ad7_image_url}" width="199" height="166" > </a>
+        </div>
+    </div>
+    <script>
+        KISSY.use("switchable", function(S) {
+            var tiny_slide = new S.Carousel('.carousel-{$widget_data.model_id}', {
+                steps: 1,
+                effect: 'scrollx',
+                easing: 'easeOutStrong',
+                circular: true,
+                prevBtnCls: 'brand-trigger-prev',
+                nextBtnCls: 'brand-trigger-next',
+                disableBtnCls: 'disable',
+                interval: 4,
+                aria: false,
+                autoplay: true,
+            });
+        });
+    </script>
+</div>

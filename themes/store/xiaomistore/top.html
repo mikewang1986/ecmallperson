@@ -1,0 +1,12 @@
+<!--{if $smarty.get.app eq 'goods' && $smarty.get.id}-->
+<div id="path">
+        {$lang.curlocal}:
+        <!--{foreach from=$_curlocal item=lnk}-->
+        <!--{if $lnk.url}-->
+        <a href="{$lnk.url}">{$lnk.text|escape}</a> <span>&#8250;</span>
+        <!--{else}-->
+        {$lnk.text|escape}
+        <!--{/if}-->
+        <!--{/foreach}-->
+</div>
+<!--{/if}-->

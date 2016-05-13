@@ -1,0 +1,7 @@
+<div  class="three-ads mb10">
+    <ul class="clearfix w">
+        <!--{foreach from=$widget_data.ads item=ad name=fe_ad}-->
+    	<li {if $smarty.foreach.fe_ad.last}class="last"{/if}><a href="{$ad.link_url}" target="_blank" title="{$ad.image_title}"><img width="393" alt="{$ad.image_title}" src="{$ad.image_url}" /></a></li>
+    	<!--{/foreach}-->
+   </ul>
+</div>

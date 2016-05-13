@@ -1,0 +1,5542 @@
+-----------2014-12-01 15:15:02-----------------array (
+  'order_id' => '32',
+  'order_sn' => '1433423654',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417389123',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433423654',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 16:14:02-----------------1234
+
+
+-----------2014-12-01 16:16:56-----------------\r\n1234
+
+
+-----------2014-12-01 16:17:08-----------------\r\n1234
+
+
+-----------2014-12-01 16:17:26-----------------\r\n1234
+
+
+-----------2014-12-01 16:17:58-----------------\r\n1234
+
+
+-----------2014-12-01 16:19:38-----------------\r\n1234
+
+
+-----------2014-12-01 16:19:49-----------------\r\n1234
+
+
+-----------2014-12-01 16:20:08-----------------\r\n1234
+
+
+-----------2014-12-01 16:20:40-----------------\r\n1234
+
+
+-----------2014-12-01 16:21:00-----------------\r\n
+
+
+-----------2014-12-01 16:21:32-----------------\r\n
+
+
+-----------2014-12-01 16:21:48-----------------\r\n
+
+
+-----------2014-12-01 16:22:05-----------------\r\n
+
+
+-----------2014-12-01 16:22:36-----------------\r\n
+
+
+-----------2014-12-01 16:23:42-----------------\r\narray (
+)
+
+
+-----------2014-12-01 16:23:42-----------------\r\narray (
+)
+
+
+-----------2014-12-01 16:23:42-----------------\r\narray (
+  'ALL_HTTP' => 'HTTP_CONNECTION:Keep-Alive
+HTTP_PRAGMA:no-cache
+HTTP_CONTENT_LENGTH:777
+HTTP_CONTENT_TYPE:text/xml
+HTTP_ACCEPT:*/*
+HTTP_HOST:www.tuitai.cn
+HTTP_USER_AGENT:Mozilla/4.0
+HTTP_X_REWRITE_URL:/test.php
+',
+  'HTTPS' => 'off',
+  'SCRIPT_NAME' => '/test.php',
+  'HTTP_COOKIE' => '',
+  'AUTH_PASSWORD' => '',
+  'AUTH_TYPE' => '',
+  'AUTH_USER' => '',
+  'CONTENT_LENGTH' => '777',
+  'CONTENT_TYPE' => 'text/xml',
+  'PATH_TRANSLATED' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html',
+  'QUERY_STRING' => '',
+  'REMOTE_ADDR' => '140.207.54.77',
+  'REMOTE_HOST' => '140.207.54.77',
+  'REMOTE_USER' => '',
+  'REQUEST_METHOD' => 'POST',
+  'SERVER_NAME' => 'www.tuitai.cn',
+  'SERVER_PORT' => '80',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'SERVER_SOFTWARE' => 'Microsoft-IIS/6.0',
+  'APPL_MD_PATH' => '/LM/w3svc/1120214844/Root',
+  'APPL_PHYSICAL_PATH' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\',
+  'INSTANCE_ID' => '1120214844',
+  'INSTANCE_META_PATH' => '/LM/W3SVC/1120214844',
+  'LOGON_USER' => '',
+  'REQUEST_URI' => '/test.php',
+  'URL' => '/test.php',
+  'SCRIPT_FILENAME' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\test.php',
+  'ORIG_PATH_INFO' => '/test.php',
+  'PATH_INFO' => '',
+  'ORIG_PATH_TRANSLATED' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\test.php',
+  'DOCUMENT_ROOT' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html',
+  'PHP_SELF' => '/test.php',
+  'HTTP_CONNECTION' => 'Keep-Alive',
+  'HTTP_PRAGMA' => 'no-cache',
+  'HTTP_CONTENT_LENGTH' => '777',
+  'HTTP_CONTENT_TYPE' => 'text/xml',
+  'HTTP_ACCEPT' => '*/*',
+  'HTTP_HOST' => 'www.tuitai.cn',
+  'HTTP_USER_AGENT' => 'Mozilla/4.0',
+  'HTTP_X_REWRITE_URL' => '/test.php',
+  'REQUEST_TIME' => 1417422222,
+)
+
+
+-----------2014-12-01 16:25:39-----------------\r\narray (
+)
+
+
+-----------2014-12-01 16:25:39-----------------\r\narray (
+)
+
+
+-----------2014-12-01 16:25:39-----------------\r\narray (
+  'ALL_HTTP' => 'HTTP_CONNECTION:Keep-Alive
+HTTP_PRAGMA:no-cache
+HTTP_CONTENT_LENGTH:777
+HTTP_CONTENT_TYPE:text/xml
+HTTP_ACCEPT:*/*
+HTTP_HOST:www.tuitai.cn
+HTTP_USER_AGENT:Mozilla/4.0
+HTTP_X_REWRITE_URL:/test.php
+',
+  'HTTPS' => 'off',
+  'SCRIPT_NAME' => '/test.php',
+  'HTTP_COOKIE' => '',
+  'AUTH_PASSWORD' => '',
+  'AUTH_TYPE' => '',
+  'AUTH_USER' => '',
+  'CONTENT_LENGTH' => '777',
+  'CONTENT_TYPE' => 'text/xml',
+  'PATH_TRANSLATED' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html',
+  'QUERY_STRING' => '',
+  'REMOTE_ADDR' => '140.207.54.77',
+  'REMOTE_HOST' => '140.207.54.77',
+  'REMOTE_USER' => '',
+  'REQUEST_METHOD' => 'POST',
+  'SERVER_NAME' => 'www.tuitai.cn',
+  'SERVER_PORT' => '80',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'SERVER_SOFTWARE' => 'Microsoft-IIS/6.0',
+  'APPL_MD_PATH' => '/LM/w3svc/1120214844/Root',
+  'APPL_PHYSICAL_PATH' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\',
+  'INSTANCE_ID' => '1120214844',
+  'INSTANCE_META_PATH' => '/LM/W3SVC/1120214844',
+  'LOGON_USER' => '',
+  'REQUEST_URI' => '/test.php',
+  'URL' => '/test.php',
+  'SCRIPT_FILENAME' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\test.php',
+  'ORIG_PATH_INFO' => '/test.php',
+  'PATH_INFO' => '',
+  'ORIG_PATH_TRANSLATED' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html\\test.php',
+  'DOCUMENT_ROOT' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html',
+  'PHP_SELF' => '/test.php',
+  'HTTP_CONNECTION' => 'Keep-Alive',
+  'HTTP_PRAGMA' => 'no-cache',
+  'HTTP_CONTENT_LENGTH' => '777',
+  'HTTP_CONTENT_TYPE' => 'text/xml',
+  'HTTP_ACCEPT' => '*/*',
+  'HTTP_HOST' => 'www.tuitai.cn',
+  'HTTP_USER_AGENT' => 'Mozilla/4.0',
+  'HTTP_X_REWRITE_URL' => '/test.php',
+  'REQUEST_TIME' => 1417422339,
+)
+
+
+-----------2014-12-01 16:25:39-----------------\r\n<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[729nwkrnnywjplhom3nk6wgtckd791tg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<order_id><![CDATA[40]]></order_id>
+<out_trade_no><![CDATA[1433443199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[B4C1448B7B4FCDB742A0CD0230925212]]></sign>
+<time_end><![CDATA[20141201162131]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375626]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:49:47-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[78AEE7CC04898B4640A4D7634898723B]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:49:47-----------------
+
+
+-----------2014-12-01 16:49:57-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CBDE60F0D93ED794094B7686CCD1B5C1]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:49:57-----------------
+
+
+-----------2014-12-01 16:50:13-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CBDE60F0D93ED794094B7686CCD1B5C1]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:50:13-----------------
+
+
+-----------2014-12-01 16:50:46-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CBDE60F0D93ED794094B7686CCD1B5C1]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:50:46-----------------
+
+
+-----------2014-12-01 16:53:49-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CBDE60F0D93ED794094B7686CCD1B5C1]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:53:49-----------------
+
+
+-----------2014-12-01 16:56:41-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[690D2B33D1ECC4083E99BEDE1A5ADF11]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:56:41-----------------1433430147
+
+
+-----------2014-12-01 16:56:41-----------------
+
+
+-----------2014-12-01 16:56:52-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:56:52-----------------1433430147
+
+
+-----------2014-12-01 16:56:52-----------------
+
+
+-----------2014-12-01 16:57:09-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:57:09-----------------1433430147
+
+
+-----------2014-12-01 16:57:09-----------------
+
+
+-----------2014-12-01 16:57:42-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:57:42-----------------1433430147
+
+
+-----------2014-12-01 16:57:42-----------------
+
+
+-----------2014-12-01 16:59:41-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:59:41-----------------44
+
+
+-----------2014-12-01 16:59:41-----------------
+
+
+-----------2014-12-01 16:59:56-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 16:59:56-----------------44
+
+
+-----------2014-12-01 16:59:56-----------------
+
+
+-----------2014-12-01 17:00:13-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:00:13-----------------44
+
+
+-----------2014-12-01 17:00:13-----------------
+
+
+-----------2014-12-01 17:00:43-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:00:43-----------------43
+
+
+-----------2014-12-01 17:00:43-----------------
+
+
+-----------2014-12-01 17:00:45-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:00:45-----------------44
+
+
+-----------2014-12-01 17:00:45-----------------
+
+
+-----------2014-12-01 17:02:38-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:02:38-----------------45
+
+
+-----------2014-12-01 17:02:52-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:02:52-----------------45
+
+
+-----------2014-12-01 17:03:10-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:03:10-----------------45
+
+
+-----------2014-12-01 17:03:43-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:03:43-----------------45
+
+
+-----------2014-12-01 17:03:47-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:03:47-----------------44
+
+
+-----------2014-12-01 17:06:45-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:06:45-----------------45
+
+
+-----------2014-12-01 17:06:45-----------------订单信息
+
+
+-----------2014-12-01 17:06:45-----------------
+
+
+-----------2014-12-01 17:06:45-----------------
+
+
+-----------2014-12-01 17:11:33-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:11:33-----------------46
+
+
+-----------2014-12-01 17:11:33-----------------订单
+
+
+-----------2014-12-01 17:11:33-----------------订单信息
+
+
+-----------2014-12-01 17:11:33-----------------
+
+
+-----------2014-12-01 17:11:33-----------------
+
+
+-----------2014-12-01 17:11:49-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:11:49-----------------46
+
+
+-----------2014-12-01 17:11:49-----------------订单
+
+
+-----------2014-12-01 17:11:49-----------------订单信息
+
+
+-----------2014-12-01 17:11:49-----------------
+
+
+-----------2014-12-01 17:11:49-----------------
+
+
+-----------2014-12-01 17:12:05-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:12:05-----------------46
+
+
+-----------2014-12-01 17:12:05-----------------订单
+
+
+-----------2014-12-01 17:12:05-----------------订单信息
+
+
+-----------2014-12-01 17:12:05-----------------
+
+
+-----------2014-12-01 17:12:05-----------------
+
+
+-----------2014-12-01 17:12:38-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:12:38-----------------46
+
+
+-----------2014-12-01 17:12:38-----------------订单
+
+
+-----------2014-12-01 17:12:38-----------------订单信息
+
+
+-----------2014-12-01 17:12:38-----------------
+
+
+-----------2014-12-01 17:12:38-----------------
+
+
+-----------2014-12-01 17:15:26-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:15:26-----------------47
+
+
+-----------2014-12-01 17:15:40-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:15:40-----------------47
+
+
+-----------2014-12-01 17:15:41-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:15:41-----------------46
+
+
+-----------2014-12-01 17:15:58-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:15:58-----------------47
+
+
+-----------2014-12-01 17:16:31-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:16:31-----------------47
+
+
+-----------2014-12-01 17:21:18-----------------订单
+
+
+-----------2014-12-01 17:21:43-----------------
+
+
+-----------2014-12-01 17:21:43-----------------
+
+
+-----------2014-12-01 17:22:32-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:22:32-----------------48
+
+
+-----------2014-12-01 17:22:32-----------------订单
+
+
+-----------2014-12-01 17:22:45-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:22:45-----------------48
+
+
+-----------2014-12-01 17:22:45-----------------订单
+
+
+-----------2014-12-01 17:23:02-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:23:02-----------------48
+
+
+-----------2014-12-01 17:23:02-----------------订单
+
+
+-----------2014-12-01 17:23:34-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:23:34-----------------48
+
+
+-----------2014-12-01 17:23:34-----------------订单
+
+
+-----------2014-12-01 17:23:52-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[qdnfwwf8sq4taul6ytp8djsoeaf07ui5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433479674]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CBDE60F0D93ED794094B7686CCD1B5C1]]></sign>
+<time_end><![CDATA[20141201164946]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374608]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:23:52-----------------
+
+
+-----------2014-12-01 17:26:35-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:26:35-----------------48
+
+
+-----------2014-12-01 17:26:35-----------------订单
+
+
+-----------2014-12-01 17:28:27-----------------
+
+
+-----------2014-12-01 17:28:27-----------------
+
+
+-----------2014-12-01 17:30:45-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:30:45-----------------43
+
+
+-----------2014-12-01 17:30:45-----------------订单
+
+
+-----------2014-12-01 17:31:46-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:31:46-----------------49
+
+
+-----------2014-12-01 17:31:46-----------------订单OrderModel::__set_state(array(
+   'table' => 'ecm_order',
+   'alias' => 'order_alias',
+   'prikey' => 'order_id',
+   '_name' => 'order',
+   '_relation' => 
+  array (
+    'has_orderextm' => 
+    array (
+      'model' => 'orderextm',
+      'type' => 1,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_ordergoods' => 
+    array (
+      'model' => 'ordergoods',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_orderlog' => 
+    array (
+      'model' => 'orderlog',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'belongs_to_store' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'store',
+    ),
+    'belongs_to_user' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'member',
+    ),
+  ),
+   'db' => 
+  cls_mysql::__set_state(array(
+     'max_cache_time' => 300,
+     'cache_dir' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/temp/query_caches/',
+     'query_log' => 
+    array (
+      0 => 'INSERT INTO `ecm_sessions` SET sesskey = \'3980da30f0f3c37bd8d7cdeecd203c72\', expiry = \'1417398946\', ip = \'140.207.54.77\', userid = \'0\', adminid = \'0\', data = \'\'',
+      1 => 'SELECT data, expiry, is_overflow FROM `ecm_sessions` WHERE sesskey = \'3980da30f0f3c37bd8d7cdeecd203c72\'',
+    ),
+     'root_path' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/',
+     'error_message' => 
+    array (
+    ),
+     'version' => '5.1.73-community',
+     'starttime' => 1417426306,
+     'timeline' => 0,
+     'timezone' => 0,
+     '_link_id' => NULL,
+     '_settings' => 
+    array (
+    ),
+     '_query_count' => 2,
+     '_dbhash' => 'f3e03697a53baf888d57c8e4607d1bf3',
+     '_platform' => 'WINDOWS',
+     'mysql_config_cache_file_time' => 0,
+     'mysql_disable_cache_tables' => 
+    array (
+    ),
+  )),
+   '_prefix' => 'ecm_',
+   '_autov' => 
+  array (
+  ),
+   '_last_query_count' => -1,
+   '_dropped_data' => 
+  array (
+  ),
+   '_errors' => 
+  array (
+  ),
+   '_errnum' => 0,
+))
+
+
+-----------2014-12-01 17:31:46-----------------订单信息array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:31:56-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:31:56-----------------49
+
+
+-----------2014-12-01 17:31:56-----------------订单OrderModel::__set_state(array(
+   'table' => 'ecm_order',
+   'alias' => 'order_alias',
+   'prikey' => 'order_id',
+   '_name' => 'order',
+   '_relation' => 
+  array (
+    'has_orderextm' => 
+    array (
+      'model' => 'orderextm',
+      'type' => 1,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_ordergoods' => 
+    array (
+      'model' => 'ordergoods',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_orderlog' => 
+    array (
+      'model' => 'orderlog',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'belongs_to_store' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'store',
+    ),
+    'belongs_to_user' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'member',
+    ),
+  ),
+   'db' => 
+  cls_mysql::__set_state(array(
+     'max_cache_time' => 300,
+     'cache_dir' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/temp/query_caches/',
+     'query_log' => 
+    array (
+      0 => 'INSERT INTO `ecm_sessions` SET sesskey = \'5517e895aa0ac290dc21480904d6d5bc\', expiry = \'1417398956\', ip = \'140.207.54.77\', userid = \'0\', adminid = \'0\', data = \'\'',
+      1 => 'SELECT data, expiry, is_overflow FROM `ecm_sessions` WHERE sesskey = \'5517e895aa0ac290dc21480904d6d5bc\'',
+    ),
+     'root_path' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/',
+     'error_message' => 
+    array (
+    ),
+     'version' => '5.1.73-community',
+     'starttime' => 1417426316,
+     'timeline' => 0,
+     'timezone' => 0,
+     '_link_id' => NULL,
+     '_settings' => 
+    array (
+    ),
+     '_query_count' => 2,
+     '_dbhash' => 'f3e03697a53baf888d57c8e4607d1bf3',
+     '_platform' => 'WINDOWS',
+     'mysql_config_cache_file_time' => 0,
+     'mysql_disable_cache_tables' => 
+    array (
+    ),
+  )),
+   '_prefix' => 'ecm_',
+   '_autov' => 
+  array (
+  ),
+   '_last_query_count' => -1,
+   '_dropped_data' => 
+  array (
+  ),
+   '_errors' => 
+  array (
+  ),
+   '_errnum' => 0,
+))
+
+
+-----------2014-12-01 17:31:56-----------------订单信息array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:32:14-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:32:14-----------------49
+
+
+-----------2014-12-01 17:32:14-----------------订单OrderModel::__set_state(array(
+   'table' => 'ecm_order',
+   'alias' => 'order_alias',
+   'prikey' => 'order_id',
+   '_name' => 'order',
+   '_relation' => 
+  array (
+    'has_orderextm' => 
+    array (
+      'model' => 'orderextm',
+      'type' => 1,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_ordergoods' => 
+    array (
+      'model' => 'ordergoods',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_orderlog' => 
+    array (
+      'model' => 'orderlog',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'belongs_to_store' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'store',
+    ),
+    'belongs_to_user' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'member',
+    ),
+  ),
+   'db' => 
+  cls_mysql::__set_state(array(
+     'max_cache_time' => 300,
+     'cache_dir' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/temp/query_caches/',
+     'query_log' => 
+    array (
+      0 => 'INSERT INTO `ecm_sessions` SET sesskey = \'09cd6a134610f4cc6fc305b56e236329\', expiry = \'1417398974\', ip = \'140.207.54.77\', userid = \'0\', adminid = \'0\', data = \'\'',
+      1 => 'SELECT data, expiry, is_overflow FROM `ecm_sessions` WHERE sesskey = \'09cd6a134610f4cc6fc305b56e236329\'',
+    ),
+     'root_path' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/',
+     'error_message' => 
+    array (
+    ),
+     'version' => '5.1.73-community',
+     'starttime' => 1417426334,
+     'timeline' => 0,
+     'timezone' => 0,
+     '_link_id' => NULL,
+     '_settings' => 
+    array (
+    ),
+     '_query_count' => 2,
+     '_dbhash' => 'f3e03697a53baf888d57c8e4607d1bf3',
+     '_platform' => 'WINDOWS',
+     'mysql_config_cache_file_time' => 0,
+     'mysql_disable_cache_tables' => 
+    array (
+    ),
+  )),
+   '_prefix' => 'ecm_',
+   '_autov' => 
+  array (
+  ),
+   '_last_query_count' => -1,
+   '_dropped_data' => 
+  array (
+  ),
+   '_errors' => 
+  array (
+  ),
+   '_errnum' => 0,
+))
+
+
+-----------2014-12-01 17:32:14-----------------订单信息array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:32:46-----------------<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 17:32:46-----------------49
+
+
+-----------2014-12-01 17:32:46-----------------订单OrderModel::__set_state(array(
+   'table' => 'ecm_order',
+   'alias' => 'order_alias',
+   'prikey' => 'order_id',
+   '_name' => 'order',
+   '_relation' => 
+  array (
+    'has_orderextm' => 
+    array (
+      'model' => 'orderextm',
+      'type' => 1,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_ordergoods' => 
+    array (
+      'model' => 'ordergoods',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'has_orderlog' => 
+    array (
+      'model' => 'orderlog',
+      'type' => 3,
+      'foreign_key' => 'order_id',
+      'dependent' => true,
+    ),
+    'belongs_to_store' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'store',
+    ),
+    'belongs_to_user' => 
+    array (
+      'type' => 2,
+      'reverse' => 'has_order',
+      'model' => 'member',
+    ),
+  ),
+   'db' => 
+  cls_mysql::__set_state(array(
+     'max_cache_time' => 300,
+     'cache_dir' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/temp/query_caches/',
+     'query_log' => 
+    array (
+      0 => 'INSERT INTO `ecm_sessions` SET sesskey = \'86826e230d57dc665a0720c03dc67e57\', expiry = \'1417399006\', ip = \'140.207.54.77\', userid = \'0\', adminid = \'0\', data = \'\'',
+      1 => 'SELECT data, expiry, is_overflow FROM `ecm_sessions` WHERE sesskey = \'86826e230d57dc665a0720c03dc67e57\'',
+    ),
+     'root_path' => 'C:\\zhujibao\\Domains\\tuitai.cn\\public_html/',
+     'error_message' => 
+    array (
+    ),
+     'version' => '5.1.73-community',
+     'starttime' => 1417426366,
+     'timeline' => 0,
+     'timezone' => 0,
+     '_link_id' => NULL,
+     '_settings' => 
+    array (
+    ),
+     '_query_count' => 2,
+     '_dbhash' => 'f3e03697a53baf888d57c8e4607d1bf3',
+     '_platform' => 'WINDOWS',
+     'mysql_config_cache_file_time' => 0,
+     'mysql_disable_cache_tables' => 
+    array (
+    ),
+  )),
+   '_prefix' => 'ecm_',
+   '_autov' => 
+  array (
+  ),
+   '_last_query_count' => -1,
+   '_dropped_data' => 
+  array (
+  ),
+   '_errors' => 
+  array (
+  ),
+   '_errnum' => 0,
+))
+
+
+-----------2014-12-01 17:32:46-----------------订单信息array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:35:48-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:35:48-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:36:06-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:36:22-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:36:47-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:36:55-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:39:29-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:39:29-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[51]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fblavessufx5h1e9m4jihzrg9bpe0zq0]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433432577]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C4B349B6B398E37A4A903F738129BC22]]></sign>
+<time_end><![CDATA[20141201173928]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371342]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:39:40-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:39:40-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[51]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fblavessufx5h1e9m4jihzrg9bpe0zq0]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433432577]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C4B349B6B398E37A4A903F738129BC22]]></sign>
+<time_end><![CDATA[20141201173928]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371342]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:39:57-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:39:57-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[umxvp7u2urhwobq5y5lbw16pvx5mvi8l]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433494353]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0EAB257F5DFEE2D8D3E756CFDBD81D6E]]></sign>
+<time_end><![CDATA[20141201173547]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378031]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:39:57-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:39:57-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[51]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fblavessufx5h1e9m4jihzrg9bpe0zq0]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433432577]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C4B349B6B398E37A4A903F738129BC22]]></sign>
+<time_end><![CDATA[20141201173928]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371342]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:40:30-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 17:40:30-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[51]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fblavessufx5h1e9m4jihzrg9bpe0zq0]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433432577]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C4B349B6B398E37A4A903F738129BC22]]></sign>
+<time_end><![CDATA[20141201173928]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371342]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:45:43-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>',
+)
+
+
+-----------2014-12-01 17:45:43-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:45:43-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[46]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[cdn0sqxe5f27t8lzcr4od9xpu8562a5c]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433497382]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[96EBC752F7CFF5BA100CA9B09222FF10]]></sign>
+<time_end><![CDATA[20141201171132]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374637]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:27-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>',
+)
+
+
+-----------2014-12-01 17:46:27-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:27-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:37-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>',
+)
+
+
+-----------2014-12-01 17:46:37-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:37-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:53-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>',
+)
+
+
+-----------2014-12-01 17:46:53-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:46:53-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:47:25-----------------array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>',
+)
+
+
+-----------2014-12-01 17:47:25-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:47:25-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:34-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:34-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[47]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fcfnzngj6hskj93njzcmb5mldh4uf4hg]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433419344]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BDBE9144261B4FA63F2FCB8F8EED1FC4]]></sign>
+<time_end><![CDATA[20141201171525]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371318]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:43-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:43-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:56-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:49:56-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:13-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:13-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:28-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:28-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[53]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[sn5smoe4bcp8ib4be9ure18zcdpa27om]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433413483]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E33A0B773470076D7B32ADB5AC16434C]]></sign>
+<time_end><![CDATA[20141201174626]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378045]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:45-----------------订单array (
+  'order_id' => '45',
+  'order_sn' => '1433464880',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417395726',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433464880',
+  'pay_time' => '1417397807',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:50:45-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:52:53-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:52:53-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:08-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:08-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:25-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:25-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:47-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:47-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[54]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[dzb1c4fk893kmzj52pfog922o5l849ji]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433480953]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E222CFCE4421F0EF29D26875CAB22B4B]]></sign>
+<time_end><![CDATA[20141201174942]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375511]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:57-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:53:57-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[55]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[j00jb2jms0zh012d3m23i01ktwplzonl]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433450762]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[F24DA670E11AE6EC8E91A54EABA9BB14]]></sign>
+<time_end><![CDATA[20141201175253]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378862]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:56:38-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 17:56:38-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[48]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fb4o686xxeha7fm8baz2ojkscehuy9vq]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433417152]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[1121686D7414ECD6B22A3FD6F7AB990E]]></sign>
+<time_end><![CDATA[20141201172231]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006375684]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:00:47-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:00:47-----------------OID43
+
+
+-----------2014-12-01 18:00:47-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:00:47-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[43]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[nh4mep1r5emjunkeovrwaesr683e4cs5]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433430147]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[CF12293FF61A5DA5CD12AAF8B5FACAA8]]></sign>
+<time_end><![CDATA[20141201165640]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006368732]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:00:53-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:00:53-----------------OID56
+
+
+-----------2014-12-01 18:00:53-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:00:53-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:11-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:01:11-----------------OID56
+
+
+-----------2014-12-01 18:01:11-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:11-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:28-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:01:28-----------------OID56
+
+
+-----------2014-12-01 18:01:28-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:28-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:59-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:01:59-----------------OID56
+
+
+-----------2014-12-01 18:01:59-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:01:59-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:03:52-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:03:52-----------------OID44
+
+
+-----------2014-12-01 18:03:52-----------------订单OIDarray (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:03:52-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:03:52-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[44]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[fl2vz8ef6g2igns4xegw57vraqjlj7di]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433402140]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[C6DB09A2F1D20FCBECCED60DDAA45CD5]]></sign>
+<time_end><![CDATA[20141201165940]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006371305]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:05:00-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:05:00-----------------OID56
+
+
+-----------2014-12-01 18:05:00-----------------订单OIDarray (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:05:00-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:05:00-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[56]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[52ikcbz5tfq70j6e0p25nikdsr64gp5m]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433453500]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[02B03DD3655E89262FB7052A0ED7F2F8]]></sign>
+<time_end><![CDATA[20141201180053]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006377075]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:05:51-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:05:51-----------------OID49
+
+
+-----------2014-12-01 18:05:51-----------------订单OIDarray (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:05:51-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:05:51-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[49]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[x113dt3hafna9ws92h3j6lgtvcte9he4]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433493736]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0C07798DEBBD4D3E1039E3551F926DF2]]></sign>
+<time_end><![CDATA[20141201173145]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378842]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:06:49-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:06:49-----------------OID45
+
+
+-----------2014-12-01 18:06:49-----------------订单OIDarray (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:06:49-----------------订单array (
+  'order_id' => '40',
+  'order_sn' => '1433443199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417393262',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433443199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:06:49-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[45]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[pb144vmel3hrvi5v4gbgs0f9q1ihhrz3]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433464880]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E787DCB429724C3AD55F5E83F86884B5]]></sign>
+<time_end><![CDATA[20141201170235]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006374627]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:09:51-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:09:51-----------------OID57
+
+
+-----------2014-12-01 18:09:51-----------------订单OIDarray (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:09:51-----------------订单array (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:09:51-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:09:59-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[umxvp7u2urhwobq5y5lbw16pvx5mvi8l]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433494353]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0EAB257F5DFEE2D8D3E756CFDBD81D6E]]></sign>
+<time_end><![CDATA[20141201173547]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378031]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:09:59-----------------OID50
+
+
+-----------2014-12-01 18:09:59-----------------订单OIDarray (
+  'order_id' => '50',
+  'order_sn' => '1433494353',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417397723',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433494353',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:09:59-----------------订单array (
+  'order_id' => '50',
+  'order_sn' => '1433494353',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '11',
+  'add_time' => '1417397723',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433494353',
+  'pay_time' => NULL,
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[umxvp7u2urhwobq5y5lbw16pvx5mvi8l]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433494353]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0EAB257F5DFEE2D8D3E756CFDBD81D6E]]></sign>
+<time_end><![CDATA[20141201173547]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378031]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[umxvp7u2urhwobq5y5lbw16pvx5mvi8l]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433494353]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0EAB257F5DFEE2D8D3E756CFDBD81D6E]]></sign>
+<time_end><![CDATA[20141201173547]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378031]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:09:59-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[50]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[umxvp7u2urhwobq5y5lbw16pvx5mvi8l]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433494353]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[0EAB257F5DFEE2D8D3E756CFDBD81D6E]]></sign>
+<time_end><![CDATA[20141201173547]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006378031]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:04-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:10:04-----------------OID57
+
+
+-----------2014-12-01 18:10:04-----------------订单OIDarray (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:10:04-----------------订单array (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:04-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:22-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:10:22-----------------OID57
+
+
+-----------2014-12-01 18:10:22-----------------订单OIDarray (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:10:22-----------------订单array (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:22-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:54-----------------OXML<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>
+
+
+-----------2014-12-01 18:10:54-----------------OID57
+
+
+-----------2014-12-01 18:10:54-----------------订单OIDarray (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+)
+
+
+-----------2014-12-01 18:10:54-----------------订单array (
+  'order_id' => '57',
+  'order_sn' => '1433403199',
+  'type' => 'material',
+  'extension' => 'normal',
+  'seller_id' => '2',
+  'seller_name' => '超级店铺',
+  'buyer_id' => '21',
+  'buyer_name' => 'test001',
+  'buyer_email' => 'test001@qq.com',
+  'status' => '20',
+  'add_time' => '1417399768',
+  'payment_id' => '10',
+  'payment_name' => '微信扫码支付',
+  'payment_bank' => '',
+  'payment_code' => 'wxnative',
+  'out_trade_sn' => '1433403199',
+  'pay_time' => '1417399791',
+  'pay_message' => '',
+  'ship_time' => NULL,
+  'invoice_no' => NULL,
+  'finished_time' => '0',
+  'goods_amount' => '0.01',
+  'discount' => '0.00',
+  'order_amount' => '0.01',
+  'evaluation_status' => '0',
+  'evaluation_time' => '0',
+  'anonymous' => '0',
+  'postscript' => '',
+  'pay_alter' => '0',
+  'xml' => '<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>',
+)XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+
+-----------2014-12-01 18:10:54-----------------XML'<xml><appid><![CDATA[wxce23f1ece9547b57]]></appid>
+<attach><![CDATA[57]]></attach>
+<bank_type><![CDATA[CMB_DEBIT]]></bank_type>
+<cash_fee><![CDATA[1]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[10027472]]></mch_id>
+<nonce_str><![CDATA[r5f091a43oxpz670kzfrijxjznjhmgxw]]></nonce_str>
+<openid><![CDATA[o6wjnjrP9ZhTWa7g5RGdWzN2s-_M]]></openid>
+<out_trade_no><![CDATA[1433403199]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[EA7FD50194EE058F04E9B727C6ABD43A]]></sign>
+<time_end><![CDATA[20141201180950]]></time_end>
+<total_fee>1</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[1005240464201412010006370751]]></transaction_id>
+</xml>'
+
+

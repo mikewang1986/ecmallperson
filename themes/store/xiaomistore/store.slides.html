@@ -1,0 +1,38 @@
+<!--{if $store.pic_slides}-->
+<script type="text/javascript" src="/themes/store/xiaomistore/styles/slidejee.js"></script>
+
+<div style="width:1903px;">
+	<div class="promoWD">
+		<div id="main_promo">
+			<div id="slides">
+			<!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+			  <!--{if $slides.url && $smarty.foreach.fe_slides.index <5 }-->
+				<div class="slidea"><a href="{$slides.link}" target="_blank"><img width="1920" height="450" src="{$slides.url}" /></a></div>
+			 <!--{/if}-->
+            <!--{/foreach}-->
+			</div>
+		</div>
+		<div id="dots">
+			<ul>
+			<!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+               <!--{if $slides.url && $smarty.foreach.fe_slides.index <5 }-->
+				<li class="menuItem" {if $smarty.foreach.fe_slides.first}class="ks-active"{/if}><a href="javascript:;"></a></li>
+			   <!--{/if}-->
+			<!--{/foreach}-->             
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style>
+#main_promo{height:450px; width:1920px; margin-left:-960px; position:relative;  top:0;  left:50%; overflow:hidden; z-index:0; }
+.promoWD{width:1000px; margin:0 auto; position:relative; }
+.slidea{display:block; float:left;  width:1920px;}
+#dots{height:13px; position:absolute; bottom:40px; left:429px; z-index:99;}
+#dots li{ width:23px; height:13px; float:left; }
+#dots li a{ width:10px; display:block; height:10px; background-color:#cecece; border:1px solid #cecece; filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8; }
+#dots li.act a{background-color:#fff;}
+</style>
+ <!--{else}-->
+<img src="/data/system/banner.jpg">
+ <!--{/if}-->

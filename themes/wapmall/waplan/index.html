@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        {$page_seo}
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+        <link href="{res file=css/index.css}" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="index.php?act=jslang"></script>
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+        {$_head_tags}
+    </head>
+    <script type="text/javascript" src="{res file=js/kissy/build/kissy.js}"></script>
+    <script type="text/javascript" src="{res file=js/kissy/build/switchable/switchable-pkg.js}"></script>
+
+    <body id="log-reg" class="gray">
+
+<div class="topbar">
+     <span>微信商城</span>
+            <header style="float:right;width:150px;display:none;" id="searchdiv"> 
+                <div class="content"> 
+                    <div id="fake-search"> 
+                        <form method="GET" action="{url app=search}">
+                            <div class="fakeInput">
+                                <input class="text" name="keyword" style="color:silver"/>
+                                <input type="submit" value="" class="search-button" />
+                                <input type="hidden" name="app" value="search" />
+                                <input type="hidden" name="act" value="index" />
+                            </div> 
+                        </form>
+                    </div> 
+                </div> 
+            </header>
+
+			<header style="float:right;width:35px;display:block;" id="onshow"><img src="{res file=images/searchon.png}"/> </header>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+$(function(){
+	$("#onshow").click(function(event){
+		var e=window.event || event;
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}   
+		$("#searchdiv").show();
+		$("#onshow").hide();
+	});
+	$("#searchdiv").click(function(event){
+		var e=window.event || event;
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}
+	});
+	document.onclick = function(){
+		$("#searchdiv").hide();
+		$("#onshow").show();
+	};
+})
+</script>
+
+
+        <div class="tmall-h5-v2">
+
+
+<div id="demo01" class="flexslider" area="jindex-banner" widget_type="area">
+   <!--{widgets page=jindex area=jindex-banner}-->
+</div>
+
+
+<style>
+.scdp {width: 90%;margin: 10px 4px;padding: 10px;background: #fff;border: 1px solid #dedede;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;}
+.scdp .red a {display: inline-table;width: 30%;padding: 6px 0;text-align: center;color: #546280;font-size: 1.2em;}
+
+
+/* flexslider */
+.flexslider{margin:5px auto;position:relative;width:100%;height:auto;overflow:hidden;zoom:1;}
+.flex-viewport{max-height:2000px;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;transition:all 1s ease;}
+.flexslider .slides{zoom:1;}
+.flex-direction-nav a{width:60px;height:90px;line-height:99em;overflow:hidden;margin:-60px 0 0;display:block;background:url(/themes/wapmall/waplan/styles/default/images/ad_ctr00.png) no-repeat;position:absolute;top:50%;z-index:10;cursor:pointer;opacity:0;filter:alpha(opacity=0);-webkit-transition:all .3s ease;}
+.flex-direction-nav .flex-next{background-position:0 -90px;right:0;}
+.flex-direction-nav .flex-prev{left:0;}
+.flexslider:hover .flex-next{opacity:0.8;filter:alpha(opacity=25);}
+.flexslider:hover .flex-prev{opacity:0.8;filter:alpha(opacity=25);}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover{opacity:1;filter:alpha(opacity=50);}
+.flex-control-nav{width:100%;position:absolute;bottom:0;text-align:center;}
+.flex-control-nav li{margin:0;display:inline-block;zoom:1;*display:inline;}
+.flex-control-paging li a{background:url(/themes/wapmall/waplan/styles/default/images/dot.png) no-repeat 0 -16px;display:block;height:16px;overflow:hidden;text-indent:-99em;width:15px;cursor:pointer;}
+.flex-control-paging li a.flex-active{background-position:0 0;}
+
+
+/*topbar*/
+.topbar{background:#eb5628;height:35px;width:100%;}
+.topbar img{float:left;}
+.topbar span{color:#fff;font-size:20px;font-family:microsoft yahei;font-weight:bold;margin:3px 0 0 5px;display:block;float:left;}
+
+.floor{margin-bottom:15px;}
+.floor-item{width:95%;margin:0 auto;}
+.floor-item a{display:block;border:1px solid #dedede;width:48%;background-color:#fff;box-shadow:1px 1px 2px #ccc;margin-bottom:12px;}
+.floor-item a img{width:100%;}
+.floor-item a p{padding:5px 3px;border-bottom:1px solid #dedede;height:34px;overflow:hidden;}
+.floor-item a span{font-size:16px;font-weight:bold;color:#f40;padding:2px 3px;display:block;}
+.floor-title span:nth-child(1){font-size:14px;color:#373737;display:inline-block;line-height:34px;margin-left:8px}
+.floor-title span:nth-child(2){font-size:10px;color:#6f6f6f;display:inline-block;float:right;line-height:10px;height:10px;border-left:2px solid #b8b8b8;padding:0 8px 0 2px;margin-top:12px;}
+
+.floor .floorad {width:95%;margin:0 auto;}
+.floor .floorad img{width:100%;}
+
+</style>
+
+
+
+    <div class="region entry-list">
+
+		 <a href="{url app=category}">
+			<img alt="商品类目" height="30" src="/themes/wapmall/waplan/styles/default/images/catimg/band.png" width="30"/><br/>
+			<span>全部分类</span>
+		 </a>
+		  
+		 <span class="entry-decollator"></span>
+		  
+		 <a href="{url app=buyer_order}">
+		     <img alt="订单管理" height="30" src="{res file=images/catimg/recharge.png}" width="30"/><br/>
+             <span>订单管理</span>
+	     </a>
+
+		 <span class="entry-decollator"></span>   
+
+		 <a href="{url app=member}">
+			<img alt="个人中心" height="30" src="/themes/wapmall/waplan/styles/default/images/catimg/myhome.png" width="30"/><br/> 
+			<span>个人中心</span>
+		 </a>
+
+		 <span class="entry-decollator"></span>
+
+		 <a href="{url app=cart}">
+			<img alt="购物车" height="30" src="/themes/wapmall/waplan/styles/default/images/catimg/movie2.png" width="30"/><br/>
+			<span>购物车</span>
+		 </a>
+
+                <!-- 为双11添加      
+                <br/>
+                <a href="{url app=buyer_order}"><img alt="订单管理" height="30" src="{res file=images/catimg/recharge.png}" width="30"/><br/>
+              <span>订单管理</span></a><span class="entry-decollator"></span>
+                <a href="#"><img alt="活动促销" height="30" src="{res file=images/catimg/tuan.png}" width="30"/><br/>
+                <span>活动促销</span></a><span class="entry-decollator"></span>     
+                <a href="{url app=my_favorite}"><img alt="收藏夹" height="30" src="{res file=images/catimg/collect.png}" width="30"/><br/>
+                <span>收藏夹</span></a><span class="entry-decollator"></span>
+                <a href="http://m.kuaidi100.com/uc/index.html"><img alt="查物流" height="30" src="{res file=images/catimg/jipiao.png}"  width="30"/><br/>
+                <span>查物流</span></a><span class="entry-decollator"></span>-->
+    </div>
+
+            <div class="region floor" area="jindex-floor1" widget_type="area">
+				<!--{widgets page=jindex area=jindex-floor1}-->
+            </div>
+
+            <div class="region floor" area="jindex-floor2" widget_type="area">
+				<!--{widgets page=jindex area=jindex-floor2}-->
+            </div>
+
+
+            {include file='footer.html'}
+
+
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+{include file="zlstore/header.html"}
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+{assign var="curr_name" value='购物车'}
+{include file="zlstore/top.html"}
+<style>
+    .addtext{
+        width:2em;
+    }
+  
+    .drop_cart_item{
+        margin-right: 30px;
+        display: inline-block;
+    }
+    .add_goods_num{
+        display: inline-block;
+    }
+    .goods-count{
+        top:0.08em;
+    }
+    .show_goods_num{
+        width:9em;
+    }
+    .null{
+        text-align: center;
+        line-height: 1.5em;
+    }
+</style>
+<div class="main">
+    <!--product list-->
+           <div class="null" >
+               <p>
+                   <img src="{res file=images/cart_null.png}" />           
+               </p>
+               <p>
+                   你的购物车是空的
+                   <br />           
+                   现在就去购物吧~
+               </p>
+               <p>
+                   <a href="{url app=store&id=$store.store_id&act=search}" class="white_btn">去购物</a>
+               </p>
+           </div>
+    <!--product list END-->
+    <div class="clr"></div>
+</div>
+<div class="space" style="padding:4em 0;"></div>
+{include file="zlstore/footer.html"}
+
+
+
+
+    

@@ -1,0 +1,61 @@
+<div class="tuan mb10 carousel-{$widget_data.model_id}">
+	<div class="title clearfix"><h2>{$widget_data.model_name}</h2><a href="{url app=search&act=groupbuy}" target="_blank">更多团购&nbsp;></a></div>
+	<div class="content">
+    	<div class=" ks-switchable-content">
+            <!--{foreach from=$widget_data.groupbuy_list item=groupbuy name=fe_groupbuy}-->
+            <div class="tlist">
+                <dl class="clearfix relative">
+                    <dt><a href="{url app=groupbuy&id=$groupbuy.group_id}" target="_blank">{if $groupbuy.group_image}<img class="lazyload" initial-url="{$groupbuy.group_image}" width="258" height="128" />{else}<img class="lazyload" initial-url="{$groupbuy.default_image}"  height="128" />{/if}</a></dt>
+                    <dd class="J_Countdown time">
+                        <span>离活动结束</span>
+                        <span class="flip-top J_NumDays" >{$groupbuy.lefttime.d}</span><em>天</em>
+                        <span class="flip-top J_NumHours">{$groupbuy.lefttime.h}</span><em>小时</em>
+                        <span class="flip-top J_NumMins" >{$groupbuy.lefttime.m}</span><em>分</em>
+                        <span class="flip-top J_NumSeconds">{$groupbuy.lefttime.s}</span><em>秒</em>
+                    </dd>
+                    <dd class="absolute clearfix">
+                        <b><i>￥</i>{$groupbuy.groupbuy_price}</b>
+                        <del>{$groupbuy.price|price}</del>
+                        <a href="{url app=groupbuy&id=$groupbuy.group_id}">参团</a>
+                    </dd>
+                 </dl>
+            </div>
+            <!--{/foreach}-->
+        </div>
+        <div class="ctr">
+            <a class="prev" href="javascript:;"></a>
+            <a class="next" href="javascript:;"></a> 
+        </div>
+    </div>
+</div>
+<!--{if $widget_data.groupbuy_list}-->
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$.each($('.carousel-{$widget_data.model_id} .J_Countdown'),function(){
+	
+		var theDaysBox  = $(this).find('.J_NumDays');
+		var theHoursBox = $(this).find('.J_NumHours');
+		var theMinsBox  = $(this).find('.J_NumMins');
+		var theSecsBox  = $(this).find('.J_NumSeconds');
+		
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+	
+	$('.carousel-{$widget_data.model_id} .content').hover(function(){
+		$('.carousel-{$widget_data.model_id} .content .ctr a').show();
+	},function(){
+		$('.carousel-{$widget_data.model_id} .content .ctr a').hide();
+	})
+});
+KISSY.ready(function(S) {
+	var carousel = new S.Carousel('.carousel-{$widget_data.model_id}', {
+		prevBtnCls: 'prev',
+		nextBtnCls: 'next',
+		effect: 'scrollx',
+		easing: 'easeOutWeak',
+		autoplay:true
+	});
+});
+</script>
+<!--{/if}-->

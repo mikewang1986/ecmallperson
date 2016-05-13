@@ -1,0 +1,100 @@
+{include file="header.html"}
+<script type="text/javascript">
+$(function(){
+    $('#account_form').validate({
+        errorPlacement: function(error, element){
+            $(element).next('.field_notice').hide();
+            $(element).after(error);
+        },
+        success       : function(label){
+            label.addClass('right').text('OK!');
+        },
+        onkeyup    : false,
+        rules : {
+            account : {
+                required : true,
+				email : true,
+                byteRange: [6,40,'{$charset}'],
+                remote   : {
+                    url :'index.php?app=deposit&act=check_account',
+                    type:'get',
+                    data:{
+                        account : function(){
+                            return $('#account').val();
+                        },
+                        id : '{$account.account_id}'
+                    }
+                }
+            },
+            password: {
+                maxlength: 40,
+                minlength: 6
+            },
+            real_name   : {
+                required : true
+            }
+        },
+        messages : {
+            account : {
+                required : '{$lang.account_not_empty}',
+				email    : '{$lang.currect_email}',
+                byteRange: '{$lang.account_length_limit}',
+                remote   : '{$lang.account_exist}'
+            },
+            password : {
+                maxlength: '{$lang.password_limit}',
+                minlength: '{$lang.password_limit}'
+            },
+            real_name  : {
+                required : '{$lang.real_name_not_empty}'
+            }
+        }
+    });
+});
+</script>
+<div id="rightTop">
+  <p>{$lang.account}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=tradelist">{$lang.trade_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=drawlist">{$lang.withdraw_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=rechargelist">{$lang.recharge_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=setting">{$lang.system_setting}</a></li>
+    <li><span>{$lang.recharge}</span></li>
+  </ul>
+</div>
+<div class="info">
+  <form method="post" id="account_form">
+    <table class="infoTable">
+      <tr>
+        <th class="paddingT15"> {$lang.account_name}:</th>
+        <td class="paddingT15 wordSpacing5">{$account.real_name} ( {$account.account} {$lang.balance}:{$account.money} )</td>
+      </tr>
+      <tr>
+        <th class="paddingT15"> {$lang.account_money}:</th>
+        <td class="paddingT15 wordSpacing5">
+        	<select name="money_change">
+            	<option value="">{$lang.no_change}</option>
+            	<option value="increase">{$lang.increase}</option>
+                <option value="reduce">{$lang.reduce}</option>
+            </select>
+            <input class="infoTableInput2" name="money" type="text" id="money" /> 元
+          	<label class="field_notice">增加表示充值，减少表示扣费</label>
+        </td>
+      </tr>
+      <tr>
+        <th class="paddingT15"> {$lang.remark}:</th>
+        <td class="paddingT15 wordSpacing5">
+        	<textarea name="remark"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td class="ptb20">
+        	<input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+{include file="footer.html"}

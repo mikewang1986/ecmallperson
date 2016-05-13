@@ -1,0 +1,44 @@
+{include file="header.html"}
+ 
+<div id="rightTop">
+    <p>{$lang.jindan_call}</p>
+    <ul class="subnav">
+        <li><a class="btn3" href="index.php?module=jindan">{$lang.jindan_manage}</a></li>
+        <li><a class="btn3" href="index.php?module=jindan&act=jindan_shangjia">{$lang.jindan_shangjia}</a></li>
+        <li><span>{$lang.jindan_shangjia_add}</span></li>
+         <li><a class="btn3" href="index.php?module=jindan&act=jindan_log">{$lang.jindan_log}</a></li>
+    </ul>
+</div>
+<div class="info">
+ 
+     <form method="post">
+        <table class="infoTable">
+             
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_jiangli_id}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="shop_id" type="text" name="shop_id" value=""/>
+                <span class="grey">{$lang.jindan_jiangli_id_note}</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_jiangli_danbi}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="jindan_num" type="text" name="jindan_num" value=""/>
+                <span class="grey">{$lang.jindan_jiangli_danbi_note2}</span>
+                </td>
+            </tr>
+           
+            <tr>
+            <th></th>
+            <td class="ptb20">
+                <input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
+                <input class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />
+            </td>
+        </tr>
+        </table>
+    </form>
+</div>
+{include file="footer.html"}

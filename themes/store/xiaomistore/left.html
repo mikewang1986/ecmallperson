@@ -1,0 +1,146 @@
+
+<div class="module_common">
+        <div class="module_common store-category">
+            <div class="title">{$lang.gcategory}</div>
+            <div class="wrap">
+                <div class="wrap_child">
+                    <ul class="submenu">
+                        <li><a class="" href="{url app=store&id=$store.store_id&act=search}">{$lang.all_goods}</a></li>
+                        <!--{foreach from=$store.store_gcates item=gcategory}-->
+                        <!--{if $gcategory.children}-->
+                        <li>
+                            <a class="" href="{url app=store&id=$store.store_id&act=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a>
+                            <ul>
+                                <!--{foreach from=$gcategory.children item=child_gcategory}-->
+                                <li><a href="{url app=store&id=$store.store_id&act=search&cate_id=$child_gcategory.id}">{$child_gcategory.value|escape}</a></li>
+                                <!--{/foreach}-->
+                            </ul>
+                        </li>
+                        <!--{else}-->
+                        <li><a class="" href="{url app=store&id=$store.store_id&act=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a></li>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="title">店内搜索</div>
+            <div class="wrap">
+                <div class="wrap_child">
+                    <div class="web_search" style="margin-top:20px;">
+                        <form id="" name="" method="get" action="index.php">
+                            <input type="hidden" name="app" value="store" />
+                            <input type="hidden" name="act" value="search" />
+                            <input type="hidden" name="id" value="{$store.store_id}" />
+                            <label>关键字</label>
+                            <input type="text" name="keyword" style="width:110px;border:1px #ccc solid; height:20px; line-height:20px;" value="{$smarty.get.keyword}" />
+                            <input class="btn" type="submit" value="搜索" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--宝贝排行榜-->
+        <!--{if $store.hot_saleslist or $store.collect_goodslist}-->
+        <div class="module_common">
+          <div class="title">商品排行榜</div>
+          <div class="gindex_leftcontent wrap" id="rank">
+             <ul class="rank-nav" id="rank-11">
+                <li class="curr" id="one"><a><span>热门销售排行</span></a></li>
+	        	<li id="two"><a><span>热门收藏排行</span></a></li>
+             </ul>
+             <ul class="rank-c clearfix" id="rank-one">
+                <!--{foreach from=$store.hot_saleslist item=h_goods name=fe_saleslist}-->
+                <li {if $smarty.foreach.fe_saleslist.last}style="border:0;"<!--{/if}-->>
+                   	<div class="pic"><a href="{url app=goods&id=$h_goods.goods_id}">
+                    <img width="60" height="60" style="border:1px #ddd solid;" src="{$h_goods.default_image}"alt="{$h_goods.goods_name|truncate:20|escape}" title="{$h_goods.goods_name|escape}" /></a></div>
+		   			<div class="desc"><a href="{url app=goods&id=$h_goods.goods_id}">{$h_goods.goods_name|escape}</a></div>
+		   			<div class="price"><strong>{$h_goods.price}元</strong></div>
+		   			<div class="sale">已售出 <strong>{$h_goods.sales}</strong> 件</div>
+                </li>
+                <!--{/foreach}-->
+             </ul>
+             <ul class="rank-c clearfix" id="rank-two" style="display:none;">
+                <!--{foreach from=$store.collect_goodslist item=c_goods name=fe_collectlist}-->
+                <li {if $smarty.foreach.fe_collectlist.last}style="border:0;"<!--{/if}-->>
+                   <div class="pic"><a href="{url app=goods&id=$c_goods.goods_id}">
+                      <img width="60" height="60" style="border:1px #ddd solid;" src="{$c_goods.default_image}"alt="{$c_goods.goods_name|truncate:20|escape}" title="{$c_goods.goods_name|escape}" /></a></div>
+		   <div class="desc"><a href="{url app=goods&id=$c_goods.goods_id}">{$c_goods.goods_name|escape}</a></div>
+		   <div class="price"><strong>{$c_goods.price}元</strong></div>
+		   <div class="collecter">收藏人气&nbsp;&nbsp;{$c_goods.collects}</div>
+                </li>
+                <!--{/foreach}-->
+             </ul>
+          </div>
+         </div>
+         <script>
+		 	$(function(){
+				$('#rank #one').hover(function(){
+					$(this).parent().find('li').attr('class','');
+					$(this).attr('class','curr');
+					
+					$('#rank').find('.rank-c').hide();
+					$('#rank #rank-'+this.id).show();
+				});
+				
+				$('#rank #two').hover(function(){
+					$(this).parent().find('li').attr('class','');
+					$(this).attr('class','curr');
+					
+					$('#rank').find('.rank-c').hide();
+					$('#rank #rank-'+this.id).show();
+				});
+			});
+		 </script>
+         <!--{/if}-->
+        
+        <!-- {if $store.left_rec_goods and ($smarty.get.act eq 'index' || $smarty.get.app eq 'goods')} -->
+        <div class="module_common">
+            <div class="title">{$lang.hot_goods}</span></div>
+            <div class="wrap">
+                <div class="major">
+                    <ul class="list" style="width:188px; text-align:center">
+                        <!--{foreach from=$store.left_rec_goods item=recgoods}-->
+                            <li>
+                                <div class="pic"><a href="{url app=goods&id=$recgoods.goods_id}" target="_blank"><img src="{$recgoods.default_image}" width="160" height="160" /></a></div>
+                                <h3><a href="{url app=goods&id=$recgoods.goods_id}" target="_blank">{$recgoods.goods_name|escape}</a></h3>
+                                <p><!--<em></em>-->{$recgoods.price|price}</p>
+                            </li>
+                            <!-- {/foreach} -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- {/if} -->
+        
+        <!-- {if $smarty.get.app eq "store" and $smarty.get.act eq "index"} -->
+        <div class="module_common">
+            <div class="title">{$lang.partner}</div>
+            <div class="wrap">
+                <div class="wrap_child">
+                    <ul class="submenu">
+                        <!--{foreach from=$partners item=partner}-->
+                        <li><a class="link_ico" href="{$partner.link}" target="_blank">{$partner.title|escape}</a></li>
+                        <!--{/foreach}-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- {/if} -->
+        
+        <!--{if $smarty.get.app eq "goods" and $goods_history}-->
+        <div class="module_common">
+            <div class="title">{$lang.goods_history}</div>
+            <div class="wrap">
+                <div class="wrap_child">
+                    <ul class="annals">
+                        <!--{foreach from=$goods_history item=gh_goods}-->
+                        <li><a href="{url app=goods&id=$gh_goods.goods_id}"><img src="{$gh_goods.default_image}" width="40" height="40" alt="{$gh_goods.goods_name|truncate:20|escape}" title="{$gh_goods.goods_name|escape}" /></a></li>
+                        <!--{/foreach}-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--{/if}-->

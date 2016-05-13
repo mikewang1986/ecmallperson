@@ -1,0 +1,15 @@
+<!-- {if $widget_data.ad_image_url} -->
+<div class="global-image-ads" style="{if $widget_data.ad_border}border:{$widget_data.ad_border}px solid #ddd;{/if}{if $widget_data.ad_margin}margin:{$widget_data.ad_margin};{/if}">
+
+<div class="global-image-ads-content">
+<a href="{$widget_data.ad_link_url}" target="_blank" style="width:100%;height:{$widget_data.ad_height}px;background:url({$widget_data.ad_image_url}) no-repeat center 0;display:block;"></a>
+</div>
+
+<!-- {if $widget_data.ad_button_close}-->
+<div class="J_GlobalImageAdsBotton global-image-ads-botton">x</div>
+<!-- {/if}-->
+
+</div>
+<!-- {else} -->
+<div style="padding:10px; text-align:center;">请配置</div>
+<!-- {/if} -->

@@ -1,0 +1,52 @@
+{include file="zlstore/header.html"}
+<script type="text/javascript" src="{lib file=cart.js}" charset="utf-8"></script>
+{assign var="curr_name" value='购物车'}
+{include file="zlstore/top.html"}
+<div class="main">
+    <!--product list-->
+    <!--{foreach from=$carts item=cart key=store_id}-->
+    <div class="pro-list" style="width:100%;">
+        <ul>
+            <!--{foreach from=$cart.goods item=goods}-->
+            <li>
+                <div class="pro-img">
+                    <a href="{url app=goods&id=$goods.goods_id}">
+                        <img src="{$goods.goods_image}" />
+                    </a>
+                </div>
+                <div class="pro-txt">
+                    <h2>
+                        <a href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape}</a>
+                    </h2>
+                    <span class="price"> <strong>{$goods.price|price}</strong>
+                    </span>
+                </div>
+                <div class="clr"></div>
+                <div class="count clearfix show_goods_num">
+                    <a href="javascript:void(0);" class="reduce" onclick="decrease_quantity({$goods.rec_id});"><img src="{res file=images/reduce.jpg}"/></a>
+                    <input type="text" id="input_item_{$goods.rec_id}"  value="{$goods.quantity}" orig="{$goods.quantity}"  class="addtext"  id="input_item"  onkeyup="change_quantity({$store_id}, {$goods.rec_id}, {$goods.spec_id}, this);"  changed="{$goods.quantity}"/>
+                    <a href="javascript:void(0);" onclick="add_quantity({$goods.rec_id});" class="add add_goods_num"><img src="{res file=images/add.jpg}"/></a>
+                    <a href="#" onclick="drop_cart_item({$store_id}, {$goods.rec_id});" class=" drop_cart_item" >关闭
+                        <span class="close">
+                            <img src="{res file=images/close.jpg}" style="border:none; width:1em;height:1em;margin:-4px 0 5px 0;" />
+                        </span>
+                    </a>
+                </div>
+            </li>
+            <!--{/foreach}-->
+            <li>
+                <div class=" goods-count">
+                    <a>
+                        合计(不含运费): <strong id='cart{$store_id}_amount'>{$cart.amount|price}</strong>
+                    </a>
+                    <a href="{url app=order&goods=cart&store_id=$store_id}" class="jie">去结算</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--{/foreach}-->
+    <!--product list END-->
+    <div class="clr"></div>
+</div>
+<div class="space" style="padding:4em 0;"></div>
+{include file="zlstore/footer.html"}

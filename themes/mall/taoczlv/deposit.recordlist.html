@@ -1,0 +1,81 @@
+{include file=member.header.html}
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+        {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table deposit">
+            	<div class="recordlist">
+                	<!--{if $records.list}-->
+                	<div class="notice-word">通过预存款交易的收支记录</div>
+                    <!--{/if}-->
+                	<div class="title clearfix">
+                    	<form method="get" class="float-left">
+                        	<input type="hidden" name="app" value="deposit" />
+                            <input type="hidden" name="act" value="recordlist" />
+                			<input class="text" type="text" name="add_time_from" id="add_time_from" value="{$smarty.get.add_time_from}" /> <span>-</span>
+                            <input class="text" id="add_time_to" type="text" name="add_time_to" value="{$smarty.get.add_time_to}" />
+                			<input type="submit" class="btn-record" value="{$lang.search}" />
+        				</form>
+                        <div class="float-left">
+                    		总收入 <strong>{$records.total_income}</strong> 元，总支出 <strong>{$records.total_outlay}</strong> 元
+                        </div>
+                        <div class="float-right">
+                    		<a href="{url app=deposit&act=monthbill}">月账单下载</a>
+                        </div>
+                    </div>
+                    <ul class="subtit">
+                    	<li class="clearfix">
+                        	<div class="tradesn">流水号</div>
+                            <div class="time">日期</div>
+                        	<div class="info">名称 | 备注</div>
+                            <div class="income">收入(元)</div>
+                            <div class="defray">支出(元)</div>
+                            <div class="balanceNum">账户余额(元)</div>
+                            <div class="payway">支付方式</div>
+                            <div class="detail">详情</div>
+                        </li>
+                    </ul>
+                    <div class="content">
+                    	<!--{foreach from=$records.list item=record}-->
+                        <ul>
+                        	<li class="clearfix">
+                        		<div class="tradesn">{$record.tradesn}</div>
+                            	<div class="time">{if $record.flow eq 'income'}{$record.end_time|date:Y.m.d H.i.s}{else}{$record.pay_time|date:Y.m.d H.i.s}{/if}</div>
+                        		<div class="info break-word">{$record.name}{if $record.remark}<p title="{$record.remark|escape}" class="gray">{$record.remark|escape|truncate:30}</p>{/if}</div>
+                            	<div class="income"><strong class="price green">{if $record.flow eq 'income'}+{$record.amount}{else}&nbsp;{/if}</strong></div>
+                            	<div class="defray"><strong class="price f60">{if $record.flow eq 'outlay'}-{$record.amount}{else}&nbsp;{/if}</strong></div>
+                            	<div class="balanceNum"><strong class="price">{$record.balance}</strong></div>
+                            	<div class="payway">{$record.payway}</div>
+                            	<div class="detail">
+                                	<a target="_blank" href="{url app=deposit&act=record&tradesn=$record.tradesn}">查看</a>
+                                </div>
+                       		</li>
+                        </ul>
+                        <!--{foreachelse}-->
+                        <div class="notice-word mt10">没有任何收支记录。</div>
+                        <!--{/foreach}-->
+                    </div>
+                    <div class="mt10 clearfix">{include file=member.page.bottom.html}</div>
+				</div>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<iframe id='iframe_post' name="iframe_post" src="about:blank" frameborder="0" width="0" height="0"></iframe>
+{include file=footer.html}

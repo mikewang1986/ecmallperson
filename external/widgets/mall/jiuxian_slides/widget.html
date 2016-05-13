@@ -1,0 +1,50 @@
+<div class="slide s{$widget_data.model_id} mb10">
+    <!--{if !$widget_data.ads}-->
+    <div class="padding10 center">请配置</div>
+    <!--{else}-->
+   <div class="scroller">
+      <ul class="ks-content ks-switchable-content clearfix">
+      <!--{foreach from=$widget_data.ads item=ad}-->
+      <li>
+      	<a href="{$ad.0.ad_link_url}"  target="_blank" style="display:block;width:100%;height:420px;background:url({$ad.0.ad_image_url}) center;"></a>
+        <div class="w relative">
+            <div class="small-img-ads">
+                <a href="{$ad.1.ad_link_url}" target="_blank"><img width="190" height="130" class="lazyload" initial-url="{$ad.1.ad_image_url}" /><i></i><div class="masker"></div></a>
+                <a href="{$ad.2.ad_link_url}" target="_blank"><img width="190" height="130" class="lazyload" initial-url="{$ad.2.ad_image_url}" /><i></i><div class="masker"></div></a>
+                <a href="{$ad.3.ad_link_url}" target="_blank"><img width="190" height="130" class="lazyload" initial-url="{$ad.3.ad_image_url}" /><div class="masker"></div></a>
+            </div>
+        </div>
+      </li>
+      <!--{/foreach}-->
+      </ul>
+   </div>
+   <div class="w relative">
+       <div class="ks-switchable-nav">
+           <!-- {foreach from=$widget_data.ads item=ad name=fe_ad} -->
+           <span {if $smarty.foreach.fe_ad.first}class="ks-active"{/if}></span>
+           <!-- {/foreach} -->
+       </div>
+   </div>
+   <script>
+   	  $(document).ready(function(){
+		  var width=document.body.clientWidth;
+		  $('.s{$widget_data.model_id}').attr('style','height:420px;width:'+width+'px;overflow:hidden;');
+		  $('.s{$widget_data.model_id} .scroller ul li').attr('style','height:420px;width:'+width+'px');
+   	  })
+	  KISSY.ready(function(S) {
+          var carousel = new S.Carousel('.s{$widget_data.model_id}', {
+              effect: 'fade',
+			  autoplay:true
+           });
+	    });
+	 $(function(){
+		$('.s{$widget_data.model_id} .scroller ul li .small-img-ads a').hover(function(){
+			$('.s{$widget_data.model_id} .scroller ul li .small-img-ads a .masker').addClass('transparence');
+			$(this).children('.masker').removeClass('transparence');
+		},function(){
+			$('.s{$widget_data.model_id} .scroller ul li .small-img-ads a .masker').removeClass('transparence');
+		});
+	 });
+   </script>
+   <!--{/if}-->
+</div>

@@ -1,0 +1,268 @@
+<?php
+/**
+ *  @Created By ECMall PhpCacheServer
+ *  @Time:2015-06-08 10:29:54
+ */
+
+if(filemtime(__FILE__) + 1800 < time())return false;
+
+return array (
+  'model_id' => 995094562,
+  'model_name' => '葡萄酒馆',
+  'keywords' => 
+  array (
+    0 => '中国',
+    1 => '法国',
+    2 => '',
+    3 => '德国',
+    4 => '',
+    5 => '意大利',
+    6 => '俄罗斯',
+    7 => '',
+    8 => '澳大利亚',
+    9 => '',
+    10 => '西班牙',
+    11 => '阿根廷·',
+    12 => '智利',
+    13 => '葡萄牙',
+    14 => '',
+    15 => '南非',
+    16 => '美国',
+    17 => '',
+    18 => '新西兰',
+    19 => '匈牙利',
+  ),
+  'goods_list' => 
+  array (
+    0 => 
+    array (
+      'goods_id' => '100',
+      'goods_name' => '2014四季款时尚单鞋甜美平底帆布鞋新款潮女鞋温州外贸鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_94/small_201506061754546723.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '103',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    1 => 
+    array (
+      'goods_id' => '101',
+      'goods_name' => '2014夏秋季新款女鞋 金属网纱尖头平底单鞋 外贸鞋地摊鞋批发代理',
+      'default_image' => 'data/files/store_2/goods_85/small_201506061754453078.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '104',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    2 => 
+    array (
+      'goods_id' => '102',
+      'goods_name' => '2014夏秋时尚铆钉尖头平底鞋  爆款舒适新款潮女单鞋批发/代理',
+      'default_image' => 'data/files/store_2/goods_93/small_201506061754539883.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '105',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    3 => 
+    array (
+      'goods_id' => '103',
+      'goods_name' => '2014夏蝴蝶结时尚工作鞋坡跟女单鞋新款潮外贸女鞋地摊鞋批发代理',
+      'default_image' => 'data/files/store_2/goods_94/small_201506061754546441.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '106',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    4 => 
+    array (
+      'goods_id' => '104',
+      'goods_name' => '2014新款休闲网面跑步鞋舒适保健单鞋交叉绑带平底鞋温州女鞋批发',
+      'default_image' => 'data/files/store_2/goods_77/small_201506061754371795.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '107',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    5 => 
+    array (
+      'goods_id' => '105',
+      'goods_name' => '2014新款四季单鞋 时尚碎花平底鞋一件代发免费代理 温州女鞋批发',
+      'default_image' => 'data/files/store_2/goods_87/small_201506061754476685.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '108',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    6 => 
+    array (
+      'goods_id' => '106',
+      'goods_name' => '2014新款四季单鞋 时尚豹纹平底鞋一件代发免费代理 温州女鞋批发',
+      'default_image' => 'data/files/store_2/goods_89/small_201506061754499518.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '109',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    7 => 
+    array (
+      'goods_id' => '107',
+      'goods_name' => '2014新款四季单鞋时尚拼色帆布鞋舒适平底鞋温州外贸女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_98/small_201506061754589295.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '110',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    8 => 
+    array (
+      'goods_id' => '108',
+      'goods_name' => '2014新款四季单鞋时尚碎花布鞋 交叉绑带平底鞋 温州女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_92/small_201506061754537249.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '111',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    9 => 
+    array (
+      'goods_id' => '109',
+      'goods_name' => '2014新款四季单鞋时尚蕾丝帆布鞋 舒适平底鞋 新款潮女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_98/small_201506061754587284.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '112',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    10 => 
+    array (
+      'goods_id' => '110',
+      'goods_name' => '2014新款潮四季单鞋 韩版舒适圆头平底鞋 温州外贸女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_92/small_201506061754525725.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '113',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    11 => 
+    array (
+      'goods_id' => '111',
+      'goods_name' => '2014新款潮四季平底单鞋星星拼色时尚学生鞋温州外贸女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_96/small_201506061754563774.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '114',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    12 => 
+    array (
+      'goods_id' => '112',
+      'goods_name' => '2014新款潮四季平底单鞋碎花图案甜美学生鞋温州外贸女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_84/small_201506061754448989.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '115',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    13 => 
+    array (
+      'goods_id' => '113',
+      'goods_name' => '2014新款潮四季平底单鞋红唇图案帆布学生鞋温州外贸女鞋代理批发',
+      'default_image' => 'data/files/store_2/goods_95/small_201506061754554445.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '116',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    14 => 
+    array (
+      'goods_id' => '114',
+      'goods_name' => '四季新款潮高档低帮女单鞋交叉绑带平跟外贸鞋子批发代理',
+      'default_image' => 'data/files/store_2/goods_97/small_201506061754572425.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '117',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    15 => 
+    array (
+      'goods_id' => '115',
+      'goods_name' => '四季款百搭时尚单鞋 舒适圆头平底鞋 新款潮女鞋温州鞋子代理批发',
+      'default_image' => 'data/files/store_2/goods_86/small_201506061754466109.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '118',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    16 => 
+    array (
+      'goods_id' => '116',
+      'goods_name' => '夏秋季新款潮女鞋网纱镂空尖头平底欧美风皮单鞋外贸鞋批发代理',
+      'default_image' => 'data/files/store_2/goods_80/small_201506061754404053.jpeg',
+      'price' => '30.00',
+      'stock' => '999',
+      'spec_id' => '119',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+    17 => 
+    array (
+      'goods_id' => '99',
+      'goods_name' => '测试商品',
+      'default_image' => 'data/files/store_2/goods_123/small_201406260258439769.jpg',
+      'price' => '0.10',
+      'stock' => '1000',
+      'spec_id' => '99',
+      'sales' => '0',
+      'store_id' => '2',
+      'store_name' => '超级店铺',
+    ),
+  ),
+  'ad1_image_url' => 'data/files/mall/template/201311180340281319.jpg',
+  'ad1_link_url' => '',
+  'ad2_image_url' => 'data/files/mall/template/201311180340288035.jpg',
+  'ad2_link_url' => '',
+  'ad3_image_url' => 'data/files/mall/template/201311180340282303.jpg',
+  'ad3_link_url' => '',
+  'ad4_image_url' => 'data/files/mall/template/201311180340283825.jpg',
+  'ad4_link_url' => '',
+  'ad5_image_url' => 'data/files/mall/template/201311180340286153.jpg',
+  'ad5_link_url' => '',
+  'ad6_image_url' => 'data/files/mall/template/201311180340288762.jpg',
+  'ad6_link_url' => '',
+);
+
+?>

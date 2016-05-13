@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    var _d = DialogManager.get('config_dialog');
+    _d.setWidth(450);
+    _d.setPosition('center');
+
+
+    $('#add_image').click(function() {
+        $(this).before('<div class="field_item">' +
+                '<label>楼层图片参数</label>' +
+                '<p style="overflow:hidden;">&#x<input type="text" name="iconfont[]" value="{$data.iconfont}" />' +
+                '<input type="button" value="删除iconfont" onclick="drop_iconfont(this)" /></p></div>');
+    });
+    function drop_iconfont(btnObj)
+    {
+        $(btnObj).parents('.field_item').remove();
+    }
+
+
+
+
+</script>
+<div class="field_item">
+    <label>模块名称</label>
+    <p><input type="text" name="model_name" value="{$options.model_name}" /></p>
+    <label>商品分类的数量:(<span>使页面排列整齐</span>)</label>
+    <p><input type="text" name="amount" value="{$options.amount}" />(0 或者为空表示全部)</p>
+</div>
+
+
+<div style="height:500px;overflow:scroll;" >
+    <!-- {if $options.iconfonts} -->
+    <!-- {foreach from=$options.iconfonts item=data name=fe_data} -->
+    <div class="field_item">
+        <label>楼层{$smarty.foreach.fe_data.iteration}图片参数</label>
+        <p style="overflow:hidden;">
+            <select name="iconfont[]">
+                <!-- {html_options options=$iconfonts selected=$data.iconfont} -->
+            </select>
+            <input  type="button" value="删除iconfont" onclick="drop_iconfont(this)" />
+        </p>
+    </div>
+    <!-- {/foreach} -->
+    <!-- {else} -->
+    <div class="field_item">
+        <label>楼层图片参数</label>
+        <p style="overflow:hidden;">&#x<input type="text" name="iconfont[]" value="{$data.iconfont}" />
+            <input type="button" value="删除iconfont" onclick="drop_iconfont(this)" /></p>
+    </div>
+    <!-- {/if} -->
+    <input type="button" id="add_image" value="新增分类iconfont" />
+</div>

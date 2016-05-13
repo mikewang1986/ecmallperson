@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<style>
+@charset "utf-8";
+/************************************ 全局样式 ******************************/
+*{margin:0;padding:0;}
+body{margin:0;padding:0;font-size:13px;color: #333;font-family:Arial, Helvetica, sans-serif /*"微软雅黑","Microsoft Yahei","宋体", "新宋体", "Arial Unicode MS" ! important;*/}
+a{list-style-type:none;text-decoration: none;color: #333;font-size:13px;font-family:Arial, Helvetica, sans-serif}
+a:hover{}
+li{list-style:none} 
+a:visited{text-decoration: none;}
+img{vertical-align:bottom;border:0;}
+.full_screen_img{width:100%; display:block;}/* 只需在页面里给img标签加上height即可 */
+.l{float:left;}
+.r{float:right;}
+.clear {clear:both;}
+.widget{min-height:20px;}
+.container_auto{margin:0 auto;overflow:hidden;width:320px;}
+.head_div{margin:0 auto;overflow:hidden;width:320px;}
+.body_div{margin:0 auto;overflow:hidden;width:320px;}
+.foot_div{margin:0 auto;overflow:hidden;width:320px;}
+.ap {position: relative;}
+.ap1 {position: relative;}
+.ran { filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#000;position: absolute;width:100%;height:100%; cursor:pointer; z-index: 30;}
+.des {position: absolute;right:5%;left:5%;top:5%;bottom:5%;color:#FFF;z-index: 40;}
+.des div{margin-top:3px;padding-bottom:3px;}
+.des div a{color:#fff;}
+.des .bd{border-bottom:1px dotted #e6e6e6;clear:both}
+.des .or{color:#ff6600;clear:both}
+.des .bf{font-size:18px;clear:both}
+.tip{display:none;z-index:100;}
+
+/************ 全局的一些固定样式及单独模块样式 ，header与footer基本是固定 **********/
+.head_div .top{
+	height:48px;
+	line-height:48px;
+	background:#ff6600;
+	color:#fff;
+	padding:0 15px;
+}
+.head_div .top a{
+	color:#fff;
+}
+.head_div .top .l a{
+	font-weight:bold;
+	font-size:20px;
+}
+.head_div .top .r a{
+	margin:0 0 0 10px;
+}
+.head_div .search{
+	margin:10px auto;
+	width:280px;
+}
+.head_div .search input[type=text]{
+	width:190px;
+	height:30px;
+	line-height:30px;
+	border:2px solid #ff6600;
+	padding:0 0 0 30px;
+	float:left;
+	background:url(../images/wap/a1.jpg) no-repeat 5px center;
+}
+.head_div .search input[type=submit]{
+	width:55px;
+	height:34px;
+	background:#ff6600;
+	border:0;
+	float:left;
+	color:#fff;
+}
+.foot_div{
+	background:#ff6600;
+	color:#fff;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+}
+.curlocal{
+	height:28px;
+	line-height:28px;
+	border-top:1px solid #d4d4d4;
+	border-bottom:1px solid #d4d4d4;
+	padding:0 10px;
+}
+.body_div{
+	
+}
+.body_div .index_box{
+	height:578px;
+	background:url(../images/wap/a2.jpg);
+	position:relative;
+}
+.body_div .index_box a{
+	display:block;
+	position:absolute;
+	width:80px;
+	height:60px;
+}
+.body_div .index_box .a8{
+	top:418px;
+	left:190px;
+}
+.body_div .index_box .a7{
+	top:418px;
+	left:60px;
+}
+.body_div .index_box .a6{
+	top:76px;
+	left:60px;
+}
+.body_div .index_box .a5{
+	top:303px;
+	left:190px;
+}
+.body_div .index_box .a4{
+	top:190px;
+	left:190px;
+}
+.body_div .index_box .a3{
+	top:85px;
+	left:190px;
+}
+.body_div .index_box .a2{
+	top:190px;
+	left:60px;
+}
+.body_div .index_box .a1{
+	top:305px;
+	left:60px;
+}
+.page {
+	margin:15px 0;
+	float:right;
+}
+.page a{
+	float:left;
+	padding:0 12px;
+	height:23px;
+	line-height:23px;
+	background:#ff6600;
+	color:#fff;
+	display:block;
+	margin:0 0 0 15px;
+}
+
+
+
+
+
+/* 表单 */
+.box2{
+	margin:15px auto;
+	width:300px;
+	
+}
+.box2 .t .l a{
+	height:23px;
+	line-height:23px;
+	display:block;
+}
+.box2 .t .r a{
+	height:23px;
+	line-height:23px;
+	display:block;
+	padding:0 10px;
+	background:#ff6600;
+	color:#fff;
+}
+.box2 .c{
+	padding:15px 0;
+}
+.box2 .c table{
+	width:100%;
+}
+.box2 .c table td,th{
+	text-align:center;
+	height:36px;
+	line-height:36px;
+}
+.box2 .c input[type=text],.box2 .c input[type=password]{
+	border:1px solid #ff6600;
+	height:28px;
+	line-height:28px;float:left;
+}
+.box2 .c input[type=submit]{
+	color:#fff;
+	height:28px;
+	line-height:28px;
+	padding:0 15px;
+	background:#ff6600;
+	border:0;
+	float:left;
+}
+
+
+
+
+
+
+/*积分砸蛋*/
+.integral{
+	width:100%;
+	height:200px;
+	
+	
+}
+.integral .zd{ 
+	
+	margin-top:50px; 
+	width:100%; 
+	height:277px; 
+	color:#000000; 
+	font-size:14px;}
+
+.integral .zd .m{ 
+border:0px solid #ff0000;margin:0 auto;width:320px;height:220px;
+}
+ .integral .zd .m .d{ 
+float:left;width:30%;
+}
+
+
+
+
+.integral .zd .b{width:320px;margin:0 auto;text-align:center;color:#ff0000;font-weight:700;}
+.integral .zd .b a{color:#ff0000;font-weight:700;}
+.integral .zd .b1{display:none;}
+ .integral .zd .b2{display:none;}
+ .integral .zd .b3{display:none;}
+
+</style>
+</head>
+<script type="text/javascript" src="{res file=js/jquery-1.4.2.min.js}"></script>
+<script type="text/javascript" src="{res file=js/script.js}"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+	//幻灯（奖品展示）
+	$('#example2').bxCarousel({
+		display_num: 1, //显示的内容数量
+		move: 1, //一次移动几个内容
+		auto: true, //加载页面后是否自动滚动
+		controls: false, //是否添加控制元件
+		margin: 10,
+		auto_hover: true //鼠标放上时是否暂停
+	});
+
+	//change_egg
+	$('#egg_type').change(function(){
+        var egg_t = $(this).children('option:selected').val();   //弹出select的值
+		if(egg_t!="0"){
+			$('img[name="egg"]').each(function(){
+				this.src = "{res file=}images/act/lock_"+egg_t+".gif";
+			});
+		}
+    });
+
+});
+</script>
+<body>
+
+<div class="head_div">
+	<div class="top">
+		<div class="l">
+			<a href="{$site_url}/">疯狂砸蛋 奖品多多</a>
+		</div>
+		<div class="r">
+        <!--{if $visitor.user_id}-->
+        <a href="index.php?app=wap_index&amp;act=reg">用户注销</a>
+        <!--{else}-->
+		<a href="index.php?app=member&act=login">登录</a>
+        <!--{/if}-->
+        <input id="user_id" type="hidden" value="{$visitor.user_id}"/>
+				
+            		</div>
+	</div>
+	
+</div><div class="clear"></div>
+<div class="body_div">
+	<div class="curlocal">
+			</div>	
+            <div class="box2">
+		<div class="t">
+			<div class="l">
+				<a>请选择要砸的蛋:</a>
+                <a><select name="areaid" id="egg_type">
+						<option value="0">=请选择=</option>
+						<option value="1">=金蛋=</option>
+						<option value="2">=银蛋=</option>
+						<option value="3">=铜蛋=</option>
+						</select>
+                        </a>
+			</div>
+			<div class="r">
+				<a href="{$site_url}/">返回首页</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+        <div class="integral">
+			       <div class="zd">
+			         <div class="m">
+					 	<script>
+						function ex(t)  
+						{
+							if( $('#user_id').val() == "0" ){
+								alert("请先登录");
+								return ;
+							}else if( $('#egg_type').val() == "0" ){
+								alert("请先选择要砸的蛋");
+								return ;
+							}else if( $('#isex').val() == "0" ){
+								alert("请点下方的 继续砸蛋 ");
+								return ;
+							}else{}
+							var eggid = $('#egg_type').val();
+							//alert(""+eggid);
+							$.get(  
+								'index.php?app=search&act=eggact_ajax&ajax=1',  
+								{  
+								egg_type : function(){
+								return $('#egg_type').val();
+								}
+								},  
+								function(data) //回传函数  
+								{  
+									$("#e"+t).children('img').attr("src","{res file=}images/act/ege_0"+eggid+".gif");
+									$("#isex").val("0");
+									$("#goon").show();
+									alert(data);
+								}  
+							);  
+						} 
+						function goonegg()
+						{
+							$("#isex").val("1");
+							$("#goon").hide();
+							var egg_t = $("#egg_type").children('option:selected').val();
+							$('img[name="egg"]').each(function(){
+								this.src = "{res file=}images/act/lock_"+egg_t+".gif";
+							});
+						}
+						</script>
+						<input id="isex" type="hidden" value="1"/>
+					   <div class="d"><a class="da" id="e1" href="javascript:ex(1);"><img name="egg" src="{res file=images/act/lock_1.gif}"/></a></div>
+					   <div class="d"><a class="da" id="e2" href="javascript:ex(2);"><img name="egg" src="{res file=images/act/lock_2.gif}"/></a></div>
+					   <div class="d"><a class="da" id="e3" href="javascript:ex(3);"><img name="egg" src="{res file=images/act/lock_3.gif}"/></a></div>
+					 </div>
+					 <div class="b b1" id="goon"><a href="javascript:goonegg()">继续砸蛋！</a></div>
+					 <div class="b b2">很遗憾！什么也没有砸中，再接再厉吧！</div>
+					 <div class="b b3">太棒了！你砸中了<a> xjj </a>！</div>
+			       </div>
+			  </div>
+		<p>
+				现在就疯狂砸蛋吧，抽奖所获奖品价值为金蛋>银蛋>铜蛋，砸金蛋还有机会爆出意外大奖哦！
+			</p>
+
+	</div>
+</div>
+<div class="clear"></div>
+<div class="foot_div">
+	<div class="m">
+		随时随地查询商家信息
+	</div>
+</div>
+
+</body>
+</html>

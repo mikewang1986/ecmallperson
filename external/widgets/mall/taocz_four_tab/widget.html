@@ -1,0 +1,51 @@
+<div class="fourgroup mb10 tab{$widget_data.model_id}">
+	<ul class="ks-switchable-nav clearfix">
+		<!-- {foreach from=$widget_data.tabs item=tab name=fe_tab} -->
+		<li {if $smarty.foreach.fe_tab.first}class="ks-active first"{/if}>{$tab|escape}</li>
+		<!--{/foreach}-->
+	</ul> 
+	<div class="ks-switchable-content">
+    	<div class="images_content clearfix">
+        	<!-- {foreach from=$widget_data.ads item=ad name=fe_ad} -->
+            <!--{if $smarty.foreach.fe_ad.iteration le 4}-->
+        	<a target="_blank" href="{$ad.ad_link_url}" style="{if $smarty.foreach.fe_ad.iteration eq 4}border:0px;{/if}"><img style="{if $smarty.foreach.fe_ad.iteration eq 4}width:188px;_width:185px;{else}width:189px;{/if}" height="150" src="{$ad.ad_image_url}" /></a>
+            <!--{/if}-->
+            <!--{/foreach}-->
+        </div>
+		<!-- {foreach from=$widget_data.goods_list item=list name=fe_list} -->
+        <!--{if $list}-->
+		<div class="content clearfix hidden">
+			<!-- {foreach from=$list item=goods name=fe_goods} -->
+			<div class="offbox">
+				<dl class="item clearfix">
+					<dt>
+                    	<a href="{url app=goods&id=$goods.goods_id}"target="_blank"><img width="130" height="130" src="{$goods.default_image}" /></a>
+                    </dt>
+					<dd>
+                    	<span>{$goods.price|price}</span>
+                    	<b>{$goods.goods_name|escape|truncate:42}</b>
+                        <a target="_blank" href="{url app=goods&id=$goods.goods_id}">立即购买</a>
+                    </dd>
+				</dl>
+			</div>
+			<!--{/foreach}-->
+		</div>
+        <!--{/if}-->
+		<!--{/foreach}-->
+        <div class="images_content five_images hidden clearfix">
+        	<!-- {foreach from=$widget_data.ads item=ad name=fe_ad} -->
+            <!--{if $smarty.foreach.fe_ad.iteration gt 4}-->
+        	<a target="_blank" href="{$ad.ad_link_url}"><img width="142" height="138" src="{$ad.ad_image_url}" /></a>
+            <!--{/if}-->
+            <!--{/foreach}-->
+        </div>
+	</div>          
+</div>
+
+<script>
+    KISSY.ready(function(S) {
+        var tabs = new S.Tabs('.tab{$widget_data.model_id}',{
+			aria:false
+		});
+    });
+</script>

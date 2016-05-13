@@ -1,0 +1,150 @@
+{include file=member.header.html}
+<script language = "JavaScript">
+function chongzhi()
+{
+  if (document.chongzhi_form.cz_money.value=="")
+  {
+    alert("{$lang.tianxieyaochongzhidejine}");
+	document.chongzhi_form.cz_money.focus();
+	return false;
+  }
+
+  return true;  
+}
+
+
+function card()
+{
+  if (document.card_form.user_name1.value =="")
+  {
+    alert("充值帐户不能为空!");
+	document.card_form.user_name1.focus();
+	return false;
+  }
+  if (document.card_form.user_name2.value =="")
+  {
+    alert("确认帐户不能为空!");
+	document.card_form.user_name2.focus();
+	return false;
+  }
+  if (document.card_form.user_name1.value != document.card_form.user_name2.value)
+  {
+    alert("两次输入充值帐户不同!");
+	document.card_form.user_name2.focus();
+	return false;
+  }
+  if (document.card_form.card_sn.value =="")
+  {
+    alert("充值卡卡号不能为空!");
+	document.card_form.card_sn.focus();
+	return false;
+  }
+  if (document.card_form.card_pass.value =="")
+  {
+    alert("充值卡密码不能为空!");
+	document.card_form.card_pass.focus();
+	return false;
+  }
+  return true;  
+}
+</script>
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+          <ul class="tab">
+				<li class="active">{$lang.zaixianchongzhi}</li>
+				<li class="normal"><a href="index.php?app=my_money&act=paylog">{$lang.chongzhijilu}</a></li>
+                <li class="normal"><a href="index.php?app=my_money&act=txlist">{$lang.tixianshenqing}</a></li>
+                
+          </ul>
+          
+        <div class="wrap margin1">
+            <div class="public table">
+				<div class="information_index" style="overflow:hidden; margin: 0px 0 -15px;">
+                <div class="info">
+                        <h3 class="margin2">
+                            <span>{$lang.hello}！{$visitor.user_name}，欢迎来到资金管理中心</span>
+                           <!-- <a href="index.php?app=my_money&act=index" target="_blank">{$lang.shenmeshishangfutong}</a>-->
+                        </h3>
+                      <table class="width6">
+                      <tr>
+					  <td><span style="font-size:14px">
+					  <!--{foreach from=$my_money item=val key=key}-->
+{$lang.zhanghuzongjinere}<span style="font-size:16px;font-weight:bold; color:#FE5400;">{$val.money}</span>
+&nbsp;{$lang.yuan}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$lang.dongjiejine}<span style="color:blue;">{$val.money_dj}</span>&nbsp;{$lang.yuan}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$lang.jifen}<span style="color:blue;">{$val.jifen}</span></span>
+					  <!--{/foreach}-->
+					  </td>
+                      </tr>
+                      <tr>
+                      <td>{$lang.shangcidengluip}: {$visitor.last_ip}<br>
+                                    {$lang.shangcidenglushijian}:{$visitor.last_login|date:complete}<br> 
+                                    
+                                    <A 
+href="index.php?app=my_money&act=mibao"><span style="color:red;">{$lang.bangdingdongtaimima}</span></A>&nbsp;|&nbsp;<A 
+href="index.php?app=my_money&act=paylist">{$lang.lijichongzhi}</A>&nbsp;|&nbsp;<A 
+class=G href="index.php?app=my_money&act=txlist"><span style="color:green;">{$lang.tixian}</span></A>  
+					  </td> 
+
+                      </tr>
+                      </table>
+                  </div>
+				
+				
+                </div>
+             </div>
+        </div>
+
+<!--开始-->
+           <div class="wrap margin1">
+            <div class="public table">
+            <h3 class="title" style="margin: -10px 0 20px; color:#3E3E3E">{$lang.zaixianchongzhi}</h3>
+                  <div style="color:#646665;float:left;font-size:12px;font-weight:normal;line-height:30px;">
+<form name="chongzhi_form" onSubmit="return chongzhi();" action="index.php?app=my_money&act=czfs" method="post" target="_blank">
+				  {$lang.chongzhijine}
+                  <input name="cz_money" type="text" value="100" size="8" />&nbsp;{$lang.yuan}
+                    {$lang.chongzhifangshi}：
+                    <select name="czfs" class="select">
+                    <option value="alipay">{$lang.zhifubaochongzhi}</option>
+                    <option value="tenpay">{$lang.caifutongchongzhi}</option>
+                    <option value="chinabank">{$lang.wangyinchongzhi}</option>                    
+					</select>
+                  <BR>注：目前支持支付宝、财付通、各大银行网银、银联充值。您也可以联系客服人员进行后台充值。<BR><input type="submit" class="money_btn" value="{$lang.lijichongzhi}" />
+                  </form>
+             </div>
+			</div>
+           </div>		
+<!--结束-->	
+<!--开始-->
+           <div class="wrap">
+            <div class="public table">
+            <h3 class="title" style="margin: -10px 0 20px; color:#3E3E3E">充值卡充值</h3>
+                  <div style="color:#646665;float:left;font-size:12px;font-weight:normal;line-height:30px;">
+<form name="card_form" onSubmit="return card();" action="index.php?app=my_money&act=card_cz" method="post" target="_blank">
+				  充值帐户：<input name="user_name1" type="text" id="user_name1" value="{$visitor.user_name}" size="15" />
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  充值卡卡号：<input name="card_sn" type="text" id="card_sn" size="30" />
+				  <br>
+				  确认帐户：<input name="user_name2" type="text" id="user_name2" size="15" />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  充值卡密码：<input name="card_pass" type="text" id="card_pass" size="30" />
+				  <br>注：如果您通过线下汇款或活动赚金，请联系客服人员索取。<br>
+                  <input type="submit" class="money_btn" value="{$lang.lijichongzhi}" />
+                  </form>
+             </div>
+			</div>
+           </div>		
+<!--结束-->		
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<iframe id='iframe_post' name="iframe_post" frameborder="0" width="0" height="0">
+</iframe>
+{include file=footer.html}

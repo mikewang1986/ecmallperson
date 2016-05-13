@@ -1,0 +1,13 @@
+
+        <div class="ff">
+            <div class="title"><h3><a href="">{$widget_data.model_name}</a></h3></div>
+            <div class="list">
+                <ul>
+				<!--{foreach from=$widget_data.ads item=ad name=fe_ad}-->
+                    <li><a href="{$ad.ad_link_url}" title="{$ad.ad_title_url}" target="_blank"><img src="{$ad.ad_image_url}"  alt="{$ad.ad_title_url}" width="175" height="85"/></a></li>
+					<!--{/foreach}-->
+                    <div class="clearfix"></div>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>

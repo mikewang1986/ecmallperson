@@ -1,0 +1,177 @@
+{include file=header.html}
+<link href="{res file=css/search.index.css}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="{$charset}" src="{res file=js/search_goods.js}"></script>
+<script type="text/javascript">
+var upimg   = '{res file=images/up.gif}';
+var downimg = '{res file=images/down.gif}';
+imgUping = new Image();
+imgUping.src = upimg;
+$(function(){
+
+	var order = '{$smarty.get.order}';
+	var css = '';
+	
+	<!--{if $smarty.get.order}-->
+	order_arr = order.split(' ');
+	switch (order_arr[1]){
+		case 'desc' : 
+			css = 'order-down filter-cur';
+		break;
+		case 'asc' :
+			css = 'order-up filter-cur';
+		break;
+		default : 
+			css = 'order-down-gray';
+	}
+	$('.filter a[ectype='+order_arr[0]+']').attr('class','filter-click '+css);
+	<!--{/if}-->
+	
+	$(".filter a").click(function(){
+		if(this.id==''){
+			dropParam('order');// default order
+			return false;
+		}
+		else
+		{
+			dd = " desc";
+			if(order != '') {
+				order_arr = order.split(' ');
+				if(order_arr[0]==this.id && order_arr[1]=="desc")
+					dd = " asc";
+				else dd = " desc";
+			}
+			replaceParam('order', this.id+dd);
+			return false;
+		}
+	});
+
+});
+
+
+</script>
+<div id="tbh5v0">
+<div id="page" class="page-shadow">
+	<div class="searchbox">
+		<div class="sb-header">
+			<a href="{$ret_url}" class="sb-back" id="J_BackBtn">{$lang.goback}</a>
+			<div class="sb-search">
+				<form method="GET" action="{url app=search}"> 
+					<div class="s-combobox s-combobox-shown">
+						<div class="s-combobox-input-wrap">
+							<input type="text" name="keyword" id="tkeyword" class="s-combobox-input" autocomplete="off" title="{$lang.pls_input_keyword}" tabindex="0">
+						</div>
+					</div>
+					<input type="submit" id="J_SubmitBtn">
+					<input type="hidden" name="app" value="search" />
+                    <input type="hidden" name="act" value="index" />
+				</form>
+			</div>
+			<a href="{url app=category}" class="sb-switchBtn sb-switchBtn-album" id="J_SwitchBtn">{$lang.all_categories}</a>
+			<a href="javascript:void(0);" onclick="mtShowMenu()" style="height: 45px;line-height: 45px;color: #fff;">筛选</a>
+		</div>
+	</div>
+
+                            	<div class="filter">
+                                <ul class="filter-inner">
+                                	<!--<span>{$lang.order_by}{$lang.colon}</span>-->
+                                	<!--{foreach from=$orders item=order key=k name=fe_order}-->
+                                	<!--{if !$k}-->
+                                	<li><a class="filter-click default-sort" id="{$k}" href="javascript:;">{$order}</a></li>
+                                	<!--{else}-->
+                                	<li><a class="filter-click order-down-gray" ectype="{$k}" id="{$k}" href="javascript:;">{$order}<i></i></a></li>
+                                	<!--{/if}-->
+                                	<!--{/foreach}-->
+                                    </ul>
+                            	</div>
+
+	<div id="J_ItemList" class="srp m-ks-autoResponsive-container m-animation album" style="opacity: 1;">
+		<!--{if $goods_list}-->
+		<!--{foreach from=$goods_list item=goods}-->
+		<div class="product">
+			<div class="pro-inner">
+				<div class="proImg-wrap"><a href="{url app=goods&id=$goods.goods_id}"><img alt="{$goods.goods_name|escape}" src="{$site_url}/{$goods.default_image}"></a></div>
+				<div class="proInfo-wrap">
+					<div class="proTitle"><a  href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape}</a></div>
+					<div class="proSKU"></div>
+					<div class="proPrice"><em title="{$goods.price}">{$goods.price|price}</em></div>
+					<div class="proSales">{$lang.sales}:<em>{$goods.sales|default:0}</em></div>
+				</div>
+			</div>
+		</div>
+		<!--{/foreach}-->
+		<!--{else}-->
+		<div class="product">
+			<p class="red-box wrong-tip">{$lang.no_records}</p>
+		</div>
+		<!--{/if}-->
+	</div>
+	{include file=page.button.html}
+</div>
+<div id="nav" class="nav" style="right:-275px;">
+	<form class="hold-height" action="index.php">
+		<div class="attrExtra">
+			<input type="hidden" name="app" value="search"/>
+			<input type="hidden" name="cate_id" value="{$smarty.get.cate_id}"/>
+			<button class="attrExtra-submit" type="submit">确定</button>
+			<button class="attrExtra-cancel" type="button"  onclick="mtShowMenu()">取消</button>
+		</div>
+		<div class="attrs attr-fix" style="overflow: auto;height: 100%">
+			<!--{if $brands || $price_intervals || $regions || $categories || $props}-->
+			<!--{if $brands && !$filters.brand}-->
+			<div class="attr brandAttr">
+				<div class="attrKey">{$lang.by_brand}{$lang.colon}</div>
+				<div class="attrValues">
+					<ul class="av-collapse filter_list">
+						<!--{foreach from=$brands item=row name=fe_row}-->
+						<li {if $smarty.foreach.fe_row.iteration ge 25}class="av-selected"{/if}><a  href="javascript:void(0);" data="{$row.brand}">{$row.brand|escape}</a></li>
+						<!--{/foreach}-->
+						<input type="hidden" name="brand" value="" />
+					</ul>
+					<div class="av-options"><a class="j_More avo-more avo-more-down" href="javascript:;">查看更多<i></i></a> </div>
+				</div>
+			</div>
+			<!--{/if}-->
+			<!--{foreach from=$props item=prop name=fe_prop}-->
+			<div class="attr brandAttr">
+				<div class="attrKey">{$prop.name}{$lang.colon}</div>
+				<div class="attrValues">
+					<ul class="av-collapse filter_list">
+						<!--{foreach from=$prop.value item=row}-->
+						<li {if $smarty.foreach.fe_row.iteration ge 25}class="av-selected"{/if}><a  href="javascript:void(0);" data="{$row.pid}:{$row.vid}">{$row.prop_value|escape}</a></li>
+						<!--{/foreach}-->
+						<input type="hidden" name="props" value="" />
+					</ul>
+					<div class="av-options"><a class="j_More avo-more avo-more-down" href="javascript:;">查看更多<i></i></a> </div>
+				</div>
+			</div>
+			<!--{/foreach}-->
+			<!--{/if}-->
+			<!--{if $price_intervals && !$filters.price}-->
+			<div class="attr brandAttr">
+				<div class="attrKey">{$lang.by_price}{$lang.colon}</div>
+				<div class="attrValues">
+					<ul class="av-collapse filter_list">
+						<!--{foreach from=$price_intervals item=row name=fe_row}-->
+						<li><a  href="javascript:void(0);" data="{$row.min} - {$row.max}">{$row.min|price} - {$row.max|price}</a></li>
+						<!--{/foreach}-->
+						<input type="hidden" name="price" value="0" />
+					</ul>
+					<div class="av-options"><a class="j_More avo-more avo-more-down" href="javascript:;">查看更多<i></i></a> </div>
+				</div>
+			</div>
+			<!--{/if}-->
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="{res file=js/jquery.min.js}"></script>
+<script type="text/javascript" src="{res file=js/jquery.mmenu.js}"></script>
+<script type="text/javascript" src="{res file=js/ectouch.js}"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		$('#menu').css('display','');
+	}
+	$(function() {
+		$('nav#menu').mmenu();
+	});
+</script>
+{include file=footer.html}

@@ -1,0 +1,326 @@
+{include file=header.html}
+<body>
+<script language="javascript">
+	$(document).ready(function() {
+
+		$.featureList(
+			$(".slider-status span"),
+			$(".slider-outer li"), {
+				start_item	:	0
+			}
+		);
+	});
+	
+
+</script>
+<div id="page">
+  <header id="header" >
+    <div class="header_l"> <a class="ico_02" href="#menu"> 菜单栏 </a> </div>
+    <h1> {$site_title} </h1>
+    <div class="header_r"> <a class="ico_01" href="/"> 购物车 </a> </div>
+  </header>
+</div>
+ 
+<div id="focus" class="focus region">
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <div class="bd">
+    
+<ul>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider5.jpg}" width="360" height="168" border="0"></a></li>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider1.jpg}" width="360" height="168" border="0"></a></li>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider2.jpg}" width="360" height="168" border="0"></a></li>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider3.jpg}" width="360" height="168" border="0"></a></li>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider4.jpg}" width="360" height="168" border="0"></a></li>
+   <li style="display: table-cell; vertical-align: top; width: 400px;"><a href="#" target="_blank"><img src="{res file=images/index/slider5.jpg}" width="360" height="168" border="0"></a></li>
+</ul>    
+  </div>
+</div>
+<script type="text/javascript">
+TouchSlide({ 
+	slideCell:"#focus",
+	titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	mainCell:".bd ul", 
+	effect:"leftLoop", 
+	autoPlay:true,//自动播放
+	autoPage:true //自动分页
+});
+</script>
+<STYLE type=text/css>
+
+#tags {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 10px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 23px
+}
+#tags LI {
+	FLOAT: left; MARGIN-RIGHT: 1px; LIST-STYLE-TYPE: none; HEIGHT: 23px;
+}
+#tags LI A {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND:#666; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #999; LINE-HEIGHT: 23px; PADDING-TOP: 0px; HEIGHT: 23px; TEXT-DECORATION: none; color:#FFF;
+}
+
+#tags LI.selectTag {
+	MARGIN-BOTTOM: -2px; POSITION: relative; HEIGHT: 25px; 
+}
+#tags LI.selectTag A {
+	background:#FFF; color:#333; LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.fakeInput {
+	DISPLAY: none; 
+}
+#tagContent DIV.selectTag {
+	DISPLAY: block;
+}
+</STYLE>
+  <SCRIPT type=text/javascript>
+function selectTag(showContent,selfObj){
+	// 操作标签
+	var tag = document.getElementById("tags").getElementsByTagName("li");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.parentNode.className = "selectTag";
+	// 操作内容
+	for(i=0; j=document.getElementById("tagContent"+i); i++){
+		j.style.display = "none";
+	}
+	document.getElementById(showContent).style.display = "block";
+}
+</SCRIPT>
+<div class="blank2"> </div>
+<div id=content class="wrap">
+  <a name="soso"></a><header class=region>
+    <div class=content>
+      <UL id=tags>
+  <LI class=selectTag><A onClick="selectTag('tagContent0',this)" href="javascript:void(0)">商品</A> </LI>
+  <LI><A onClick="selectTag('tagContent1',this)" href="javascript:void(0)">店铺</A> </LI>
+     </UL>
+<DIV id=tagContent>
+  <DIV class="fakeInput box1 radius15 selectTag" id=tagContent0>
+  <form method="GET" action="{url app=search}"> 
+            <input class="text" name="keyword" id="tkeyword" placeholder="请在这里输入商品名称" style=" margin-left:20px; width:80%; height:100%; border:0px;color:silver;">
+          <input type="hidden" name="app" value="search" />
+          <input type="hidden" name="act" value="index" />
+          <input type="submit" value="" class="search ico_03" />
+          </form>
+  </DIV>
+  <DIV class="fakeInput box1 radius15" id=tagContent1>
+  <form method="GET" action="{url app=search}"> 
+              <input class="text" name="keyword" id="tkeyword" placeholder="请在这里输入店铺名称" style=" margin-left:20px; width:80%; height:100%; border:0px;color:silver;">
+          <input type="hidden" name="app" value="search" />
+          <input type="hidden" name="act" value="store" />
+          <input type="submit" value="" class="search ico_03" />
+          </form>
+  </DIV>
+</DIV>
+    </div>
+    
+  </header>
+  
+  <div class="region row row_category">
+    <ul class="flex flex-f-row">
+	  <li class="flex_in"> <a href="{url app=category}" title="商品分类"> <img src="{res file=images/ico1.png}"> </a>
+        <p> 商品分类 </p>
+      </li>
+      <li class="flex_in"> <a href="{url app=category&act=store}" title="店铺分类"> <img src="{res file=images/ico2.png}"> </a>
+        <p> 店铺分类 </p>
+      </li>
+      <li class="flex_in"> <a href="{url app=member}" title="个人中心"> <img src="{res file=images/ico3.png}"> </a>
+        <p> 个人中心 </p>
+      </li>
+      <li class="flex_in"> <a href="/index.php?app=nearstore&act=baidumap" title="附近商家"> <img src="{res file=images/ico4.png}"> </a>
+        <p> 附近商家 </p>
+      </li>
+   </ul>
+            
+   <ul class="flex flex-f-row">
+      <li class="flex_in"> <a href="{url app=buyer_order}" title="订单管理"> <img src="{res file=images/ico5.png}"> </a>
+        <p> 订单管理 </p>
+      </li>
+      <li class="flex_in"> <a href="/index.php?app=promotion" title="打折促销"> <img src="{res file=images/ico6.png}"> </a>
+        <p> 打折促销 </p>
+      </li>
+      <li class="flex_in"> <a href="/index.php?app=search&amp;act=groupbuy" title="团购"> <img src="{res file=images/ico7.png}"> </a>
+        <p> 团购 </p>
+      </li>
+      <li class="flex_in"> <a href="/index.php?app=search&act=eggact" title="积分砸蛋"> <img src="{res file=images/ico8.png}"> </a>
+        <p> 积分砸蛋 </p>
+      </li>
+   </ul>
+  </div>
+  
+<style type="text/css">
+.picScroll3{margin:10px auto; text-align:center;}
+.picScroll3 .bd ul{width:100%;  float:left; padding-top:10px;}
+.picScroll3 .bd li{width:30%; float:left; font-size:14px; text-align:center;}
+.picScroll3 .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */}
+.picScroll3 .bd li img{width:100px; height:100px;}
+.picScroll3 .hd{display:None}
+
+.picScroll{margin:10px auto; text-align:center;}
+.picScroll .bd ul{width:100%;  float:left; padding-top:10px;}
+.picScroll .bd li{width:30%; float:left; font-size:14px; text-align:center;margin-bottom:15px;}
+.picScroll .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */}
+.picScroll .bd li img{width:100px; height:100px;}
+.picScroll .hd{display:None}
+
+.gnames {
+	display:block;
+	height:60px;
+	overflow:hidden;
+	}
+	
+.gnameico{
+	display:block;
+	height:25px;
+	overflow:hidden;
+	}
+</style>
+<script type="text/javascript">
+TouchSlide({
+    slideCell:"#picScroll3",
+    titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+    autoPage:true, //自动分页
+    pnLoop:"false", // 前后按钮不循环
+    //switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+});
+</script>
+<div class="blank2"></div>
+
+<div class="item_show_box2 box1 region" style="overflow:hidden">
+    <div id="picScroll" class="picScroll">
+        <div class="hd">
+            <ul><li class="on">1</li></ul>
+        </div>
+        <div class="tempWrap" style="overflow:hidden; position:relative;"><div class="tempWrap" style="overflow:hidden; position:relative;"><div class="bd" style="width: 376px; position: relative; overflow: hidden; padding: 0px; margin: 0px; transition: 200ms; -webkit-transition: 200ms; -webkit-transform: translate(0px, 0px) translateZ(0px);">
+            
+            <ul style="display: table-cell; vertical-align: top; width: 376px;">                             
+            
+               {foreach from=$img_goods_list item=goods name=fe_groupbuy}         
+              <li><a href="{url app=goods&id=$goods.goods_id}"><img src="{$goods.default_image}" alt="{$goods.goods_name|escape}"></a>
+                <span class="price_s"> {$goods.price|price} </span> 
+  <span class="gnames">{$goods.goods_name|truncate:18}</span>   
+   <span class="gnameico">
+        </span> 
+          </li>                
+             {/foreach}                                 
+           </ul>
+    </div></div></div>
+    </div>
+    <div class="position_a_lt">
+      <div> </div>
+      <a>
+      <p> 最新商品 </p>
+      <p class="ico_04"> </p>
+      </a> </div>
+    <div class="position_a_rb">
+      <div> </div>
+      <a href="{url app=category}">
+      <p class="ico_04_b"> </p>
+      <p> 更多 </p>
+      </a> </div>
+  </div>
+  <div class="blank2"> </div>
+    
+<div class="item_show_box2 box1 region" style="overflow:hidden">
+    <div id="picScroll" class="picScroll">
+        <div class="hd">
+            <ul></ul>
+        </div>
+        <div class="bd">
+            
+            <ul>                             
+            
+ {foreach from=$img_goods_list1 item=goods name=fe_groupbuy}                       
+              <li><a href="{url app=goods&id=$goods.goods_id}"><img src="{$goods.default_image}" alt="{$goods.goods_name|escape}"></a>
+                <span class="price_s"> {$goods.price|price} </span> 
+  <span class="gnames">{$goods.goods_name|truncate:23}</span>   
+   <span class="gnameico">
+        </span> 
+          </li>
+ {/foreach}                                            
+                </ul>
+     </div>
+    </div>
+    <div class="position_a_lt">
+      <div> </div>
+      <a>
+      <p> 热门商品 </p>
+      <p class="ico_04"> </p>
+      </a> </div>
+    <div class="position_a_rb">
+      <div> </div>
+      <a href="{url app=category}">
+      <p class="ico_04_b"> </p>
+      <p> 更多 </p>
+      </a> </div>
+  </div>
+  <div class="blank2"> </div>
+
+<style type="text/css">
+.picScroll2{margin:10px auto; text-align:center;}
+.picScroll2 .bd ul{width:100%;  float:left; padding-top:10px;}
+.picScroll2 .bd li{width:30%; float:left; font-size:14px; text-align:center;}
+.picScroll2 .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */}
+.picScroll2 .bd li img{width:100px; height:100px;}
+.picScroll2 .hd{display:None}
+</style><div class="blank2"></div>
+
+<script type="text/javascript">
+TouchSlide({
+    slideCell:"#picScroll",
+    titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+    autoPage:true, //自动分页
+    pnLoop:"false", // 前后按钮不循环
+    //switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+});
+</script>
+</div>
+
+<style>
+	body { background: none repeat scroll 0% 0% #eee; }
+	/*页脚*/
+	.footer{ padding:0 0.6rem 0.6rem; color: #aaa; font-size: 0.6rem; }
+	.footer .in{ position:relative; height:2.8rem; margin:0 -0.6rem; padding:0 3.5rem; background-color:#B9B9B9; }
+	.homeBtn, .footer .gotop{ position:absolute; top:0; width:2.8rem; height:2.8rem; color:#fff; font-size:0.65rem; }
+	.footer .gotop, .footer .homeBtn{ background:#a1a1a1; }
+	.homeBtn{ left:0; }
+	.homeBtn span{ position:absolute; left:0.5rem; top:0.5rem; }
+	.footer .gotop{ right:0; }
+	.footer .gotop span{ position:absolute; left:50%; top:0.8rem; width:0.9rem; height:0.9rem; margin:-0.3rem 0 0 -0.3rem; }
+	.footer .gotop p{ position:absolute; bottom:0.14rem; left:0.45rem; width:2.2rem; }
+	/* 底部 */
+	.footer .favLink, .footer p{ text-align:center; line-height: 1.3rem; }
+	.footer .link{ line-height:1rem; font-size: 0.7rem; color: #1ca2e1; }
+	.footer .link a{ display:inline-block; margin-top:0.3rem; padding:0 0.6rem 0 0.3rem; border-right:1px solid #D5D5D5; color:#1CA2E1; }
+	.footer .link a:last-child{ border:none; }
+	.footer .favLink a{ margin-right:0.3rem; color: #aaa; }
+	.search_box { position: relative; top: 0.4rem; width: 100%; background: none repeat scroll 0% 0% #FFF; border-radius: 20px; text-align: center; }
+	.footer p a { color: #8D8D8D; margin: 0px 5px; text-decoration: none; }
+	.search_box input { width: 85%; height: 2rem; line-height: normal; border: medium none; font-size: 0.8rem; }
+	.footer { background: none repeat scroll 0% 0% #eee; border-top: 0px solid #B20005; }
+	.search_box button { position: absolute; top: 0.4rem; right: 0.6rem; width: 1.2rem; height: 1.2rem; border: medium none; }
+	.ico_05{ background:url(/themes/wapmall/vchuang_cn/styles/default/images/ico_05.png) no-repeat 50% 50%; -webkit-background-size:1.8rem 1.8rem; -moz-background-size:1.8rem 1.8rem; background-size:1.8rem 1.8rem; width:1.8rem; height:1.8rem} /* 主页图标 */
+	.ico_06{ background:url(/themes/wapmall/vchuang_cn/styles/default/images/ico_06.png)  no-repeat 50% 50%; -webkit-background-size:1.0rem 1.0rem; -moz-background-size:1.0rem 1.0rem; background-size:1.0rem 1.0rem; width:1.0rem; height:1.0rem}  /* 返回顶部图标 */
+	.ico_07{ background:url(/themes/wapmall/vchuang_cn/styles/default/images/ico_07.png)  no-repeat 50% 50%; -webkit-background-size:1.2rem 1.2rem; -moz-background-size:1.2rem 1.2rem; background-size:1.2rem 1.2rem; width:1.2rem; height:1.2rem}    /* 搜索图标_灰 */
+</style>
+<div id="content" class="footer mr-t20">
+  <div class="in">
+    <div class="search_box">
+      <form method="GET" action="{url app=search}"> 
+        <input name="keyword" id="tkeyword" type="text" />
+        <input type="hidden" name="app" value="search" />
+        <input type="hidden" name="act" value="index" />
+        <button class="ico_07" type="submit" value="搜索" > </button>
+      </form>
+    </div>
+    <a href="./" class="homeBtn"> <span class="ico_05"> </span> </a> <a href="#top" class="gotop"> <span class="ico_06"> </span> <p> TOP </p>
+    </a>
+ </div>
+ <p><span class="STYLE3">在浏览器中打开下载本商城客户端!</span></p>
+ <p><a href="azapp.apk"><img height="30" src="{res file=images/index/az.jpg}" width="140"/></a><a href="pgapp.ipa"><img height="30" src="{res file=images/index/pg.jpg}" width="140"/></a> </p>
+ <a href="/" target="_blank">  &copy;2015 琪琦网购微信商城 </a> </p>
+</div>
+{include file=footer.html}

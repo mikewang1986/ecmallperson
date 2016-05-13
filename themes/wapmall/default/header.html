@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        {$page_seo}
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+        <link href="{res file=css/index.css}" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="index.php?act=jslang"></script>
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+        {$_head_tags}
+        <script type="text/javascript">
+            //<!CDATA[
+            var SITE_URL = "{$site_url}";
+            var REAL_SITE_URL = "{$real_site_url}";
+            var PRICE_FORMAT = '{$price_format}';
+            //]]>
+        </script>
+    </head>
+    <body id="log-reg" class="gray">
+        <div class="tmall-h5-v2">
+            <header class="region"> 
+                <div class="content"> 
+                    <div style=" text-align:center; margin:8px;"><a href="{url app=default}"><img alt="{$site_title}" src="{$site_logo}" width="180px"/></a></div> 
+                    <div id="fake-search"> 
+                        <form method="GET" action="{url app=search}">
+                            <div class="fakeInput">
+                                <input class="text" name="keyword" id="tkeyword" placeholder="请在这里输入你所在的小区名、街道、店铺名" style="color:silver"/>
+                                <input type="submit" value="" class="search-button" />
+                                <input type="hidden" name="app" value="search" />
+                                <input type="hidden" name="act" value="index" />
+                                <input type="hidden" name="act" value="store" />
+                            </div> 
+                        </form>
+                    </div> 
+                </div> 
+            </header>
+            <div class="region entry-list"> 
+                <a href="{url app=category}"><img alt="商品类目" height="29px" src="{res file=images/ico1.png}" width="29px"/><br/><span>商品类目</span></a><span class="entry-decollator"></span>
+                <a href="{url app=category&act=store}"><img alt="店铺类目" height="30px" src="{res file=images/ico2.png}" width="30px"/><br/> <span>店铺类目</span> </a><span class="entry-decollator"></span>   
+                <a href="{url app=member}"><img alt="个人中心" height="31px" src="{res file=images/ico3.png}" width="31px"/><br/> <span>个人中心</span> </a><span class="entry-decollator"></span>
+                <a href="{url app=cart}"><img alt="购物车" height="31px" src="{res file=images/ico4.png}" width="37px"/><br/><span>购物车</span></a>
+
+                <!-- 为双11添加 -->     
+                <br/>
+                <a href="/wm/wap/"><img alt="外卖订餐" height="32px" src="{res file=images/ico5.gif}" width="32px"/><br/><span>外卖订餐</span></a><span class="entry-decollator"></span>
+               <a href="/index.php?app=promotion"><img alt="打折促销" height="32px" src="{res file=images/ico6.gif}" width="32px"/><br/><span>打折促销</span></a><span class="entry-decollator"></span>    
+                <a href="/index.php?app=search&act=groupbuy"><img alt="团购" height="32px" src="{res file=images/ico7.gif}" width="34px"/><br/><span>团购</span></a><span class="entry-decollator"></span>
+                <a href="/index.php?app=search&act=eggact"><img alt="积分砸蛋" height="32px" src="{res file=images/ico8.gif}"  width="34px"/><br/><span>积分砸蛋</span></a><span class="entry-decollator"></span>
+            </div>

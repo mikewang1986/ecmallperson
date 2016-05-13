@@ -1,0 +1,93 @@
+{include file=header_index.html}
+
+<!----main-->
+<div class="main">
+
+	<div  class="banner" id="bann" area="col-1-banner" widget_type="area">
+        <!--{widgets page=index area=col-1-banner}-->
+    </div>
+    
+    <div class="kucont">
+        <div class="mode">
+            <div class="left">
+                <div id="tab">
+	                            <ul class="tab_menu">
+    	                            <li class="selected" style="border-right:1px solid #EEE;">新产品</li>
+                                    <li>周销量</li>
+                                </ul>
+                                <div class="clearfix h0"></div>
+                                <div class="tab_box">
+    	                          <div class="tab_box_n">
+                                    <li><img src="/themes/mall/xiaomi/images/p1.jpg" width="80" height="80" /><a href=""><p>MIUI/小米 小米手机4</p><em>￥2498.00</em></a></li>
+                                    <li><img src="/themes/mall/xiaomi/images/p2.jpg" width="80" height="80" /><a href=""><p>MIUI/小米 小米手机4</p><em>￥1180.00</em></a></li>
+                                    <li><img src="/themes/mall/xiaomi/images/p3.jpg" width="80" height="80" /><a href=""><p>MIUI/小米 小米手机4</p><em>￥1050.00</em></a></li>
+                                    <li><img src="/themes/mall/xiaomi/images/p4.jpg" width="80" height="80" /><a href=""><p>MIUI/小米 小米手机4</p><em>￥1899.00</em></a></li>
+                                   </div>
+                                   <div class="hide tab_box_n">
+                                   <li><img src="/themes/mall/xiaomi/images/p5.jpg" width="80" height="80" /><a href=""><p>Huawei/华为 G750-T01</p><em>￥3428.00</em></a></li>
+                                   <li><img src="/themes/mall/xiaomi/images/p6.jpg" width="80" height="80" /><a href=""><p>Huawei/华为 G750-T01</p><em>￥999.00</em></a></li>
+                                   <li><img src="/themes/mall/xiaomi/images/p4.jpg" width="80" height="80" /><a href=""><p>Huawei/华为 G750-T01</p><em>￥300</em></a></li>
+                                   <li><img src="/themes/mall/xiaomi/images/p2.jpg" width="80" height="80" /><a href=""><p>Huawei/华为 G750-T01</p><em>￥300</em></a></li>
+                                   </div>
+                                 </div>
+                              </div><!--tab END-->
+<script type="text/javascript">
+$(document).ready(function(){
+	var $tab_li = $('#tab ul li');
+	$tab_li.hover(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
+		var index = $tab_li.index(this);
+		$('div.tab_box > div').eq(index).show().siblings().hide();
+	});	
+});
+</script>
+            </div>
+            
+        <div class="right" area="col-2-elastic" widget_type="area">
+            <!--{widgets page=index area=col-2-elastic}-->
+        </div>
+
+     </div>
+            <!--right end-->
+
+            <div class="clearfix h0"></div>
+        </div>
+    
+    <div class="kucont" >
+	    <div class="f1">
+            <div class="title">
+                <h3>1F 手机</h3>
+                <div class="hot"><a href="#">热销手机</a></div>
+            </div>
+            <div class="clearfix h0"></div>
+             <div class="list" area="col-3-floor" widget_type="area">
+               
+             <!--{widgets page=index area=col-3-floor}-->
+
+               <div class="clearfix h0"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="kucont">
+    <div class="banner2" area="col-4-ad" widget_type="area"><!--{widgets page=index area=col-4-ad}--></div>
+    </div>
+    
+    <div class="kucont">
+        <div class="f2">
+            <div class="title">
+                <h3>2F 配件/存储</h3>
+                <div class="hot"><a href="">热销配件/存储</a></div>
+            </div>
+            <div class="clearfix h0"></div>
+            <div class="list" area="col-5-floor2" widget_type="area">
+                <!--{widgets page=index area=col-5-floor2}-->
+                <div class="clearfix h0"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--main END-->
+{include file=server.html}
+{include file=footer.html}

@@ -1,0 +1,12 @@
+                <div class="pro">
+                    <div class="banner1"><a href="{$widget_data.ad1_link_url}" target="_blank"><img src="{$widget_data.ad1_image_url}" /></a></div>
+					<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+					<!--{if $smarty.foreach.fe_goods.iteration lt 7}-->
+                    <div class="product">
+                        <div class="product-img"><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img src="{$goods.default_image}" width="235" height="235" /></a></div>
+                        <p class="product-price"><em><b></b>{$goods.price|price}</em><span class="tm-price"><!--{if $goods.market_price gt $goods.price}-->{$goods.market_price|price}<!--{/if}--></span></p>
+                        <div class="product-title"><a href="{url app=goods&id=$goods.goods_id}" target="_blank">{$goods.goods_name|escape|truncate:50}</a></div>
+                    </div>
+                    <!--{/if}-->
+					<!--{/foreach}-->
+                </div>

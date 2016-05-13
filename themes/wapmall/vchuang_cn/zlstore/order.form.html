@@ -1,0 +1,151 @@
+{include file="zlstore/header.html"}
+
+{assign var="curr_name" value='确认订单'}
+{include file="zlstore/top.html"}
+<style>
+.manner a {
+    display: inline-block;
+    margin: 0 0.2em;
+    width: 5em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 1px 2px 0px #ccc;
+}
+.total {
+    padding-left: 1.6em;
+}
+.manner {
+    background: #fff;
+    padding: 1em 1em;
+}
+.submit-order {
+    padding: 0 0.6em;
+    display: block;
+}
+.input-yj{
+    height: 2.2em;
+    width:80%;
+}
+</style>
+<div class="main">
+<form method="post" id="order_form">
+    <div class="manner clearfix"> <strong>支付方式：</strong>
+        <span>
+            <a href="javascript:void(0);" type='offline'>线下付款</a>
+            <a href="javascript:void(0);" type='online'>在线付款</a>
+        </span>
+    </div>
+
+    <!--type-->
+    <div class="box">
+        <ul class="list">
+            <li>
+                <p>
+                    
+                支付类型:
+                <select name="payment_id" id='payment_id' class="select01">    
+                    <!--{foreach from=$payment_list.offline item=payment}-->
+                    <option value="{$payment.payment_id}">{$payment.payment_name|escape}</option>
+                    <!--{/foreach}-->
+                </select>
+
+                <select name="payment_online" id="payment_online"  style="display:none;">
+                    <!--{foreach from=$payment_list.online item=payment}-->
+                    <option value="{$payment.payment_id}">{$payment.payment_name|escape}</option>
+                    <!--{/foreach}-->
+                </select>
+
+                <select name="payment_offline" id="payment_offline" style="display:none;">
+                    <!--{foreach from=$payment_list.offline item=payment}-->
+                    <option value="{$payment.payment_id}">{$payment.payment_name|escape}</option>
+                    <!--{/foreach}-->
+                </select>
+
+                    
+                    
+                </p>               
+                    
+                <p>
+                    优惠卷: <select  name="coupon_sn" class="select01 ml40">
+                        <option value="">{$lang.pls_coupon}</option>
+                        {foreach from=$coupon_list item=coupon}
+                          <option value="{$coupon.coupon_sn}">SN:{$coupon.coupon_sn}({$coupon.coupon_value|price})</option>
+                          {/foreach}
+                    </select>
+                </p>
+
+                
+                    
+                
+            </li>
+        </ul>
+    </div>
+    <!--type END-->
+
+    <div class="total">
+        总价：
+        <span class="color02">{$goods_info.amount|price}</span>
+    </div>
+
+    <!--shop info-->
+    <div class="box">
+        <ul class="list">
+            <li>
+                    
+                
+                <p>
+                    桌号：
+                    <input type="text" name="postscript" id="postscript" class="input-yj" placeholder="请输入您的桌号,以方便点餐" />
+
+                    <select  name="shipping_id" class="select01 " style="display:none;">
+                        <!--{foreach from=$shipping_methods item=shipping_method name=shipping_select}-->
+                          <option value="{$shipping_method.shipping_id}"> {$shipping_method.shipping_name|escape}</option>
+                        <!--{/foreach}-->
+                    </select>
+
+
+                    <select name="region_id" id="region_id"  style="display:none;" >
+                    <!--{foreach from=$region_list item=region}-->
+                    <option value="{$region.region_id}">{$region.region_name|escape}</option>
+                    <!--{/foreach}-->
+                    </select>
+                    <input type="hidden" name="consignee" id="consignee" class="input-yj"  value="点餐客户" />
+               
+                    <input type="hidden" name="phone_tel" id="phone_tel"class="input-yj"/>
+                    <input type="hidden" name="phone_mob" id="phone_mob" class="input-yj"  value="13800138000" />
+                    <input type="hidden" name="address" id="address" class="input-yj"  value="店内点餐,无地址" />
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!--shop info END-->
+
+    <a href="javascript:$('#order_form').submit();" class="submit-order" style="">
+        <img src="{res file=images/btn.jpg}" width="100%" />
+    </a>
+
+    <div class="sky" style="padding:4em 0;"></div>
+
+</form>
+    <script>
+        $(document).ready(function() {
+            $('.manner span a').click(function(event) {
+                /* Act on the event */
+                var type=$(this).attr('type');
+                if(type=='online')
+                {
+                    var html=$('#payment_online').html();
+                    $('#payment_id').html(html);
+                }else{
+                    var html=$('#payment_offline').html();
+                    $('#payment_id').html(html);
+                }
+            });
+        });
+    </script>
+    {include file="zlstore/footer.html"}

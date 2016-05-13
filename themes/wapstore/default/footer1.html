@@ -1,0 +1,31 @@
+
+<div class="footer">
+
+    <p>
+        <a href="{url app=store&id=$store.store_id}">商铺首页</a>|
+        <a href="{url app=member}">会员中心</a>|
+        
+    </p>
+    <p>{if $store.functions.copyright}{$store.copyright|escape}{ else} Copyright &copy;2013 {$site_url}{/if}</p>
+</div> 
+<!--{if $kmenus.status==0 or $kmenus.status==''}-->
+<link type="text/css" rel="stylesheet" href="{res file=css/base.css}">
+<div class='yi-shangqiao yi-www' id='Shangqiao'>
+<ul class='yi-toolbar yi-bgcolor'>
+<li><a href='tel:12345678' class='yi-hover yi-tels'><span class='yi-toolbar-tel'></span>电话咨询</a></li>
+<li><a href='sms:12345678' class='yi-hover yi-tj'><span class='yi-toolbar-mess'></span>短信咨询</a></li>
+<li><a href='http://wpa.qq.com/msgrd?v=3&uin=540616918&site=qq&menu=yes' class='yi-hover yi-tj'><span class='yi-toolbar-online'></span>在线沟通</a></li>
+</ul>
+</div>
+
+
+<div class="flo_btn_<!--{if $kmenus.stypeinfo==''}-->1<!--{else}-->{$kmenus.stypeinfo}<!--{/if}-->">
+    <ul>
+        <!--{foreach from=$kmenusinfo item=info}-->
+        <li>
+            <a style="background-color:#{$info.color};" href="<!--{if $info.title=='导航'}-->http://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3D{$info.loadurl}<!--{else}-->{$info.loadurl}<!--{/if}-->"><span style="background:url('{$info.imgurl}') scroll no-repeat center center transparent;background-size:60%; bottom:0; left:0;"></span></a>
+        </li>
+        <!--{/foreach}-->
+    </ul>
+</div>
+<!--{/if}-->

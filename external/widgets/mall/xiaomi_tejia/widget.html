@@ -1,0 +1,17 @@
+                <div class="pro0">
+                    
+					<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+					<!--{if $smarty.foreach.fe_goods.iteration lt 11}-->
+                    <div class="product0">
+					   <div class="sale"></div>
+                        <div class="product-img"><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img src="{$goods.default_image}" width="236" height="236" /></a></div>
+                        
+                        <div class="product-title"><a href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape|truncate:80}</a></div>
+						<p class="product-price" style="margin-top:4px;"><em style="float:left;"><b></b>{$goods.price|price}</em><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><u class="qg">立即抢购</u></a></p>
+						
+						
+
+                    </div>
+                    <!--{/if}-->
+					<!--{/foreach}-->
+                </div>

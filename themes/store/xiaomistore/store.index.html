@@ -1,0 +1,190 @@
+{include file=header.html}
+<div class="main">
+	{include file=store.slides.html}
+    
+    <div class="kucont">
+        <div class="mode">
+            <div class="left">
+                <div id="tab">
+	                <ul class="tab_menu">
+    	                <li class="selected" style="border-right:1px solid #EEE;">新产品</li>
+                        <li>周销量</li>
+                    </ul>
+                    <div class="clearfix h0"></div>
+                    <div class="tab_box">
+    	                <div class="tab_box_n">
+						            <!--{foreach from=$new_goods item=ngoods}-->
+                                    <li><img src="{$ngoods.default_image}" width="80" height="80" /><a href="{url app=goods&id=$ngoods.goods_id}" target="_blank"><p>{$ngoods.goods_name|escape|truncate:50}</p><em>{$ngoods.price|price}</em></a></li>
+									<!--{/foreach}-->
+                        </div>
+                        <div class="hide tab_box_n">
+						           <!--{foreach from=$store.hot_saleslist item=h_goods name=fe_saleslist}-->
+                                   <li><img src="{$h_goods.default_image}" width="80" height="80" /><a href="{url app=goods&id=$h_goods.goods_id}" target="_blank"><p>{$h_goods.goods_name|escape}</p><em>{$h_goods.price|price}</em></a></li>
+								   <!--{/foreach}-->
+                        </div>
+                    </div>
+                </div><!--tab END-->
+<script type="text/javascript">
+$(document).ready(function(){
+	var $tab_li = $('#tab ul li');
+	$tab_li.hover(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
+		var index = $tab_li.index(this);
+		$('div.tab_box > div').eq(index).show().siblings().hide();
+	});	
+});
+</script>
+            </div>
+            <script type="text/javascript" src="/themes/store/xiaomistore/styles/shensuo.js"></script>
+            <div class="right">
+              <div class="ad_slide_area">
+                  <div class="box">
+                    <div id="sliderf">
+					    <!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+		                <!--{if $slides.url && $smarty.foreach.fe_slides.index >=5 && $smarty.foreach.fe_slides.index <=8 }-->
+                        <div class="slidef" id="mainimg">
+                             <a href="{$slides.link}" target="_blank">
+                              <img width="475" height="477" class="diapo" src="{$slides.url}" style="opacity: 1; visibility: visible;">
+                             </a>
+							 <div class="text"></div>
+                        </div>  
+						<!--{/if}-->
+		                <!--{/foreach}-->
+
+						<!--{if !$store.pic_slides}-->
+						<div class="slidef" id="mainimg">
+                             <a href="#" target="_blank">
+                              <img width="475" height="477" class="diapo" src="/data/system/ss.jpg" style="opacity: 1; visibility: visible;">
+                             </a>
+							 <div class="text"></div>
+                        </div>
+						<div class="slidef" id="mainimg">
+                             <a href="#" target="_blank">
+                              <img width="475" height="477" class="diapo" src="/data/system/ss.jpg" style="opacity: 1; visibility: visible;">
+                             </a>
+							 <div class="text"></div>
+                        </div>
+						<div class="slidef" id="mainimg">
+                             <a href="#" target="_blank">
+                              <img width="475" height="477" class="diapo" src="/data/system/ss.jpg" style="opacity: 1; visibility: visible;">
+                             </a>
+							 <div class="text"></div>
+                        </div>
+						<div class="slidef" id="mainimg">
+                             <a href="#" target="_blank">
+                              <img width="475" height="477" class="diapo" src="/data/system/ss.jpg" style="opacity: 1; visibility: visible;">
+                             </a>
+							 <div class="text"></div>
+                        </div>
+						<!--{/if}-->
+
+
+                    </div>
+                  </div>
+              </div>
+			</div>
+			<script type="text/javascript">
+              sliderf.init();
+              document.getelementbyid("mainimg").onmouseover();
+            </script><!--right end-->
+
+            </div><!--mode end-->
+            <div class="clearfix h0"></div>
+        </div>
+    
+    <div class="kucont">
+        <div class="f1">
+            <div class="title">
+                <h3>1F 手机</h3>
+                <div class="hot"><a>热销手机</a></div>
+            </div>
+            <div class="clearfix h0"></div>
+            <div class="list">
+                <div class="pro">
+                    <div class="banner1">
+					    <!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+		                <!--{if $slides.url && $smarty.foreach.fe_slides.index ==9 }-->
+                        <a href="{$slides.link}" target="_blank"><img src="{$slides.url}" width="476" height="323"/></a> 
+						<!--{/if}-->
+		                <!--{/foreach}-->
+						<!--{if !$store.pic_slides}-->
+						<a href="#" target="_blank"><img src="/data/system/floor.jpg" width="476" height="323"/></a>
+						<!--{/if}-->
+						</div>
+					<!--{foreach from=$recommended_goods item=rgoods name="rgoods"}-->
+                    <div class="product">
+                        <div class="product-img"><a href="{url app=goods&id=$rgoods.goods_id}" target="_blank"><img src="{$rgoods.default_image}" width="235" height="235" /></a></div>
+                        <p class="product-price"><em title="{$rgoods.price}">{$rgoods.price|price}</em><span class="tm-price"><!--{if $rgoods.market_price gt $rgoods.price}-->{$rgoods.market_price|price}<!--{/if}--></span></p>
+                        <div class="product-title"><a href="{url app=goods&id=$rgoods.goods_id}" target="_blank">{$rgoods.goods_name|escape|truncate:50}</a></div>
+                    </div>
+		            <!--{/foreach}-->
+
+
+                </div>
+
+                <div class="hot-pro">
+                    <!--{foreach from=$hot_sale_goods item=hsgoods}-->
+                    <li><img src="{$hsgoods.default_image}" width="80" height="80" /><a href="{url app=goods&id=$hsgoods.goods_id}" target="_blank"><p>{$hsgoods.goods_name|escape|truncate:50}</p><em>{$hsgoods.price|price}</em></a></li>
+					<!--{/foreach}-->
+                </div>
+                <div class="clearfix h0"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="kucont">
+    <div class="banner2">
+	            <!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+		        <!--{if $slides.url && $smarty.foreach.fe_slides.index ==11 }-->
+                <a href="{$slides.link}" target="_blank"><img src="{$slides.url}" /></a> 
+				<!--{/if}-->
+		        <!--{/foreach}-->
+				</div>
+    </div>
+    
+    <div class="kucont">
+        <div class="f2">
+            <div class="title">
+                <h3>2F 配件/存储</h3>
+                <div class="hot"><a>热销配件/存储</a></div>
+            </div>
+            <div class="clearfix h0"></div>
+            <div class="list">
+                <div class="pro">
+                    <div class="banner1">
+                        <!--{foreach from=$store.pic_slides item=slides name=fe_slides}-->
+		                <!--{if $slides.url && $smarty.foreach.fe_slides.index ==10 }-->
+                        <a href="{$slides.link}" target="_blank"><img src="{$slides.url}" width="476" height="323"/></a>
+						<!--{/if}-->
+		                <!--{/foreach}-->
+						<!--{if !$store.pic_slides}-->
+						<a href="#" target="_blank"><img src="/data/system/floor.jpg" width="476" height="323"/></a>
+						<!--{/if}-->
+					</div>
+                    <!--{foreach from=$recommended_goods2 item=rgoods name="rgoods2"}-->
+                    <div class="product">
+                        <div class="product-img"><a href="{url app=goods&id=$rgoods.goods_id}" target="_blank"><img src="{$rgoods.default_image}" width="235" height="235" /></a></div>
+                        <p class="product-price"><em title="{$rgoods.price}">{$rgoods.price|price}</em><span class="tm-price"><!--{if $rgoods.market_price gt $rgoods.price}-->{$rgoods.market_price|price}<!--{/if}--></span></p>
+                        <div class="product-title"><a href="{url app=goods&id=$rgoods.goods_id}" target="_blank">{$rgoods.goods_name|escape|truncate:50}</a></div>
+                    </div>
+		            <!--{/foreach}-->
+                </div>
+
+                <div class="hot-pro">
+				    <!--{foreach from=$hot_sale_goods2 item=hsgoods2}-->
+                    <li><img src="{$hsgoods2.default_image}" width="80" height="80" /><a href="{url app=goods&id=$hsgoods2.goods_id}" target="_blank"><p>{$hsgoods2.goods_name|escape|truncate:50}</p><em>{$hsgoods2.price|price}</em></a></li>
+					<!--{/foreach}-->
+
+                </div>
+                <div class="clearfix h0"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--main END-->
+
+<!----footer-->
+
+{include file=server.html}
+{include file=footer.html}

@@ -1,0 +1,71 @@
+{include file=member.header.html}
+<style>
+.information .info table{ width :auto;}
+</style>
+
+<div class="content">
+  <div class="totline"></div>
+  <div class="botline"></div>
+  {include file=member.menu.html}
+  <div id="right"> {include file=member.submenu.html}
+    
+    <div class="wrap">
+            <!--<div class="eject_btn_two eject_pos1" title="{$lang.bind}"><b class="ico3" ectype="dialog" dialog_title="{$lang.bind}" dialog_id="my_coupon_bind" dialog_width="480" uri="index.php?app=my_coupon&act=bind">{$lang.bind}</b>
+
+	</div>-->
+            
+            
+            
+            
+            <div class="tradelist">
+                    	<div class="title clearfix"><!--<h1>最近10条记录</h1>--></div>
+                    	<div class="subtit">
+                        	<ul class="clearfix">
+                            	<li class="time">日期</li>
+                                <li class="party">订单号</li>
+                                  <li class="party">类型</li>
+                                  <li class="party">推荐者|微信号</li>
+                                <li class="party">购买者|微信号</li>
+                              <!--  <li class="party">店铺</li>-->
+                                <li class="price">金额</li>
+                              <!--  <li class="status">状态</li>
+                                <li class="detail">查看</li>-->
+                            </ul>
+                        </div>
+                        <div class="list clearfix">
+                        	    {foreach from=$affiliate_list item=list}                    	                        	
+                                <ul class="clearfix">
+                                
+                            	<li class="time">{$list.time|date:Y.m.d H:i:s}</li>
+                                <li class="party">{$list.order_id}</li>
+                                 <li class="party">{$list.leixing}</li>
+                                  <li class="party">  <img width="50" height="50" src="{$list.twx_portrait}"  /> {$list.tname} | {$list.twx_nickname} </li>
+                                <li class="party"><img width="50" height="50" src="{$list.bwx_portrait}"  /> {$list.user_name} | {$list.bwx_nickname}</li>
+                           <!--      <li class="party">{$list.store_name}</li>-->
+                              <li class="price">
+                                	 <strong class="f60">{$list.money}</strong>
+                                    </li>
+                      
+                            </ul>
+                             {/foreach}                                                       
+                                                    </div>
+                    </div>
+            
+            <div class="pull-right" style="margin-top:2px">
+					<div class="btn-group">					
+						{include file=member.page.bottom.html}
+					</div>
+				</div>
+            <div class="wrap_bottom"></div>
+        </div>
+            
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file=footer.html}

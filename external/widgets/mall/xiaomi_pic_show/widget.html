@@ -1,0 +1,11 @@
+<div class="pic_show mb10">
+	<div class="title">{$widget_data.model_name}</div>
+	<div class="content clearfix">
+    	 <!--{foreach from=$widget_data.ads item=ad name=fe_ad}-->
+         <!--{if $smarty.foreach.fe_ad.iteration le 4}-->
+		 <a style="{if $smarty.foreach.fe_ad.iteration % 2 eq 0}border-right:1px solid #fff;{/if} {if $smarty.foreach.fe_ad.iteration eq 4}_width:105px;{/if}" href="{$ad.ad_link_url}" target="_blank"><img width="108" height="31" src="{$ad.ad_image_url}" /></a>
+         <!--{/if}-->
+      	<!--{/foreach}-->
+    </div>
+    <p><a href="{$widget_data.ads.4.ad_link_url}" target="_blank"><img width="218"  src="{$widget_data.ads.4.ad_image_url}" /></a></p>
+</div>

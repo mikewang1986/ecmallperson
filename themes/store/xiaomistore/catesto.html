@@ -1,0 +1,24 @@
+            <div class="list-menu">
+			<!--{if $store.store_gcates}-->
+                <ul <!--{if $smarty.get.act neq 'index'}--> id="catdiv" style="display:none;padding-bottom:0px;"<!--{/if}--> >
+				<!--{foreach from=$store.store_gcates item=gcategory name=store_gcates}-->
+                    <li>
+                    <h3><i><img src="/themes/store/xiaomistore/images/m{$smarty.foreach.store_gcates.iteration}.png" width="20" height="20" /></i><a href="{url app=store&id=$store.store_id&act=search&cate_id=$gcategory.id}" target="_blank">{$gcategory.value|escape}</a></h3>
+					<!--{foreach from=$gcategory.children item=child_gcategory}--> 
+                    <a href="{url app=store&id=$store.store_id&act=search&cate_id=$child_gcategory.id}" target="_blank">{$child_gcategory.value|escape}</a>
+					<!--{/foreach}-->
+                    </li>
+                <!--{/foreach}-->
+                </ul>
+			<!--{/if}-->
+            </div>
+<!--{if $smarty.get.act neq 'index'}-->
+<script type="text/javascript">
+var onsh=document.getElementById('onshow');
+var showc=document.getElementById('catdiv');
+onsh.onmouseover=function(){showc.style.display = 'block';}
+onsh.onmouseout=function(){showc.style.display = 'none';}
+showc.onmouseover=function(){showc.style.display = 'block';}
+showc.onmouseout=function(){showc.style.display = 'none';}
+</script>
+<!--{/if}-->

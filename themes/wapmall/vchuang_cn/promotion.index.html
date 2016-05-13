@@ -1,0 +1,71 @@
+{include file=header.html}
+<style type="text/css">
+<!--
+.STYLE2 {color: #FFFFFF}
+.s-header {
+	position:relative;
+	z-index:999;
+}
+.s-header nav {
+	background-color:#ee2222; 
+	position:relative;
+	
+	 height:45px;
+}
+.s-header nav h1 {
+	text-align:center;
+font-size:18px;
+line-height:46px; 
+font-family:'微软雅黑'; color:#FFF;
+	
+}
+.s-header nav .back {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+width:48px;
+	overflow:hidden;
+	color:transparent;
+	background-repeat:no-repeat;
+	background-position:50% 50%
+}
+.s-header nav .back {
+	background-image:url(/themes/wapmall/vchuang_cn/styles/default/images/index.png); background-size:25px 20px;
+}
+
+-->
+</style>
+<header class="s-header">
+<nav>
+<h1>打折促销</h1>
+<a href="javascript:history.back(-1)" class="back">返回</a>
+</nav>
+</header>
+<div id="main" class="w-full">
+	<div id="page-search-promotion" class="w mt10 mb20">
+		<div class="w mt10">
+		  <div class="lists lists1">
+          		<ul class="clearfix">
+                 	<!-- {foreach from=$goods_list item=goods name=fe_goods} -->
+                 	<li class="item mb20" {if $smarty.foreach.fe_goods.iteration % 4 eq 0} style="margin-right:0"{/if}>
+                 		<div class="desc"><a target="_blank" href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name|escape|truncate:60}</a></div>
+                 		<div class="pic"><a target="_blank" href="{url app=goods&id=$goods.goods_id}"><img src="{$goods.default_image}" alt="{$goods.goods_name|escape}" /></a></div>
+                    	<table width="100%" border="0" align="center" bgcolor="#FFCC33">
+  <tr>
+    <td><span class="price">{$goods.pro_price|price}</span></td>
+    <td align="right">原价<del>{$goods.price}</del></td>
+  </tr>
+</table>
+
+                 	</li>
+                 	<!--{foreachelse}-->
+                 	<div>{$lang.no_promotion_goods}</div>
+                 	<!-- {/foreach} -->
+              	</ul>
+				{include file=page.bottom.html}
+       		</div>    
+  		</div>
+	</div>
+</div>
+{include file="footer.html"}

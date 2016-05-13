@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{$site_url}/" />
+<!-- Use IE7 mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+{$page_seo}
+<meta name="copyright" content="vchuang_Vmall3.0(xiaomi). All Rights Reserved" />
+<link href="/themes/mall/xiaomi/css/kucss.css" rel="stylesheet" type="text/css">
+<script src="/includes/libraries/javascript/jquery.js" type="text/javascript" /></script>
+<script type="text/javascript">
+//<!CDATA[
+var SITE_URL = "{$site_url}";
+var REAL_SITE_URL = "{$real_site_url}";
+var PRICE_FORMAT = '{$price_format}';
+//]]>
+</script>
+
+{$_head_tags}
+<!--<editmode></editmode>-->
+</head>
+
+<body>
+<!----header-->
+<div class="header">
+    <div class="topad"><a href="#"><img src="/themes/mall/xiaomi/images/topad.jpg"></a></div>
+
+    <div class="topnav">
+        <div class="kucont">
+            <div class="top-left">
+                <span>{$lang.hello}</span>
+				<!--{if !$visitor.user_id}-->
+				<a href="{url app=member&act=login&ret_url=$ret_url}">[ {$lang.login} ]</a>
+				<a href="{url app=member&act=register&ret_url=$ret_url}">[ {$lang.register} ]</a>
+                <a href="{url app=qqconnect&act=login}"><img style="vertical-align:middle" src="{res file=images/login_qq_top.png}" /></a>
+				<!--{else}-->
+				<a href="{url app=member}">{$visitor.user_name|escape}</a>
+				<a href="{url app=member&act=logout}">{$lang.logout}</a>
+				<a href="{url app=message&act=newpm}">{$lang.pm}<!--{if $new_message}-->(<span>{$new_message}</span>)<!--{/if}--></a>
+				<!--{/if}-->
+
+				<!--{if $ustore}-->
+				<a href="{url app=search&cate_id=6}">采购中心</a>
+				<!--{/if}-->
+            </div>
+            <div class="top-right">
+                <a href="{url app=buyer_admin}">{$lang.user_center}</a><a href="{url app=buyer_order}">{$lang.my_order}</a><a href="{url app=article&code=help}">{$lang.help_center}</a><a  onclick="javascript:addFavorite2()" style="cursor:pointer;">加入收藏</a>
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+    <div class="head">
+        <div class="kucont">
+            <h1 class="logo">
+			    <a href="/"><img alt="{$site_title}" src="{$site_logo}" /></a>
+		    </h1>
+            <div class="search">
+                <form action="{url app=search}" method="get">  
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="{if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}" />
+				<input type="text"   name="keyword"  placeholder="<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->" class="sinput {if !$smarty.get.keyword}kw_bj {if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}_bj {/if}" onfocus="if(placeholder=='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->') {placeholder=''}" onblur="if (placeholder=='') {placeholder='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->'}" x-webkit-speech/>
+				<input type="submit" value="" class="sbtn" hidefocus="true" />
+
+                </form> 
+
+
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="kucont"><h1><a href="/"><img src="/themes/mall/xiaomi/images/menu.jpg" /></a></h1>
+            <div class="nav-menu">
+                <ul>
+                   <!--{foreach from=$navs.middle item=nav}-->
+                    <li {if !$index and $nav.link eq $current_url}class="current"{/if}><a href="{$nav.link}" {if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}{if $nav.hot==1}<span class="absolute block"></span>{/if}</a></li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <div class="cart">
+                <a href="{url app=cart}"><span>购物车有{$cart_goods_kinds}件</span></a>
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+</div>
+
+            <div class="list-menu"> 
+                <ul id="cardlist">
+				<!--{foreach from=$header_gcategories.gcategories item=category name=fe_category}-->
+                    <li>
+                    <h3><i><img src="/themes/mall/xiaomi/images/m{$smarty.foreach.fe_category.iteration}.png" width="20" height="20" /></i><a href="{url app=search&cate_id=$category.id}" target="_blank">{$category.value|escape}</a></h3>
+					<!--{foreach from=$category.children item=child name=fe_child}-->
+						<a href="{url app=search&cate_id=$child.id}" target="_blank">{$child.value|escape}</a>
+					<!--{/foreach}-->
+                    </li>
+                <!--{/foreach}-->
+                </ul>
+            </div>
+
+			<div class="list-menu-child">  
+				<!--{foreach from=$header_gcategories.gcategories item=category name=fe_category}-->
+                    <ul class="box" >
+					    <h3><a href="{url app=search&cate_id=$category.id}" target="_blank">{$category.value|escape}</a></h3>
+					    <!--{foreach from=$category.children item=child name=fe_child}-->
+						<li><a href="{url app=search&cate_id=$child.id}" target="_blank">{$child.value|escape}</a></li>
+					    <!--{/foreach}-->
+                    </ul>
+                <!--{/foreach}-->
+            </div>
+
+<style>
+.list-menu-child {display: block;position: absolute;z-index: 999;width: 240px;left: 50%;margin-left: -356px;}
+.list-menu-child .box{display:none;background: #fff;border: 1px solid #dfdfdf;height:420px;}
+.list-menu-child .box li{float:left;margin:2px 4px;}
+.list-menu-child .box h3{border-bottom:2px solid #ddd;line-height:35px;}
+</style>
+
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+				   $("#cardlist li").each(function(index){
+		$(this).mouseover(function(){
+			//清除没有访问过的层，同时计算当前的相对位置，实现等位置平移效果
+			$("ul.box").css({display:"none"});
+			var height = index * 50+"px";
+		//显示具体内容效果
+		  $("ul.box").eq(index).addClass("show showcontent").css({display:"block",top:height});
+		$(this).addClass("hover");
+		}).mouseleave(function(){
+		   //关闭所有的层效果
+		   $("ul.box").eq(index).css({display:"none"});
+		   $(this).removeClass("hover"); 
+		}); 
+				 });
+		$(".box").hover(function(){
+			 //获取当前选中的状态的时候让其处于显示状态
+				 $('.box').eq($('.box').index($(this))).addClass("show showcontent").css({display:"block"});
+		 //同时添加背景效果
+				 $(".box li").eq($('.box').index($(this))).addClass("hover");},function(){
+		 //移除当前效果，同时隐藏内容层
+					 $(".box li").removeClass("hover");
+					 $('ul.box').css({display:"none"});
+		}); 
+		});
+</script>
+
+<!--header END-->

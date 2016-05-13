@@ -1,0 +1,22 @@
+<div class="re-brand mb10">
+	<div class="title clearfix">
+    	<h2>推荐品牌</h2>
+        <p>
+        	<!--{foreach from=$widget_data.txt_brand item=txt}-->	
+            <a href="{url app=search&brand=$txt|escape:url}">{$txt}</a> 
+            <!--{/foreach}-->
+        </p>
+    </div>
+    <ul class="brands_list">
+       <!--{foreach from=$widget_data.brands item=each}-->
+       <li class="clearfix">
+           <!--{foreach from=$each item=brand name=fe_brand}-->
+           <dl class="float-left {if $smarty.foreach.fe_brand.iteration % 11 == 0}width108{/if}">
+           		<a href="{url app=search&brand=$brand.brand_name|escape:url}"><img class="lazyload" initial-url="{$brand.brand_logo}" alt="{$brand.brand_name|escape}" width="80" height="36" title="{$brand.brand_name|escape}" /></a>
+                <span>{$brand.brand_name}</span>
+           </dl>
+           <!--{/foreach}-->
+       </li>
+       <!--{/foreach}-->
+    </ul>
+</div>

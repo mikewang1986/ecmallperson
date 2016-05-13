@@ -1,0 +1,11 @@
+<!--{if $page_info.page_count gt 1}-->
+<div class="pages">
+    <!--{if $page_info.prev_link}-->
+    <a href="{$page_info.prev_link}" class="next">上一页</a>
+    <!--{/if}-->
+    <!--{if $page_info.next_link}-->
+    <a href="{$page_info.next_link}" class="next">下一页</a>
+    <!--{/if}-->
+    {$page_info.curr_page} / {$page_info.page_count}
+</div>
+<!--{/if}-->

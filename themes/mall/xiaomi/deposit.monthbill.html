@@ -1,0 +1,67 @@
+{include file=member.header.html}
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+        {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table deposit">
+            	<div class="monthbill">
+                	<!--{if $monthbill}-->
+                	<div class="notice-word">保留最近两年的月账单下载</div>
+                    <!--{/if}-->
+                	<div class="title clearfix">
+                    </div>
+                    <ul class="subtit">
+                    	<li class="clearfix">
+                        	<div class="month">月份</div>
+                            <div class="income-count">收入笔数</div>
+                        	<div class="income-money">收入金额（元）</div>
+                            <div class="outlay-count">支出笔数</div>
+                            <div class="outlay-money">支出金额（元）</div>
+                            <div class="charge-count">服务费笔数</div>
+                            <div class="charge-money">服务费金额（元）</div>
+                            <div class="download">下载</div>
+                        </li>
+                    </ul>
+                    <div class="content">
+                    	<!--{foreach from=$monthbill item=bill key=key}-->
+                        <ul>
+                        	<li class="clearfix">
+                        		<div class="month">{$key}</div>
+                            	<div class="income-count">{$bill.income_count|default:0}</div>
+                        		<div class="income-money">{$bill.income_money|default:0}</div>
+                            	<div class="outlay-count">{$bill.outlay_count|default:0}</div>
+                            	<div class="outlay-money">{$bill.outlay_money|default:0}</div>
+                            	<div class="charge-count">{$bill.charge_count|default:0}</div>
+                            	<div class="charge-money">{$bill.charge_money|default:0}</div>
+                            	<div class="download">
+                                	<a target="_blank" href="{url app=deposit&act=downloadbill&month=$key}">下载</a>
+                                </div>
+                       		</li>
+                        </ul>
+                        <!--{foreachelse}-->
+                        <div class="notice-word mt10">没有任何月账单可共下载。</div>
+                        <!--{/foreach}-->
+                    </div>
+				</div>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<iframe id='iframe_post' name="iframe_post" src="about:blank" frameborder="0" width="0" height="0"></iframe>
+{include file=footer.html}

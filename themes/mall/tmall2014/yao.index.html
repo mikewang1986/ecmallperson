@@ -1,0 +1,47 @@
+{include file=header.html}
+<link type="text/css" href="{res file=css/yao.css}" rel="stylesheet" />
+<script>
+    $(function() {
+        //首页左侧分类菜单
+        $(".mui-menu-nav-container").find("li").each(
+                function() {
+
+                    $(this).hover(
+                            function() {
+                                $(this).addClass("mui-menu-nav-selected");
+                            },
+                            function() {
+                                $(this).removeClass("mui-menu-nav-selected");
+                            }
+                    );
+                }
+        );
+    });
+
+</script>
+<div class="yiyao-index-moudle">
+    <div class="yao-content clearfix">
+        <div class="yao-firstScreen clearfix">
+            <div class="leftCon" area="leftCon" widget_type="area">
+                <!--{widgets page=yao area=leftCon}-->
+            </div>
+            <!-- 焦点图每日特价 -->
+            <div class="module">
+                <div class="centerCon" area="centerCon" widget_type="area">
+                    <!--{widgets page=yao area=centerCon}-->
+                </div>
+                <!-- 预告精选 -->
+                <div class="rightCon" area="rightCon" widget_type="area">
+                    <!--{widgets page=yao area=rightCon}-->
+                </div>
+            </div>
+            <!-- 焦点图每日特价 END -->
+        </div>
+        <div class="clear"></div>
+        <div class="module" area="module" widget_type="area">
+            <!--{widgets page=yao area=module}-->
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{include file=footer.html}

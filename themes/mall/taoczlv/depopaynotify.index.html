@@ -1,0 +1,24 @@
+{include file="header.html"}
+<style type="text/css">
+.mall-nav{ display:none}
+</style>
+<div id="mycart" class="w auto">
+   <div class="step step3 mt10 clearfix">
+      <span class="fs14 strong f60">{$lang.ckgwc}</span>
+      <span class="fs14 strong f60">{$lang.qrddxx}</span>
+      <span class="fs14 strong fff">{$lang.fk}</span>
+      <span class="fs14 strong">{$lang.qrsh}</span>
+      <span class="fs14 strong">{$lang.pj}</span>
+   </div>
+   <div class="order-form cashier succeed clearfix mt20 mb20">
+		<div class="order_info">
+   			<div class="ico"></div>
+            <div class="text">
+				<h4>{$lang.pay_successed}</h4>
+				<p>{$lang.pay_successed_desc} <a href="{url app=member}">{$lang.member_center}</a>&nbsp;&nbsp;<a href="{url app=deposit&act=record&tradesn=$trade.tradesn}">{$lang.view_order}</a></p>
+				<div class="btn" title="{$lang.mall_index}"><a href="{$site_url}"></a></div>
+            </div>
+        </div>
+   </div>
+</div>
+{include file="footer.html"}

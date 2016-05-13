@@ -1,0 +1,20 @@
+{include file=header.html}
+<div class="w320">
+    <table style="width: 100%">
+        <!--{foreach from=$sgrades item=sgrade}-->
+        <tr>
+            <th>{$sgrade.grade_name}</th>
+            <td>
+                <p>{$lang.need_confirm}: <span class="fontColor1"><!--{if $sgrade.need_confirm}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></span></p>
+            </td>
+            <td><a href="{url app=apply&step=2&id=$sgrade.grade_id}" class="white_btn" style="padding: 5px 2%;
+                   margin: 0 2% 0 0;
+                   width: 96%;
+                   text-align: center;
+                   display: inline-block;
+                   cursor: pointer;">{$lang.soon_open}</a></td>
+        </tr>
+        <!--{/foreach}-->
+    </table>
+</div>
+{include file=footer.html}

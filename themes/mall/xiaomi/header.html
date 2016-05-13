@@ -1,0 +1,63 @@
+{include file=top.html}
+<div class="header">
+	<div class="head">
+        <div class="kucont">
+            <h1 class="logo">
+			    <a href="/"><img alt="{$site_title}" src="{$site_logo}" /></a>
+				{if $smarty.get.app eq 'search' && $smarty.get.cate_id eq '6'}<span>商家采购中心</span>{/if}
+		    </h1>
+            <div class="search">
+                <form action="{url app=search}" method="get">  
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="{if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}" />
+				<input type="text"   name="keyword"  placeholder="<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->" class="sinput {if !$smarty.get.keyword}kw_bj {if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}_bj {/if}" onfocus="if(placeholder=='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->') {placeholder=''}" onblur="if (placeholder=='') {placeholder='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->'}" x-webkit-speech/>
+				<input type="submit" value="" class="sbtn" hidefocus="true" />
+
+                </form> 
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="kucont"><h1 id="onshow"><a href="/"><img src="/themes/mall/xiaomi/images/menu.jpg" /></a></h1>
+            <div class="nav-menu">
+                <ul>
+                   <!--{foreach from=$navs.middle item=nav}-->
+                    <li {if !$index and $nav.link eq $current_url}class="current"{/if}><a href="{$nav.link}" {if $nav.open_new} target="_blank"{/if}>{$nav.title|escape}{if $nav.hot==1}<span class="absolute block"></span>{/if}</a></li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <div class="cart">
+                <a href="{url app=cart}"><span>购物车有{$cart_goods_kinds}件</span></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+            <div class="list-menu">
+                <ul id="catdiv" style="display:none;padding-bottom:0px;">
+				<!--{foreach from=$header_gcategories.gcategories item=category name=fe_category}-->
+                    <li>
+                    <h3><i><img src="/themes/mall/xiaomi/images/m{$smarty.foreach.fe_category.iteration}.png" width="20" height="20" /></i><a href="{url app=search&cate_id=$category.id}" target="_blank">{$category.value|escape}</a></h3>
+					<!--{foreach from=$category.children item=child name=fe_child}--> 
+                    <a href="{url app=search&cate_id=$child.id}" target="_blank">{$child.value|escape}</a>
+					<!--{/foreach}-->
+                    </li>
+                <!--{/foreach}-->
+                </ul>
+            </div>
+
+<script type="text/javascript">
+var onsh=document.getElementById('onshow');
+var showc=document.getElementById('catdiv');
+onsh.onmouseover=function(){showc.style.display = 'block';}
+onsh.onmouseout=function(){showc.style.display = 'none';}
+showc.onmouseover=function(){showc.style.display = 'block';}
+showc.onmouseout=function(){showc.style.display = 'none';}
+</script>
+
+
+<!--header END-->

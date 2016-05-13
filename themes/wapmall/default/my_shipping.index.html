@@ -1,0 +1,65 @@
+{include file=member.header.html}
+{$_head_tags}
+
+<style>
+    .my_shipping_index{border-radius: 5px;position: relative;border: #aaa solid 1px;background: #fff;overflow: hidden;color: #6b6b6b;margin: 0px 10px 0;font-size: 14px;margin-top:60px;}
+    .my_shipping_index td{text-align: center}
+    .my_shipping_index a{margin-right: 10px;}
+    .add_shipping{margin: 0 auto;width: 43%;}
+    .add_shipping a {padding: 5px 2%;margin: 10px 2% 0 0;width: 100%;text-align: center;display: inline-block;cursor: pointer;text-align: center;}
+</style>
+<body class="gray" style="overflow-x:hidden;min-height:300px">
+    <div class="w320">
+        <div class="fixed">
+            <!---头部------>
+            <div class="header header2">
+                <a href="{url app=default}"
+                   class="back2_index"></a>
+                配送方式管理
+                <a href="{url app=my_favorite}" class="bookmark"></a>
+            </div>    
+        </div>
+        <script type="text/javascript" src="{lib file=jquery.plugins/jquery.validate.js}" charset="{$charset}"></script>
+        <div class="my_shipping_index" >
+            <table style="width:100%;">
+                <!--{if $shippings}-->
+                <tr class="line_bold">
+                    <th class="" colspan="6">
+                    </th>
+                </tr>
+
+                <tr class="gray">
+                    <th style="width:20%;text-align: center">{$lang.shipping_name}</th>
+                    <th style="width:20%">{$lang.first_price}</th>
+                    <th style="width:20%">{$lang.step_price}</th>
+                    <th style="width:10%">{$lang.enabled}</th>
+                    <th style="width:30%">{$lang.handle}</th>
+                </tr>
+                <!--{/if}-->
+                <!-- {foreach from=$shippings item=shipping name=v} -->
+                <tr <!--{if $smarty.foreach.v.last}-->class="line_bold"<!--{else}-->class="line"<!--{/if}-->>
+                    <td><span>{$shipping.shipping_name|escape}</span></td>
+                    <td>{$shipping.first_price}</td>
+                    <td>{$shipping.step_price}</td>
+                    <td><!--{if $shipping.enabled}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></td>
+                    <td>
+                        <div>
+                            <a href="javascript:void(0);" uri="index.php?app=my_shipping&amp;act=edit&shipping_id={$shipping.shipping_id}" ectype="dialog" dialog_id="my_shipping_edit" dialog_width="100%" dialog_title="{$lang.edit}" class="edit1">{$lang.edit}</a><a href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=my_shipping&amp;act=drop&shipping_id={$shipping.shipping_id}');" class="delete">{$lang.drop}</a>
+                        </div>
+                    </td>
+                </tr>
+                <!-- {foreachelse} -->
+                <tr>
+                    <td colspan="6" class="member_no_records padding6">{$lang.no_records}</td>
+                </tr>
+                <!--{/foreach}-->
+                <iframe name="my_shipping" style="display:none" ></iframe>
+            </table>
+        </div>
+        <div class="add_shipping">
+            <a class="white_btn" ectype="dialog" uri="index.php?app=my_shipping&amp;act=add" ectype="dialog" dialog_id="my_shipping_add" dialog_width="100%" dialog_title="{$lang.add_shipping}">{$lang.add_shipping}</a>
+        </div>
+    </div>
+</body>
+
+{include file="member.footer.html"}

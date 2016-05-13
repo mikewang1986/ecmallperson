@@ -1,0 +1,41 @@
+{include file="header.html"}
+<script>
+$(function(){
+	$('#draw-refuse').submit(function(){
+		if($('textarea[name="remark"]').val()=='') {
+			alert('empty');
+			return false;
+		}
+	});
+});
+</script>
+<div id="rightTop">
+  <p>{$lang.deposit_manage}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=tradelist">{$lang.trade_manage}</a></li>
+    <li><span>{$lang.withdraw_manage}</span></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=rechargelist">{$lang.recharge_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=setting">{$lang.system_setting}</a></li>
+  </ul>
+</div>
+
+<div class="mrightTop">
+  
+  
+</div>
+<div class="tdare">
+	<form id="draw-refuse" method="post">
+		<table width="90%">
+    		<tr>
+        		<td width="60">拒绝理由</td>
+                <td><textarea name="remark"></textarea></td>
+  			</tr>
+            <tr>
+            	<td></td>
+                <td><input class="formbtn" type="submit" name="" value="{$lang.submit}" /></td>
+            </tr>
+  		</table>
+  </form>
+</div>
+{include file="footer.html"} 

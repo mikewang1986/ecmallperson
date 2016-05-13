@@ -1,0 +1,174 @@
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(400);
+_d.setPosition('center');
+
+$("select[name='img_recom_id_1']").change(function(){
+    switchRecommend(this.value, 'img_cate_id_1');
+});
+$("select[name='img_recom_id_2']").change(function(){
+    switchRecommend(this.value, 'img_cate_id_2');
+});
+$("select[name='img_recom_id_3']").change(function(){
+    switchRecommend(this.value, 'img_cate_id_3');
+});
+$("select[name='img_recom_id_4']").change(function(){
+    switchRecommend(this.value, 'img_cate_id_4');
+});
+$("select[name='img_recom_id_5']").change(function(){
+    switchRecommend(this.value, 'img_cate_id_5');
+});
+switchRecommend($("select[name='img_recom_id_1']").val(), 'img_cate_id_1');
+switchRecommend($("select[name='img_recom_id_2']").val(), 'img_cate_id_2');
+switchRecommend($("select[name='img_recom_id_3']").val(), 'img_cate_id_3');
+switchRecommend($("select[name='img_recom_id_4']").val(), 'img_cate_id_4');
+switchRecommend($("select[name='img_recom_id_5']").val(), 'img_cate_id_5');
+
+function switchRecommend(recomId, selectName)
+{
+    if (recomId >= 0)
+    {
+        $("select[name='" + selectName + "']").hide();
+    }
+    else
+    {
+        $("select[name='" + selectName + "']").show();
+    }
+}
+
+</script>
+<div class="field_item">
+    <label>模块名称</label>
+    <p><input type="text" name="model_name" value="{$options.model_name}" /></p>
+	<label>显示数量(必须是5的倍数)</label>
+	<p><input type="text" name="amount" value="{$options.amount}" /></p>
+    
+    <label>切换标题一</label>
+    <p><input type="text" name="tab_1" value="{$options.tab_1}" /></p>
+    <label>商品排序</label>
+    <p>
+    	<select name="sort_by_1">
+        	<option value="" {if $options.sort_by eq ''} selected="selected"{/if}>默认排序</option>
+            <option value="sales" {if $options.sort_by eq 'sales'} selected="selected"{/if}>销量从多到少</option>
+            <option value="views" {if $options.sort_by eq 'views'} selected="selected"{/if}>点击量从多到少</option>
+            <option value="add_time" {if $options.sort_by eq 'add_time'} selected="selected"{/if}>上架时间从新到旧</option>
+            <option value="comments" {if $options.sort_by eq 'comments'} selected="selected"{/if}>评论从多到少</option>
+            <option value="collects" {if $options.sort_by eq 'collects'} selected="selected"{/if}>收藏量从多到少</option>
+        </select>
+    </p>
+    <label>商品推荐类型</label>
+    <p><select name="img_recom_id_1">
+        <option value="0">请选择...</option>
+        <!-- {foreach from=$recommends key=recom_id item=recom_name} -->
+        <option value="{$recom_id}"{if $options.img_recom_id_1 eq $recom_id} selected="selected"{/if}>{$recom_name|escape}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select name="img_cate_id_1">
+        <option value="0">请选择分类...</option>
+        <!-- {html_options options=$gcategories selected=$options.img_cate_id_1} -->
+    </select>
+	</p>
+    
+    <label>切换标题二</label>
+    <p><input type="text" name="tab_2" value="{$options.tab_2}" /></p>
+    <label>商品排序</label>
+    <p>
+    	<select name="sort_by_2">
+        	<option value="" {if $options.sort_by eq ''} selected="selected"{/if}>默认排序</option>
+            <option value="sales" {if $options.sort_by eq 'sales'} selected="selected"{/if}>销量从多到少</option>
+            <option value="views" {if $options.sort_by eq 'views'} selected="selected"{/if}>点击量从多到少</option>
+            <option value="add_time" {if $options.sort_by eq 'add_time'} selected="selected"{/if}>上架时间从新到旧</option>
+            <option value="comments" {if $options.sort_by eq 'comments'} selected="selected"{/if}>评论从多到少</option>
+            <option value="collects" {if $options.sort_by eq 'collects'} selected="selected"{/if}>收藏量从多到少</option>
+        </select>
+    </p>
+    <label>商品推荐类型</label>
+    <p><select name="img_recom_id_2">
+        <option value="0">请选择...</option>
+        <!-- {foreach from=$recommends key=recom_id item=recom_name} -->
+        <option value="{$recom_id}"{if $options.img_recom_id_2 eq $recom_id} selected="selected"{/if}>{$recom_name|escape}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select name="img_cate_id_2">
+        <option value="0">请选择分类...</option>
+        <!-- {html_options options=$gcategories selected=$options.img_cate_id_2} -->
+    </select>
+	</p>
+    
+    <label>切换标题三</label>
+    <p><input type="text" name="tab_3" value="{$options.tab_3}" /></p>
+    <label>商品排序</label>
+    <p>
+    	<select name="sort_by_3">
+        	<option value="" {if $options.sort_by eq ''} selected="selected"{/if}>默认排序</option>
+            <option value="sales" {if $options.sort_by eq 'sales'} selected="selected"{/if}>销量从多到少</option>
+            <option value="views" {if $options.sort_by eq 'views'} selected="selected"{/if}>点击量从多到少</option>
+            <option value="add_time" {if $options.sort_by eq 'add_time'} selected="selected"{/if}>上架时间从新到旧</option>
+            <option value="comments" {if $options.sort_by eq 'comments'} selected="selected"{/if}>评论从多到少</option>
+            <option value="collects" {if $options.sort_by eq 'collects'} selected="selected"{/if}>收藏量从多到少</option>
+        </select>
+    </p>
+    <label>商品推荐类型</label>
+    <p><select name="img_recom_id_3">
+        <option value="0">请选择...</option>
+        <!-- {foreach from=$recommends key=recom_id item=recom_name} -->
+        <option value="{$recom_id}"{if $options.img_recom_id_3 eq $recom_id} selected="selected"{/if}>{$recom_name|escape}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select name="img_cate_id_3">
+        <option value="0">请选择分类...</option>
+        <!-- {html_options options=$gcategories selected=$options.img_cate_id_3} -->
+    </select>
+	</p>
+    
+    <label>切换标题四:</label>
+    <p><input type="text" name="tab_4" value="{$options.tab_4}" /></p>
+    <label>商品排序</label>
+    <p>
+    	<select name="sort_by_4">
+        	<option value="" {if $options.sort_by eq ''} selected="selected"{/if}>默认排序</option>
+            <option value="sales" {if $options.sort_by eq 'sales'} selected="selected"{/if}>销量从多到少</option>
+            <option value="views" {if $options.sort_by eq 'views'} selected="selected"{/if}>点击量从多到少</option>
+            <option value="add_time" {if $options.sort_by eq 'add_time'} selected="selected"{/if}>上架时间从新到旧</option>
+            <option value="comments" {if $options.sort_by eq 'comments'} selected="selected"{/if}>评论从多到少</option>
+            <option value="collects" {if $options.sort_by eq 'collects'} selected="selected"{/if}>收藏量从多到少</option>
+        </select>
+    </p>
+    <label>商品推荐类型</label>
+    <p><select name="img_recom_id_4">
+        <option value="0">请选择...</option>
+        <!-- {foreach from=$recommends key=recom_id item=recom_name} -->
+        <option value="{$recom_id}"{if $options.img_recom_id_4 eq $recom_id} selected="selected"{/if}>{$recom_name|escape}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select name="img_cate_id_4">
+        <option value="0">请选择分类...</option>
+        <!-- {html_options options=$gcategories selected=$options.img_cate_id_4} -->
+    </select>
+	</p>
+        <label>切换标题五:</label>
+    <p><input type="text" name="tab_5" value="{$options.tab_5}" /></p>
+    <label>商品排序</label>
+    <p>
+    	<select name="sort_by_5">
+        	<option value="" {if $options.sort_by eq ''} selected="selected"{/if}>默认排序</option>
+            <option value="sales" {if $options.sort_by eq 'sales'} selected="selected"{/if}>销量从多到少</option>
+            <option value="views" {if $options.sort_by eq 'views'} selected="selected"{/if}>点击量从多到少</option>
+            <option value="add_time" {if $options.sort_by eq 'add_time'} selected="selected"{/if}>上架时间从新到旧</option>
+            <option value="comments" {if $options.sort_by eq 'comments'} selected="selected"{/if}>评论从多到少</option>
+            <option value="collects" {if $options.sort_by eq 'collects'} selected="selected"{/if}>收藏量从多到少</option>
+        </select>
+    </p>
+    <label>商品推荐类型</label>
+    <p><select name="img_recom_id_5">
+        <option value="0">请选择...</option>
+        <!-- {foreach from=$recommends key=recom_id item=recom_name} -->
+        <option value="{$recom_id}"{if $options.img_recom_id_5 eq $recom_id} selected="selected"{/if}>{$recom_name|escape}</option>
+        <!-- {/foreach} -->
+    </select>
+    <select name="img_cate_id_5">
+        <option value="0">请选择分类...</option>
+        <!-- {html_options options=$gcategories selected=$options.img_cate_id_5} -->
+    </select>
+	</p>
+</div>

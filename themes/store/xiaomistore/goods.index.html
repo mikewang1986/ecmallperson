@@ -1,0 +1,81 @@
+{include file=header.html}
+
+<div id="path">
+        {$lang.curlocal}:
+        <!--{foreach from=$_curlocal item=lnk}-->
+        <!--{if $lnk.url}-->
+        <a href="{$lnk.url}">{$lnk.text|escape}</a> <span>&#8250;</span>
+        <!--{else}-->
+        {$lnk.text|escape}
+        <!--{/if}-->
+        <!--{/foreach}-->
+</div>
+
+<div id="mystore" class="w1190 auto">
+   {include file=goodsinfo.html}
+   <div class="col-sub w190">
+      {include file=left.html}
+   </div>
+   <div class="col-main w990"> 
+       
+
+        <a name="module"></a>
+
+		<div class="group_tab1">
+            <ul class="group_tab1_ul">
+			  <li class="hover"><a href="{url app=goods&id=$goods.goods_id}" target="_self">{$lang.goods_detail}</a></li>     
+			  <li><a href="{url app=goods&act=comments&id=$goods.goods_id}" target="_self">{$lang.goods_comment}</a></li>
+			  <li><a href="{url app=goods&act=saleslog&id=$goods.goods_id}" target="_self">{$lang.sales_log}</a></li>
+			  <li><a href="{url app=goods&act=qa&id=$goods.goods_id}" target="_self">{$lang.qa}</a></li>
+            </ul>
+			<div class="bdsharebuttonbox" style="margin-left:730px;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a></div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      </div>
+
+ 
+        <div class="clearfix"></div>
+
+        <div class="option_box">
+           
+            <!-- sku tyioocom  -->
+            {if $props}
+            <div class="prop">
+               {foreach from=$props item=prop}
+               <div class="prop1" style="background:{cycle values='#FFF7F7,#F5FCF6'};">
+                  {$prop.name}：{$prop.value}
+               </div>
+               {/foreach}
+               <div class="prop2"></div>
+            </div>
+            {/if}
+            <!-- sku tyioocom -->
+            
+            <div class="default">{$goods.description|escape:editor}</div>
+        </div>
+        <!--{if $goods.related_info.count gt 0}-->
+        <div class="module_currency">
+            <h2 class="common_title veins1">
+                <div class="ornament1"></div>
+                <div class="ornament2"></div>
+                <span class="ico1"><span class="ico2">{$lang.related_info}</span></span>
+            </h2>
+            <dl class="related_list">
+                <!--{foreach from=$goods.related_info.list item=app_data}-->
+                <!--{if $app_data.data and $app_data.app_type neq 'ECMALL'}-->
+                <dt><a href="{$app_data.app_url}">{$app_data.app_name}</a></dt>
+                <!--{foreach from=$app_data.data item=item}-->
+                <dd>{$item}</dd>
+                <!--{/foreach}-->
+                <!--{/if}-->
+                <!--{/foreach}-->
+            </dl>
+        </div>
+        <!--{/if}-->
+        <div class="clr"></div>
+    </div>
+
+    <div class="clr"></div>
+
+</div>
+{include file=server.html}
+{include file=footer.html}

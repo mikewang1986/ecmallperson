@@ -1,0 +1,37 @@
+<?php
+/**
+ *  @Created By ECMall PhpCacheServer
+ *  @Time:2016-05-11 14:35:50
+ */
+
+if(filemtime(__FILE__) + 1800 < time())return false;
+
+return array (
+  'goodslist' => 
+  array (
+  ),
+  'model_name' => 'ÓªÑø±£½¡',
+  'keyword_list' => 
+  array (
+    0 => 'ÂÌA',
+    1 => 'ÐÞÉíÌÃ',
+    2 => '°ºÁ¢',
+    3 => 'ºãÊÙÌÃ',
+    4 => '°×À¼ÊÏ',
+    5 => 'ÉÅÍ¨',
+    6 => 'ÉÆ´æ',
+    7 => '°ºÁ¢',
+    8 => '¸Æ¶ûÆæ',
+    9 => '±ÌÉúÔ´',
+  ),
+  'ad1_image_url' => 'data/files/mall/template/201107230155023243.jpg',
+  'ad1_link_url' => 'http://www.psmoban.com',
+  'ad2_image_url' => 'data/files/mall/template/201107230155022559.jpg',
+  'ad2_link_url' => 'http://www.psmoban.com',
+  'ad3_image_url' => 'data/files/mall/template/201107230155027704.jpg',
+  'ad3_link_url' => 'http://www.psmoban.com',
+  'ad4_image_url' => 'data/files/mall/template/201107230155023847.jpg',
+  'ad4_link_url' => 'http://www.psmoban.com',
+);
+
+?>

@@ -1,0 +1,8 @@
+               <div class="hot-pro">
+				<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+					<!--{if $smarty.foreach.fe_goods.iteration lt 7}-->
+
+                    <li><img src="{$goods.default_image}" width="80" height="80" /><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><p>{$goods.goods_name|escape|truncate:50}</p><em>{$goods.price|price}</em></a></li>
+                    <!--{/if}-->
+				<!--{/foreach}-->
+				</div>

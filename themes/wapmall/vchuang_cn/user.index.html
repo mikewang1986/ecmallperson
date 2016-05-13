@@ -1,0 +1,105 @@
+{include file="member.header.html"}
+{$_head_tags}
+<style>
+.borline td { padding:10px 0px; }
+.ware_list th { text-align:left; }
+</style>
+<script type="text/javascript">
+
+$(function(){
+    $('#profile_form').validate({
+        errorPlacement: function(error, element){
+            $(element).parent('span').parent('b').after(error);
+        },
+        rules : {
+            portrait : {
+                accept   : 'gif|jpe?g|png'
+            }
+        },
+        messages : {
+            portrait  : {
+                accept   : '{$lang.avatar}'
+            }
+        }
+    });
+    $('input[ectype="change_avatar"]').change(function(){
+
+        var src = getFullPath($(this)[0]);
+        $('img[ectype="avatar"]').attr('src', src);
+        $('input[ectype="change_avatar"]').removeAttr('name');
+        $(this).attr('name', 'portrait');
+    });
+});
+</script>
+<div class="content">
+    <div id="right">
+            {include file=member.submenu.html}
+            
+            
+            <div class="wrap">
+          <div class="public table">
+                		
+			<div class="user_search">
+      
+                <br />
+                        
+  
+
+ 
+                </div>
+                <table width="100%">
+                    <!--{if $users}-->
+
+                    <tr class="line tr_bgcolor">
+                        
+                        <th>会员名 | 微信号 </th>
+                        <th align="center">电子邮箱</th>
+                        <th>手机号码</th>
+                       <!-- <th>注册时间</th>-->
+					<!--	<th>最后登录</th>
+						<th>登录次数</th>-->
+						
+						<!--<th>操作</th>-->
+                        
+                    </tr>
+                    <!--{/if}-->
+                    <!--{foreach from=$users item=user name=v}-->
+                    	<!--{if $smarty.foreach.v.last}--><tr class="line_bold"><!--{else}--><tr class="line"><!--{/if}-->
+                        
+                        <td><img  width="60" height="60" src="{$user.portrait}"  /> {$user.user_name|escape} | {$user.nickname|escape} </td>
+                        <td align="center">{$user.email|escape}</td>
+                        <td align="center"> {$user.phone_mob}<br />
+       </td>
+						<!--<td align="center">{$user.reg_time|date}</td>-->
+				
+				<!--		<td align="center"><a href="{$site_url}/index.php?app=default&amp;act=back_login&amp;id={$user.user_id}&amp;key={$user.login_key}" >登陆</a> | <a target="_blank" href="{url app=buyer_order&id=$user.user_id}">查看订单</a></td>-->
+                    </tr>
+                    <!--{foreachelse}-->
+                    <tr>
+                        <td colspan="5" class="member_no_records padding6">{$lang.$smarty.get.act}{$lang.no_records}</td>
+                    </tr>
+                    <!--{/foreach}-->
+                </table>
+            </div>
+           
+			<div id="dataFuncs">
+        <div class="pageLinks">
+           <!-- {if $users}-->
+		   {include file=page.bottom.html}
+		   <!--{/if}-->
+        </div>
+    </div>
+	 <div class="wrap_bottom"></div>
+    <div class="clear"></div>
+        </div>
+
+            <div class="clear"></div>
+            <div class="adorn_right1"></div>
+            <div class="adorn_right2"></div>
+            <div class="adorn_right3"></div>
+            <div class="adorn_right4"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{include file="member.footer.html"}

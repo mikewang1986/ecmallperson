@@ -1,0 +1,64 @@
+{include file=header.html}
+<link href="{res file=css/zp_index.css}" rel="stylesheet" type="text/css" />
+<div class="yl_fgx_main">
+  <div class="marg clearfix">
+    <div class="yl_cj_left fl">
+      <div class="yl_cj_main">
+		 <!--[if !IE]><!-->
+		<object data="/Main.swf?aresConfig=app/ares.xml" type="application/x-shockwave-flash" id="roulette" width="350px" height="350px" >
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="407px" height="407px" id="roulette">
+		<param name="movie" value="/Main.swf?aresConfig=app/ares.xml" />
+		<![endif]-->
+			<param name="quality" value="high">
+			<param value="always" name="allowScriptAccess">
+			<param value="transparent" name="wmode">
+			<param value="count=8" name="flashVars">
+		</object>
+	  </div>
+    </div>
+    <div class="yl_cj_right fl">
+      <div class="yl_zjmd">
+        <div class="yl_zjmd_m"> <strong>最新中奖动态</strong> <span><em>奖品</em><i>中奖用户</i><b>中奖时间</b></span>
+          <div id="yl_demo" style="overflow:hidden;height:240px;width:286px;">
+			
+				<ul id="yl_demo1">
+                 <!--{foreach from=$zhongjiang_list item=val key=key}-->
+				 				  <li class="clearfix"><em>{$val.title|escape}</em><i>{$val.user_name|escape}</i><b>{$val.time|date}</b></li>
+                                   <!--{/foreach}-->
+				   
+				  				 
+				  				</ul>			
+				 <ul id="yl_demo2"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="yl_cj_hdgz"> <strong>活动规则说明</strong>
+        <p>1. 每次抽奖需要消耗<em>100</em>积分，每天不限抽奖次数。</p>
+        <p>2. 您可通过"抽奖记录"查询您的中奖信息。</p>
+        <p>3. 实物奖励<em>3-5</em>天发放,（注：如未填写收货地址，将不予发放实物奖励）</p>
+        <p>4. 以上抽奖规则最终解释权归有啦所有！</p>
+      </div>
+    </div>
+  </div>
+</div>
+	<script> 
+var speed=40 
+var demo=document.getElementById("yl_demo"); 
+var demo2=document.getElementById("yl_demo2"); 
+var demo1=document.getElementById("yl_demo1"); 
+demo2.innerHTML=demo1.innerHTML 
+function Marquee(){ 
+if(demo2.offsetHeight-demo.scrollTop<=0) 
+  demo.scrollTop-=demo1.offsetHeight 
+else{ 
+  demo.scrollTop++ 
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+demo.onmouseover=function() {clearInterval(MyMar)} 
+demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script>
+{include file=footer.html}
+ 

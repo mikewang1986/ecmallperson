@@ -1,0 +1,35 @@
+{include file='header.html'}
+
+<div class="tmall-h5-v2" style="margin-top:10px;">
+
+
+<script type="text/javascript" src="{lib file=search_goods.js}" charset="utf-8"></script>
+
+
+<div class="lists">
+            <ul>
+                <!--{foreach from=$goods_list item=goods name=fe_goods}-->
+                <a href="{url app=goods&id=$goods.goods_id}">
+                    <li>
+                        <img src="{$goods.default_image}" />
+                        <p>{$goods.goods_name|escape}</p>
+                        <span>{$goods.price|price}</span>
+                    </li>
+                </a>
+                <!-- {/foreach} -->
+
+            </ul>
+ </div>
+
+
+
+
+
+{include file='page.bottom.html'}
+
+
+{include file='footer.html'}
+
+</div>
+</body>
+</html>

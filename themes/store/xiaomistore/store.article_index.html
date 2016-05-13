@@ -1,0 +1,29 @@
+{include file=header.html}
+
+{include file=top.html}
+
+<div id="mystore" class="w1200 auto clearfix mt10">
+   <div class="col-sub w190">
+      {include file=left.html}
+   </div>
+   <div class="col-main w1000">
+        <div class="module_special">
+            <h2 class="common_title veins2">
+                <span class="ico1"><span class="ico2">新闻资讯</span></span>
+            </h2>
+			<div class="wrap arwrap">
+            <!--{if $store.store_news}-->
+			<ul>
+			<!--{foreach from=$store.store_news item=store_new}-->
+        	<li class="arli"><a href="{url app=store&act=article&id=$store_new.article_id}">{$store_new.title|escape}</a></li>
+        	<!--{/foreach}-->
+			<ul>
+            <!--{else}-->
+			<div class="nothing"><p>暂无内容</p></div>
+			<!--{/if}-->
+			<div style="clear:both"></div>
+			</div>
+        </div>
+   </div>
+</div>
+{include file=footer.html}

@@ -1,0 +1,87 @@
+<div class="floor-2 mb10 fl-{$widget_data.model_id}">
+	<div class="title clearfix">
+    	<h2>{$widget_data.model_name}</h2>
+        <p>
+       		<!--{foreach from=$widget_data.brands item=k}--> 
+            <a href="{url app=search&keyword=$k|escape:url}">{$k}</a>
+            <!--{/foreach}-->
+        </p>
+    </div>
+    <div class="content w-full clearfix">
+		<div class="pic-list">
+            <div class="slide_pics s1{$widget_data.model_id} mb10">
+            	<div class="ks-content ks-switchable-content">
+                	<!--{foreach from=$widget_data.ads_1 item=a1}--> 
+                    <a href="{$a1.ad_link_url}" target="_blank"><img width="195" height="265" class="lazyload" initial-url="{$a1.ad_image_url}" /></a>
+                    <!--{/foreach}-->
+
+                </div>
+                <div class="ks-switchable-nav clearfix">
+                	<!--{foreach from=$widget_data.ads_1 item=a1 name=fe_a1}--> 
+      				<span {if $smarty.foreach.fe_a1.first}class="ks-active"{/if}></span>
+                    <!--{/foreach}-->
+     			</div>
+            </div>
+            <div class="slide_pics s2{$widget_data.model_id}">
+            	<div class="ks-content ks-switchable-content">
+                    <!--{foreach from=$widget_data.ads_2 item=a2}--> 
+                    <a href="{$a2.ad_link_url}" target="_blank"><img width="195" height="265" class="lazyload" initial-url="{$a2.ad_image_url}" /></a>
+                    <!--{/foreach}-->
+                </div>
+                <div class="ks-switchable-nav clearfix">
+      				<!--{foreach from=$widget_data.ads_2 item=a1 name=fe_a2}--> 
+      				<span {if $smarty.foreach.fe_a2.first}class="ks-active"{/if}></span>
+                    <!--{/foreach}-->
+     			</div>
+            </div>
+        </div>
+        <ul class="goods-list clearfix">
+            <!--{foreach from=$widget_data.promotions item=goods name=fe_goods}-->
+            <li class="float-left {if $smarty.foreach.fe_goods.iteration le 5}mb10{/if}">
+            	<dl>
+                	<dt><a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img class="lazyload" width="160" height="160" class="lazyload" initial-url="{$goods.default_image}" /></a></dt>
+                	<dd class="name"><a href="{url app=goods&id=$goods.goods_id}" target="_blank"  title="{$goods.goods_name|escape}" >{$goods.goods_name|escape}<font color="#BB000D">{$goods.pro_desc|escape}</font></a></dd>
+                	<dd class="price clearfix"><del>{$goods.price|price}</del><strong>{$goods.pro_price|price}</strong></dd>
+                    <dd class="J_Countdown time">
+                        <span></span>
+                        <span class="flip-top J_NumDays" >{$goods.lefttime.d}</span><em>天</em>
+                        <span class="flip-top J_NumHours">{$goods.lefttime.h}</span><em>小时</em>
+                        <span class="flip-top J_NumMins" >{$goods.lefttime.m}</span><em>分</em>
+                        <span class="flip-top J_NumSeconds">{$goods.lefttime.s}</span><em>秒</em>
+                    </dd>
+                </dl>
+             </li>
+             <!--{/foreach}-->
+       </ul>
+	</div>
+</div>
+<script>
+ KISSY.use('switchable', function(S) {
+      S.Slide('.s1{$widget_data.model_id}', {
+      effect: 'scrollx',
+      easing: 'easeOutWeak',
+      autoplay:true
+    });
+});
+ KISSY.use('switchable', function(S) {
+      S.Slide('.s2{$widget_data.model_id}', {
+      effect: 'scrollx',
+      easing: 'easeOutWeak',
+      autoplay:true
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$.each($('.fl-{$widget_data.model_id} .J_Countdown'),function(){
+	
+		var theDaysBox  = $(this).find('.J_NumDays');
+		var theHoursBox = $(this).find('.J_NumHours');
+		var theMinsBox  = $(this).find('.J_NumMins');
+		var theSecsBox  = $(this).find('.J_NumSeconds');
+		
+		countdown(theDaysBox, theHoursBox, theMinsBox, theSecsBox)
+	});
+});
+</script>

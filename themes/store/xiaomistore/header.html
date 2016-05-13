@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{$site_url}/"/>
+<!-- Use IE7 mode -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+<meta http-equiv="Content-Type" content="text/html;charset={$charset}" />
+{$page_seo}
+<meta name="copyright" content="vchuang_Vmall3.0. All Rights Reserved" />
+<link href="{res file=shop.css}" rel="stylesheet" type="text/css" />
+<link href="{res file=kucss.css}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+<script type="text/javascript">
+//<!CDATA[
+var SITE_URL = "{$site_url}";
+var REAL_SITE_URL = "{$real_site_url}";
+var PRICE_FORMAT = '{$price_format}';
+//]]>
+</script>
+{$_head_tags}
+</head>
+
+<body>
+
+<!----header-->
+<div class="header">
+    <div class="topnav">
+        <div class="kucont">
+            <div class="top-left">
+                <span class="rbor">{$lang.hello}</span>
+				<!--{if !$visitor.user_id}-->
+				<a href="{url app=member&act=login&ret_url=$ret_url}">[ {$lang.login} ]</a>
+				<a href="{url app=member&act=register&ret_url=$ret_url}">[ {$lang.register} ]</a>
+				<!--{else}-->
+				<a href="{url app=member}">{$visitor.user_name|escape}</a>
+				<a href="{url app=member&act=logout}">{$lang.logout}</a>
+				<a href="{url app=message&act=newpm}">{$lang.pm}<!--{if $new_message}-->(<span>{$new_message}</span>)<!--{/if}--></a>
+				<!--{/if}-->
+
+            </div>
+            <div class="top-right">
+                <a href="/">商城首页</a><a href="{url app=buyer_admin}">{$lang.user_center}</a><a href="{url app=buyer_order}">{$lang.my_order}</a><a href="{url app=article&code=help}">{$lang.help_center}</a><a  onclick="javascript:addFavorite2()" style="cursor:pointer;">加入收藏</a>
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+    <div class="head">
+        <div class="kucont">
+            <h1 class="logo">
+			    <!--{if $store.store_logo}-->
+        		<a href="/"><img src="{$store.store_logo}" alt="{$store.store_name}" /></a>
+        		<!--{else}-->
+        		<img src="{res file=images/logo.gif}" alt="{$store.store_name}" /></a>
+        		<!--{/if}-->
+		    </h1>
+            <div class="search">
+                <form action="{url app=search}" method="get">  
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="act" value="{if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}" />
+				<input type="text"   name="keyword"  placeholder="<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->" class="sinput {if !$smarty.get.keyword}kw_bj {if $smarty.get.act eq 'store'}store{elseif $smarty.get.act eq 'groupbuy'}groupbuy{else}index{/if}_bj {/if}" onfocus="if(placeholder=='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->') {placeholder=''}" onblur="if (placeholder=='') {placeholder='<!--{foreach from=$hot_keywords item=keyword name=fe_keyword}-->{$keyword}<!--{/foreach}-->'}" x-webkit-speech/>
+				<input type="submit" value="" class="sbtn" hidefocus="true" />
+
+                </form> 
+
+
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="kucont">
+		<h1 <!--{if $smarty.get.act neq 'index'}-->id="onshow"<!--{/if}--> ><a href="/"><img src="/themes/store/xiaomistore/images/menu.jpg" /></a></h1>
+            <div class="nav-menu">
+                <ul>
+				    <li {if !$index and $nav.link eq $current_url}class="current"{/if}><a href="{url app=store&id=$store.store_id}" >店铺首页</a></li>
+				    <li {if $smarty.get.app eq 'store' and $smarty.get.act eq 'search'}class="current"{/if}><a href="{url app=store&act=search&id=$store.store_id}" >所有商品</a></li>
+                   <!--{foreach from=$store.store_navs item=store_nav}-->
+                    <li {if $smarty.get.app eq 'store' and $smarty.get.act eq 'article' and $smarty.get.id eq $store_nav.article_id}class="current"{/if}><a href="{url app=store&act=article&id=$store_nav.article_id}" {if $nav.open_new} target="_blank"{/if}>{$store_nav.title|escape}{if $nav.hot==1}<span class="absolute block"></span>{/if}</a></li>
+                   <!--{/foreach}-->
+                </ul>
+            </div>
+            <div class="cart">
+                <a href="{url app=cart}"><span>购物车有{$cart_goods_kinds}件</span></a>
+            </div>
+            <div class="clearfix h0"></div>
+        </div>
+    </div>
+</div>
+{include file=catesto.html}
+<!--header END-->

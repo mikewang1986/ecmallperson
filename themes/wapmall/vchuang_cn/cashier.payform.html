@@ -1,0 +1,63 @@
+<!--{if $payform.online}-->
+<h3>{$lang.connecting_pay_gateway}</h3>
+<form action="{$payform.gateway}" id="payform" method="{$payform.method}" style="display:none">
+    <!-- {foreach from=$payform.params item=value key=_k} -->
+    <input type="hidden" name="{$_k}" value="{$value}" />
+    <!-- {/foreach} -->
+</form>
+<script type="text/javascript">
+    document.getElementById('payform').submit();
+</script>
+{else}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {$page_seo}
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset={$charset}" />
+        <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+    </head>
+
+    <body>
+<style type="text/css">
+.mall-nav{ display:none}
+</style>
+<div id="main" class="w-full">
+<div id="page-cashier" class="w">
+   {include file="curlocal.html"}
+   <div class="order-form payform clearfix border mt10 mb20">
+      <div class="title padding5 strong">{$lang.payment_desc}</div>
+      <div class="detail padding10">
+            {$payform.desc}
+      </div>
+      <div class="form padding10">
+         <form id="pay_message_form" action="index.php?app=cashier&act=offline_pay&order_id={$order.order_id}" method="POST">
+            <table class="table_form" width="100%" border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td valign="top" width="90">
+                         {$lang.input_pay_message}
+                    <span class="desc">({$lang.input_pay_message_notice})</span></td>
+                    <td>
+                    <textarea name="pay_message" cols="60" rows="5" class="border">{$order.pay_message|escape}</textarea></td>
+                </tr>
+                <tr>
+                	<td></td>
+                    <td>
+                        <input type="submit" class="btn-step fff strong fs14" value="{$lang.submit}" />
+                    </td>
+                </tr>
+            </table>
+           </form>
+        </div>
+    </div>
+</div>
+</div>
+    </body>
+</html>
+
+<!--{/if}-->

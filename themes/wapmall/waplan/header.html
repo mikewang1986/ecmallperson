@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        {$page_seo}
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+        <link href="{res file=css/index.css}" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="index.php?act=jslang"></script>
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+        {$_head_tags}
+        <script type="text/javascript">
+            //<!CDATA[
+            var SITE_URL = "{$site_url}";
+            var REAL_SITE_URL = "{$real_site_url}";
+            var PRICE_FORMAT = '{$price_format}';
+            //]]>
+        </script>
+    </head>
+    <body id="log-reg" class="gray">
+
+
+	<div class="topbar">
+      <span>微信商城</span>
+            <header style="float:right;width:150px;display:none;" id="searchdiv"> 
+                <div class="content"> 
+                    <div id="fake-search"> 
+                        <form method="GET" action="{url app=search}">
+                            <div class="fakeInput">
+                                <input class="text" name="keyword" style="color:silver"/>
+                                <input type="submit" value="" class="search-button" />
+                                <input type="hidden" name="app" value="search" />
+                                <input type="hidden" name="act" value="index" />
+                            </div> 
+                        </form>
+                    </div> 
+                </div> 
+            </header>
+
+			<header style="float:right;width:35px;display:block;" id="onshow"><img src="{res file=images/searchon.png}"/> </header>
+
+    </div>
+
+<style>
+/*topbar*/
+.topbar{background:#eb5628;height:35px;width:100%;}
+.topbar img{float:left;}
+.topbar span{color:#fff;font-size:20px;font-family:microsoft yahei;font-weight:bold;margin:3px 0 0 5px;display:block;float:left;}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$("#onshow").click(function(event){
+		var e=window.event || event;
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}   
+		$("#searchdiv").show();
+		$("#onshow").hide();
+	});
+	$("#searchdiv").click(function(event){
+		var e=window.event || event;
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}
+	});
+	document.onclick = function(){
+		$("#searchdiv").hide();
+		$("#onshow").show();
+	};
+})
+</script>
+
+
+        <div class="tmall-h5-v2">
+
+    <!-- <div class="region entry-list"> 
+              <a href="{url app=category}"><img alt="商品类目" height="30" src="{res file=images/catimg/band.png}" width="30"/><br/>
+              <span>商品类目</span></a><span class="entry-decollator"></span>
+              <a href="{url app=category&act=store}"><img alt="店铺类目" height="30px" src="{res file=images/catimg/categorys.png}" width="30px"/><br/> 
+              <span>店铺类目</span> </a><span class="entry-decollator"></span>   
+                <a href="{url app=member}"><img alt="个人中心" height="30" src="{res file=images/catimg/myhome.png}" width="30"/><br/> 
+                <span>个人中心</span> </a><span class="entry-decollator"></span>
+                <a href="{url app=cart}"><img alt="购物车" height="30" src="{res file=images/catimg/movie2.png}" width="30"/><br/>
+                <span>购物车</span></a>
+-->
+                <!-- 为双11添加 -->     
+    <!--            <br/>
+                <a href="{url app=buyer_order}"><img alt="订单管理" height="30" src="{res file=images/catimg/recharge.png}" width="30"/><br/>
+              <span>订单管理</span></a><span class="entry-decollator"></span>
+                <a href="#"><img alt="活动促销" height="30" src="{res file=images/catimg/tuan.png}" width="30"/><br/>
+                <span>活动促销</span></a><span class="entry-decollator"></span>     
+                <a href="{url app=my_favorite}"><img alt="收藏夹" height="30" src="{res file=images/catimg/collect.png}" width="30"/><br/>
+                <span>收藏夹</span></a><span class="entry-decollator"></span>
+                <a href="http://m.kuaidi100.com/uc/index.html"><img alt="查物流" height="30" src="{res file=images/catimg/jipiao.png}"  width="30"/><br/>
+                <span>查物流</span></a><span class="entry-decollator"></span>
+    </div>
+
+	-->

@@ -1,0 +1,64 @@
+{include file=member.header.html}
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+          <ul class="tab">
+                <li class="active">{$lang.wodezhanghu}</li>
+				<li class="normal"><a href="index.php?app=my_money&act=buyer">{$lang.mairuchaxun}</a></li>
+				<li class="normal"><a href="index.php?app=my_money&act=seller">{$lang.maichuchaxun}</a></li>
+				<li class="normal"><a href="index.php?app=my_money&act=intolog">{$lang.zhuanruchaxun}</a></li>
+				<li class="normal"><a href="index.php?app=my_money&act=outlog">{$lang.zhuanchuchaxun}</a></li>
+          </ul>
+	  
+        <div class="wrap margin1">
+            <div class="public table">
+				<div class="information_index" style="overflow:hidden; margin: 0px 0 -15px;">
+                 <div class="info">
+                        <h3 class="margin2">
+                            <span>{$lang.hello}！{$visitor.user_name}，{$lang.huanyingdenglushangfutong}</span>
+                        </h3>
+                      <table class="width6">
+                      <tr>
+					  <td><span style="font-size:14px">
+					  <!--{foreach from=$my_money item=val key=key}-->
+{$lang.zhanghuzongjinere}<span style="font-size:16px;font-weight:bold; color:#FE5400;">{$val.money}</span>
+&nbsp;{$lang.yuan}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$lang.dongjiejine}<span style="color:blue;">{$val.money_dj}</span>&nbsp;{$lang.yuan}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$lang.jifen}<span style="color:blue;">{$val.jifen}</span></span>
+					  <!--{/foreach}-->
+					  </td>
+                      </tr>
+                      <tr>
+                      <td>{$lang.shangcidengluip}: {$visitor.last_ip}<br>
+                                    {$lang.shangcidenglushijian}:{$visitor.last_login|date:complete}<br> 
+                                    
+                                    <A 
+href="index.php?app=my_money&act=mibao"><span style="color:red;">{$lang.bangdingdongtaimima}</span></A>&nbsp;|&nbsp;<A 
+href="index.php?app=my_money&act=paylist">{$lang.lijichongzhi}</A>&nbsp;|&nbsp;<A 
+class=G href="index.php?app=my_money&act=txlist"><span style="color:green;">{$lang.tixian}</span></A>  
+					  </td> 
+
+                      </tr>
+                      </table>
+                  </div>
+                </div>			
+            </div>
+        </div>
+		
+        <div class="wrap">
+          <div class="public table">
+            <h3 class="title" style="margin: -10px 0 20px; color:#3E3E3E">《站内宝》简介</h3>
+              <div style="color:#646665;float:left;font-size:12px;font-weight:normal;line-height:30px;">
+			  <span>　　站内宝是琪琦网购微信商城集成的站内资金管理，余额充值及支付功能<BR><BR><BR>
+			  </span>		   </div>
+          </div>
+         </div>
+
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+
+<div class="clear"></div>
+{include file=footer.html}

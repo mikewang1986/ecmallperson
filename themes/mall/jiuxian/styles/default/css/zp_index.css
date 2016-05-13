@@ -1,0 +1,33 @@
+/*mall_dazhuanpan.html*/
+
+.yl_fgx_main{ width:1000px; background:#fafafa url(../zp_img/yl_fgf_bg.gif) repeat-x; padding-top:32px;margin:0 auto;margin-bottom:30px; }
+.yl_cj_left{ width:637px; height:649px; background:url(../zp_img/yl_cj_bg.jpg) no-repeat; position:relative; border:1px solid #e1e1e1; float:left;}
+.yl_cj_fx{ width:276px; height:60px; position:absolute; left:349px; top:60px}
+.yl_cj_fx p{ padding-top:6px}
+.yl_cj_cyrs{color:#626262; font-size:18px; width:162px; height:36px; line-height:36px; left:50px; top:130px; position:absolute}
+.yl_cj_cyrs em{color:#ff5d5c; font-size:20px;  font-weight:bold;}
+.yl_cj_main{ width:407px; height:407px; left:117px; top:211px; position:absolute}
+.yl_cj_right{ width:360px; background:#fff; border:1px solid #e1e1e1; border-left:none; height:649px; float:left;}
+.yl_zjmd{height:347px; width:360px; border-bottom:1px solid #e1e1e1;}
+.yl_zjmd_m{height:306px;width:286px; margin:16px auto }
+.yl_zjmd_m strong{ display:block; height:24px; line-height:24px; background:url(../images_sun_store/yl_hk.gif) no-repeat left center; padding-left:8px; font-size:16px; font-weight:normal; margin-bottom:20px}
+.yl_zjmd_m span{ display:block; height:28px; background:#f6f6f6; line-height:28px; margin-bottom:20px}
+.yl_zjmd_m span em{ display:block; float:left; width:104px; height:28px; overflow:hidden; padding-left:16px;}
+.yl_zjmd_m span i{ display:block; float:left; width:95px; height:28px; overflow:hidden;}
+.yl_zjmd_m span b{ display:block; float:left; width:70px; height:28px; font-weight:normal; overflow:hidden; }
+#yl_demo{height:240px;width:286px;overflow:hidden; }
+#yl_demo1{float:left;}
+#yl_demo1 li{ height:35px; line-height:35px; border-bottom:1px dotted #dadada; width:286px}
+#yl_demo1 li em{ display:block; float:left; width:120px; height:35px; overflow:hidden;}
+#yl_demo1 li i{ display:block; float:left; width:95px; height:35px; overflow:hidden;}
+#yl_demo1 li b{ display:block; float:left; width:70px; height:35px; font-weight:normal; overflow:hidden;}
+#yl_demo2{float:left;}
+#yl_demo2 li{ height:35px; line-height:35px; border-bottom:1px dotted #dadada; width:286px}
+#yl_demo2 li em{ display:block; float:left; width:120px; height:35px; overflow:hidden;}
+#yl_demo2 li i{ display:block; float:left; width:95px; height:35px; overflow:hidden;}
+#yl_demo2 li b{ display:block; float:left; width:70px; height:35px; font-weight:normal; overflow:hidden;}
+
+.yl_cj_hdgz{height:306px;width:286px; margin:16px auto 0px}
+.yl_cj_hdgz strong{ display:block; height:24px; line-height:24px; background:url(../images_sun_store/yl_hk.gif) no-repeat left center; padding-left:8px; font-size:16px; font-weight:normal; margin-bottom:20px}
+.yl_cj_hdgz p{ margin-top:18px; line-height:20px; font-size:14px}
+.yl_cj_hdgz p em{ color:#ff5d5c; font-size:16px; font-weight:bold;}

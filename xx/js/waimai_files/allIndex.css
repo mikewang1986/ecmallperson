@@ -1,0 +1,401 @@
+/**全局设置**/
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+display: block;
+}
+input[type=radio]{border:none !important;}
+html{color:#000;overflow-y:scroll;background:#fff;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,form,th{margin:0;padding:0;font-family:12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b\4f53;text-align: left;}
+body,button,input,select,textarea,a,span,div,p{font-family:12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b\4f53;text-align: left;}
+body, button, input, select, textarea,body,button,input,select,textarea,a,span,div,p,h1,h2,h3,h4,li{font: 12px/1.5 Microsoft Yahei,tahoma,arial,宋体b8b\4f53;text-align: left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;text-align: left;}
+.none{display: none;}
+a{text-decoration: none;color:#3E3E3E;cursor: pointer;}
+ul li{list-style: none;}
+img{border:none;}
+a:hover{}
+.adverA{margin-top:10px;dislay:block;float:left;width:100%;}
+.floatl{float:left !important;}
+.floatr{float:right !important;}
+.fl{float:left !important;}
+.fr{float:right !important;}
+
+.more{display:block;float:right;width:88px;height:21px;background:url(../images/peixun/more.jpg) no-repeat;font-size:12px;text-align: center;position: relative;top:10px;
+line-height: 180%
+}
+address, cite, dfn, em, var {
+font-style: normal;
+}
+.nowrap{white-space: nowrap;}
+.bl_fl{display:block;float:left;}
+
+/***大框架css设定**/
+body{width:100%;min-height:1000px;}
+#main{width:100%;background-color:#fff;position: relative;top:0px;z-index:10000;}
+#headerOUTER{width:100%;height:141px;position: relative;top:16px;z-index:10000;}
+
+#header{margin:0 auto;width:1000px;font-size:12px;width:1000px;}
+#containerOUTER{width:100%;overflow: hidden;position: relative;*top:12px;}
+#couter_lr_a_left,#couter_lr_a_right{position: absolute;height:auto;background-color:#fff;z-index: 11111111}
+#couter_lr_a_left{left:0px;}
+#couter_lr_a_right{right:0px;}
+
+#container{width:1000px;margin:0 auto;padding-top:0px;position: relative;overflow: hidden;}
+#footerOUTER{width:100%;overflow: hidden;clear:both;
+border-top: 1px solid #ccc;}
+#footer{clear:both;width:1000px;height:300px;;margin: 0 auto;font-size:12px;text-align:center;
+padding-top:16px;
+}
+
+.grayBorder{border:1px solid #d8d8d8}
+
+.container {
+margin-left: auto;
+margin-right: auto;
+}
+.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+width: 950px;
+}
+.hide{display:none}
+
+
+
+
+/******footer********/
+.site-footer {
+color: #777;
+width:980px;margin: 0 auto;
+overflow: hidden;
+clear:both;
+}
+.sfooter-link-list {
+display: block;
+margin: 0 0 10px;
+text-align: center;
+height:20px;
+padding-top:10px;
+padding-left:30%
+}
+p {
+margin: 0 0 9px;
+font-size: 13px;
+line-height: 18px;
+}
+.site-footer p {
+text-align: center;
+margin: 0 0 15px;
+color:#ccc;
+width:1040px;
+}
+.sfooter-link {
+display: block;
+padding: 0 10px;
+float:left;
+line-height: 1em;
+height:20px;
+}
+.sfooter-link a{font-size:14px;color:#999;padding-top:3px;line-height: 150%;}
+.sfooter-cert {
+display: inline-block;
+margin-left: -2px;
+padding: 0 20px;
+text-align: left;
+}
+.sfooter-cert+.sfooter-cert {
+border-left: 1px solid #bbb;
+}
+.icon-icp, .icon-aic {
+display: block;
+float: left;
+margin-right: 5px;
+width: 32px;
+height: 32px;
+}
+
+.icon-icp {
+background: url("../images/quantian/global-sprites.png") no-repeat 0 0;
+}
+.sfooter-crt-info {
+float: left;
+font-size: 12px;
+line-height: 14px;
+color: #ccc;
+}
+.icon-aic {
+background: url("../images/quantian/global-sprites.png") no-repeat -40px 0;
+}
+
+.box-shadow {
+position: absolute;
+top: -1px;
+left: 0;
+display: block;
+width: 100%;
+height: 5px;
+background: url("../images/quantian/sprites-shadows.png") repeat-x transparent 0 -1px;
+}
+
+/*********************************************以上是从main.css里拿到的全局css***************************************************/
+#main{background-color:#F1F1F1;}
+#ihi_right ul li a i{background:url(../images/quantian/allIndex.png) no-repeat;}
+#logoSeI_logo .logo{background:url(../images/quantian/logo.png) no-repeat;}
+/*******首页Header CSS开始****/
+#indexHeader{width:100%;height:25px;background:f1f1f1;}
+#ih_i{width:1000px;height:25px;margin:0 auto;}
+#ihi_left,#ihi_right{float:left;height:25px;}
+#ihi_right{float:right;width:auto;}
+#ihi_left{width:400px;}
+#ihi_right ul li{display:block;float:right;width:40px;height:25px;border-right:1px solid #D7D5D2;padding:0px 10px 0px 10px;}
+#ihi_right ul li a{color:black;line-height: 25px;text-align: center;display:block;float:left;width:100%;height:100%}
+#ihi_right ul li a:hover{color:#ccc;}
+#ihi_right ul li a i{display:block;float:left;width:13px;height:18px;margin-top:5px;}
+.headerTip{color:black;line-height: 25px;font-size:12px;}
+/*******首页Header CSS结束****/
+
+/*******首页logo 和search区域开始***/
+#logoSe{width:100%;height:100px;background:#fff;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
+#logoSe_i{width:1000px;margin:0 auto;height:90px;padding:10px 0px 0px 0px;}
+#logoSeI_logo{height:80px;float:left;width:230px;}
+#logoSeI_logo .logo{margin-left:0px;display:block;float:left;width:300px;height:200px;margin-top:15px;}
+#logoSeI_city{float:left;width:60px;height:20px;margin-top:55px;position: relative;top:0px;}
+#logoSeI_city.cur{border:1px solid #e64145;background:#fff;width:58px;border-radius:2px 2px 0px 0px;background:#e64145;}
+#logoSeI_se{height:40px;float:right;width:500px;margin-top:25px;}
+a.city{line-height: 22px;float:left;font-size:12px;padding-left:3px;}
+a.city:hover{color:#000;}
+#logoSeI_city.cur a.city{color:#fff;}
+#logoSeI_city b{
+position: absolute;
+right: 5px;
+top: 9px;
+width: 0;
+height: 0;
+border-width: 4px;
+border-style: solid;
+border-color: #666 #fff #fff;
+font-size: 0;
+line-height: 0;
+-moz-transition: -moz-transform .2s ease-in;
+-o-transition: -o-transform .2s ease-in;
+transition: transform .2s ease-in;
+}
+#logoSeI_city.cur b{
+border-color:#fff #e64145 #e64145;-moz-transform:rotate(180deg);-moz-transform-origin:50% 30%;-webkit-transform:rotate(180deg);-webkit-transform-origin:50% 30%;-o-transform:rotate(180deg);-o-transform-origin:50% 30%;transform:rotate(180deg);transform-origin:50% 30%;filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);top:3px\9;
+top: 5px;
+}
+
+#logoSeI_cityAlert{position: absolute;top:20px;left:0px;width:58px;height:22px;background:#fff;z-index:1000;border:1px solid #e64145;border-top:none;
+padding:0px;border-radius:0px 0px 2px 2px;display:none;
+}
+#logoSeI_cityAlert ul li,#logoSeI_cityAlert ul li a{display:block;float:left;width:58px;height:22px;}
+#logoSeI_cityAlert ul li a{line-height: 22px;padding-left:3px;width:55px;}
+#logoSeI_cityAlert ul li a:hover{background:#fd484d;color:#fff;}
+#logoSeI_city.cur #logoSeI_cityAlert{left:-1px;}
+
+
+
+
+
+#header_search{margin-top:0px;}
+
+
+
+
+
+.search-triggers,.search-triggers ul{width:500px;height:23px;}
+.search-triggers li {position: relative;zoom: 1;float: left;width:auto;height:23px;text-align: center;}
+.search-triggers li a{float: left;display:block;height: 23px;line-height: 23px;padding: 0 12px;}
+.search-triggers ul .selected{width:auto;height:23px;}
+.search-triggers li.selected a {background: #ff4b57;font-weight: 700;padding: 0 15px;color: #fff;border-radius: 3px 3px 0 0;}
+.search-triggers li.selected a:hover{color:#fff !important;text-decoration: none !important;}
+.search-panel {position: relative;zoom: 1;float: left;width: 500px;z-index:10000;
+background: url(../images/quantian/searchBg.png) no-repeat;height:35px;
+}
+.search-panel-fields {width: 420px;height: 34px;float: left;position: relative;zoom: 1;
+border-radius: 0 0 0 3px;}
+.search-panel-fields label {position: absolute;left: 32px;top: 8px;z-index: 1;color: #bbb;}
+.search-combobox {font-size: 12px;}
+.search-combobox-input-wrap {vertical-align: middle;position: relative;height: 30px;}
+.search-panel-fields input {font-size: 14px;position: absolute;
+left: 3px;top: 3px;width: 320px;height: 18px;line-height: 18px;
+padding: 5px;background: transparent;vertical-align: middle;border: 0;overflow-y: visible;
+
+}
+.search-panel-fields s {position: absolute;left: 14px;top: 12px;background-position: -134px -349px;width: 12px;height: 13px;}
+.search-panel button {float: left;width: 80px;height: 35px;cursor: pointer;border: 0;
+font-size: 18px;color: #fff;
+text-indent: -999em;
+/***background: #d9444d url(../images/quantian/allIndex.png) -420px 2px no-repeat;**/
+border-radius:0px 3px 3px 0px;
+background: transparent;
+}
+.search-panel button.cur{
+	background:  url(../images/quantian/searchBg.png)  no-repeat;
+background-position: -420px -52px;
+}
+.searchInnerSelectDiv{width:80px;margin-left:4px;padding-top:3px;float:left;position: absolute;right:0px;top:2px;
+margin-right:3px;
+}
+.search-hots {clear: both;font: 12px/1.5 arial;padding: 10px 5px 5px;color: #3f3f3f;overflow: hidden;}
+.search-hots a {color: #646464;margin-right: 6px;float:left;}
+.h, .h * {color: #f50!important;}
+
+#header_menu{width:1000px;height:26px;font-weight: 700;border-bottom: 2px solid #f27b03;position: relative;top:0px;}
+.menu-special{padding: 0 7px;}
+
+.menu-special li {position: relative;float: left;margin-right: 10px;font-size: 14px;margin-left:10px;}
+.menu-special a, .menu-special span {display: inline;float: left;height: 25px;line-height: 23px;color: #db4701;padding-left:5px;padding-right:5px;border-bottom:none;font-size:14px;}
+.menu-special .selected span {padding: 0 14px;color: #fff;border: 1px solid #d74700;border-bottom: 0;background: #f37c06;}
+.menu-special a{border:1px solid #fff;border-bottom:none;}
+.menu-special a:hover{text-decoration: none !important;color: #db4701!important;text-decoration: none;border: 1px solid #f90;border-bottom: 0;background: #fef6ed;}
+.menu_tip{float:right;width:130px;height:40px;position: relative;top:-20px;}
+
+.divselect{width:80px; position:relative; z-index:10000;
+float:left;
+border-radius:3px;}
+.divselect cite{width:auto; height:26px;line-height:23px; display:block; color:#333; cursor:pointer;font-style:normal;
+padding-left:10px; text-align: left;
+}
+.divselect cite span{line-height:25px; }
+.selectBody{width:77px;border:1px solid #808080; background-color:#ffffff; position:absolute; z-index:10000; margin-top:-1px; display:none;
+left:1px;border-top:none;
+}
+.divselect ul li{height:24px; line-height:23px;}
+.divselect ul li a{display:block; height:23px; color:#333; text-decoration:none; padding-left:10px; padding-right:10px;line-height: 23px;}
+.divselect ul li a:hover{background-color:#eee;color:#000 !important;}
+
+
+.selectedSelect cite b{
+position: absolute;
+right: 5px;
+top: 10px;
+width: 0;
+height: 0;
+border-width: 4px;
+border-style: solid;
+border-color: #fff #d9444d #d9444d;
+font-size: 0;
+line-height: 0;
+-moz-transition: -moz-transform .2s ease-in;
+-o-transition: -o-transform .2s ease-in;
+transition: transform .2s ease-in;
+}
+.selectedSelect.cur cite b{
+border-color:#fff #d9444d #d9444d;-moz-transform:rotate(180deg);-moz-transform-origin:50% 30%;-webkit-transform:rotate(180deg);-webkit-transform-origin:50% 30%;-o-transform:rotate(180deg);-o-transform-origin:50% 30%;transform:rotate(180deg);transform-origin:50% 30%;filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);top:3px\9
+}
+.logoSeShadow{top:125px;}
+
+#searchAlert{width:331px;height:auto;position: absolute;top:30px;
+background:#fff;border:1px solid #c1cad2;border-top:none;border-radius:0px 0px 5px 5px;
+display:none;padding-bottom:10px;
+}
+#searchAlert ul li{display:block;float:left;width:325px;padding:3px;height:20px;border-top:1px dotted #eee;}
+#searchAlert ul li a{display:block;float:left;width:325px;height:26px;}
+#searchAlert ul li a span{line-height: 26px;}
+#searchAlert ul li a span.se_a_l{float:left;margin-left:5px;}
+#searchAlert ul li a span.se_a_r{float:right;margin-right:15px;}
+#searchAlert ul li a:hover{background: #eee;}
+/*******首页logo 和search区域结束***/
+.promotion-banner {
+width: 100%;
+height: 260px;
+margin-bottom: 20px;
+position: relative;
+clear: both;
+}
+
+/*******首页大模块图标区域开始***/
+.fxplay{width:1000px !important;}
+
+#serverList{width:1000px;height:105px;margin:0px 0px 20px 0px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;
+background: #fff url(../images/quantian/restaurant_closed_bg.png);
+}
+#serverList ul li,#serverList ul li a{display:block;float:left;width:200px;height:99px;}
+#serverList ul li a{background:url(../images/quantian/allIndex.png) no-repeat;}
+#serverList ul li a.diancan{background-position: -0px -104px;}
+#serverList ul li a.diancan:hover{background-position: -0px -205px;}
+
+#serverList ul li a.chaoshi{background-position: -200px -104px;}
+#serverList ul li a.chaoshi:hover{background-position: -200px -205px;}
+
+#serverList ul li a.xianhua{background-position: -400px -104px;}
+#serverList ul li a.xianhua:hover{background-position: -400px -205px;}
+
+#serverList ul li a.dangao{background-position: -600px -104px;}
+#serverList ul li a.dangao:hover{background-position: -600px -205px;}
+
+#serverList ul li a.paotui{background-position: -800px -104px;}
+#serverList ul li a.paotui:hover{background-position: -800px -205px;}
+
+/*******首页大模块图标区域结束***/
+
+
+
+
+/*******首页每个行业区域开始***/
+.everyIndexDiv{width:998px;height:390px;margin-top:10px;margin-bottom:10px;}
+.eiD_title{width:1000px;border-left:5px solid #d9444d;height:35px;line-height: 35px;
+}
+.eiD_con{width:1000px;margin-top:0px;}
+.eiD_t_name1{text-indent: -999em;background:url(../images/quantian/1.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name2{text-indent: -999em;background:url(../images/quantian/2.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name3{text-indent: -999em;background:url(../images/quantian/3.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name4{text-indent: -999em;background:url(../images/quantian/4.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name5{text-indent: -999em;background:url(../images/quantian/5.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name6{text-indent: -999em;background:url(../images/quantian/6.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+.eiD_t_name7{text-indent: -999em;background:url(../images/quantian/7.png) no-repeat;
+display:block;float:left;width:142px;height:45px;}
+
+
+
+
+
+
+
+.eidt_canting{background-position: -355px -52px;}
+.eiD_con ul li{display:block;float:left;width:160px;margin-left:8px;height:160px;background:#fff;margin-top:8px;}
+.eiD_con ul li.first{margin-left:0px;}
+.eiD_con ul li a{margin-left:0px;display:block;float:left;width:154px;height:154px;border:1px solid #ddd;border-radius:3px;
+padding:2px;
+}
+.eiD_con ul li a img{width:154px;height:154px;border-radius:3px;}
+.eiD_con ul li a:hover{border:1px solid #ff4b57;}
+
+/*******首页每个行业区域结束***/
+
+
+
+
+
+
+/**********************************************/
+
+#myAlert{width:200px;height:150px;position: absolute;top:50%;left:50%;background-color:#eee;z-index:100000000;display:none;}
+.myAlertI{width:196px;height:146px;margin:2px;background-color:#fff;border:1px solid #ccc;}
+.myAlertI .title{width:196px;height:25px;border-bottom:1px solid #ccc;background:#eee;}
+.myAlertI .foot{width:196px;height:30px;border-top:1px solid #ccc;background:#eee;position: relative;top:3px;}
+.myAlertI .foot .footBut{display:block;float:left;position: absolute;right:0px;width:60px;height:22px;top:3px;right:10px;background:#fff;border:1px solid #ccc;
+line-height: 22px;color:#666;font-weight: 700;text-align: center;text-decoration: none;border-radius:3px;
+}
+.myAlertI .foot .footBut:hover{text-decoration: none;background:#e64145;color:#fff;}
+.myAlertI .foot .footBut.footButOk{right:80px;}
+
+.myAlertI .title span{line-height: 25px;padding-left:5px;color:#333;font-weight: 700;letter-spacing: 1px;}
+.myAlertI .content{width:196px;height:121px;padding:10px;position: relative;top:0px;}
+.myAlertI .macTipImg{background:url(../images/ico_warn.png) no-repeat;position: absolute;top:50px;left:10px;width:50px;height:50px;}
+.myAlertI .macTipImg.ok{background-position: -100px -0px;}
+.myAlertI .macTipImg.error{background-position: -100px -50px;}
+.myAlertI .macTipImg.jinggao{background-position: -100px -100px;}
+
+.myAlertI .content .contentData{position: absolute;right:10px;width:100px;height:auto;}
+
+
+
+
+
+
+

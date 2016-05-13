@@ -1,0 +1,59 @@
+{include file=member.header.html}
+<style>
+.information .info table{ width :auto;}
+</style>
+<div class="content">
+  <div class="totline"></div>
+  <div class="botline"></div>
+  <div id="right"> 
+    
+    <div class="wrap">
+      <div class="public">
+      
+     
+        <form method="post"  id="register_form">
+        
+        <div class="closec" style="margin-left:50px;">
+      
+       {html_radios name="is_affter" options=$is_fenxiao checked=$store_info.is_affter}
+      
+      
+      </div>
+      <br />
+      
+      
+      <table>
+          <tr class="line tr_bgcolor">
+            <th align="center">推荐人级别</th>
+            <th align="center">现金分成百分比</th>
+          </tr>
+          <tr class="line_bold">
+            <td align="center">1 </td>
+            <td align="center"><input type="text"  name="pasen_1" value="{$row.0}"  />% </td>
+          <tr>
+          <tr class="line_bold">
+            <td align="center">2</td>
+            <td align="center"><input type="text"  name="pasen_2" value="{$row.1}"  />% </td>
+          <tr>
+          <tr class="line_bold">
+            <td align="center">3</td>
+            <td align="center"><input type="text"  name="pasen_3" value="{$row.2}"  />% </td>
+          <tr>
+            <td colspan="5" class="member_no_records padding6"> <div class="issuance"><input type="submit" class="btn" value="{$lang.submit}" /></div></td>
+          </tr>
+        </table>
+        </form>
+        
+      
+      </div>
+      </div>
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file="member.footer.html"}

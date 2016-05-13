@@ -1,0 +1,67 @@
+{include file=header.html}
+
+<link type="text/css" href="{res file=ditu/ecmall.css}" rel="stylesheet"  />
+{include file=curlocal.html}
+
+<div class="content">
+    <div class="left">
+        <div class="module_sidebar">
+            <h2><b>{$lang.scategory}</b></h2>
+            <div class="wrap">
+                <div class="wrap_child">
+                    <!--{foreach from=$scategorys item=scategory}-->
+                    <dl class="sidebar_list">
+                        <dt class="bg_color1"><a href="{url app=nearstore&cate_id=$scategory.id}">{$scategory.value|escape}</a></dt>
+                        <!--{foreach from=$scategory.children item=child}-->
+                        <dd><a href="{url app=nearstore&cate_id=$child.id}">{$child.value|escape}</a></dd>
+                        <!--{/foreach}-->
+                    </dl>
+                    <!--{/foreach}-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="shop_list">
+            <div class="ornament1"></div>
+            <div class="ornament2"></div>
+            <div class="search_bar">
+                <div class="shop_page">
+                    {include file=page.top.html}
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th class="align1">{$lang.store}</th>
+                    <th>{$lang.goods_num}</th>
+                    <th class="width2">{$lang.seller}</th>
+                    <th>距离</th>
+                    <th>{$lang.region_name}</th>
+                </tr>
+                <!--{foreach from=$stores item=store}-->
+                <tr>
+                    <td class="width1">
+                        <p class="ware_pic"><a href="{url app=store&id=$store.store_id}"><img src="{$store.store_logo}" width="65" height="65" /></a></p>
+                        <h3>
+                            <a href="{url app=store&id=$store.store_id}">{$store.store_name|escape}</a>
+                        </h3>
+                    </td>
+                    <td class="align2">{$store.goods_count}</td>
+                    <td class="align2"><p class="name">{$store.user_name|escape}</p><a target="_blank" class="email" href="{$site_url}/index.php?app=message&amp;act=send&amp;to_id={$store.user_id}"><img src="{res file=images/web_mail.gif}" alt="{$lang.send_pm}" /></a></td>
+                    <td class="align2">
+                        {$store.juli}KM
+                    </td>
+                    <td class="align2">{$store.region_name|escape}{$store.address|escape}</td>
+                </tr>
+                <!--{/foreach}-->
+            </table>
+        </div>
+        
+        <div class="shop_list_page">
+            {include file=page.bottom.html}
+        </div>
+    </div>
+</div>
+
+{include file=footer.html}

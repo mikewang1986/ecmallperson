@@ -1,0 +1,41 @@
+<div class="allcategory mb10">
+	<div class="allcategory-list">
+		<div class="content clearfix">
+			<!--{foreach from=$widget_data item=category name=fe_category}-->
+			<div {if $smarty.foreach.fe_category.iteration % 2 eq 1}style="background: #f1f1f1;"{/if} class="item {if $smarty.foreach.fe_category.iteration gt 6}hover_show{/if}">
+				<div class="pborder">
+					<h3 clas="clearfix"><a href="{url app=search&cate_id=$category.id}" target="_blank">{$category.value|escape}</a><span>></span></h3>
+                    <p>
+                    	<!--{foreach from=$category.children item=child name=fe_child}--> 
+                        <a href="index.php?app=search&cate_id={$child.id}">{$child.value|escape}</a>
+                        <!--{/foreach}-->
+                    </p>
+				</div>
+				<div class="pop" {if $category.position} style="top:{$category.position}px"{/if}>
+					<div class="catlist">
+						<!--{foreach from=$category.children item=child name=fe_child}--> 
+						<dl>
+							<dt ><a href="index.php?app=search&cate_id={$child.id}"><strong>{$child.value|escape}</strong></a></dt>
+							<dd >
+								<!--{foreach from=$child.children item=child2 name=fe_child2}--> 
+                        		<a href="index.php?app=search&cate_id={$child2.id}">{$child2.value|escape}</a>
+                       		    <!--{/foreach}-->
+							</dd>
+						</dl> 
+						<!--{/foreach}-->
+					</div>          
+				</div>
+			</div>
+			<!--{/foreach}-->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.allcategory').hover(function(){
+			$('.allcategory .hover_show').slideDown();
+		},function(){
+			$('.allcategory .hover_show').slideUp();
+		})
+	})
+</script>

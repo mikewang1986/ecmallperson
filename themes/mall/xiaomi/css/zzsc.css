@@ -1,0 +1,9 @@
+/*==============焦点图================*/
+#main_promo{height:380px; width:1903px; margin-left:-951.5px; position:relative;  top:0;  left:50%; overflow:hidden; z-index:0; }
+.promoWD{width:1000px; margin:0 auto; position:relative; }
+.slide{display:block; float:left;  width:1903px;}
+#dots{height:13px; position:absolute; bottom:13px; left:429px; z-index:99;}
+#dots li{ width:23px; height:13px; float:left; }
+#dots li a{ width:10px; display:block; height:10px; background-color:#cecece; border:1px solid #cecece; filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8; }
+#dots li.act a{background-color:#fff;}
+/*==============焦点图 end================*/

@@ -1,0 +1,38 @@
+{include file="header.html"}
+<div id="rightTop">
+  <p>{$lang.account}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=tradelist">{$lang.trade_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=drawlist">{$lang.withdraw_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=rechargelist">{$lang.recharge_manage}</a></li>
+    <li><span>{$lang.system_setting}</span></li>
+  </ul>
+</div>
+<div class="info">
+  <form method="post" id="account_form">
+    <table class="infoTable">
+      <tr>
+        <th class="paddingT15"> {$lang.trade_rate}:</th>
+        <td class="paddingT15 wordSpacing5">
+        	<input class="infoTableInput2" name="trade_rate" type="text" id="trade_rate"  value="{$setting.trade_rate}"/>
+            <label class="field_notice">{$lang.note_trade_rate}</label>
+        </td>
+      </tr>
+      <tr>
+        <th class="paddingT15"> {$lang.transfer_rate}:</th>
+        <td class="paddingT15 wordSpacing5">
+        	<input class="infoTableInput2" name="transfer_rate" type="text" id="transfer_rate"  value="{$setting.transfer_rate}"/>
+            <label class="field_notice">{$lang.note_transfer_rate}</label>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td class="ptb20">
+        	<input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+{include file="footer.html"}

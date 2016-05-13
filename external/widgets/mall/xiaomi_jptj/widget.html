@@ -1,0 +1,12 @@
+        <div class="floor-title"><span>{$widget_data.model_name}</span><span>更多</span></div>
+		<div class="floor-item">
+		<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+
+		  <a href="{url app=goods&id=$goods.goods_id}" style="float:{cycle values='left,right'}" target="_blank"><img src="{$goods.default_image}" ><br />
+		   <p>{$goods.goods_name|escape}</p>
+		   <span>{$goods.price|price}</span>
+		  </a>
+	    <!--{/foreach}-->
+    	</div>
+
+		<div class="floorad"><a href="{$widget_data.ad1_link_url}" target="_blank"><img src="{$widget_data.ad1_image_url}" /></a></div>

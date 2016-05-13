@@ -1,0 +1,92 @@
+{include file="header.html"}
+<script>
+$(function(){
+	$('*[ectype=recharge_verify]').click(function(){
+		if(!window.confirm('{$lang.confirm_pay}')){
+        	return;
+    	}
+		tradesn = $(this).parent().parent().find('input').val();
+    	$.getJSON('index.php?app=deposit&act=recharge_verify&tradesn=' + tradesn, function(result){
+        	if(result.done){
+            	alert(result.msg);
+				window.location.reload();
+        	}else{
+            	alert(result.msg);
+        	}
+    	});
+	});
+});
+</script>
+
+<div id="rightTop">
+  <p>{$lang.deposit_manage}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=tradelist">{$lang.trade_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&act=drawlist">{$lang.withdraw_manage}</a></li>
+    <li><span>{$lang.recharge_manage}</span></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=setting">{$lang.system_setting}</a></li>
+  </ul>
+</div>
+
+<div class="mrightTop">
+  <div class="fontr">{include file=page.top.html}</div>
+</div>
+<div class="tdare">
+  <form method=get>
+  <table width="100%" cellspacing="0" class="dataTable">
+    <!--{if $rechargelist}-->
+    <tr class="tatr1">
+      <td width="20" class="firstCell"><input type="checkbox" class="checkall" /></td>
+      <td>流水号</td>
+      <td>用户</td>
+      <td>创建时间</td>
+      <td>名称</td>
+      <td>充值方式</td>
+      <td>金额(元)</td>
+      <td>充值信息</td>
+      <td>状态</td>
+      <td class="handler">审核</td>
+    </tr>
+    <!--{/if}-->
+    <!--{foreach from=$rechargelist item=recharge}-->
+    <tr class="tatr2">
+      <td class="firstCell"><input type="checkbox" class="checkitem" value="{$recharge.tradesn}" /></td>
+      <td>{$recharge.tradesn}</td>
+      <td>{$recharge.user_name}</td>
+      <td>{$recharge.add_time|date:Y.m.d H.i.s}</td>
+      <td>{$lang.recharge}</td>
+      <td>{if $recharge.is_online}{$lang.online}{else}{$lang.offline}{/if}</td>
+      <td>{$recharge.amount}</td>
+      <td>{$recharge.extra.payway}
+        {if !$recharge.is_online}
+        <span class="gray">( {$recharge.extra.account_name},{$recharge.extra.num} )</span>
+        {/if}
+      </td>
+      <td><span style="color:{if $recharge.status eq 'WAIT_ADMIN_VERIFY' || $recharge.status eq 'PENDING'}#f60{else}#2F792E{/if}">{$recharge.status_label}</span></td>
+      <td class="handler">
+      	<!-- {if $recharge.status eq 'SUCCESS'} -->
+        <img src="{res file=style/images/positive_enabled.gif}" />
+        <!--{else}-->
+        <a href="javascript:;" ectype="recharge_verify"><img src="{res file=style/images/positive_disabled.gif}" /></a>
+        <!-- {/if} -->
+      </td>
+    </tr>
+    <!--{foreachelse}-->
+    <tr class="no_data">
+      <td colspan="10">{$lang.no_data}</td>
+    </tr>
+    <!--{/foreach}-->
+  </table>
+  </form>
+  <!--{if $rechargelist}-->
+  <div id="dataFuncs">
+    <div id="batchAction" class="left paddingT15"> &nbsp;&nbsp;
+      <input class="formbtn batchButton" type="button" value="{$lang.drop}" name="id" uri="index.php?app=deposit&act=drop_recharge" presubmit="confirm('{$lang.drop_confirm}');" />
+    </div>
+    <div class="pageLinks">{include file=page.bottom.html}</div>
+    <div class="clear"></div>
+  </div>
+  <!--{/if}-->
+</div>
+{include file="footer.html"} 

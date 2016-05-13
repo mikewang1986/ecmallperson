@@ -1,0 +1,67 @@
+{include file=member.header.html}
+<style>
+.information .info table{ width :auto;}
+</style>
+
+<div class="content">
+  <div class="totline"></div>
+  <div class="botline"></div>
+  <div id="right"> 
+    
+    <div class="wrap">
+    
+            <div class="tradelist">
+                    	<div class="title clearfix"><!--<h1>最近10条记录</h1>--></div>
+                    	<div class="subtit">
+                        	<ul class="clearfix">
+                            	<li class="time">日期</li>
+                                <li class="party">订单号</li>
+                                  <li class="party">类型</li>
+                                <li class="party">购买者</li>
+                                <li class="party">店铺</li>
+                                <li class="price">金额</li>
+                              <!--  <li class="status">状态</li>
+                                <li class="detail">查看</li>-->
+                            </ul>
+                        </div>
+                        <div class="list clearfix">
+                        	    {foreach from=$affiliate_list item=list}                    	                        	
+                                <ul class="clearfix">
+                                
+                            	<li class="time">{$list.time|date:Y.m.d H:i:s}</li>
+                                <li class="party">{$list.order_id}</li>
+                                 <li class="party">{$list.leixing}</li>
+                                <li class="party">{$list.user_name}</li>
+                                 <li class="party">{$list.store_name}</li>
+                              <li class="price">
+                                	 <strong class="f60">{$list.money}</strong>
+                                    </li>
+                      
+                            </ul>
+                             {/foreach}                                                       
+                                                    </div>
+                    </div>
+					<p>
+	  
+        <iframe name="my_coupon" style="display:none"></iframe>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div
+
+
+>
+            <div class="wrap_bottom"></div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{include file="member.footer.html"}

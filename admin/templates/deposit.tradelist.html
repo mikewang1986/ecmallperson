@@ -1,0 +1,85 @@
+{include file="header.html"}
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+<div id="rightTop">
+  <p>{$lang.deposit_manage}</p>
+  <ul class="subnav">
+    <li><a class="btn1" href="index.php?app=deposit">{$lang.manage}</a></li>
+    <li><span>{$lang.trade_manage}</span></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=drawlist">{$lang.withdraw_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=rechargelist">{$lang.recharge_manage}</a></li>
+    <li><a class="btn1" href="index.php?app=deposit&amp;act=setting">{$lang.system_setting}</a></li>
+  </ul>
+</div>
+
+<div class="mrightTop">
+  <div class="fontl">
+        <form method="get">
+             <div class="left">
+                <input type="hidden" name="app" value="deposit" />
+                <input type="hidden" name="act" value="tradelist" />
+                <select class="querySelect" name="field">{html_options options=$search_options selected=$smarty.get.field}
+                </select>:<input class="queryInput" type="text" name="search_name" value="{$smarty.get.search_name}" />
+                <select class="querySelect" name="status">
+                    <option value="">{$lang.trade_status}</option>
+                    {html_options options=$status_list selected=$smarty.get.status}
+                </select>
+                {$lang.add_time_from}:<input class="queryInput2" type="text" value="{$query.add_time_from}" id="add_time_from" name="add_time_from" class="pick_date" />
+                {$lang.to}:<input class="queryInput2" type="text" value="{$query.add_time_to}" id="add_time_to" name="add_time_to" class="pick_date" />
+                {$lang.amount_from}:<input class="queryInput2" type="text" value="{$query.amount_from}" name="amount_from" />
+                {$lang.to}:<input class="queryInput2" type="text" style="width:60px;" value="{$query.amount_to}" name="amount_to" class="pick_date" />
+                <input type="submit" class="formbtn" value="{$lang.query}" />
+            </div>
+            <!--{if $filtered}-->
+            <a class="left formbtn1" href="index.php?app=deposit&act=tradelist">{$lang.cancel_query}</a>
+            <!--{/if}-->
+        </form>
+    </div>
+  <div class="fontr">{include file=page.top.html}</div>
+</div>
+<div class="tdare">
+  <form method=get>
+  <table width="100%" cellspacing="0" class="dataTable">
+    <!--{if $tradelist}-->
+    <tr class="tatr1">
+      <td width="20" class="firstCell"><input type="checkbox" class="checkall" /></td>
+      <td>流水号</td>
+      <td>用户</td>
+      <td>创建时间</td>
+      <td>名称 | 备注</td>
+      <td>金额(元)</td>
+      <td>状态</td>
+    </tr>
+    <!--{/if}-->
+    <!--{foreach from=$tradelist item=record}-->
+    <tr class="tatr2">
+      <td class="firstCell"><input type="checkbox" class="checkitem" value="{$record.tradesn}" /></td>
+      <td>{$record.tradesn}</td>
+      <td>{$record.user_name}</td>
+      <td>{$record.add_time|date:Y.m.d H.i.s}</td>
+      <td>{$record.name}{if $record.remark}<p style="color:gray">{$record.remark}</p>{/if}</td>
+      <td>{$record.amount}</td>
+      <td><span style="color:{if $record.status eq 'SUCCESS'}#2F792E{elseif $record.status eq 'CLOSED'}gray{else}#f60{/if}">{$record.status_label}</span></td>
+    </tr>
+    <!--{foreachelse}-->
+    <tr class="no_data">
+      <td colspan="10">{$lang.no_data}</td>
+    </tr>
+    <!--{/foreach}-->
+  </table>
+  </form>
+  <!--{if $tradelist}-->
+  <div id="dataFuncs">
+    <div id="batchAction" class="left paddingT15"> &nbsp;&nbsp;
+      <input class="formbtn batchButton" type="button" value="{$lang.drop}" name="id" uri="index.php?app=deposit&amp;act=drop_trade" presubmit="confirm('{$lang.drop_confirm}');" />
+    </div>
+    <div class="pageLinks">{include file=page.bottom.html}</div>
+    <div class="clear"></div>
+  </div>
+  <!--{/if}-->
+</div>
+{include file="footer.html"} 

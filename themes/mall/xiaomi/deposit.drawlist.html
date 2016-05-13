@@ -1,0 +1,86 @@
+{include file=member.header.html}
+<script type="text/javascript">
+$(function(){
+    $('#add_time_from').datepicker({dateFormat: 'yy-mm-dd'});
+    $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
+});
+</script>
+
+<div class="content">
+    {include file=member.menu.html}
+    <div id="right">
+        {include file=member.submenu.html}
+        <div class="wrap">
+            <div class="public table deposit">
+            	<div class="drawlist">
+                	<div class="tab-ttl">
+                		<ul class="withdraw-tab clearfix">
+                    		<li class="current"><a href="{url app=deposit&act=drawlist}"><span>{$lang.withdraw_record}</span></a></li>
+                        	<li><a href="{url app=deposit&act=rechargelist}"><span>{$lang.recharge_record}</span></a></li>
+                    	</ul>
+                    </div>
+                	<div class="title clearfix">
+                    	<form method="get" class="float-left">
+                        	<input type="hidden" name="app" value="deposit" />
+                            <input type="hidden" name="act" value="drawlist" />
+                			<input class="text" type="text" name="add_time_from" id="add_time_from" value="{$smarty.get.add_time_from}" /> <span>-</span>
+                            <input class="text" id="add_time_to" type="text" name="add_time_to" value="{$smarty.get.add_time_to}" />
+                            <select name="status">
+                            	<option value=""></option>
+                            	<option value="success" {if $smarty.get.status eq 'success'} selected="selected" {/if}>{$lang.success}</option>
+                                <option value="verifing" {if $smarty.get.status eq 'verifing'} selected="selected" {/if}>{$lang.verifing}</option>
+                            </select>
+                			<input type="submit" class="btn-withdraw" value="{$lang.search}" />
+        				</form>
+                        <div class="float-left">
+                    		已成功提现 <strong>{$withdraws.total_amount}</strong> 元
+                        </div>
+                        {include file=member.page.top.html}
+                    </div>
+                    <ul class="subtit">
+                    	<li class="clearfix">
+                        	<div class="tradesn">流水号</div>
+                            <div class="time">创建时间</div>
+                        	<div class="info">名称</div>
+                            <div class="method">收/支</div>
+                            <div class="money">金额(元)</div>
+                            <div class="payway">资金渠道</div>
+                            <div class="status">状态</div>
+                        </li>
+                    </ul>
+                    <div class="content">
+                    	<ul>
+                    		<!--{foreach from=$withdraws.list item=withdraw}-->
+                        	<li class="clearfix">
+                        		<div class="tradesn">{$withdraw.tradesn}</div>
+                            	<div class="time">{$withdraw.add_time|date:Y.m.d H.i.s}</div>
+                        		<div class="info">{$lang.withdraw}</div>
+                            	<div class="method"><span class="f60">{$lang.defray}</span></div>
+                            	<div class="money">
+                                	{$withdraw.amount}
+                                </div>
+                            	<div class="payway">{$withdraw.card_info.bank_name}<br /><span class="gray">{$withdraw.card_info.num}</span></div>
+                            	<div class="status">{if $withdraw.status eq 'SUCCESS'}{$lang.success}{else}<span class="f60">{$lang.verifing}</span>{/if}</div>
+                        	</li>
+                            <!--{/foreach}-->
+                    	</ul>
+                        <!--{if !$withdraws.list}-->
+                        <div class="notice-word mt10">没有任何符合条件的记录。 <a href="{url app=deposit&act=withdraw}">马上提现</a></div>
+                        <!--{/if}-->
+                    </div>
+                    {include file=member.page.bottom.html}
+				</div>
+            </div>
+            <div class="wrap_bottom"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="adorn_right1"></div>
+        <div class="adorn_right2"></div>
+        <div class="adorn_right3"></div>
+        <div class="adorn_right4"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<iframe id='iframe_post' name="iframe_post" src="about:blank" frameborder="0" width="0" height="0"></iframe>
+{include file=footer.html}

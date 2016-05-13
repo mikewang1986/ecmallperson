@@ -1,0 +1,125 @@
+{include file=header.html}
+<style type="text/css">
+<!--
+.STYLE2 {color: #FFFFFF}
+.s-header {
+	position:relative;
+	z-index:999;
+}
+.s-header nav {
+	background-color:#ee2222; 
+	position:relative;
+	
+	 height:45px;
+}
+.s-header nav h1 {
+font-size:18px;
+text-align:center;
+line-height:46px; 
+font-family:'微软雅黑'; color:#FFF;
+	
+}
+.s-header nav .back {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+width:48px;
+	overflow:hidden;
+	color:transparent;
+	background-repeat:no-repeat;
+	background-position:50% 50%
+}
+.s-header nav .back {
+	background-image:url(/themes/wapmall/vchuang_cn/styles/default/images/index.png); background-size:25px 20px;
+}
+
+-->
+</style>
+<header class="s-header">
+<nav>
+<h1>团购活动</h1>
+<a href="javascript:history.back(-1)" class="back">返回</a>
+</nav>
+</header>
+
+<script type="text/javascript" src="{lib file=search_groupbuy.js}" charset="utf-8"></script>
+<link type="text/css" rel="stylesheet" href="{res file=css/common.css}">
+<div id="main" class="w-full">
+	<div id="page-search-groupbuy" class="w mt10 mb20">
+		<div class="w ads mt10" area="ads_top" widget_type="area">
+			<!--{widgets page=groupbuy area=ads_top}-->
+		</div>
+		<div class="w mt10">
+			<div class="search-by mb10">
+				<ul>
+					<li class="state clearfix">
+                    
+                       <div style="width: 90%;margin: 5px 4px;padding: 10px;background: #fff;border: 1px solid #dedede;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;">&nbsp;&nbsp;{$lang.group_state}：<a href="javascript:;" ectype="state" {if $smarty.get.state eq ''}class="act"{/if} id="">{$lang.no_limit}</a>&nbsp;&nbsp;<a href="javascript:;" ectype="state" {if $smarty.get.state eq 'on'}class="act"{/if} id="on">{$state.on}</a>&nbsp;&nbsp;<a href="javascript:;" ectype="state" {if $smarty.get.state eq 'on'}class="act"{/if} id="on">{$state.on}</a>&nbsp;&nbsp;<a href="javascript:;" ectype="state" {if $smarty.get.state eq 'finished'}class="act"{/if} id="finished">{$state.finished}</a>&nbsp;&nbsp;<a href="javascript:;" ectype="state" {if $smarty.get.state eq 'canceled'}class="act"{/if} id="canceled">{$state.canceled}</a>
+</div>
+               	  </li>
+					
+				</ul>
+		  </div>
+			<br />
+			
+<div class="lists lists1">
+          		<ul class="clearfix">
+                 	<!-- {foreach from=$groupbuy_list item=group name=fe_group} -->
+                 	<li class="item mb20" {if $smarty.foreach.fe_group.iteration % 4 eq 0} style="margin-right:0"{/if}>
+                 		<!--{if $group.recommended==1}--><div class="rec_ico"></div><!--{/if}-->
+                 		<div >
+                 		  
+                 		    <table width="100%" border="0" cellpadding="4" cellspacing="4" bgcolor="#FFFFFF">
+                              <tr>
+                                <td><div align="center"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}">
+               		      {$group.group_name|escape|truncate:26}</a><br />
+               		     
+                 		  </div></td>
+                              </tr>
+                            </table>
+                 		    
+                 		</div>
+                 		<div class="pic">
+                 		  <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#999999" bgcolor="#FFFFFF">
+  <tr>
+    <td><div align="center"><a target="_blank" href="{url app=groupbuy&id=$group.group_id}"><img src="{if $group.group_image}{$group.group_image}{else}{$group.default_image}{/if}" alt="{$group.group_name|escape}" width="145" height="100" border="0" /></a><br />
+                 		  <div><span class="price">{$group.group_price|price}</span><del>{$group.price}</del>>>{$group.discount}{$lang.zhe}</div>
+    </div></td>
+  </tr>
+</table>
+                 		</div>
+                    	<div class="buy">
+                    	  <div align="left">
+                    	    <table width="100%" border="0" bordercolor="#999999" bgcolor="#FFCC00">
+                              <tr>
+                                <td >{$group.quantity}{$lang.man_join}</td>
+                                <td ><div align="right"><a href="{url app=groupbuy&amp;id=$group.group_id}" class="STYLE2">去聚惠</a></div></td>
+                              </tr>
+                            </table>
+                    	    
+                   	       
+                   	  </div>
+                      <!--
+                    	<div class="extra">
+                   			
+                   			<div class="gray-bg">
+                   			  <div align="right">剩余时间：{$group.lefttime}</div>
+                   			</div>
+                   	  </div>
+                      -->
+                 	</li>
+                 	<!--{foreachelse}-->
+                 	<div>{$lang.no_groupbuy}</div>
+                 	<!-- {/foreach} -->
+              	</ul>
+				
+   		  </div>    
+  		</div>
+   		<div class="ads mt10 clearboth" area="ads_bottom" widget_type="area">
+			<!--{widgets page=groupbuy area=ads_bottom}-->
+    	</div>
+	</div>
+</div>
+
+{include file=footer.html}

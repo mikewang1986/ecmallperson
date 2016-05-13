@@ -1,0 +1,20 @@
+<script type="text/javascript" src="/themes/wapmall/waplan/styles/default/js/slider.js"></script>
+	<ul class="slides">
+	 <!--{foreach from=$widget_data.ads item=ad}-->
+		<li><div class="img"><a href="{$ad.ad_link_url}" target="_blank"><img src="{$ad.ad_image_url}"  width="100%"  /></a></div></li>
+     <!--{/foreach}-->
+	</ul>
+
+<script type="text/javascript">
+$(function(){
+
+	$('#demo01').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing",
+		directionNav: false,
+	});
+	
+	
+});
+</script>

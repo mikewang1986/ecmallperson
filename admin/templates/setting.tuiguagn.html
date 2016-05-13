@@ -1,0 +1,100 @@
+{include file="header.html"}
+
+
+
+<script type="text/javascript">
+
+//<!CDATA[
+
+$(function(){
+
+    $(".show_image").mouseover(function(){
+
+        $(this).next("div").show();
+
+    });
+
+    $(".show_image").mouseout(function(){
+
+        $(this).next("div").hide();
+
+    });
+
+});
+
+//]]>
+
+</script>
+
+
+
+<div id="rightTop">
+
+  <p>{$lang.setting}</p>
+
+  
+
+</div>
+
+<div class="info">
+
+  <form method="post" enctype="multipart/form-data">
+
+    <table class="infoTable">
+
+
+     
+      
+      
+     
+      
+
+      <tr>
+
+        <th class="paddingT15"> <label for="site_name">一级:</label></th>
+
+        <td class="paddingT15 wordSpacing5"><input id="site_name" type="text" name="pasen_0" value="{$setting.pasen_0}" class="infoTableInput"/>  % </td>
+
+      </tr>
+
+
+        <tr>
+
+        <th class="paddingT15"> <label for="site_name">二级:</label></th>
+
+        <td class="paddingT15 wordSpacing5"><input id="site_name" type="text" name="pasen_1" value="{$setting.pasen_1}" class="infoTableInput"/>      %   </td>
+
+      </tr>  
+
+
+        <tr>
+
+        <th class="paddingT15"> <label for="site_name">三级:</label></th>
+
+        <td class="paddingT15 wordSpacing5"><input id="site_name" type="text" name="pasen_2" value="{$setting.pasen_2}" class="infoTableInput"/>      %   </td>
+
+      </tr> 
+      
+           
+
+
+    
+     
+
+      <tr>
+
+        <th></th>
+
+        <td class="ptb20"><input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
+
+          <input class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />        </td>
+
+      </tr>
+
+    </table>
+
+  </form>
+
+</div>
+
+{include file="footer.html"}

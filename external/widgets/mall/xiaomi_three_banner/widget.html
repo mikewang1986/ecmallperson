@@ -1,0 +1,23 @@
+<script type="text/javascript" src="/themes/mall/xiaomi/js/shensuo.js"></script>
+
+<div class="ad_slide_area">
+        <div class="box">
+            <div id="sliderf">
+            <!--{foreach from=$widget_data.ads item=ad name=fe_ad}-->
+            <div class="slidef" id="mainimg" >
+                    <a href="{$ad.link_url}" target="_blank">
+                        <img width="475" height="477" class="diapo" src="{$ad.image_url}" alt="{$ad.image_title}" style="opacity: 1; visibility: visible;">
+                    </a>
+					<div class="text">
+			        </div>
+            </div>
+            <!--{/foreach}-->
+                        
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+sliderf.init();
+document.getelementbyid("mainimg").onmouseover();
+</script>

@@ -1,0 +1,58 @@
+{include file="header.html"}
+<div id="rightTop">
+    <p>{$lang.jindan_call}</p>
+    <ul class="subnav">
+        <li><span>{$lang.jindan_manage}</span></li>
+        <li><a class="btn3" href="index.php?module=jindan&act=jindan_shangjia">{$lang.jindan_shangjia}</a></li>
+        <li><a class="btn3" href="index.php?module=jindan&act=add">{$lang.jindan_shangjia_add}</a></li>
+         <li><a class="btn3" href="index.php?module=jindan&act=jindan_log">{$lang.jindan_log}</a></li>
+    </ul>
+</div>
+
+<div class="info">
+    <form method="post">
+        <table class="infoTable">
+             
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_zadianpu}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="dandan_1" type="text" name="dandan_1" value="{$setting.dandan_1}"/>
+                <span class="grey">{$lang.jindan_zadianpu_note}</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_quanzhan}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="dandan_2" type="text" name="dandan_2" value="{$setting.dandan_2}"/>
+                <span class="grey">{$lang.jindan_quanzhan_note}</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_gailv}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="dandan_3" type="text" name="dandan_3" value="{$setting.dandan_3}"/>
+                    <span class="grey">{$lang.jindan_gailv_note}</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    {$lang.jindan_jiangli}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="dandan_4" type="text" name="dandan_4" value="{$setting.dandan_4}"/>
+                    <span class="grey">{$lang.jindan_jiangli_note}</span>
+                </td>
+            </tr>
+            <tr>
+            <th></th>
+            <td class="ptb20">
+                <input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
+                <input class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />
+            </td>
+        </tr>
+        </table>
+    </form>
+</div>
+{include file="footer.html"}

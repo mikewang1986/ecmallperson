@@ -1,0 +1,64 @@
+<script type="text/javascript">
+    var _d = DialogManager.get('config_dialog');
+    _d.setWidth(350);
+    _d.setPosition('center');
+</script>
+<div class="field_item">
+    <label>模块名称：</label>
+    <p><input type="text" name="model_name" value="{$options.model_name}" /></p>
+
+    <label>品牌分类一:</label>
+    <p><select name="tag1">
+            <!--{foreach from=$tags item=tag name=fe_tag}--> 
+            <option value="{$tag.tag}" <!--{if $options.tag1 eq $tag.tag}-->selected<!--{/if}-->>{$tag.tag}</option>
+            <!--{/foreach}-->
+        </select>
+    </p>
+
+    <label>品牌分类二:</label>
+    <p><select name="tag2">
+            <!--{foreach from=$tags item=tag name=fe_tag}--> 
+            <option value="{$tag.tag}" <!--{if $options.tag2 eq $tag.tag}-->selected<!--{/if}-->>{$tag.tag}</option>
+            <!--{/foreach}-->
+        </select>
+    </p>
+
+    <label>品牌分类三：</label>
+    <p><select name="tag3">
+            <!--{foreach from=$tags item=tag name=fe_tag}--> 
+            <option value="{$tag.tag}" <!--{if $options.tag3 eq $tag.tag}-->selected<!--{/if}-->>{$tag.tag}</option>
+            <!--{/foreach}-->
+        </select>
+    </p>
+
+
+
+
+    <label>上传广告图片1:(<span>图片尺寸 200x326，支持 gif|jpg|jpeg|png 格式</span>)</label>
+    <p><input type="file" name="ad1_image_file" /><input type="hidden" name="ad1_image_url" value="{$options.ad1_image_url}" /></p>
+    <!-- {if $options.ad1_image_url} --><p><img src="{$options.ad1_image_url}" height="20" /></p><!-- {/if} -->
+    <label>广告1链接地址:</label>
+    <p><input type="text" name="ad1_link_url" value="{$options.ad1_link_url}" /></p>
+    <label>广告1标题:</label>
+    <p><input type="text" name="ad1_image_title" value="{$options.ad1_image_title}" /></p>
+
+    <label>上传广告图片2:(<span>图片尺寸 100px100，支持 gif|jpg|jpeg|png 格式</span>)</label>
+    <p><input type="file" name="ad2_image_file" /><input type="hidden" name="ad2_image_url" value="{$options.ad2_image_url}" /></p>
+    <!-- {if $options.ad2_image_url} --><p><img src="{$options.ad2_image_url}" height="20" /></p><!-- {/if} -->
+    <label>广告2链接地址:</label>
+    <p><input type="text" name="ad2_link_url" value="{$options.ad2_link_url}" /></p>
+    <label>广告2标题:</label>
+    <p><input type="text" name="ad2_image_title" value="{$options.ad2_image_title}" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

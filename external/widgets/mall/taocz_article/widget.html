@@ -1,0 +1,24 @@
+<div class="article mb10 tab_{$widget_data.model_id}">
+    <ul class="title clearfix ks-switchable-nav">
+        <!--{foreach from=$widget_data.tabs item=item name=fe_item}-->
+        <li class="{if $smarty.foreach.fe_item.first}ks-active first{/if}">{$item}</li>
+        <!--{/foreach}-->
+    </ul>
+    <div class="content ks-switchable-content">
+       <!--{foreach from=$widget_data.articles item=article_list name=fe_article_list}-->
+       <ul class="clearfix {if !$smarty.foreach.fe_article_list.first}hidden{/if}">
+          <!--{foreach from=$article_list item=article name=fe_article}-->
+          <li><a {if $smarty.foreach.fe_article.iteration le 2} style="color:red"{/if} href="{url app=article&act=view&article_id=$article.article_id}" title="{$article.title|escape}" target="_blank">{$article.title|escape|truncate:30}</a></li>
+          <!--{/foreach}-->
+       </ul>
+       <!--{/foreach}-->
+    </div>
+
+</div>
+<script>
+    KISSY.ready(function(S) {
+        var tabs = new S.Tabs('.tab_{$widget_data.model_id}',{
+             aria:false
+        });
+    });
+</script>

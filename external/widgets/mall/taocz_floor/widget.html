@@ -1,0 +1,46 @@
+<div class="floor w mb10">
+	<div class="title w clearfix">
+    	<h1>{$widget_data.model_name}</h1>
+    	<div class="clearfix right">
+        	<div class="keyword">
+            	<h2>
+                	<p>
+                    <!--{foreach from=$widget_data.keywords item=k}-->
+                    <a target="_blank" href="{url app=search&keyword=$k|escape:url}">{$k}</a>
+                    <!--{/foreach}-->
+                    <a target="_blank" class="go_channel" href="{$widget_data.link}" >{$widget_data.title} >></a>
+                </h2>
+            </div>
+        </div>
+    </div>
+	<div class="content w clearfix pt10">
+		<div class="col-sub">
+        	<a href="{$widget_data.ad1_link_url}" target="_blank"><img width="200" height="83" src="{$widget_data.ad1_image_url}" /></a>
+        	<a href="{$widget_data.ad2_link_url}" target="_blank"><img width="200" height="83" src="{$widget_data.ad2_image_url}" /></a>
+            <a class="mb10" href="{$widget_data.ad3_link_url}" target="_blank"><img width="200" height="83" src="{$widget_data.ad3_image_url}" /></a>
+            <a href="{$widget_data.ad4_link_url}" target="_blank"><img width="200" height="65" src="{$widget_data.ad4_image_url}" /></a>
+            <a href="{$widget_data.ad5_link_url}" target="_blank"><img width="200" height="65" src="{$widget_data.ad5_image_url}" /></a>
+        </div>
+		<div class="col-main">
+        	<ul class="goods clearfix">
+            	<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+                <li class="item">
+                    <a href="{url app=goods&id=$goods.goods_id}" target="_blank"><img width="160" height="160" src="{$goods.default_image}" /></a>
+                    <p>
+                        <a href="{url app=goods&id=$goods.goods_id}" target="_blank" class="name">{$goods.goods_name|escape|truncate:50}</a>
+                        <span>已售出：{$goods.sales}</span>
+                        <strong>{$goods.price|price}</strong>
+                    </p>
+                    <div class="transparent_bg"></div>
+                </li>
+                <!--{/foreach}-->
+            </ul>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+

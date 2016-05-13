@@ -1,0 +1,27 @@
+<footer class="region">
+    <section class="user-panel">
+        <p class="guest">
+            <!--{if !$visitor.user_id}-->
+            <a href="{url app=member&act=login&ret_url=$ret_url}">{$lang.login}</a>
+            <a href="{url app=member&act=register&ret_url=$ret_url}">{$lang.register}</a>
+            <!--{else}-->
+            <a href="{url app=member}">{$visitor.user_name|escape}</a>
+            <a href="{url app=member&act=logout}">{$lang.logout}</a>
+            <!--{/if}--> 
+        </p>
+        <a class="fb-top" href="javascript:scroll(0,0)"></a>
+    </section>
+    <p class="version">
+        <a href="#">标准版</a>
+        <a href="#" id="btn_go_pc">电脑版</a>
+    </p>     
+    <p class="copyright">Copyright © 2014 琪琦网购</p> 
+</footer>
+        </div>
+<div class='yi-shangqiao yi-www' id='Shangqiao'>
+<ul class='yi-toolbar yi-bgcolor'>
+<li><a href='tel:18012345678' class='yi-hover yi-tels'><span class='yi-toolbar-tel'></span>电话咨询</a></li>
+<li><a href='sms:18012345678' class='yi-hover yi-tj'><span class='yi-toolbar-mess'></span>短信咨询</a></li>
+<li><a href='http://wpa.qq.com/msgrd?v=3&uin=540616918&site=qq&menu=yes' class='yi-hover yi-tj'><span class='yi-toolbar-online'></span>在线沟通</a></li>
+</ul>
+</div>

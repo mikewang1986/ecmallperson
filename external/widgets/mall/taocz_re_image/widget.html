@@ -1,0 +1,10 @@
+<div class="re_image mb10">
+	<div class="title">
+    	<h1>{$widget_data.model_name}</h1>
+    </div>
+	<div class="content clearfix">
+    	<!--{foreach from=$widget_data.ads item=ad name=fe_ad}-->
+        <a style="{if $smarty.foreach.fe_ad.iteration % 6 eq 0}border-right:0px;_width:95px;_overflow:hidden;{/if}{if $smarty.foreach.fe_ad.iteration gt 6 }border-bottom:0px;{/if}" href="{$ad.ad_link_url}" title="{$ad.ad_title_url}"><img width="98" height="98" src="{$ad.ad_image_url}" /></a>
+    	<!--{/foreach}-->
+	</div>
+</div>

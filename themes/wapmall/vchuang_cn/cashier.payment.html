@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        {$page_seo}
+        <link href="{res file=css/common.css}" type="text/css" rel="stylesheet" />
+        <link href="{res file=css/comment.css}" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="index.php?act=jslang"></script>
+        <script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{res file=js/nav.js}" charset="utf-8"></script>
+        <script type="text/javascript" src="{res file=js/jquery-1.8.0.min.js}" charset="utf-8"></script>
+        <script type="text/javascript">
+            //<!CDATA[
+            var SITE_URL = "{$site_url}";
+            var REAL_SITE_URL = "{$real_site_url}";
+            var PRICE_FORMAT = '{$price_format}';
+
+            $(function() {
+                var select_list = document.getElementById("select_list");
+                var float_list = document.getElementById("float_list");
+                select_list.onmouseover = function() {
+                    float_list.style.display = "block";
+                };
+                select_list.onmouseout = function() {
+                    float_list.style.display = "none";
+                };
+            });
+            //]]>
+        </script>
+        
+<style type="text/css">
+.mall-nav{ display:none}
+</style>
+<style media="screen" type="text/css">
+/*下面字体大小记得要删掉*/
+.divs{margin-top:10px;text-align:center;over-flow:hidden;height:100%;width:100%;}
+UL{list-style-type:none; margin:0px;}
+/* 标准盒模型 */
+.ttl{height:18px;}
+.ctt{height:auto;padding:1px;clear:both;border:1px solid #ff6d00;border-top:0;text-align:left;}
+.w936{margin:2px 0;clear:both;width:820px;/*这里调整整个滑动门的宽度*/}
+/* TAB 切换效果 */
+.tb_{background-image: url('/themes/wapmall/vchuang_cn/styles/default/images_sft/cashier.payment_1.gif'); background-repeat: repeat-x;background-color: #ffffff;}/*按钮底色   图片：上行一横*/
+.tb_ ul{height:24px;}
+.tb_ li{float:left;height: 24px;line-height:1.9;width: 94px;cursor:pointer;}
+/* 用于控制显示与隐藏的css类 */
+.normaltab   { background-image:url('/themes/wapmall/vchuang_cn/styles/default/images_sft/cashier.payment_2.gif'); background-repeat: no-repeat; color:#f5f5f5 ;}/*无选时字体颜色 图片：无选时图片*/
+.hovertab    { background-image: url('/themes/wapmall/vchuang_cn/styles/default/images_sft/cashier.payment_3.gif'); background-repeat: no-repeat; color:#ff6600; font-weight:bold }/*已选时字体颜色*/
+.dis{display:block;}
+.undis{display:none;}
+
+
+/*网银*/
+
+.bank-list dd,.bank-list ul{width:100%;margin-bottom:2px;*margin-bottom:10px;}
+.bank-list li{float:left;/*width:163px;*/margin-right:18px; height:36px;margin-bottom:10px; text-align:center; line-height:34px;}
+.bank-list li input{float:left;margin-top:10px;margin-right:5px;*margin-right:0px;}
+.bank-list li label{border:1px #ddd solid; display:inline-block;width:140px; position:relative}
+.bank-list .renewedly{float:left;margin-left:2px;}
+.bank-list input[name="captcha"]{float:left;width:80px;}
+.icon-cashier{ display:block; height:36px; background-repeat:no-repeat; text-align:center; background-image:url(/themes/wapmall/vchuang_cn/styles/default/images/member/combo.png);}
+.icon-cashier .qiye{display:none; background:#D2EEF7; padding:0 3px; width:15px; height:100%; line-height:18px; position:absolute;top:0;right:0;}
+.icon-cashier-ABC,.icon-cashier-ABCBTB {background-position: 0px 0px; } 
+.icon-cashier-BJBANK{background-position: 0px -36px;}
+.icon-cashier-BJRCB{background-position: 0px -72px;}
+.icon-cashier-BOC,.icon-cashier-BOCB2C,.icon-cashier-BOCBTB {background-position: 0px -108px; }
+.icon-cashier-CCB,.icon-cashier-CCBBTB {background-position: 0px -144px; } 
+.icon-cashier-CDCB {background-position: 0px -180px;}
+.icon-cashier-CEB,.icon-cashier-CEBBANK {background-position: 0px -216px; }
+.icon-cashier-CIB {background-position: 0px -252px;} 
+.icon-cashier-CITIC {background-position: 0px -288px;} 
+.icon-cashier-CMB,.icon-cashier-CMBBTB {background-position: 0px -324px;} 
+.icon-cashier-CMBC { background-position: 0px -360px;} 
+.icon-cashier-COMM { background-position: 0px -396px;} 
+.icon-cashier-FDB { background-position: 0px -432px;}
+.icon-cashier-GDB { background-position: 0px -468px;} 
+.icon-cashier-HZCB,.icon-cashier-HZCBB2C {background-position: 0px -504px; } 
+.icon-cashier-ICBC,.icon-cashier-ICBCB2C,.icon-cashier-ICBCBTB {background-position: 0px -540px; } 
+.icon-cashier-NBBANK { background-position: 0px -576px;} 
+.icon-cashier-PSBC,.icon-cashier-POSTGC { background-position: 0px -612px;} 
+/*.icon-cashier-SPABANK { background-position: 0px -648px;} */
+.icon-cashier-SHBANK {  background-position: 0px -684px;} 
+.icon-cashier-SHRCB {background-position: 0px -720px;}
+.icon-cashier-SPABANK {background-position: 0px -756px;}
+.icon-cashier-SPDB,.icon-cashier-SPDBBTB { background-position: 0px -792px;} 
+.icon-cashier-WZCB,.icon-cashier-WZCBB2C-DEBIT {background-position: 0px -828px;}
+.icon-cashier-HXBANK,.icon-cashier-HXBANKB2C {background-position: 0px -864px; }
+.icon-cashier-alipay{background-position: 0px -900px;}
+.icon-cashier-ICBCBTB .qiye,.icon-cashier-CCBBTB .qiye,.icon-cashier-ABCBTB .qiye,.icon-cashier-CMBBTB .qiye,.icon-cashier-BOCBTB .qiye,.icon-cashier-SPDBBTB .qiye{ display:block}
+
+.bank-list li input {
+float: left;
+margin-top: 10px;
+margin-right: 5px;
+}
+
+
+.defrays { width: 100%; margin-bottom: 20px; }
+/* 灰色线下支付 css类 */
+.defrays dt { height: 20px; line-height: 20px; background: #f5f5f5; padding-left: 20px; font-weight: bold; color: #333; }
+.defrays dd { width: 99%; overflow: hidden; padding-top: 10px; }
+.defrays dd .radio { float: left; width: 40px; text-align: center; padding-top: 14px; }
+.defrays dd .logo { float: left; width: 140px; }
+.defrays dd .dongtai { float: left; width: 100%; line-height: 40px; }
+
+</style>
+<script type="text/javascript" language="javascript">
+function g(o){return document.getElementById(o);}
+function HoverLi(n){
+//如果有N个标签,就将i<=N;
+//本功能非常OK,兼容IE7,FF,IE6
+for(var i=1;i<=2;i++){g('tb_'+i).className='normaltab';g('tbc_0'+i).className='undis';}g('tbc_0'+n).className='dis';g('tb_'+n).className='hovertab';
+}
+//如果要做成点击后再转到请将<li>中的onmouseover 改成 onclick;
+</script>
+
+        {$_head_tags}
+        <!--<editmode></editmode>-->
+    </head>
+    <style>
+        .pay_con{ margin-top:70px; overflow:hidden; text-align:center;text-align:left; }
+        .pay_con .succeed{  margin-bottom:10px;  overflow:hidden;padding:0 10px;}
+        .pay_con .succeed img{ float:left; width:110px; margin-right:10px;}
+        .pay_con .succeed  h4{ margin:25px 0 5px 0; font-size:18px; font-weight:normal;}
+        .pay_con .order_info{clear: both;margin: 5px; padding: 10px;}
+        .pay_con .order_info p{ font-size:14px; font-weight:bold; margin:5px 0;}
+        .pay_con .order_info span{ color:#b20005;}
+        .pay_con .buy .pay_way p{ float:left; vertical-align:middle; height:30px; line-height:30px;}
+        .pay_con .buy .pay_way p .radio{ margin-top:18px;}
+        .pay_con .buy .pay_way dt{background:#eee;padding:6px 10px; font-size:16px; margin:5px 0; border-left:#b20005 solid 5px; font-weight:bold; color:#444;}
+        .pay_con .buy .pay_way dd{padding:6px 10px;margin:5px 0; border-bottom:#ddd dashed 1px; overflow:hidden;}
+        .pay_con .buy .pay_way dd:last-child{ border:none;}
+        .pay_con .red_btn,.pay_con .white_btn{ width:120px; display:block; text-align:center; float:left;}
+    </style>  
+</head>
+<body>
+    <div class="w320">
+        <div class="fixed">
+            <!---头部------>
+            <div class="header header2">
+                <a href="{url app=buyer_order&act=index}" class="back2_pre"></a>
+                选择付款方式
+            </div>  
+        </div>
+            <!---------选择付款方式----------->
+            <div class="pay_con">
+                <div class="succeed">
+                    <img src="{$site_url}/themes/wapmall/vchuang_cn/styles/default/images/clue_on.gif"/>
+                    <h4>订单提交成功！</h4>
+                    <p>您的订单已成功生成，选择您想用的支付方式进行支付</p>
+                </div>
+                <div class="order_info">
+                    <p>订单号：<span>{$order.order_sn}</span></p>
+                    <p>订单总价：<span>{$order.order_amount|price}</span></p>
+                </div>
+                <div class="buy">
+                    <dl class="pay_way">
+                        <dt>选择支付方式并付款</dt>
+                        
+                        <dd>
+<div id="main" class="w-full">
+<div id="page-cashier" class="w">
+   <div class="order-form cashier clearfix">
+            <div class="buy border padding10 mt10">
+<div class="divs">
+ <div id="tb_" class="tb_">
+   <ul>
+    <li id="tb_1" class="hovertab" onclick="a:HoverLi(1);">{$lang.online_payment}</li>
+	<li id="tb_2" class="normaltab" onclick="b:HoverLi(2);">{$lang.offline_payment}</li>
+   </ul>
+ </div>
+ <div class="ctt">
+  <form action="index.php?app=cashier&act=goto_pay&order_id={$order.order_id}" method="POST" id="goto_pay">
+  <div class="dis" id="tbc_01"><!--开始-->
+  
+                <dl class="defrays">
+                    <dt>{$lang.online_payment}</dt>
+                    <!--{foreach from=$payments.online item=payment}-->
+                    <dd>
+                        <p class="radio"><input id="payment_{$payment.payment_code}" type="radio" name="payment_id" value="{$payment.payment_id}" /></p>
+                        <p class="logo"><label for="payment_{$payment.payment_code}"><img src="{$site_url}/includes/payments/{$payment.payment_code}/logo.gif" alt="{$payment.payment_name}-{$payment.payment_desc}" title="{$payment.payment_name}-{$payment.payment_desc}" width="125" height="47" /></label></p>
+                    </dd>
+                    <!--{/foreach}-->
+                    
+                  <!--{if $alipay_bank}-->
+               <dt>支付宝网银</dt>
+                <dd>
+                <dl class="bank-list clearfix" ectype="online" style="margin-left:20px;">
+                <ul class="ui-list-icons clearfix">
+                                  		<!--{foreach from=$alipaybank item=bank key=key name=fe_bank}-->
+										<li class="clearfix">
+											<input class="float-left"  type="radio" name="defaultbank" id="{$key}" value="{$key}" />
+											<label class="float-left icon-box current " for="{$key}" >
+												<span class="icon-cashier icon-cashier-{$key}" title="{$bank}">&nbsp;<em class="qiye hidden">企业</em></span>
+											</label>
+										</li>
+                                        <!--{/foreach}-->
+                          			</ul>
+                
+               </dl>
+              </dd>
+                  <!--{/if}-->
+                </dl> 
+             <div class="make_sure mt10 mb20">
+                <p style="margin-top:5px;">
+                    <a href="javascript:$('#goto_pay').submit();" class="red_btn">{$lang.confirm_pay}</a>
+                </p>
+            </div>      
+  </div><!--结束-->
+
+  <div class="undis" id="tbc_02"><!--开始-->
+
+                  <dl class="defrays">
+                    <dt>{$lang.offline_payment}</dt>
+                    <!--{foreach from=$payments.offline item=payment}-->
+					<!--{if $payment.payment_code != "sft"}-->
+                    <dd>
+                        <p class="radio"><input type="radio" id="payment_{$payment.payment_code}" name="payment_id" value="{$payment.payment_id}" /></p>
+                        <p class="logo"><label for="payment_{$payment.payment_code}">
+						<img alt="{$payment.payment_name}-{$payment.payment_desc}" title="{$payment.payment_name}-{$payment.payment_desc}" src="{$site_url}/includes/payments/{$payment.payment_code}/logo.gif" width="125" height="47" /></label></p>
+                    </dd>
+					<!--{/if}-->
+                    <!--{/foreach}-->
+                </dl>
+             <div class="make_sure mt10 mb20">
+                <p style="margin-top:5px;">
+                    <a href="javascript:$('#goto_pay').submit();" class="red_btn">{$lang.confirm_pay}</a>
+                </p>
+            </div>               
+         </div>
+       </div>
+</form>
+	</div>
+</div>
+</div>
+                        </dd>
+                    </dl>                
+                </div>
+            </div>
+    </div>
+    {include file="member.footer.html"}

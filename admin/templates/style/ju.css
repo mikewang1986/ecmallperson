@@ -1,0 +1,7 @@
+@charset "utf-8";
+.groupbuy{ padding:0 20px; background-color:#F3FBFE}
+.groupbuy .title{ border-bottom:1px solid #DEEFFB; height:30px; line-height:30px; color:#0099CC;}
+.groupbuy ul li {background: url(images/bg_position.gif) no-repeat scroll -628px -888px transparent;color: #888888;line-height: 30px;
+padding-left: 24px;}
+.table{ width:100%}
+.add_btn{display: inline-block;text-align: center;padding-top: 3px;margin-top: -2px;height: 18px;text-decoration: none;}

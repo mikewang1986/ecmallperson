@@ -1,0 +1,22 @@
+<?php echo $this->fetch('header.html'); ?>
+<div  id="main" class="w-full" style="background: #f5f5f5;">
+    <div  class="w-full clearfix" area="slides" widget_type="area">
+        <?php $this->display_widgets(array('page'=>'index','area'=>'slides')); ?>
+    </div>
+    <div class="w" area="col-1" widget_type="area">
+        <?php $this->display_widgets(array('page'=>'index','area'=>'col-1')); ?>
+    </div>
+    
+    <div class="tmall-fashion-bg" >
+        <div class="w" area="col-2" widget_type="area">
+            <?php $this->display_widgets(array('page'=>'index','area'=>'col-2')); ?>
+        </div>
+    </div>
+    <div class="w clearfix" area="col-3" widget_type="area">
+        <?php $this->display_widgets(array('page'=>'index','area'=>'col-3')); ?>
+    </div>
+    <div class="w" area="col-4" widget_type="area">
+        <?php $this->display_widgets(array('page'=>'index','area'=>'col-4')); ?>
+    </div>
+</div>
+<?php echo $this->fetch('footer.html'); ?>

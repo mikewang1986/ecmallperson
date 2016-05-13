@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link href="{res file=css/style.css}" rel="stylesheet" type="text/css" />
+<link href="{res file=css/common.css}" rel="stylesheet" type="text/css" />
+{$page_seo}
+<script type="text/javascript" src="index.php?act=jslang"></script>
+<script type="text/javascript" src="{lib file=jquery.js}" charset="utf-8"></script>
+<script type="text/javascript" src="{lib file=ecmall.js}" charset="utf-8"></script>
+
+<script type="text/javascript">
+//<!CDATA[
+var SITE_URL = "{$site_url}";
+var REAL_SITE_URL = "{$real_site_url}";
+var PRICE_FORMAT = '{$price_format}';
+
+//]]>
+</script>
+{$_head_tags}
+</head>
+<body>
+<div class="container">
+{assign var="curr_name" value="我们的位置"}
+{include file="top.html"}
+<!--shop info-->
+<div class="main">
+<style>
+    img, fieldset {border: 0; }
+</style>
+    <input id="city" type="hidden" value="{$store.region_name|escape}">
+
+    <input id="addr" type="hidden" value="{$store.address|escape}">
+
+    <div class="s_cont" style=''>
+
+        <style>
+
+        .show_map_info .show_bd_map{font-weight: 600;color:red;font-size: 0.8em;}
+
+        .show_map_info dt,.show_map_info dd{font-size: 0.6em;}
+
+        .show_map_info .show_logo{margin-left:0px;}
+
+        </style>
+
+        <div class="map" >
+
+            
+             <script type="text/javascript" src="http://api.map.baidu.com/api?key=abcd&amp;v=1.0&amp;services=true"></script>
+            <div id="info" style=''></div>
+
+            <div id="container" style='height:18em;'></div>
+
+            <script type="text/javascript"> 
+
+                        var xOffset= 0.013151;
+
+                        var yOffset= 0.006888;
+
+                        var map = new BMap.Map("container");          // 创建地图实例  
+
+                        var point = new BMap.Point(116.332557 +xOffset, 39.998112 +yOffset); 
+
+                        var city=document.getElementById("city").value;
+
+                        var addr=document.getElementById("addr").value;
+
+                   
+
+                         var sContent="<dl class='show_map_info'>"+
+
+                                "<dt class='show_bd_map'>{$store.store_name}</dt> "+
+                                "<dd><b>地址：</b>"+addr+"</dd>"+
+
+                                " <dd><b>电话：</b> {$store.tel}</dd>"+
+
+                               // "<dd class='show_logo'><img src='data/files/store_751/other/store_logo.jpg' width=50 height=50 /></dd>"+
+                                "</dl>";
+
+                        var opts = {
+
+                          width : 100,     // 信息窗口宽度
+
+                          height: 75,     // 信息窗口高度
+
+                          enableMessage:true,//设置允许信息窗发送短息
+
+                          message:"{$store.store_name}"
+
+                        }
+
+
+
+
+
+                        map.centerAndZoom(point,15);
+
+                        map.addControl(new BMap.NavigationControl()); 
+
+                        // 创建地址解析器实例
+
+                        var myGeo = new BMap.Geocoder();
+
+                        // 将地址解析结果显示在地图上,并调整地图视野
+
+                        myGeo.getPoint(addr, function(point){
+
+                          if (point) {
+
+                            map.centerAndZoom(point, 16);
+
+                            var maker1=new BMap.Marker(point);
+
+                            map.addOverlay(maker1);
+
+                            var infoWindow = new BMap.InfoWindow(sContent,opts);
+
+                            maker1.openInfoWindow(infoWindow);
+
+                          }
+
+                        }, city);
+
+
+
+
+
+                       
+
+                        map.enableScrollWheelZoom();
+
+                        // 初始化地图，设置中心点坐标和地图级别  
+
+                        </script>
+
+        </div>
+
+    </div>
+
+
+<!--shop info END-->
+</div>
+<div class="space" style="padding:1em 0;"></div>
+{include file="footer.html"}

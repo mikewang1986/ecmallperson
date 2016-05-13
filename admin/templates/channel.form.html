@@ -1,0 +1,92 @@
+{include file="header.html"}
+<script type="text/javascript">
+//<!CDATA[
+$(function(){
+    // multi-select mall_gcategory
+    //$('#gcategory').length>0 && gcategoryInit("gcategory");
+	
+	<!--{if $channel}-->
+	$('input[name="style"]').click(function(){
+		if({$channel.style} != $(this).val() && confirm('{$lang.change_style_notice}')){
+			$(this).attr('checked',true);
+		} else {
+			$('#style{$channel.style}').attr('checked',true);
+		}
+	});
+	<!--{/if}-->
+	
+});
+//]]>
+</script>
+<style>
+.subnav li span{*top:1px;}
+a{ text-decoration:none;color:#234F8D}
+</style>
+
+<div id="rightTop">
+    <p>{$lang.template_setting}</p>
+    <ul class="subnav">
+        <li><a class="btn1" href="index.php?app=template">{$lang.template_list}</a></li>
+        <!-- {if !$smarty.get.page_id} -->
+        <li><span>{$lang.channel_add}</span></li>
+        <!--{else}-->
+        <li><a class="btn1" href="index.php?app=channel&amp;act=add">{$lang.channel_add}</a></li>
+        <li><span>{$lang.channel_edit}</span></li>
+        <!-- {/if} -->
+    </ul>
+</div>
+<div class="info">
+    <form method="post" id="channel_form">
+        <table class="infoTable">
+            <tr>
+                <th class="paddingT15">
+                    {$lang.title}:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput2" type="text" name="title" value="{$channel.title|escape}" /> <label class="field_notice">{$lang.title_note}</label>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    <label for="parent_id">{$lang.cate_id}:</label>
+                </th>
+                <td class="paddingT15 wordSpacing5">
+          			<!--<div id="gcategory" style="display:inline;">
+                    	<input type="hidden" name="cate_id" value="0" class="mls_id" />-->
+            			<select class="querySelect" name="cate_id">
+             				<option>{$lang.select_pls}</option>
+              				{html_options options=$gcategories selected=$channel.cate_id}
+            			</select>
+          			<!--</div>-->
+                    <label class="field_notice">{$lang.cate_id_note}</label>
+                </td>
+            </tr>
+            <tr>
+              <th class="paddingT15">{$lang.channel_style}:</th>
+              <td class="paddingT15 wordSpacing5 channel_style">
+                <input type="radio" id="style1" name="style" value="1" {if $channel.style eq '1' || $smarty.get.act eq 'add'}checked="checked"{/if} />
+                <label for="style1">{$lang.style}1</label> [<a href="{$tpl_url}/screenshot_channel_style1.jpg" target="_blank">{$lang.preview}</a>]            
+              </td>
+            </tr>
+            
+            <tr>
+              <th class="paddingT15">{$lang.status}:</th>
+              <td class="paddingT15 wordSpacing5">
+                  <input type="radio" id="status1" name="status" value="1" {if $channel.status eq '1' || $smarty.get.act eq 'add'}checked="checked"{/if} />
+                  <label for="status1">{$lang.enable}</label>
+                  <input type="radio" id="status0" name="status" value="0" {if $channel.status eq '0'}checked="checked"{/if} />
+                  <label for="status0">{$lang.disable}</label>
+                  <label class="field_notice">{$lang.if_enable}</label>
+              </td>
+            </tr>
+
+          <tr>
+            <th></th>
+            <td class="ptb20">
+                <input class="formbtn" type="submit" value="{$lang.submit}" />
+                <input class="formbtn" type="reset" name="reset" value="{$lang.reset}" />
+            </td>
+        </tr>
+        </table>
+    </form>
+</div>
+{include file="footer.html"}

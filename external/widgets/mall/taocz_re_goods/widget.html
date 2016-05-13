@@ -1,0 +1,23 @@
+<div class="re_goods mb10">
+	<div class="title clearfix">
+    	<b></b><span>{$widget_data.model_name}</span>
+    </div>
+	<div class="content clearfix">
+    	<!--{foreach from=$widget_data.goods_list item=goods name=fe_goods}-->
+    	<dl {if $smarty.foreach.fe_goods.iteration % 6 eq 0}style="width:178px;border:0px;_width:178px;"{/if} class="item">
+        	<dt><a target="_blank"  href="{url app=goods&id=$goods.goods_id}"><img width="140" height="140" src="{$goods.default_image}"/></a></dt>
+            <dd>
+            	<p title="还剩{$goods.stock}件">库存<b class="clearfix"><em style="width:{$goods.stock_rate};"></em></b></p>
+                <a target="_blank" href="{url app=goods&id=$goods.goods_id}">{$goods.goods_name}</a>
+                <span>特惠价：<strong>{$goods.price|price}</strong></span>
+            </dd>
+        </dl>
+        <!--{/foreach}-->
+    </div>
+</div>
+
+
+
+
+
+

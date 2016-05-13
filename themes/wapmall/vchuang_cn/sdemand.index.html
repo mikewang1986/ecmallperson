@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        {$page_seo}
+        <link href="{res file=css/common.css}" rel="stylesheet" type="text/css" />
+        <link href="{res file=css/sdemand.css}" rel="stylesheet" type="text/css" />
+    </head>
+    <style>
+
+        .shop_detail{ margin-top:45px; color:#999; font-size:14px;}
+        .shop_detail img{width:100%;  margin:0 auto ;}
+        .shop_detail table{border-collapse: collapse; width:100%;}
+        .shop_img_bg{ background:#333; height:200px; position:absolute; top:45px; width:100%; left:0; z-index:-1;}
+        .nav_btn_img{background: linear-gradient(#FFFFFF, #F1F1F1) repeat scroll 0 0 #EEEEEE;border: 1px solid #CCCCCC;color: #222222;font-weight: bold;height: 70px;margin-bottom: -1px;overflow: hidden;text-overflow: ellipsis; text-shadow: 0 1px 0 #FFFFFF;white-space: nowrap;position: relative;}
+        .nav_btn_img .t {font-size: 18px;left: 15px;position: absolute;top: 21px;}
+        .nav_btn_img .s { bottom: 15px;color: #BBBBBB;font-size: 13px;left: 15px;overflow: hidden;position: absolute;width: 70%;}
+        .header3{text-align:center; line-height:45px; }
+    </style>
+    <body>
+<div id="page-sdemand" class="col-main">
+    	{include file=curlocal.html}
+        <div class="sdemand-form">
+			<form method="get">
+				<input type="hidden" name="app" value="sdemand" />
+				{$lang.title}:<input class="queryInput" type="text" name="keyword" value="{$smarty.get.keyword|escape}" />&nbsp;&nbsp;
+ 				{$lang.select_type}:
+				<select class="querySelect" name="type">
+					<option value="">{$lang.select_pls}</option>
+					{html_options options=$type selected=$smarty.get.type}
+				</select>
+ 				&nbsp;&nbsp;
+				<input type="submit" class="btn" value="{$lang.query}" />
+				<a class="btn-fabu" href="{url app=supply_demand&act=add}" target="_blank"><i></i>免费发布信息</a>
+			</form>
+		</div>
+   		<div class="sdemand-list">
+   			<div class="title">
+				<ul class="clearfix">
+                    <li class="desc">{$lang.title}</li>
+                    <li>{$lang.price}</li>
+                    <li>{$lang.name}</li>
+                </ul>
+             </div>
+			<div class="content">  
+                <!-- {foreach from=$infos item=info} -->
+                <ul class="clearfix">
+                    <li class="desc"><a href="index.php?app=sdemand&type={$info.type}" target="_blank" style="color:red">{if $info.type eq 1}[{$lang.supply}]{else}[{$lang.demand}]{/if}</a> <a href="{url app=sdemand&act=view&id=$info.id}" target="_blank">{$info.title|escape|truncate:20}</a></li>
+                    <li class="price">{if $info.price neq 0}{$info.price|price}{elseif $info.price_from neq 0 and $info.price_to neq 0}{$info.price_from|price} - {$info.price_to|price}{else}{$lang.asktoface}{/if}</li>
+                    <li >{$info.name}</li>
+                </ul>
+                <!-- {foreachelse} -->
+                <div>
+                  <p class="mt10">{$lang.no_records}</p>
+                </div>
+                <!-- {/foreach} -->
+        	</div>
+		</div>
+		{include file=page.bottom.html}
+    </div>
+{include file=footer.html}

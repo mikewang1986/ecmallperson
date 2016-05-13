@@ -1,0 +1,73 @@
+{include file=header.html}
+    <link href="{res file=css/global_ddmall.css}" rel="stylesheet" type="text/css">
+    <link href="{res file=css/vip_integral_ddmall.css}" rel="stylesheet" type="text/css">
+
+   <!--content-->
+   <div class="content">
+    <!--choice-->
+	
+	 <div class="choice">
+	  <p class="address"><a href="/" target="_blank">商城首页</a> &gt; <a href="{url app=integral}" target="_blank">积分商城</a> &gt; <span>{$integral_info.wupin_name}</span></p>
+	  <!--choice_L-->
+	  <div class="choice_L">
+	    <!--coupon-->
+		<div class="coupon">
+		 <h2><a href="" target="_blank">{$integral_info.wupin_name}</a></h2>
+         <p class="coupon_L"><img src="/{$integral_info.wupin_img}" alt="{$integral_info.wupin_name}" height="181" width="298"></p>
+		 <!--coupon_R-->
+		 <div class="coupon_R">
+		  <p class="price">商品价格：{$integral_info.jiazhi}&nbsp;元</p>
+		  <p class="price">兑换所需积分：<span>{$integral_info.jifen}</span>&nbsp;积分</p>
+		  <!--p class="time">有效时间：<span></span></p-->
+		  <p class="time">剩余数量：<span>{$integral_info.shengyu}&nbsp;份</span>&nbsp;&nbsp;
+		  <span>友情提醒: 该商品一个用户累计兑换数量不得超过2件</span>
+		  </p>
+		  <!--want-->
+		  <div class="want">
+		  <form name="dpfrmnew" id="dpfrmnew_b" action="index.php" method="get">
+		    <div>
+			  <input type="hidden" name="app" value="my_money" />
+			  <input type="hidden" name="act" value="jifen_post" />
+			  <input type="hidden" name="id" value="{$integral_info.id}" />
+			  <p><span>我要兑换：</span><input name="prizenum" value="1" type="text"><span>份</span></p>
+			  <p><a style="cursor: pointer;" onclick="document.getElementById('dpfrmnew_b').submit()">点击兑换</a></p>
+			</div>
+		  </form></div>
+		  
+		  <!--want end-->
+		 </div>
+		 <!--coupon_R end-->
+		</div>
+		<!--coupon end-->
+	    <!--commodity-->
+	     <div class="commodity">
+		   <h2>商品详情</h2>
+		   <div>
+		    <p></p><p>{$integral_info.log_text}</p><p></p>
+			<!--p><img width="740" height="428" src="http://img2.ddmapimg.com/pageimg/dm/tool/photo1.jpg" alt=""></p-->
+		   </div>
+		 </div>
+		 <!--commodity end-->
+	   </div>
+	  <!--choice_L end-->
+	  <!--choice_R-->
+	  <div class="choice_R">
+	   <!--quanbu-->
+	   <div class="quanbu">
+	    <h2>全部礼品</h2>
+		<ul>
+		 <li>&middot;<a href="{url app=integral&to_jifen=0&from_jifen=10000}">0-10000分</a></li>
+		 <li>&middot;<a href="{url app=integral&to_jifen=10001&from_jifen=50000}">10001-50000分</a></li>
+		 <li>&middot;<a href="{url app=integral&to_jifen=50001}">50001分已上</a></li>
+		</ul>
+	   </div>
+	   <!--quanbu end-->
+		
+	  </div>
+	  <!--choice_R end-->
+     </div>
+	
+</div>
+   <!--content end-->
+
+{include file=footer.html}

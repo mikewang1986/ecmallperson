@@ -1,0 +1,19 @@
+<script type="text/javascript">
+var _d = DialogManager.get('config_dialog');
+_d.setWidth(350);
+_d.setPosition('center');
+</script>
+<div class="field_item">
+    <label>模块名称:</label>
+    <p><input type="text" name="model_name" value="{$options.model_name}" /></p>
+    <label>是否推荐团购：</label>
+    <p>
+    <select name="recommend">
+          <option value="2"  {if !$options.recommend eq 2} selected="selected"{/if}>无限制</option>
+          <option value="1" {if $options.recommend eq 1} selected="selected"{/if}>推荐</option>
+          <option value="0" {if $options.recommend eq 0} selected="selected"{/if}>不推荐</option>
+     </select>
+    </p>
+    <label>团购数量：</label>
+    <p><input type="text" name="amount" value="{$options.amount}" /></p>
+</div>

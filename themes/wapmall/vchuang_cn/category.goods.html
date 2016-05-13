@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="Vmall3.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> 商品分类</title>
+<meta name="description" content="{$page_description}" />
+<meta name="keywords" content="{$page_keywords}" />
+<link rel="stylesheet" href="{res file=css/ec_detail.css}">
+<link rel="stylesheet" href="{res file=css/style.css}">
+</head>
+<body class="category_bg">
+<header class="s-header">
+<nav>
+<h1>类目浏览</h1>
+<a href="javascript:history.back(-1)" class="back">返回</a>
+</nav>
+</header>
+
+<div class="ccontainer">
+
+  
+<div class="clist">
+     <ul>
+	 <!--{foreach from=$gcategorys item=gcategory}-->
+      <li class="crow level1">
+        <div class="crow_row">   
+         <div class="crow_icon">  </div>      
+          <div class="crow_title"> <a href="{url app=search&cate_id=$gcategory.id}">{$gcategory.value|escape}</a> </div>
+          <div class="crow_arrow"><img src="{res file=images/crow_arrow.png}" /></div>
+          <div>&nbsp;</div>
+        </div>
+      </li>
+	  
+      <ul class="clist clist_sub" style="opacity: 1; display: none; ">
+        <li class="crow">
+        <!--{foreach from=$gcategory.children item=child}-->
+         <div class="crow_row">
+        <div class="crow_two">
+        <div class="crow_title"> 
+        <a href="{url app=search&cate_id=$child.id}">{$child.value|escape}</a>
+        </div>
+        </div>
+        </div>
+        <div class="crow_row">
+		<!-- {foreach from=$child.children item=child2} -->
+        <div class="crow_item"> 
+         <a href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a></div>
+        <!--{/foreach}-->
+        <div class="clear"></div>
+        </div>
+		<!--{/foreach}-->
+      </li>
+      </ul>
+     <!--{/foreach}-->
+    </ul>
+
+  </div>
+  </div>
+<script src="{res file=js/zepto.min.js}"></script>
+<script src="{res file=js/category.js}"></script>
+
+{include file=footer.html}

@@ -1,0 +1,50 @@
+<div class="allcategory">
+	<div class="allcategory-list">
+		<div class="content clearfix">
+			<!--{foreach from=$widget_data.gcategories item=category name=fe_category}-->
+			<div class="item">
+				<div class="pborder">
+					<p><a href="{url app=search&cate_id=$category.id}" target="_blank">{$category.value|escape}</a></p>
+				</div>
+                <div class="shadow"></div>
+				<div class="pop" {if $category.top} style="top:{$category.top}"{/if}>
+					<div class="catlist float-left">
+						<!--{foreach from=$category.children item=child name=fe_child}--> 
+						<dl class="clearfix" {if $smarty.foreach.fe_child.last} style="border-bottom:0"{/if}>
+							<dt class="float-left"><a href="{url app=search&cate_id=$child.id}"><strong>{$child.value|escape}</strong></a></dt>
+							<dd class="float-left">
+								<!--{foreach from=$child.children item=child2 name=fe_child2}-->
+								<a {if $smarty.foreach.fe_child2.iteration % 3 ==1 } style="color:#C00;"{/if} href="{url app=search&cate_id=$child2.id}">{$child2.value|escape}</a>
+								<!--{/foreach}-->
+							</dd>
+						</dl> 
+						<!--{/foreach}-->
+					</div>
+					<div class="catbrand float-left">
+                    	<!--{if $category.image.image}-->
+                    	<h2>热门活动</h2>
+                    	<a class="mb10 block" href="{$category.image.link}"><img width="210" src="{$category.image.image}" /></a>
+                        <!--{/if}-->
+                        <!--{if $category.brands}-->
+						<h2>热门品牌</h2>
+						<ul class="clearfix mb10">
+							<!-- {foreach from=$category.brands item=brand name=fe_brand} -->
+							<li class="float-left"><a href="{url app=search&brand=$brand.brand_name|escape:url}" title="{$brand.brand_name}">{$brand.brand_name|escape}</a></li>                                  		
+							<!-- {/foreach} -->
+						</ul>
+                        <!--{/if}-->
+                        <!--{if $category.store}-->
+                        <h2>推荐店铺</h2>
+                        <ul class="clearfix">
+							<!-- {foreach from=$category.store item=store name=fe_store} -->
+							<li class="float-left"><a href="{url app=store&id=$store.store_id}" title="{$store.store_name}">{$store.store_name}</a></li>                                  		
+							<!-- {/foreach} -->
+						</ul>
+                        <!--{/if}-->
+					</div>           
+				</div>
+			</div>
+			<!--{/foreach}-->
+		</div>
+	</div>
+</div>
