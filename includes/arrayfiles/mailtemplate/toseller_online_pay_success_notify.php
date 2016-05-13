@@ -1,12 +1,12 @@
 <?php
 return array (
   'version' => '1.0',
-  'subject' => '{$site_name}ÌáĞÑ:Âò¼Ò{$order.buyer_name}ÒÑ¸¶¿î',
-  'content' => '<p>×ğ¾´µÄ{$order.seller_name}:</p>
-<p style="padding-left: 30px;">Âò¼Ò{$order.buyer_name}ÒÑÍ¨¹ıÏßÉÏÖ§¸¶Íê³ÉÁË¶©µ¥{$order.order_sn}µÄ¸¶¿î£¬ÇëºËÊµ²¢¾¡¿ì°²ÅÅ·¢»õ¡£</p>
-<p style="padding-left: 30px;">²é¿´¶©µ¥ÏêÏ¸ĞÅÏ¢Çëµã»÷ÒÔÏÂÁ´½Ó</p>
+  'subject' => '{$site_name}æé†’:ä¹°å®¶{$order.buyer_name}å·²ä»˜æ¬¾',
+  'content' => '<p>å°Šæ•¬çš„{$order.seller_name}:</p>
+<p style="padding-left: 30px;">ä¹°å®¶{$order.buyer_name}å·²é€šè¿‡çº¿ä¸Šæ”¯ä»˜å®Œæˆäº†è®¢å•{$order.order_sn}çš„ä»˜æ¬¾ï¼Œè¯·æ ¸å®å¹¶å°½å¿«å®‰æ’å‘è´§ã€‚</p>
+<p style="padding-left: 30px;">æŸ¥çœ‹è®¢å•è¯¦ç»†ä¿¡æ¯è¯·ç‚¹å‡»ä»¥ä¸‹é“¾æ¥</p>
 <p style="padding-left: 30px;"><a href="{$site_url}/index.php?app=seller_order&amp;act=view&amp;order_id={$order.order_id}">{$site_url}/index.php?app=seller_order&amp;act=view&amp;order_id={$order.order_id}</a></p>
-<p style="padding-left: 30px;">²é¿´ÄúµÄ¶©µ¥ÁĞ±í¹ÜÀíÒ³Çëµã»÷ÒÔÏÂÁ´½Ó</p>
+<p style="padding-left: 30px;">æŸ¥çœ‹æ‚¨çš„è®¢å•åˆ—è¡¨ç®¡ç†é¡µè¯·ç‚¹å‡»ä»¥ä¸‹é“¾æ¥</p>
 <p style="padding-left: 30px;"><a href="{$site_url}/index.php?app=seller_order">{$site_url}/index.php?app=seller_order</a></p>
 <p style="text-align: right;">{$site_name}</p>
 <p style="text-align: right;">{$mail_send_time}</p>',

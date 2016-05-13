@@ -63,7 +63,7 @@ class Crond extends Object
         }
 
         $this->_tasks = include($this->_config['task_list']);
-        if (empty($this->_tasks))
+        if (empty($this->_tasks) || !is_array($this->_tasks))
         {
             return;
         }
@@ -183,7 +183,7 @@ class Crond extends Object
     function get_due_tasks()
     {
         $tasks = array();
-        if (empty($this->_tasks))
+        if (empty($this->_tasks) || !is_array($this->_tasks))
         {
             return $tasks;
         }

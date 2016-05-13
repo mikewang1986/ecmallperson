@@ -55,7 +55,7 @@ $(function(){
         <!--{foreach from=$orders item=order}-->
         <tr class="tatr2">
             <td class="firstCell">{$order.seller_name|escape}</td>
-            <td>{$order.order_sn}&nbsp;&nbsp;<!--{if $order.extension eq 'groupbuy'}-->[{$lang.groupbuy}]<!--{/if}--></td>
+            <td>{$order.order_sn}&nbsp;&nbsp;<!--{if $order.extension eq 'groupbuy'}-->[{$lang.groupbuy}]<!--{elseif $order.group_id}-->[{$lang.ju}]<!--{/if}--></td>
             <td>{$order.add_time|date:complete}</td>
             <td>{$order.buyer_name|escape}</td>
             <td>{$order.order_amount|price}</td>

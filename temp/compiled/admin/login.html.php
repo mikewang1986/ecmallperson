@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
-<title>����Ҫ��¼�����ʹ�ñ�����- Powered by ECMall</title>
+<title>您需要登录后才能使用本功能</title>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'jquery.js'; ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo $this->lib_base . "/" . 'ecmall.js'; ?>" charset="utf-8"></script>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
@@ -20,18 +20,18 @@ $(function(){
 </head>
 <body>
 <div id="enter">
-    <h1><img alt="�̳Ǻ�̨" src="templates/style/images/enter_logo.gif" /></h1>
+    <h1><img alt="商城后台" src="templates/style/images/enter_logo.gif" /></h1>
     <table>
     <form method="post">
         <tr>
-            <td>�û���:</td>
+            <td>用户名:</td>
             <td colspan="3"><input class="text" type="text" id="user_name" name="user_name" /></td>
         </tr>
         <tr>
-            <td>��&nbsp;&nbsp;&nbsp;��:</td>
+            <td>密&nbsp;&nbsp;&nbsp;码:</td>
             <td class="width160"><input class="text" type="password" name="password" /></td>
             <?php if ($this->_var['captcha']): ?>
-            <td>��֤��:</td>
+            <td>验证码:</td>
             <td><input class="text2" type="text" name="captcha" /> <div class="validates"><img onclick="this.src='index.php?app=captcha&' + Math.round(Math.random()*10000)" style="cursor:pointer;" class="validate" src="index.php?app=captcha&<?php echo $this->_var['random_number']; ?>" /></div></td>
             <?php else: ?>
             <td colspan="2">&nbsp;</td>
@@ -42,7 +42,7 @@ $(function(){
             <input class="btnEnter" type="submit" name="" value="" />
             <input class="btnBack" type="button" name="" value="" onclick="go('<?php echo $this->_var['site_url']; ?>')"/>
             <input class="btnBorget" type="button" name="" value="" onclick="go('<?php echo $this->_var['site_url']; ?>/index.php?app=find_password')"/>
-            <p>&copy; 2003-2012 ShopEx inc. Powered by ECMall</p>
+            <p>2011-2014 &copy; <a href="http://ecmjx.jyds95.com">琪琦网购微信商城</a> 版权所有</p>
             </th>
         </tr>
     </form>

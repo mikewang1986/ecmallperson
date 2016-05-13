@@ -99,6 +99,13 @@ class GoodsModel extends BaseModel
             'foreign_key' => 'goods_id',
             'dependent'   => true, // 依赖
         ),
+		//商品和促销活动（减价打折）是一对多关系 /  edit by tyioocom
+        'has_promotion' => array(
+            'model' => 'promotion',
+            'type'  => HAS_ONE,
+            'foreign_key' => 'goods_id',
+            'dependent'   => true, // 依赖
+        ),
     );
 
     var $_autov = array(
@@ -127,15 +134,19 @@ class GoodsModel extends BaseModel
         $store_mod =& m('store');
         $gstat_mod =& m('goodsstatistics');
         $cg_table  = DB_PREFIX . 'category_goods';
+		$goods_pvs_mod = &m('goods_pvs');  // sku tyioocom 
 
-        $fields = "g.goods_id, g.store_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, " .
+		/* tyioocom */
+        $fields .= "g.goods_id, g.store_id, g.type, g.goods_name, g.cate_id, g.cate_name, g.brand, g.spec_qty, g.spec_name_1, g.spec_name_2, g.if_show, g.closed, g.add_time, g.recommended, g.default_image, g.default_spec, " .//360cd.cn
                 "gs.spec_id, gs.spec_1, gs.spec_2, gs.color_rgb, gs.price, gs.stock, " .
-                "s.store_name, s.region_id, s.region_name, s.credit_value, s.sgrade, " .
+                "s.store_name, s.send_address, s.region_id, s.region_name, s.credit_value, s.sgrade, " .//1hao5
+				"gp.pvs, " .  // sku tyioocom 
                 "gst.views, gst.sales, gst.comments";
         $desc && $fields .= ", g.description";
         $tables = "{$this->table} g " .
                 "LEFT JOIN {$gs_mod->table} gs ON g.default_spec = gs.spec_id " .
                 "LEFT JOIN {$store_mod->table} s ON g.store_id = s.store_id " .
+				"LEFT JOIN {$goods_pvs_mod->table} gp ON g.goods_id=gp.goods_id " .  // sku tyioocom 
                 "LEFT JOIN {$gstat_mod->table} gst ON g.goods_id = gst.goods_id ";
 
         /* 条件(WHERE) */
@@ -175,6 +186,12 @@ class GoodsModel extends BaseModel
                 $goods['default_image'] || $goods_list[$key]['default_image'] = Conf::get('default_goods_image');
             }
         }
+		
+		/* 读取促销价格 */
+		$promotion_mod= &m('promotion');
+		foreach ($goods_list as $key => $goods) {
+			$goods_list[$key]['price'] = $promotion_mod->get_promotion_price($goods['goods_id'], $goods['spec_id']);
+		}
 
         return $goods_list;
     }

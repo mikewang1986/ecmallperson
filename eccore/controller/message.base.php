@@ -318,7 +318,7 @@ class Message extends MessageBase
             {
                 $this->redirect = str_replace('&amp;', '&', $this->redirect); //$this->redirect 是给js使用的,不能包含&amp;
             }
-            $this->_config_seo('title', Lang::get('ecmall_sysmsg') . '-- Powered by ECMall');
+            $this->_config_seo('title', Lang::get('ecmall_sysmsg'));
             $this->assign('message',    $this->message);
             $this->assign('links',      $this->links);
             $this->assign('icon',       $this->icon);

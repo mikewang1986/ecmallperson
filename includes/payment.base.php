@@ -114,7 +114,7 @@ class BasePayment extends Object
      */
     function _get_subject($order_info)
     {
-        return 'ECMall Order:' . $order_info['order_sn'];
+        return 'Order:' . $order_info['order_sn'];
     }
 
     /**

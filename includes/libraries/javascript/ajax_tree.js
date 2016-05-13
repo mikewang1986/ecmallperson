@@ -65,7 +65,9 @@ $(function()
                         "<td class='node' width='50%'><img class='preimg' src='templates/style/images/treetable/vertline.gif'/>"+src+"<span class='node_name editable' ectype='inline_edit' fieldname='cate_name' fieldid='"+res[i].cate_id+"' required='1'>"+res[i].cate_name+"</span></td>"+
             "<td class='align_center'><span class='editable' ectype='inline_edit' fieldname='sort_order' fieldid='"+res[i].cate_id+"' datatype='number'>"+res[i].sort_order+"</span></td>"+
             "<td class='align_center'>"+if_show+"</td>"+
-            "<td class='handler'><span><a href='index.php?app=gcategory&amp;act=edit&amp;id="+res[i].cate_id+"'>"+lang.edit+"</a>  | <a href='javascript:if(confirm(\""+lang.confirm_delete+"\"))window.location=\"index.php?app=gcategory&act=drop&id="+res[i].cate_id+"\";'>"+lang.drop+"</a> | <a href='index.php?app=gcategory&amp;act=add&amp;pid="+res[i].cate_id+"'>"+lang.add_child+"</a></span></td></tr>";
+            // props tyioocom 
+			"<td><span><a href='index.php?app=gcategory&amp;act=edit&amp;id="+res[i].cate_id+"'>"+lang.edit+"</a>  | <a href='javascript:if(confirm(\""+lang.confirm_delete+"\"))window.location=\"index.php?app=gcategory&act=drop&id="+res[i].cate_id+"\";'>"+lang.drop+"</a> | <a href='index.php?app=gcategory&amp;act=add&amp;pid="+res[i].cate_id+"'>"+lang.add_child+"</a> | <a href='index.php?app=props&act=distribute&cate_id="+res[i].cate_id+"'>分配属性</a></span></td></tr>";
+			// end props
                     }
                     //将组成的字符串添加到点击对象后面
                     pr.after(str);
@@ -145,7 +147,9 @@ function secajax(ob)
                         "<td class='node' width='50%'>"+itd2+"</td>"+
             "<td class='align_center'><span class='editable' ectype='inline_edit' fieldname='sort_order' fieldid='"+res[i].cate_id+"' datatype='number'>"+res[i].sort_order+"</span></td>"+
             "<td class='align_center'>"+if_show+"</td>"+
-            "<td class='handler'><span><a href='index.php?app=gcategory&amp;act=edit&amp;id="+res[i].cate_id+"'>"+lang.edit+"</a>  | <a href='javascript:if(confirm(\""+lang.confirm_delete+"\"))window.location =\"index.php?app=gcategory&amp;act=drop&amp;id="+res[i].cate_id+"\";'>"+lang.drop+"</a>" + add_child + "</span></td></tr>";
+			 // props tyioocom 
+            "<td><span><a href='index.php?app=gcategory&amp;act=edit&amp;id="+res[i].cate_id+"'>"+lang.edit+"</a>  | <a href='javascript:if(confirm(\""+lang.confirm_delete+"\"))window.location =\"index.php?app=gcategory&amp;act=drop&amp;id="+res[i].cate_id+"\";'>"+lang.drop+"</a>" + add_child + " | <a href='index.php?app=props&act=distribute&cate_id="+res[i].cate_id+"'>分配属性</a></span></td></tr>";
+			            // end props
                     }
                     pr.after(str);
                     change_background();

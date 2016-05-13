@@ -38,7 +38,13 @@ class PaynotifyApp extends MallbaseApp
         }
 
         $model_payment =& m('payment');
-        $payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id={$order_info['seller_id']}");
+        $store_mod = & m('store');
+        $store_info = $store_mod->get_info($order_info['seller_id']);
+        if($store_info['is_open_pay']){
+        	$payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id={$order_info['seller_id']}");
+        }else{
+        	$payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id=0");
+        }
         if (empty($payment_info))
         {
             /* 没有指定的支付方式 */
@@ -60,6 +66,10 @@ class PaynotifyApp extends MallbaseApp
             return;
         }
 
+        $notify_result['target']=ORDER_ACCEPTED;
+        #TODO 临时在此也改变订单状态为方便调试，实际发布时应把此段去掉，订单状态的改变以notify为准
+        $this->_change_order_status($order_id, $order_info['extension'], $notify_result);
+		
         #TODO 临时在此也改变订单状态为方便调试，实际发布时应把此段去掉，订单状态的改变以notify为准
         //$this->_change_order_status($order_id, $order_info['extension'], $notify_result);
 
@@ -106,7 +116,13 @@ class PaynotifyApp extends MallbaseApp
         }
 
         $model_payment =& m('payment');
-        $payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id={$order_info['seller_id']}");
+        $store_mod = & m('store');
+        $store_info = $store_mod->get_info($order_info['seller_id']);
+        if($store_info['is_open_pay']){
+        	$payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id={$order_info['seller_id']}");
+        }else{
+        	$payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id=0");
+        }
         if (empty($payment_info))
         {
             /* 没有指定的支付方式 */
@@ -143,6 +159,97 @@ class PaynotifyApp extends MallbaseApp
             $this->_sendmail(true);
         }
     }
+
+    /**
+     *    微信支付返回认证
+     *
+     *    @author    ecmjx.jyds95.com
+     *    @return    void
+     */
+
+    function wxnotify()
+    {
+       
+        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
+
+        
+        $xmlobj = simplexml_load_string($xml);
+        $order_id = $xmlobj->attach;
+
+        $order_id = intval($order_id);
+
+        if (!$order_id)
+        {
+           
+            $this->show_warning('no_such_order');
+            return;
+        }
+        $model_order =& m('order');
+
+        
+        $order_info  = $model_order->get($order_id);
+        
+
+
+
+        if (empty($order_info))
+        {
+            /* 没有该订单 */
+            $this->show_warning('no_such_order');
+            return;
+        }
+
+        $order_info['xml'] = $xml;
+
+        $model_payment =& m('payment');
+        $store_mod = & m('store');
+        $store_info = $store_mod->get_info($order_info['seller_id']);
+        if($store_info['is_open_pay']){
+            $payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id={$order_info['seller_id']}");
+        }else{
+            $payment_info  = $model_payment->get("payment_code='{$order_info['payment_code']}' AND store_id=0");
+        }
+        
+        if (empty($payment_info))
+        {
+            /* 没有指定的支付方式 */
+            $this->show_warning('no_such_payment');
+            return;
+        }
+
+        /* 调用相应的支付方式 */
+        $payment = $this->_get_payment($order_info['payment_code'], $payment_info);
+
+        
+
+        /* 获取验证结果 */
+        $notify_result = $payment->verify_notify($order_info, true);
+        if ($notify_result === false)
+        {
+            /* 支付失败 */
+            $payment->verify_result(false);
+            return;
+        }
+
+        //改变订单状态
+        $this->_change_order_status($order_id, $order_info['extension'], $notify_result);
+        $payment->verify_result(true);
+
+        if ($notify_result['target'] == ORDER_ACCEPTED)
+        {
+            /* 发送邮件给卖家，提醒付款成功 */
+            $model_member =& m('member');
+            $seller_info  = $model_member->get($order_info['seller_id']);
+
+            $mail = get_mail('toseller_online_pay_success_notify', array('order' => $order_info));
+            $this->_mailto($seller_info['email'], addslashes($mail['subject']), addslashes($mail['message']));
+
+            /* 同步发送 */
+            $this->_sendmail(true);
+        }
+    }
+
+
 
     /**
      *    改变订单状态

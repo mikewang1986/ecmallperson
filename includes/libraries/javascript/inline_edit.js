@@ -186,12 +186,8 @@ $('img[ectype="inline_edit"]').click(function(){
             params.push('sort'+'='+ s_name);
             params.push('order=asc');
     }
-    if(location.pathname.indexOf('/admin/')>-1)
-    {
-            location.assign(SITE_URL + '/admin/index.php?' + params.join('&'));
-            return;
-    }
-    location.assign(SITE_URL + '/index.php?' + params.join('&'));
+    var href = window.location.href.split('?');
+    location.assign(href[0] + '?' + params.join('&'));
     });
 });
     //检查提交内容的必须项

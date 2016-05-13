@@ -4,6 +4,8 @@
 class GoodsApp extends StorebaseApp
 {
     var $_goods_mod;
+	var $_gradegoods_mod;//by cengnlaeng
+		var $_ju_mod;
     function __construct()
     {
         $this->GoodsApp();
@@ -12,10 +14,41 @@ class GoodsApp extends StorebaseApp
     {
         parent::__construct();
         $this->_goods_mod =& m('goods');
+		$this->_gradegoods_mod=&m('gradegoods');//by cengnlaeng
+		$this->_ju_mod = &m('ju');
     }
 
     function index()
     {
+		
+		if($this->visitor->get('user_id') && !$_GET['name'])
+		{
+			
+			
+		
+		header("Location: index.php?app=goods&id=$_GET[id]&name=".$this->visitor->get('user_id'));
+
+		}
+		
+		
+		 if($_GET['name'] !=$this->visitor->get('user_id'))
+		{
+	
+		$_SESSION['name']=$_GET['name'];
+		$_SESSION[goods_id]=$_GET['id'];
+		}else{
+			
+	   if($_SESSION[goods_id]!=$_GET['id'])
+	   {
+		 
+		$_SESSION[name]='';  
+	   }		
+		
+			
+	  }
+	  
+	
+		
         /* 参数 id */
         $id = empty($_GET['id']) ? 0 : intval($_GET['id']);
         if (!$id)
@@ -34,15 +67,67 @@ class GoodsApp extends StorebaseApp
         {
             $this->_assign_common_info($data);
         }
+        
+        if(ECMALL_WAP == 1){
+            $data = $this->_get_goods_comment($id, 10);
+            $this->_assign_goods_comment($data);
+        }
 
         /* 更新浏览次数 */
         $this->_update_views($id);
+		
+		$ju = $this->_ju_mod->get(array(
+			'join' => 'belong_template',
+			'conditions' => 'goods_id='.$id,
+			'fields' => 'this.group_id,this.status,jt.state',
+		));
+		$this->assign('ju',$ju);
 
         //是否开启验证码
         if (Conf::get('captcha_status.goodsqa'))
         {
             $this->assign('captcha', 1);
         }
+		
+		// sku tyioocom 
+		$goods_pvs_mod = &m('goods_pvs');
+		$props_mod = &m('props');
+		$prop_value_mod = &m('prop_value');
+		$goods_pvs = $goods_pvs_mod->get($id);// 取出该商品的属性字符串
+		$goods_pvs_str = $goods_pvs['pvs'];
+		$props = array();
+		if(!empty($goods_pvs_str))
+		{
+			$goods_pvs_arr = explode(';',$goods_pvs_str);//  分割成数组
+			foreach($goods_pvs_arr as $pv)
+			{
+				if($pv)
+				{
+					$pv_arr = explode(':',$pv);
+					$prop = $props_mod->get(array('conditions'=>'pid='.$pv_arr[0].' AND status=1'));
+					if($prop)
+					{
+						$prop_value = $prop_value_mod->get(array('conditions'=>'pid='.$pv_arr[0].' AND vid='.$pv_arr[1].' AND status=1'));
+						if($prop_value){
+							$props[] = array('name'=>$prop['name'],'value'=>$prop_value['prop_value']);
+						}
+					}
+				}
+			}
+		}
+		$this->assign('props',$props);
+		// end sku
+		
+		  /* 如果开启积分功能，则：读取商品积分设置 add by 1hao5 team */
+		if(Conf::get('integral_enabled'))
+		{
+			$goods_integral_mod =& m('goods_integral');
+			$goods_integral = $goods_integral_mod->get($id);
+			$this->assign('goods_integral', $goods_integral);
+		}
+
+		/*end by 1hao5 team*/
+		
 
         $this->assign('guest_comment_enable', Conf::get('guest_comment'));
         $this->display('goods.index.html');
@@ -197,6 +282,32 @@ class GoodsApp extends StorebaseApp
         }
     }
 
+
+    //360cd.cn    
+    function setWapStore($store_id)
+    {
+        //360cd.cn
+        $store_model=&m('store');
+        $where=$store_id;       
+        $store_data=$store_model->get($where);
+        if(!$store_data)
+        {
+            //此处填写数据不存在内容
+            return;
+        }
+        $themes=explode('|', $store_data['waptheme']);
+        if($themes[0]=='zlstore')
+        {
+            $_SESSION['wapstore']='zlstore';
+            $_SESSION['wapstore_id']=$store_id;
+        }else{
+			$_SESSION['wapstore']='';
+            $_SESSION['wapstore_id']=$store_id;
+		}
+        //360cd.cn
+    }
+    //360cd.cn
+
     /**
      * 取得公共信息
      *
@@ -223,8 +334,74 @@ class GoodsApp extends StorebaseApp
                 return false;
             }
             $goods['tags'] = $goods['tags'] ? explode(',', trim($goods['tags'], ',')) : array();
+			
+			
+			/*减价打折促销 价格设置 add tyioocom */
+			
+			$promotion_mod = & m('promotion');
+			
+			if($promotion_mod->goods_has_promotion($goods['goods_id']))
+			{
+				$promotion = $promotion_mod->get(array('conditions'=>"start_time<=".gmtime()." AND end_time>=".gmtime()." AND goods_id=".$goods['goods_id']));
+
+				$i=$is_pro=0;
+				foreach($goods['_specs'] as $spec)
+				{
+					$spec_price = unserialize($promotion['spec_price']);
+					if(isset($spec_price[$spec['spec_id']]['pro_type'])) 
+					{
+						if($spec_price[$spec['spec_id']]['pro_type'] == 'price') 
+						{
+							if($spec['price']>$spec_price[$spec['spec_id']]['price'])
+							{
+								$pro_price = round($spec['price'] - $spec_price[$spec['spec_id']]['price'],2);
+								$is_pro=1;
+							}
+							else
+							{
+								$pro_price = NULL; // 考虑设置了促销后，再给该商品添加规格的情况，那么一律给新增的规格设置促销价为NULL
+								$is_pro=0;
+							}
+						}
+						else 
+						{
+							$pro_price = round($spec['price'] * $spec_price[$spec['spec_id']]['price'] / 10,2);
+							$is_pro=1;
+						}
+					}
+					else{
+						$pro_price = NULL; // 考虑设置了促销后，再给该商品添加规格的情况，那么一律给新增的规格设置促销价为NULL
+						$is_pro=0;
+					}
+					$goods['_specs'][$i++] += array('pro_price' => $pro_price,'is_pro'=>$is_pro);
+				}
+				$goods += $promotion;
+				$goods['pro_type'] = 'promo';
+			}
+			
+			else
+			{
+				//开启会员价格并且用户登陆，则显示会员价格 by cengnlaeng
+				if($goods['if_open'])
+				{
+					$member_mod=&m('member');
+					$member=$member_mod->get_grade_info($this->visitor->get('user_id'));
+					$goods['pro_name']=$member['grade_name'];
+					$discount=$this->_gradegoods_mod->get_user_discount($this->visitor->get('user_id'),$id);
+					foreach($goods['_specs'] as $key => $val)
+					{
+						$goods['_specs'][$key]['pro_price']= $val['price']*$discount;
+						$goods['_specs'][$key]['is_pro'] = 1 ;
+					}
+					$goods['pro_type'] = 'ugrade';
+				}
+			}
+
+
 
             $data['goods'] = $goods;
+			$goods_integral_mod = & m('goods_integral');
+			$data['goods_integral_info'] = $goods_integral_mod->get('goods_id='.$id);
 
             /* 店铺信息 */
             if (!$goods['store_id'])
@@ -247,7 +424,6 @@ class GoodsApp extends StorebaseApp
         {
             $this->set_store($data['goods']['store_id']);
         }
-
         return $data;
     }
 
@@ -263,15 +439,25 @@ class GoodsApp extends StorebaseApp
         return $ms->tag_get($tag);
     }
 
+    function generateQRfromGoogle($goods_id, $widhtHeight = '100', $EC_level = 'L', $margin = '0') {
+        $url = SITE_URL.'/index.php?app=goods&id='.$goods_id;
+        $url = urlencode($url);
+        return '<img src="http://qr.liantu.com/api.php?bg=ffffff&fg=000000&gc=000000&el=l&w=150&m=10&text=' . $url . '" alt="QR code" widhtHeight="' . $widhtHeight . '" widhtHeight="' . $widhtHeight . '"/>';
+    }
+    
     /* 赋值公共信息 */
     function _assign_common_info($data)
     {
         /* 商品信息 */
         $goods = $data['goods'];
+        $goods['scan_code'] = $this->generateQRfromGoogle($goods['goods_id']);
         $this->assign('goods', $goods);
+		$this->assign('goods_integral_info',$data['goods_integral_info']);
         $this->assign('sales_info', sprintf(LANG::get('sales'), $goods['sales'] ? $goods['sales'] : 0));
         $this->assign('comments', sprintf(LANG::get('comments'), $goods['comments'] ? $goods['comments'] : 0));
-
+        //360cd.cn
+        $this->setWapStore($goods['store_id']);
+        //360cd.cn
         /* 店铺信息 */
         $this->assign('store', $data['store_data']);
 
@@ -286,7 +472,13 @@ class GoodsApp extends StorebaseApp
 
         /* 配置seo信息 */
         $this->_config_seo($this->_get_seo_info($data['goods']));
-
+		 
+		//会员折扣
+		$this->assign('discount',$this->_gradegoods_mod->get_user_discount($this->visitor->get('user_id'),$data['goods']['goods_id']));
+		// 会员等级名称
+		$member_mod=&m('member');
+		$user_grade_info=$member_mod->get_grade_info($this->visitor->get('user_id'));
+		$this->assign('ugrade_name',!empty($user_grade_info)?$user_grade_info['grade_name'].'价':'会员价');
         /* 商品分享 */
         $this->assign('share', $data['share']);
 
@@ -335,7 +527,7 @@ class GoodsApp extends StorebaseApp
         $page = $this->_get_page($num_per_page);
         $order_goods_mod =& m('ordergoods');
         $sales_list = $order_goods_mod->find(array(
-            'conditions' => "goods_id = '$goods_id' AND status = '" . ORDER_FINISHED . "'",
+            'conditions' => "goods_id = '$goods_id' AND order_alias.status = '" . ORDER_FINISHED . "'",
             'join'  => 'belongs_to_order',
             'fields'=> 'buyer_id, buyer_name, add_time, anonymous, goods_id, specification, price, quantity, evaluation',
             'count' => true,

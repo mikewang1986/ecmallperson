@@ -29,6 +29,12 @@
                 <!--{else}-->
                 <a href="javascript:if(confirm('{$lang.disable_confirm}'))window.location='index.php?app=payment&act=disable&code={$payment.code}';">{$lang.disable}</a>
                 <!--{/if}-->
+				 <!--{if $payment.installed}-->
+					<a href="index.php?app=payment&amp;act=config&payment_id={$payment.payment_id}&amp;code={$payment.code}" >{$lang.config}</a> 
+					<a href="javascript:drop_confirm('{$lang.uninstall_confirm}', 'index.php?app=payment&amp;act=uninstall&payment_id={$payment.payment_id}');" class="delete">{$lang.uninstall}</a>
+				<!--{else}-->
+					<a href="index.php?app=payment&amp;act=install&code={$payment.code}">{$lang.install}</a>
+				<!--{/if}-->
                 </td>
         </tr>
         <!--{foreachelse}-->

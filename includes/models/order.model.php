@@ -15,6 +15,19 @@ class OrderModel extends BaseModel
             'foreign_key'   => 'order_id',
             'dependent'     => true
         ),
+		
+		'has_virtuallog' => array(
+
+            'model'         => 'virtuallog',
+
+            'type'          => HAS_ONE,
+
+            'foreign_key'   => 'order_id',
+
+            'dependent'     => true
+
+        ),
+		
         // 一个订单有多个订单商品
         'has_ordergoods' => array(
             'model'         => 'ordergoods',
@@ -87,6 +100,53 @@ class OrderModel extends BaseModel
         /* 操作成功 */
         return true;
     }
+	
+	//新增
+function change_seckill_stock($action, $order_id){
+        if (!in_array($action, array('+', '-')))
+        {
+            $this->_error('undefined_action');
+
+            return false;
+        }
+        if (!$order_id)
+        {
+            $this->_error('no_such_order');
+
+            return false;
+        }
+
+        /* 获取订单商品列表 */
+        $model_ordergoods =& m('ordergoods');
+        $order_goods = $model_ordergoods->find("order_id={$order_id}");
+        if (empty($order_goods))
+        {
+            $this->_error('goods_empty');
+
+            return false;
+        }
+
+        $model_seckill =& m('seckill');
+        /*查找当前秒杀商品*/
+        $seckill_info = $model_seckill->find(array(
+            'conditions' => 'sec_state='.SECKILL_START,
+            'fields' => 'goods_id',
+        )); 
+        $seckill_info = empty($seckill_info) ? array() : $seckill_info;
+        foreach ($seckill_info as $sec_key => $sec_val){
+        	$seckill_info[$sec_val['goods_id']] = $sec_key;
+        }
+        /* 依次改变库存 */
+        foreach ($order_goods as $rec_id => $goods)
+        {
+        	if(key_exists($goods['goods_id'],$seckill_info)){
+                $model_seckill->edit('goods_id='.$goods['goods_id'].' AND sec_state='.SECKILL_START, "sec_quantity=sec_quantity {$action} {$goods['quantity']}");
+            }
+        }
+        /* 操作成功 */
+        return true;
+    }
+	
 }
 
 ?>

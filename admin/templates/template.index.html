@@ -3,33 +3,56 @@
 </script>
 <style type="text/css">
 <!--
+.clearfix:after{ content:'\20'; display:block; height:0; overflow:hidden; clear:both}
 body {background: none}
-#rightTop p {padding-top: 5px;}
+.subnav li span{*top:0;}
 #rightCon { list-style:none; }
-#rightCon li { float:left; margin:10px; }
-#rightCon .page_item { margin:5px; text-align:center; width:90px; height:120px; }
+#rightCon li { float:left; margin:8px; width:188px;}
+#rightCon .page_item {text-align:center; width:188px; height:120px;}
 #rightCon .page_item h3 { background:#eee; border:#ddd 1px solid; color:#4DA1E0; margin-bottom:3px; height:20px; line-height:20px; font-size:13px; }
-#rightCon .page_item div { background:#eee; border:#ddd 1px solid; height:85px; line-height:97px; }
-#rightCon .page_item input { padding:0px 5px; margin-top:50px; }
+#rightCon .page_item div { background:#eee; border:#ddd 1px solid; height:85px;}
+#rightCon .page_item input {padding:3px 0 0 0; margin-top:50px; text-align:center }
 -->
 </style>
+<script>
+$(function(){
+	$('input.preview').click(function(){
+		window.open($(this).attr('url'));
+	});
+	$('input.edit').click(function(){
+		window.location.href = REAL_BACKEND_URL + '/index.php?app=channel&act=edit&id='+$(this).attr('id');
+	});
+	$('input.drop').click(function(){
+		if(confirm('{$lang.drop_confirm}')){
+			window.location.href = REAL_BACKEND_URL + '/index.php?app=channel&act=drop&id='+$(this).attr('id');
+		}
+	});
+});
+</script>
+
 <div id="rightTop">
-<p>
-    <b>{$lang.template_setting}</b><br />
-</p>
+	<p>{$lang.template_setting}</p>
+  	<ul class="subnav">
+    	<li><span>{$lang.template_list}</span></li>
+   	 	<li><a class="btn1" href="{url app=channel&act=add}">{$lang.channel_add}</a></li>
+  </ul>
 
 </div>
-<ul id="rightCon">
-    <!--{foreach from=$pages item=page_url key=page}-->
+<ul id="rightCon" class="clearfix">
+    <!--{foreach from=$pages item=page key=key}-->
     <li>
         <div class="page_item">
-            <h3>{$lang.$page}</h3>
+            <h3>{$page.title}</h3>
             <div>
                 <form action="index.php" target="_blank">
-                <input type="hidden" name="app" value="template" />
-                <input type="hidden" name="act" value="edit" />
-                <input type="hidden" name="page" value="{$page}" />
-                <input type="submit" value="{$lang.edit}" />
+                	<input type="hidden" name="app" value="template" />
+                	<input type="hidden" name="act" value="edit" />
+                	<input type="hidden" name="page" value="{$key}" />
+                    <input type="submit" class="submit" value="{$lang.visual}" />
+                    <input type="button" class="preview" url="{$page.url}" value="{$lang.preview}" />
+                    <!--{foreach from=$page.action item=action}-->
+                	<input type="button" class="{$action}" id="{$key}" value="{$lang.$action}" />
+                    <!--{/foreach}-->
                 </form>
             </div>
         </div>

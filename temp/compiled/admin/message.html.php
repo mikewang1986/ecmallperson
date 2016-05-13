@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
-<title> ECMallϵͳ��Ϣ -- Powered by ECMall </title>
+<title> 系统消息</title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
 <style>
 <!--
@@ -19,14 +19,14 @@ p {color: #999; border-top: 1px solid #cbe4f5; text-align: center; padding-top: 
 </head>
 
 <body>
-<h1>ECMallϵͳ��Ϣ</h1>
+<h1>系统消息</h1>
 <dl>
     <dt><?php echo $this->_var['message']; ?></dt>
     <?php if ($this->_var['err_file']): ?>
     <dd>Error File: <b><?php echo $this->_var['err_file']; ?></b> at <b><?php echo $this->_var['err_line']; ?></b> line.</dd>
     <?php endif; ?>
     <?php if ($this->_var['redirect']): ?>
-    <dd>����ѡ���Զ���ת</dd>
+    <dd>若不选择将自动跳转</dd>
     <?php endif; ?>
     <?php $_from = $this->_var['links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item');if (count($_from)):
     foreach ($_from AS $this->_var['item']):
@@ -41,6 +41,6 @@ window.setTimeout("<?php echo $this->_var['redirect']; ?>", 5000);
 //-->
 </script>
 <?php endif; ?>
-<p>Copyright 2003-2012 ShopEx Inc.,All rights reserved.</p>
+<p>Copyright 2003-2014 <a href="http://ecmjx.jyds95.com">琪琦网购微信商城</a> All rights reserved.</p>
 </body>
 </html>

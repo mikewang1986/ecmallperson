@@ -1,11 +1,11 @@
 <?php
 return array (
   'version' => '1.0',
-  'subject' => '{$site_name}ÌáĞÑ:ÄúµÄ¶©µ¥{$order.order_sn}ÒÑ·¢»õ',
-  'content' => '<p>×ğ¾´µÄ{$order.buyer_name}:</p>
-<p style="padding-left: 30px;">ÓëÄú½»Ò×µÄµêÆÌ{$order.seller_name}ÒÑ¾­¸øÄúµÄ¶©µ¥{$order.order_sn}·¢»õÁË£¬Çë×¢Òâ²éÊÕ¡£</p>
-<p style="padding-left: 30px;">{if $order.invoice_no}·¢»õµ¥ºÅ£º{$order.invoice_no|escape}{/if}</p>
-<p style="padding-left: 30px;">²é¿´¶©µ¥ÏêÏ¸ĞÅÏ¢Çëµã»÷ÒÔÏÂÁ´½Ó</p>
+  'subject' => '{$site_name}æé†’:æ‚¨çš„è®¢å•{$order.order_sn}å·²å‘è´§',
+  'content' => '<p>å°Šæ•¬çš„{$order.buyer_name}:</p>
+<p style="padding-left: 30px;">ä¸æ‚¨äº¤æ˜“çš„åº—é“º{$order.seller_name}å·²ç»ç»™æ‚¨çš„è®¢å•{$order.order_sn}å‘è´§äº†ï¼Œè¯·æ³¨æ„æŸ¥æ”¶ã€‚</p>
+<p style="padding-left: 30px;">{if $order.invoice_no}å‘è´§å•å·ï¼š{$order.invoice_no|escape}{/if}</p>
+<p style="padding-left: 30px;">æŸ¥çœ‹è®¢å•è¯¦ç»†ä¿¡æ¯è¯·ç‚¹å‡»ä»¥ä¸‹é“¾æ¥</p>
 <p style="padding-left: 30px;"><a href="{$site_url}/index.php?app=buyer_order&amp;act=view&amp;order_id={$order.order_id}">{$site_url}/index.php?app=buyer_order&amp;act=view&amp;order_id={$order.order_id}</a></p>
 <p style="text-align: right;">{$site_name}</p>
 <p style="text-align: right;">{$mail_send_time}</p>',

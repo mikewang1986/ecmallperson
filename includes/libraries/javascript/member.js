@@ -1,4 +1,37 @@
 $(function(){
+	/* 预存款提现 */
+	$('.deposit-withdraw .bank-each').click(function(){
+		$(this).parent().find('.bank-each').removeClass('selected');
+		$(this).parent().find('.bank-list input').attr('checked', false);
+		$(this).find('input').attr('checked', true);
+		$(this).addClass('selected');
+	});
+	$('.pop-tips').hover(function(){
+		$(this).children('.pop-bd').show();
+	},function(){
+		$(this).children('.pop-bd').hide();
+	});
+	
+	/* 预存款充值 */
+	$('*[ectype="recharge-method"] input[name="method"]').click(function(){
+		$(this).parent().find('input[name="method"]').attr('checked',false);
+		$(this).next().removeClass('selected');
+		$(this).attr('checked', true);
+		$(this).addClass('selected');
+		$('*[ectype="online"]').hide();
+		$('*[ectype="offline"]').hide();
+		$('*[ectype="'+$(this).val()+'"]').show();
+	})
+
+	/* 左栏菜单折叠 */
+	$('#left .menu b').click(function(){
+		$(this).toggleClass('fold');
+		$(this).parent().parent().find('dd').each(function(){
+			$(this).slideToggle();
+		});
+	});
+	
+	
     /* 全选 */
     $('.checkall').click(function(){
         var _self = this;

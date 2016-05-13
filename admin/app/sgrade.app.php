@@ -54,6 +54,90 @@ class SgradeApp extends BackendApp
 
         $this->display('sgrade.index.html');
     }
+    
+    function set_wapskins()
+    {
+        $id = empty($_GET['id']) ? 0 : intval($_GET['id']);
+        if (!$id)
+        {
+            $this->show_warning('Hacking Attempt');
+            return;
+        }
+
+        if (!IS_POST)
+        {
+            $sgrade = $this->_grade_mod->get_info($id);
+            if (!$sgrade)
+            {
+                $this->show_warning('sgrade_empty');
+                return;
+            }
+            $available_wapskins = explode(',', $sgrade['wapskins']);
+
+            $wapskins = $this->_get_wapskins();
+            foreach ($wapskins as $key => $wapskin)
+            {
+                if (in_array($wapskin['value'], $available_wapskins))
+                {
+                    $wapskins[$key]['checked'] = 1;
+                }
+            }
+            $this->assign('wapskins', $wapskins);
+
+            $this->display('sgrade.wapskins.html');
+        }
+        else
+        {
+            $data = array(
+                'wapskin_limit' => isset($_POST['wapskins']) ? count($_POST['wapskins']) : 1,
+                'wapskins'      => isset($_POST['wapskins']) ? join(',', $_POST['wapskins']) : 'default|default',
+            );
+            $this->_grade_mod->edit($id, $data);
+            $this->show_message('set_wapskins_ok',
+                'back_list', 'index.php?app=sgrade');
+        }
+    }
+
+    function _get_wapskins()
+    {
+        $wapskins = array();
+
+        $layout_dir = ROOT_PATH . '/themes/wapstore/';
+        if (is_dir($layout_dir))
+        {
+            if ($ldh = opendir($layout_dir))
+            {
+                while (($lfile = readdir($ldh)) !== false)
+                {
+                    if ($lfile[0] != '.' && filetype($layout_dir . $lfile) == 'dir')
+                    {
+                        $wapskin_dir = $layout_dir . $lfile . '/styles/';
+                        if (is_dir($wapskin_dir))
+                        {
+                            if ($sdh = opendir($wapskin_dir))
+                            {
+                                while (($sfile = readdir($sdh)) !== false)
+                                {
+                                    if ($sfile[0] != '.' && filetype($wapskin_dir . $sfile) == 'dir')
+                                    {
+                                        $wapskins[] = array(
+                                            'value'     => $lfile . '|' . $sfile,
+                                            'preview'   => 'themes/wapstore/' . $lfile . '/styles/' . $sfile . '/preview.jpg',
+                                            'screenshot'=> 'themes/wapstore/' . $lfile . '/styles/' . $sfile . '/screenshot.jpg',
+                                        );
+                                    }
+                                }
+                                closedir($sdh);
+                            }
+                        }
+                    }
+                }
+                closedir($ldh);
+            }
+        }
+
+        return $wapskins;
+    }
 
     function add()
     {
@@ -305,6 +389,8 @@ class SgradeApp extends BackendApp
             $arr[] = 'coupon';
             $arr[] = 'groupbuy';
             $arr[] = 'enable_radar';
+			$arr[] = 'enable_free_fee';//by cengnlaeng
+				$arr[] = 'template';
 
         return $arr;
     }

@@ -48,7 +48,7 @@
       <td class="table-center"><!--{if $sgrade.need_confirm}-->{$lang.yes}<!--{else}-->{$lang.no}<!--{/if}--></td>
       <td class="handler" style="width: 250px">
       <span style="width: 230px">
-      <a href="index.php?app=sgrade&amp;act=edit&amp;id={$sgrade.grade_id}">{$lang.edit}</a> | <!--{if $sgrade.grade_id eq 1}-->{$lang.default}<!--{else}--><a href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=sgrade&amp;act=drop&amp;id={$sgrade.grade_id}');">{$lang.drop}</a><!--{/if}--> | <a href="index.php?app=sgrade&amp;act=set_skins&amp;id={$sgrade.grade_id}">{$lang.set_skins}</a>
+      <a href="index.php?app=sgrade&amp;act=edit&amp;id={$sgrade.grade_id}">{$lang.edit}</a> | <!--{if $sgrade.grade_id eq 1}-->{$lang.default}<!--{else}--><a href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=sgrade&amp;act=drop&amp;id={$sgrade.grade_id}');">{$lang.drop}</a><!--{/if}--> | <a href="index.php?app=sgrade&amp;act=set_skins&amp;id={$sgrade.grade_id}">{$lang.set_skins}</a> | <a href="index.php?app=sgrade&amp;act=set_wapskins&amp;id={$sgrade.grade_id}">{$lang.set_wapskins}</a>
       </span>
       </td>
     </tr>

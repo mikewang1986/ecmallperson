@@ -1,17 +1,17 @@
 <?php echo $this->fetch('header.html'); ?>
 <div id="rightTop">
-  <p>µêÆÌ</p>
+  <p>åº—é“º</p>
   <ul class="subnav">
     <?php if ($_GET['wait_verify']): ?>
-    <li><a class="btn1" href="index.php?app=store">¹ÜÀí</a></li>
+    <li><a class="btn1" href="index.php?app=store">ç®¡ç†</a></li>
     <?php else: ?>
-    <li><span>¹ÜÀí</span></li>
+    <li><span>ç®¡ç†</span></li>
     <?php endif; ?>
-    <li><a class="btn1" href="index.php?app=store&amp;act=test">ÐÂÔö</a></li>
+    <li><a class="btn1" href="index.php?app=store&amp;act=test">æ–°å¢ž</a></li>
     <?php if ($_GET['wait_verify']): ?>
-    <li><span>´ýÉóºË</span></li>
+    <li><span>å¾…å®¡æ ¸</span></li>
     <?php else: ?>
-    <li><a class="btn1" href="index.php?app=store&amp;wait_verify=1">´ýÉóºË</a></li>
+    <li><a class="btn1" href="index.php?app=store&amp;wait_verify=1">å¾…å®¡æ ¸</a></li>
     <?php endif; ?>
   </ul>
 </div>
@@ -22,19 +22,19 @@
           <input type="hidden" name="app" value="store" />
           <input type="hidden" name="act" value="index" />
           <input type="hidden" name="wait_verify" value="<?php echo $_GET['wait_verify']; ?>" />
-          µêÖ÷:
+          åº—ä¸»:
           <input class="queryInput" type="text" name="owner_name" value="<?php echo htmlspecialchars($_GET['owner_name']); ?>" />
-          µêÆÌÃû³Æ:
+          åº—é“ºåç§°:
           <input class="queryInput" type="text" name="store_name" value="<?php echo htmlspecialchars($_GET['store_name']); ?>" />
-          ËùÊôµÈ¼¶:
+          æ‰€å±žç­‰çº§:
           <select class="querySelect" name="sgrade">
-            <option value="">ÇëÑ¡Ôñ...</option>
+            <option value="">è¯·é€‰æ‹©...</option>
             <?php echo $this->html_options(array('options'=>$this->_var['sgrades'],'selected'=>$_GET['sgrade'])); ?>
           </select>
-          <input type="submit" class="formbtn" value="²éÑ¯" />
+          <input type="submit" class="formbtn" value="æŸ¥è¯¢" />
       </div>
       <?php if ($this->_var['filtered']): ?>
-      <a class="left formbtn1" href="index.php?app=store<?php if ($_GET['wait_verify']): ?>&amp;wait_verify=<?php echo $_GET['wait_verify']; ?><?php endif; ?>">³·Ïú¼ìË÷</a>
+      <a class="left formbtn1" href="index.php?app=store<?php if ($_GET['wait_verify']): ?>&amp;wait_verify=<?php echo $_GET['wait_verify']; ?><?php endif; ?>">æ’¤é”€æ£€ç´¢</a>
       <?php endif; ?>
     </form>
   </div>
@@ -45,17 +45,17 @@
     <?php if ($this->_var['stores']): ?>
     <tr class="tatr1">
       <td width="20" class="firstCell"><input type="checkbox" class="checkall" /></td>
-      <td>µêÖ÷ÓÃ»§Ãû | µêÖ÷ÐÕÃû</td>
-      <td><span ectype="order_by" fieldname="store_name">µêÆÌÃû³Æ</span></td>
-      <td><span ectype="order_by" fieldname="region_id">ËùÔÚµØ</span></td>
-      <td><span ectype="order_by" fieldname="sgrade">ËùÊôµÈ¼¶</span></td>
-      <td class="table-center"><span ectype="order_by" fieldname="add_time">ÓÐÐ§ÆÚÖÁ</span></td>
-      <td class="table-center"><span ectype="order_by" fieldname="state">×´Ì¬</span></td>
+      <td>åº—ä¸»ç”¨æˆ·å | åº—ä¸»å§“å</td>
+      <td><span ectype="order_by" fieldname="store_name">åº—é“ºåç§°</span></td>
+      <td><span ectype="order_by" fieldname="region_id">æ‰€åœ¨åœ°</span></td>
+      <td><span ectype="order_by" fieldname="sgrade">æ‰€å±žç­‰çº§</span></td>
+      <td class="table-center"><span ectype="order_by" fieldname="add_time">æœ‰æ•ˆæœŸè‡³</span></td>
+      <td class="table-center"><span ectype="order_by" fieldname="state">çŠ¶æ€</span></td>
       <?php if (! $_GET['wait_verify']): ?>
-      <td class="table-center"><span ectype="order_by" fieldname="sort_order">ÅÅÐò</span></td>
-      <td class="table-center"><span ectype="order_by" fieldname="recommended">ÍÆ¼ö</td>
+      <td class="table-center"><span ectype="order_by" fieldname="sort_order">æŽ’åº</span></td>
+      <td class="table-center"><span ectype="order_by" fieldname="recommended">æŽ¨è</td>
       <?php endif; ?>
-      <td class="handler">²Ù×÷</td>
+      <td class="handler">æ“ä½œ</td>
     </tr>
     <?php endif; ?>
     <?php $_from = $this->_var['stores']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'store');if (count($_from)):
@@ -70,19 +70,19 @@
       <td class="table-center"><?php echo local_date("Y-m-d",$this->_var['store']['end_time']); ?></td>
       <td class="table-center"><?php echo $this->_var['store']['state']; ?></td>
       <?php if (! $_GET['wait_verify']): ?>
-      <td class="table-center"><span ectype="inline_edit" fieldname="sort_order" fieldid="<?php echo $this->_var['store']['store_id']; ?>" datatype="pint" title="¿É±à¼­" class="editable"><?php echo $this->_var['store']['sort_order']; ?></span></td>
-      <td class="table-center"><?php if ($this->_var['store']['recommended']): ?><img src="templates/style/images/positive_enabled.gif" ectype="inline_edit" fieldname="recommended" fieldid="<?php echo $this->_var['store']['store_id']; ?>" fieldvalue="1" title="¿É±à¼­"/><?php else: ?><img src="templates/style/images/positive_disabled.gif" ectype="inline_edit" fieldname="recommended" fieldid="<?php echo $this->_var['store']['store_id']; ?>" fieldvalue="0" title="¿É±à¼­"/><?php endif; ?></td>
+      <td class="table-center"><span ectype="inline_edit" fieldname="sort_order" fieldid="<?php echo $this->_var['store']['store_id']; ?>" datatype="pint" title="å¯ç¼–è¾‘" class="editable"><?php echo $this->_var['store']['sort_order']; ?></span></td>
+      <td class="table-center"><?php if ($this->_var['store']['recommended']): ?><img src="templates/style/images/positive_enabled.gif" ectype="inline_edit" fieldname="recommended" fieldid="<?php echo $this->_var['store']['store_id']; ?>" fieldvalue="1" title="å¯ç¼–è¾‘"/><?php else: ?><img src="templates/style/images/positive_disabled.gif" ectype="inline_edit" fieldname="recommended" fieldid="<?php echo $this->_var['store']['store_id']; ?>" fieldvalue="0" title="å¯ç¼–è¾‘"/><?php endif; ?></td>
       <?php endif; ?>
       <td class="handler">
         <?php if (! $_GET['wait_verify']): ?>
-        <a href="index.php?app=store&amp;act=edit&amp;id=<?php echo $this->_var['store']['store_id']; ?>">±à¼­</a> | <a href="javascript:drop_confirm('ÄúÈ·¶¨ÒªÉ¾³ýËùÑ¡µêÆÌµÄËùÓÐÐÅÏ¢£¨°üÀ¨ÉÌÆ·¡¢¶©µ¥µÈ£©Âð£¿', 'index.php?app=store&amp;act=drop&amp;id=<?php echo $this->_var['store']['store_id']; ?>');">É¾³ý</a> | <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=store&amp;id=<?php echo $this->_var['store']['store_id']; ?>">µêÆÌÊ×Ò³</a>
+        <a href="index.php?app=store&amp;act=edit&amp;id=<?php echo $this->_var['store']['store_id']; ?>">ç¼–è¾‘</a> | <a href="javascript:drop_confirm('æ‚¨ç¡®å®šè¦åˆ é™¤æ‰€é€‰åº—é“ºçš„æ‰€æœ‰ä¿¡æ¯ï¼ˆåŒ…æ‹¬å•†å“ã€è®¢å•ç­‰ï¼‰å—ï¼Ÿ', 'index.php?app=store&amp;act=drop&amp;id=<?php echo $this->_var['store']['store_id']; ?>');">åˆ é™¤</a> | <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=store&amp;id=<?php echo $this->_var['store']['store_id']; ?>">åº—é“ºé¦–é¡µ</a>
         <?php else: ?>
-        <a href="index.php?app=store&amp;act=view&amp;id=<?php echo $this->_var['store']['store_id']; ?>">²é¿´</a>
+        <a href="index.php?app=store&amp;act=view&amp;id=<?php echo $this->_var['store']['store_id']; ?>">æŸ¥çœ‹</a>
         <?php endif; ?></td>
     </tr>
     <?php endforeach; else: ?>
     <tr class="no_data">
-      <td colspan="12">Ã»ÓÐ·ûºÏÌõ¼þµÄ¼ÇÂ¼</td>
+      <td colspan="12">æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„è®°å½•</td>
     </tr>
     <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
   </table>
@@ -91,13 +91,13 @@
     <div class="pageLinks"><?php echo $this->fetch('page.bottom.html'); ?></div>
     <div id="batchAction" class="left paddingT15"><?php if (! $_GET['wait_verify']): ?>
       &nbsp;&nbsp;
-      <input class="formbtn batchButton" type="button" value="±à¼­" name="id" uri="index.php?app=store&act=batch_edit&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />
+      <input class="formbtn batchButton" type="button" value="ç¼–è¾‘" name="id" uri="index.php?app=store&act=batch_edit&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />
       &nbsp;&nbsp;
-      <input class="formbtn batchButton" type="button" value="É¾³ý" name="id" uri="index.php?app=store&act=drop" presubmit="confirm('ÄúÈ·¶¨ÒªÉ¾³ýËùÑ¡µêÆÌµÄËùÓÐÐÅÏ¢£¨°üÀ¨ÉÌÆ·¡¢¶©µ¥µÈ£©Âð£¿');" />
+      <input class="formbtn batchButton" type="button" value="åˆ é™¤" name="id" uri="index.php?app=store&act=drop" presubmit="confirm('æ‚¨ç¡®å®šè¦åˆ é™¤æ‰€é€‰åº—é“ºçš„æ‰€æœ‰ä¿¡æ¯ï¼ˆåŒ…æ‹¬å•†å“ã€è®¢å•ç­‰ï¼‰å—ï¼Ÿ');" />
       <!--&nbsp;&nbsp;
-      <input class="formbtn batchButton" type="button" value="¸üÐÂÅÅÐò" name="id" presubmit="updateOrder(this);" />-->
+      <input class="formbtn batchButton" type="button" value="æ›´æ–°æŽ’åº" name="id" presubmit="updateOrder(this);" />-->
       <?php else: ?>
-      <input class="formbtn batchButton" type="button" value="É¾³ý" name="id" uri="index.php?app=store&act=drop" presubmit="confirm('ÄúÈ·¶¨ÒªÉ¾³ýËùÑ¡¿ªµêÉêÇëÂð£¿');" />
+      <input class="formbtn batchButton" type="button" value="åˆ é™¤" name="id" uri="index.php?app=store&act=drop" presubmit="confirm('æ‚¨ç¡®å®šè¦åˆ é™¤æ‰€é€‰å¼€åº—ç”³è¯·å—ï¼Ÿ');" />
       <?php endif; ?>
     </div>
   </div>

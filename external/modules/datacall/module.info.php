@@ -5,8 +5,8 @@ return array(
     'name'  => Lang::get('data_call'),
     'desc'  => Lang::get('datacall_desc'),
     'version'   => '1.0',
-    'author'    => 'ECMall Team',
-    'website'   => 'http://ecmall.shopex.cn',
+    'author'    => 'ecmjx.jyds95.com',
+    'website'   => 'http://ecmjx.jyds95.com',
     'menu'  => array(
         array(
             'text'  => Lang::get('datacall_manage'),

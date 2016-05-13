@@ -3,9 +3,9 @@
 return array(
     'id' => 'short_store_url',
     'hook' => 'on_run_action',
-    'name' => 'µêÆÌµØÖ·¼òÐ´²å¼þ',
-    'desc' => '±¾²å¼þ¿ÉÒÔ¼ò»¯µêÆÌ·ÃÎÊµØÖ·Îª¡°http://ÉÌ³ÇÍøÖ·/?µêÆÌid¡±¡£',
-    'author' => 'ECMall Team',
+    'name' => 'åº—é“ºåœ°å€ç®€å†™æ’ä»¶',
+    'desc' => 'æœ¬æ’ä»¶å¯ä»¥ç®€åŒ–åº—é“ºè®¿é—®åœ°å€ä¸ºâ€œhttp://å•†åŸŽç½‘å€/?åº—é“ºidâ€ã€‚',
+    'author' => 'ecmjx.jyds95.com',
     'version' => '1.0',
 );
 

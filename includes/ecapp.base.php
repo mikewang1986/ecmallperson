@@ -3,11 +3,11 @@
 define('IMAGE_FILE_TYPE', 'gif|jpg|jpeg|png'); // 图片类型，上传图片时使用
 
 define('SIZE_GOODS_IMAGE', '2097152');   // 商品大小限制2M
-define('SIZE_STORE_LOGO', '20480');      // 店铺LOGO大小限制2OK
+define('SIZE_STORE_LOGO', '2048000');      // 店铺LOGO大小限制2M
 define('SIZE_STORE_BANNER', '1048576');  // 店铺BANNER大小限制1M
-define('SIZE_STORE_CERT', '409600');     // 店铺证件执照大小限制400K
-define('SIZE_STORE_PARTNER', '102400');  // 店铺合作伙伴图片大小限制100K
-define('SIZE_CSV_TAOBAO', '2097152');     // 淘宝助理CSV大小限制2M
+define('SIZE_STORE_CERT', '4096000');     // 店铺证件执照大小限制4M
+define('SIZE_STORE_PARTNER', '1024000');  // 店铺合作伙伴图片大小限制1M
+define('SIZE_CSV_TAOBAO', '100971520');     // 淘宝助理CSV大小限制2M
 
 /* 店铺状态 */
 define('STORE_APPLYING', 0); // 申请中
@@ -49,6 +49,7 @@ define('TYPE_GOODS', 1);
 define('BELONG_ARTICLE',    1);
 define('BELONG_GOODS',      2);
 define('BELONG_STORE',      3);
+define('BELONG_GROUPBUY',   4);
 
 /* 二级域名开关 */
 !defined('ENABLED_SUBDOMAIN') && define('ENABLED_SUBDOMAIN', 0);
@@ -84,11 +85,13 @@ class ECBaseApp extends BaseApp
     function __construct()
     {
         $this->ECBaseApp();
+		define('SMS_UID',Conf::get('msg_pid'));
+		define('SMS_KEY',Conf::get('msg_key'));
     }
     function ECBaseApp()
     {
         parent::__construct();
-
+		$this->_template_state();
         if (!defined('MODULE')) // 临时处理方案，此处不应对模块进行特殊处理
         {
             /* GZIP */
@@ -123,6 +126,22 @@ class ECBaseApp extends BaseApp
     function _init_visitor()
     {
     }
+	
+	function _template_state()
+	{
+		
+		$template_mod = &m('jutemplate');
+		$time = gmtime();
+		
+		/* 进行中的活动*/
+		$template_mod->edit('start_time <='.$time.' AND end_time >'.$time, array('state' => 1));
+		
+		/* 已结束 */
+		$template_mod->edit('end_time <='.$time, array('state' => 2));
+		
+		/* 未发布 */
+		$template_mod->edit('start_time >'.$time, array('state' => 3));
+	}
 
     /**
      *    初始化Session
@@ -141,6 +160,7 @@ class ECBaseApp extends BaseApp
         if (SESSION_TYPE == 'mysql' || defined('IN_BACKEND'))
         {
             $this->_session =& new SessionProcessor(db(), '`ecm_sessions`', '`ecm_sessions_data`', 'ECM_ID');
+        define('SESS_ID', $this->_session->get_session_id());
             /* 清理超时的购物车项目 */
             $this->_session->add_related_table('`ecm_cart`', 'cart', 'session_id', 'user_id=0');
         }
@@ -568,7 +588,8 @@ EOT;
         /* 用户信息 */
         $this->assign('visitor', isset($this->visitor) ? $this->visitor->info : array());
 
-        
+        /* 新消息 */
+        $this->assign('new_message', isset($this->visitor) ? $this->_get_new_message() : '');
         $this->assign('charset', CHARSET);
         $this->assign('price_format', Conf::get('price_format'));
         $this->assign('async_sendmail', $this->_async_sendmail());
@@ -963,9 +984,7 @@ EOT;
                 $lang = 'zh_cn';
             break;
         }
-
-        /* 输出 */
-        $str = <<<EOT
+                $str = <<<EOT
 $include_js
 <script type="text/javascript">
     tinyMCE.init({
@@ -982,9 +1001,11 @@ $include_js
 </script>
 EOT;
 
+
+
         return $this->_view->fetch('str:' . $str);;
     }
-
+	
     /**
      *    使用swfupload
      *
@@ -1111,7 +1132,7 @@ EOT;
      *    @param     bool $is_sync
      *    @return    void
      */
-    function _sendmail($is_sync = false)
+    function _sendmail($is_sync = true)
     {
         if (!$is_sync)
         {
@@ -1310,6 +1331,9 @@ class BaseVisitor extends Object
         if ($detail['store_id'] && $detail['state'] != STORE_APPLYING) // 排除申请中的店铺
         {
             $detail['manage_store'] = $detail['has_store'] = $detail['store_id'];
+            $store_mod = & m('store');
+            $store_info = $store_mod->get_info($detail['store_id']);
+            $detail['is_open_pay'] = $store_info['is_open_pay'];
         }
 
         return $detail;

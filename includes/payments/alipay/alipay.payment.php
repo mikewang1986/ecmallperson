@@ -9,8 +9,8 @@
 
 class AlipayPayment extends BasePayment
 {
-    /* 支付宝网关 */
-    var $_gateway   =   'https://www.alipay.com/cooperate/gateway.do';
+	/* 支付宝网关地址（新）*/
+	var $_gateway 	= 	'https://mapi.alipay.com/gateway.do';
     var $_code      =   'alipay';
 
     /**
@@ -99,7 +99,7 @@ class AlipayPayment extends BasePayment
             /* 若本地签名与网关签名不一致，说明签名不可信 */
             $this->_error('sign_inconsistent');
 
-            return;
+            return false;
         }
 
         /*----------通知验证结束----------*/
@@ -138,6 +138,7 @@ class AlipayPayment extends BasePayment
             break;
 
             case 'TRADE_FINISHED':              //交易结束
+			case 'TRADE_SUCCESS':               // 交易成功
                 if ($order_info['status'] == ORDER_PENDING)
                 {
                     /* 如果是等待付款中，则说明是即时到账交易，这时将状态改为已付款 */
@@ -180,8 +181,9 @@ class AlipayPayment extends BasePayment
      */
     function _query_notify($notify_id)
     {
-        $query_url = "http://notify.alipay.com/trade/notify_query.do?partner={$this->_config['alipay_partner']}&notify_id={$notify_id}";
-
+		/* 支付宝通知地址（新） */
+		$query_url = "https://mapi.alipay.com/gateway.do?service=notify_verify&partner={$this->_config['alipay_partner']}&notify_id={$notify_id}";
+		
         return (ecm_fopen($query_url, 60) === 'true');
     }
 

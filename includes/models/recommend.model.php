@@ -36,45 +36,75 @@ class RecommendModel extends BaseModel
      * @param   bool    $default_image  如果商品没有图片，是否取默认图片
      * @param   int     $mall_cate_id   分类（最新商品用到）
      */
-    function get_recommended_goods($recom_id, $num, $default_image = true, $mall_cate_id = 0)
+    function get_recommended_goods($recom_id, $num, $default_image = true, $mall_cate_id = 0, $timeslot=array(), $sort_by='') // tyioocom
     {
         $goods_list = array();
+		$order = '';
 
         $conditions = "g.if_show = 1 AND g.closed = 0 AND s.state = 1 ";
+		
+		// tyioocom 加了时间段
+		if(count($timeslot)>0) {
+			$conditions .= "AND g.add_time >='".$timeslot['begin']."' and g.add_time <='".$timeslot['end']."'";
+		}
+		
         if ($recom_id == REC_NEW)
         {
+			if(empty($sort_by)){
+				$order = ' g.add_time DESC ';
+			}elseif(in_array($sort_by,array('views','collects','comments','sales'))){
+				$order = ' goodsstatistics.'.$sort_by.' DESC,g.add_time DESC ';
+			}elseif($sort_by=='add_time'){
+				$order = ' g.add_time DESC ';
+			}
+			
             /* 最新商品 */
             if ($mall_cate_id > 0)
             {
                 $gcategory_mod =& m('gcategory');
                 $conditions .= " AND g.cate_id " . db_create_in($gcategory_mod->get_descendant($mall_cate_id));
             }
-            $sql = "SELECT g.goods_id, g.goods_name, g.default_image, gs.price, gs.stock " .
+            $sql = "SELECT g.goods_id, g.goods_name, g.default_image, gs.price, gs.stock,gs.spec_id,goodsstatistics.sales,s.store_id,s.store_name " .
                     "FROM " . DB_PREFIX . "goods AS g " .
                     "LEFT JOIN " . DB_PREFIX . "goods_spec AS gs ON g.default_spec = gs.spec_id " .
                     "LEFT JOIN " . DB_PREFIX . "store AS s ON g.store_id = s.store_id " .
+					"LEFT JOIN " . DB_PREFIX . "goods_statistics AS goodsstatistics ON goodsstatistics.goods_id=g.goods_id " .
                     "WHERE " . $conditions .
-                    "ORDER BY g.add_time DESC " .
+                    "ORDER BY  " . $order .
                     "LIMIT {$num}";
         }
         else
         {
+			if(empty($sort_by)){
+				$order = ' rg.sort_order ';
+			}elseif(in_array($sort_by,array('views','collects','comments','sales'))){
+				$order = ' goodsstatistics.'.$sort_by.' DESC,rg.sort_order ';
+			}elseif($sort_by=='add_time'){
+				$order = ' g.add_time DESC ';
+			}
+			
             /* 推荐商品 */
-            $sql = "SELECT g.goods_id, g.goods_name, g.default_image, gs.price, gs.stock " .
+            $sql = "SELECT g.goods_id, g.goods_name, g.default_image, gs.price, gs.stock,gs.spec_id,goodsstatistics.sales,s.store_id,s.store_name " .
                     "FROM " . DB_PREFIX . "recommended_goods AS rg " .
                     "   LEFT JOIN " . DB_PREFIX . "goods AS g ON rg.goods_id = g.goods_id " .
                     "   LEFT JOIN " . DB_PREFIX . "goods_spec AS gs ON g.default_spec = gs.spec_id " .
                     "   LEFT JOIN " . DB_PREFIX . "store AS s ON g.store_id = s.store_id " .
+					"	LEFT JOIN " . DB_PREFIX . "goods_statistics AS goodsstatistics ON goodsstatistics.goods_id=g.goods_id " .
                     "WHERE " . $conditions . 
                     "AND rg.recom_id = '$recom_id' " .
                     "AND g.goods_id IS NOT NULL " .
-                    "ORDER BY rg.sort_order " .
+                    "ORDER BY  " . $order .
                     "LIMIT {$num}";
         }
         $res = $this->db->query($sql);
+		$promotion_mod= &m('promotion');
         while ($row = $this->db->fetchRow($res))
         {
             $default_image && empty($row['default_image']) && $row['default_image'] = Conf::get('default_goods_image');
+			
+			/* 读取促销价格 */
+			$row['price'] = $promotion_mod->get_promotion_price($row['goods_id'], $row['spec_id']);
+			
             $goods_list[] = $row;
         }
 
@@ -151,6 +181,62 @@ class RecommendBModel extends RecommendModel
         }
 
         return $count;
+    }
+    
+/**
+     * 取得某推荐下商品
+     * @param   int     $recom_id       推荐类型
+     * @param   int     $num            取商品数量
+     * @param   bool    $default_image  如果商品没有图片，是否取默认图片
+     * @param   int     $mall_cate_id   分类（最新商品用到）
+     */
+    function get_recommended_goods($recom_id, $num, $default_image = true, $mall_cate_id = 0)
+    {
+        $goods_list = array();
+		$left_join = '';
+		$conditions = "g.if_show = 1 AND g.closed = 0 AND s.state = 1 AND g.store_id = '". $this->_store_id ."'";
+        if ($recom_id == REC_NEW)
+        {
+            /* 最新商品 */
+            if ($mall_cate_id > 0)
+            {
+				$gcategory_mod =& m('gcategory');
+                $conditions .= " AND cg.cate_id " . db_create_in($gcategory_mod->get_descendant($mall_cate_id))." GROUP BY cg.goods_id ";
+				$left_join = "LEFT JOIN " . DB_PREFIX . "category_goods AS cg ON cg.goods_id = g.goods_id ";
+            }            
+			$sql = "SELECT g.goods_id,g.cate_id,g.cate_name,g.goods_name,g.tags,g.brand, g.default_image, gs.price, gs.stock,goodsstatistics.sales,goodsstatistics.comments,goodsstatistics.collects,s.store_id,s.im_qq,s.im_ww,s.store_name " .
+                    "FROM " . DB_PREFIX . "goods AS g " .
+                    "LEFT JOIN " . DB_PREFIX . "goods_spec AS gs ON g.default_spec = gs.spec_id " .
+                    "LEFT JOIN " . DB_PREFIX . "store AS s ON g.store_id = s.store_id " .
+					"LEFT JOIN " . DB_PREFIX . "goods_statistics AS goodsstatistics ON goodsstatistics.goods_id=g.goods_id " .
+					$left_join .
+                    "WHERE " . $conditions .
+                    "ORDER BY g.add_time DESC " .
+                    "LIMIT {$num}";
+        }
+        else
+        {
+            /* 推荐商品 */
+            $sql = "SELECT g.goods_id,g.cate_id,g.cate_name,g.goods_name,g.tags,g.brand, g.default_image, gs.price, gs.stock,goodsstatistics.sales,goodsstatistics.comments,s.store_id,s.im_qq,s.im_ww,s.store_name " .
+                    "FROM " . DB_PREFIX . "recommended_goods AS rg " .
+                    "   LEFT JOIN " . DB_PREFIX . "goods AS g ON rg.goods_id = g.goods_id " .
+                    "   LEFT JOIN " . DB_PREFIX . "goods_spec AS gs ON g.default_spec = gs.spec_id " .
+                    "   LEFT JOIN " . DB_PREFIX . "store AS s ON g.store_id = s.store_id " .
+					"   LEFT JOIN " . DB_PREFIX . "goods_statistics AS goodsstatistics ON goodsstatistics.goods_id=g.goods_id " .
+					"WHERE " . $conditions . 
+                    "AND rg.recom_id = '$recom_id' " .
+                    "AND g.goods_id IS NOT NULL " .
+                    "ORDER BY rg.sort_order " .
+                    "LIMIT {$num}";
+        }
+        $res = $this->db->query($sql);
+        while ($row = $this->db->fetchRow($res))
+        {
+            $default_image && empty($row['default_image']) && $row['default_image'] = Conf::get('default_goods_image');
+            $goods_list[] = $row;
+        }
+
+        return $goods_list;
     }
 }
 

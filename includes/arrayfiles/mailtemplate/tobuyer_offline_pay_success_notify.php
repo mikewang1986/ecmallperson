@@ -1,10 +1,10 @@
 <?php
 return array (
   'version' => '1.0',
-  'subject' => '{$site_name}ÌáĞÑ:µêÆÌ{$order.seller_name}ÒÑÈ·ÈÏÊÕµ½ÁËÄúÏßÏÂÖ§¸¶µÄ»õ¿î',
-  'content' => '<p>×ğ¾´µÄ{$order.buyer_name}:</p>
-<p style="padding-left: 30px;">ÓëÄú½»Ò×µÄµêÆÌ{$order.seller_name}ÒÑ¾­È·ÈÏÁËÊÕµ½ÁËÄúµÄ¶©µ¥{$order.order_sn}µÄ¸¶¿î£¬ÇëÄÍĞÄµÈ´ıÂô¼Ò·¢»õ¡£</p>
-<p style="padding-left: 30px;">²é¿´¶©µ¥ÏêÏ¸ĞÅÏ¢Çëµã»÷ÒÔÏÂÁ´½Ó</p>
+  'subject' => '{$site_name}æé†’:åº—é“º{$order.seller_name}å·²ç¡®è®¤æ”¶åˆ°äº†æ‚¨çº¿ä¸‹æ”¯ä»˜çš„è´§æ¬¾',
+  'content' => '<p>å°Šæ•¬çš„{$order.buyer_name}:</p>
+<p style="padding-left: 30px;">ä¸æ‚¨äº¤æ˜“çš„åº—é“º{$order.seller_name}å·²ç»ç¡®è®¤äº†æ”¶åˆ°äº†æ‚¨çš„è®¢å•{$order.order_sn}çš„ä»˜æ¬¾ï¼Œè¯·è€å¿ƒç­‰å¾…å–å®¶å‘è´§ã€‚</p>
+<p style="padding-left: 30px;">æŸ¥çœ‹è®¢å•è¯¦ç»†ä¿¡æ¯è¯·ç‚¹å‡»ä»¥ä¸‹é“¾æ¥</p>
 <p style="padding-left: 30px;"><a href="{$site_url}/index.php?app=buyer_order&amp;act=view&amp;order_id={$order.order_id}">{$site_url}/index.php?app=buyer_order&amp;act=view&amp;order_id={$order.order_id}</a></p>
 <p style="text-align: right;">{$site_name}</p>
 <p style="text-align: right;">{$mail_send_time}</p>',

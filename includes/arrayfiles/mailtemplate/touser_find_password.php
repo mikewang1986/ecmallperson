@@ -1,11 +1,11 @@
 <?php
 return array (
   'version' => '1.0',
-  'subject' => '{$site_name}ÌáĞÑ:{$user.user_name}ĞŞ¸ÄÃÜÂëÉèÖÃ',
-  'content' => '<p>×ğ¾´µÄ{$user.user_name}:</p>
-<p style="padding-left: 30px;">ÄúºÃ, Äú¸Õ²ÅÔÚ {$site_name} ÉêÇëÁËÖØÖÃÃÜÂë£¬Çëµã»÷ÏÂÃæµÄÁ´½Ó½øĞĞÖØÖÃ£º</p>
+  'subject' => '{$site_name}æé†’:{$user.user_name}ä¿®æ”¹å¯†ç è®¾ç½®',
+  'content' => '<p>å°Šæ•¬çš„{$user.user_name}:</p>
+<p style="padding-left: 30px;">æ‚¨å¥½, æ‚¨åˆšæ‰åœ¨ {$site_name} ç”³è¯·äº†é‡ç½®å¯†ç ï¼Œè¯·ç‚¹å‡»ä¸‹é¢çš„é“¾æ¥è¿›è¡Œé‡ç½®ï¼š</p>
 <p style="padding-left: 30px;"><a href="{$site_url}/index.php?app=find_password&act=set_password&id={$user.user_id}&activation={$word}">{$site_url}/index.php?app=find_password&act=set_password&id={$user.user_id}&activation={$word}</a></p>
-<p style="padding-left: 30px;">´ËÁ´½ÓÖ»ÄÜÊ¹ÓÃÒ»´Î, Èç¹ûÊ§Ğ§ÇëÖØĞÂÉêÇë. Èç¹ûÒÔÉÏÁ´½ÓÎŞ·¨µã»÷£¬Çë½«Ëü¿½±´µ½ä¯ÀÀÆ÷(ÀıÈçIE)µÄµØÖ·À¸ÖĞ¡£</p>
+<p style="padding-left: 30px;">æ­¤é“¾æ¥åªèƒ½ä½¿ç”¨ä¸€æ¬¡, å¦‚æœå¤±æ•ˆè¯·é‡æ–°ç”³è¯·. å¦‚æœä»¥ä¸Šé“¾æ¥æ— æ³•ç‚¹å‡»ï¼Œè¯·å°†å®ƒæ‹·è´åˆ°æµè§ˆå™¨(ä¾‹å¦‚IE)çš„åœ°å€æ ä¸­ã€‚</p>
 <p style="text-align: right;">{$site_name}</p>
 <p style="text-align: right;">{$mail_send_time}</p>',
 );

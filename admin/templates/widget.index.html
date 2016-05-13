@@ -23,7 +23,12 @@ function clean_file()
 }
 </script>
 <div id="rightTop">
-    <p><strong>{$lang.widget_manage}</strong>[<a href="javascript:void(0);" onclick="clean_file();" title="{$lang.clean_file_note}">{$lang.clean_file}</a>]</p>
+    <p>{$lang.widget_manage}</p>
+    <ul class="subnav">
+        <li><span>{$lang.widget_mall}</span></li>
+        <li><a class="btn1" href="index.php?app=widget_store">{$lang.widget_store}</a></li>
+        <li>[<a href="javascript:void(0);" onclick="clean_file();" title="{$lang.clean_file_note}">{$lang.clean_file}</a>]</li>
+    </ul>
 </div>
 <div class="tdare info">
     <table width="100%" cellspacing="0">

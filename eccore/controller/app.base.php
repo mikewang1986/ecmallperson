@@ -86,7 +86,18 @@ class BaseApp extends Object
         $this->_init_view();
         $this->_view->display($n);
     }
-
+	/**
+     *  获取输出页面内容
+     * 调用内置的模板引擎fetch方法，
+     * @access protected
+     * @param string $n 指定要调用的模板文件
+     * 默认为空 由系统自动定位模板文件
+     * @return string
+     */
+    function fetch($n = '') {
+        $this->_init_view();
+        return $this->_view->fetch($n);
+    }
     /**
      *    初始化视图连接
      *

@@ -21,8 +21,8 @@ class BaseWidget extends Object
     function BaseWidget($id, $options = array())
     {
         $this->id = $id;
-        $this->widget_path = ROOT_PATH . '/external/widgets/' . $this->_name;
-        $this->widget_root = SITE_URL . '/external/widgets/' . $this->_name;
+        $this->widget_path = ROOT_PATH . '/external/widgets/mall/' . $this->_name;
+        $this->widget_root = SITE_URL . '/external/widgets/mall/' . $this->_name;
 
         /* 初始化视图配置 */
         $this->_view =& _widget_view();
@@ -236,6 +236,47 @@ class BaseWidget extends Object
     }
 }
 
+class Store_baseWidget extends BaseWidget
+{
+	var $_store_id;
+	
+    function __construct($id, $options = array())
+    {
+    	parent::BaseWidget($id, $options);
+        $this->Store_baseWidget();
+    }
+    
+    function Store_baseWidget()
+    {
+        $this->widget_path = ROOT_PATH . '/external/widgets/store/' . $this->_name;
+        $this->widget_root = SITE_URL . '/external/widgets/store/' . $this->_name;
+		$this->_store_id   = $GLOBALS['ECMALL_APP']->_store_id;  //编辑模板的时候是游客状态，用此取得store_id,
+        //$this->_store_id = isset($_SESSION['user_info']['store_id']) ? $_SESSION['user_info']['store_id'] : 0;
+    }
+	/* 取得推荐类型 */
+    function _get_recommends()
+    {
+        $recom_mod =& bm('recommend', array('_store_id' => $this->_store_id));
+        $recommends = $recom_mod->get_options();
+        $recommends[REC_NEW] = Lang::get('recommend_new');
+
+        return $recommends;
+    }
+
+	/* 取得分类列表 */
+    function _get_gcategory_options($layer = 0)
+    {
+        $gcategory_mod =& bm('gcategory', array('_store_id' => $this->_store_id));
+        $gcategories = $gcategory_mod->get_list();
+
+        import('tree.lib');
+        $tree = new Tree();
+        $tree->setTree($gcategories, 'cate_id', 'parent_id', 'cate_name');
+
+        return $tree->getOptions($layer);
+    }
+}
+
 /**
  *    获取挂件视图处理类
  *
@@ -263,12 +304,19 @@ function &_widget_view()
  *    @param     array  $options
  *    @return    Object Widget
  */
-function &widget($id, $name, $options = array())
+function &widget($id, $name, $options = array(),$type = '')
 {
     static $widgets = null;
     if (!isset($widgets[$id]))
     {
-        $widget_class_path = ROOT_PATH . '/external/widgets/' . $name . '/main.widget.php';
+		if(empty($type))
+		{
+			$widget_class_path = ROOT_PATH . '/external/widgets/mall/' . $name . '/main.widget.php';        
+		}
+		else
+		{
+			$widget_class_path = ROOT_PATH . '/external/widgets/'.$type.'/' . $name . '/main.widget.php';
+		}
         $widget_class_name = ucfirst($name) . 'Widget';
         include_once($widget_class_path);
         $widgets[$id] = new $widget_class_name($id, $options);
@@ -285,14 +333,21 @@ function &widget($id, $name, $options = array())
  *    @param     string $page
  *    @return    array
  */
-function get_widget_config($template_name, $page)
+function get_widget_config($template_name, $page,$type = '',$style_name = 'default')
 {
     static $widgets = null;
     $key = $template_name . '_' . $page;
     if (!isset($widgets[$key]))
     {
         $tmp = array('widgets' => array(), 'config' => array());
-        $config_file = ROOT_PATH . '/data/page_config/' . $template_name . '.' . $page . '.config.php';
+		if(!$type)
+		{
+			$config_file = ROOT_PATH . '/data/page_config/mall/' . $template_name . '.' . $page . '.config.php';
+		}
+		else
+		{
+        	$config_file = ROOT_PATH . '/data/page_config/'.$type.'/' . $template_name . '.' . $style_name . '.'  . $page . '.config.php';
+		}
         if (is_file($config_file))
         {
             /* 有配置文件，则从配置文件中取 */

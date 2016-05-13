@@ -212,6 +212,8 @@ class StoreApp extends BackendApp
                 'region_id'    => $_POST['region_id'],
                 'region_name'  => $_POST['region_name'],
                 'address'      => $_POST['address'],
+				'operate_time'      => $_POST['operate_time'],
+				'send_address'      => $_POST['send_address'],
                 'zipcode'      => $_POST['zipcode'],
                 'tel'          => $_POST['tel'],
                 'sgrade'       => $_POST['sgrade'],
@@ -276,6 +278,15 @@ class StoreApp extends BackendApp
                 STORE_OPEN   => Lang::get('open'),
                 STORE_CLOSED => Lang::get('close'),
             ));
+            $this->assign('open_pay_states', array(
+                '1'   => Lang::get('open'),
+                '0' => Lang::get('close'),
+            ));
+			
+			 $this->assign('is_affter', array(
+                '1'   => Lang::get('open'),
+                '0' => Lang::get('close'),
+            ));
 
             $this->assign('recommended_options', array(
                 '1' => Lang::get('yes'),
@@ -324,6 +335,8 @@ class StoreApp extends BackendApp
                 'region_id'    => $_POST['region_id'],
                 'region_name'  => $_POST['region_name'],
                 'address'      => $_POST['address'],
+				'operate_time'      => $_POST['operate_time'],
+				'send_address'      => $_POST['send_address'],
                 'zipcode'      => $_POST['zipcode'],
                 'tel'          => $_POST['tel'],
                 'sgrade'       => $_POST['sgrade'],
@@ -332,6 +345,8 @@ class StoreApp extends BackendApp
                 'sort_order'   => $_POST['sort_order'],
                 'recommended'  => $_POST['recommended'],
                 'domain'       => $domain,
+            	'is_open_pay' => $_POST['is_open_pay'],
+				'is_affter' => $_POST['is_affter'],
             );
             $data['state'] == STORE_CLOSED && $data['close_reason'] = $_POST['close_reason'];
             $certs = array();
@@ -587,6 +602,10 @@ class StoreApp extends BackendApp
             if ($_POST['recommended'] > -1)
             {
                 $data['recommended'] = $_POST['recommended'];
+            }
+            if ($_POST['is_open_pay'] > -1)
+            {
+                $data['is_open_pay'] = $_POST['is_open_pay'];
             }
             if (trim($_POST['sort_order']))
             {

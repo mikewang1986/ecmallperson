@@ -38,9 +38,11 @@
                 <!--{if $store.tel}-->
                 <p>{$lang.tel}: {$store.tel|escape}</p>
                 <!--{/if}-->
+                 <p>{$lang.operate_time}:{$store.operate_time|escape}</p>
+                <p style="color:#F00;">{$lang.send_address}: {$store.send_address|escape}</p>
                 <p>
                     <!--{if $store.im_qq}-->
-                    <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$store.im_qq|escape}&amp;Site={$store.store_name|escape}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$store.im_qq|escape}:4" alt="QQ"></a>
+                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$store.im_qq|escape}&amp;site={$store.store_name|escape}&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$store.im_qq|escape}:4" alt="QQ"></a>
                     <!--{/if}-->
                     <!--{if $store.im_ww}-->
                     <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid={$store.im_ww|escape:url}&site=cntaobao&s=2&charset={$charset}" alt="Wang Wang" /></a>

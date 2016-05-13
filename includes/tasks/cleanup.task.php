@@ -40,7 +40,7 @@ class CleanupTask extends BaseTask
     {
         $now = gmtime();
         /* 默认15天 */
-        $interval = empty($this->_config['confirm_interval']) ? 15 * 24 * 3600 : intval($this->_config['confirm_interval']);
+        $interval = empty($this->_config['confirm_interval']) ? 7 * 24 * 3600 : intval($this->_config['confirm_interval']);
         $model_order =& m('order');
 
         /* 确认收货 */

@@ -285,12 +285,7 @@ class Captcha
             {
                 $text_shadowcolor = imagecolorallocate($this->im, 255 - $this->fontcolor[0], 255 - $this->fontcolor[1], 255 - $this->fontcolor[2]);
             }
-            if($this->height>=$font[$i]['height']) {
-                $y = $font[0]['angle'] > 0 ? mt_rand($font[$i]['height'], $this->height) : mt_rand($font[$i]['height'] - $font[$i]['hd'], $this->height - $font[$i]['hd']);
-            }
-            else{
-                $y = $font[0]['angle'] > 0 ? mt_rand($this->height,$font[$i]['height']) : mt_rand($this->height - $font[$i]['hd'], $font[$i]['height'] - $font[$i]['hd']);
-            }
+            $y = $font[0]['angle'] > 0 ? mt_rand($font[$i]['height'], $this->height) : mt_rand($font[$i]['height'] - $font[$i]['hd'], $this->height - $font[$i]['hd']);
             $this->shadow && imagettftext($this->im, $font[$i]['size'], $font[$i]['angle'], $x + 1, $y + 1, $text_shadowcolor, $font[$i]['font'], $seccode[$i]);
             imagettftext($this->im, $font[$i]['size'], $font[$i]['angle'], $x, $y, $text_color, $font[$i]['font'], $seccode[$i]);
             $x += $font[$i]['width'];

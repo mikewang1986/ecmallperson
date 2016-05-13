@@ -73,6 +73,7 @@ class My_paymentApp extends StoreadminbaseApp
     function install()
     {
         $code = isset($_GET['code']) ? trim($_GET['code']) : 0;
+        $code=str_replace(array("/","\\"), '', $code); 
         if (!$code)
         {
             echo Lang::get('no_such_payment');

@@ -1,24 +1,4 @@
 {include file="header.html"}
-<script language="javascript">
-$(function(){
-    $.getJSON('{$spt}&jsoncallback=?',function(){});
-    $.getJSON('http://ecmall.shopex.cn/system/notice2.php?charset={$cur_lang}&uniqueid={$uniqueid}&jsoncallback=?',function(data){
-        var message='';
-        $.each(data,function(i){
-            message += '<li>' + data[i] + '</li>';
-        });
-        $('#news').html(message);
-    }
-);
-});
-<!--{if $dangerous_apps}-->
-var dangerous_apps = '';
-<!--{foreach from=$dangerous_apps item=da}-->
-dangerous_apps += "{$da}\r\n";
-<!--{/foreach}-->
-alert(dangerous_apps);
-<!--{/if}-->
-</script>
 <div id="rightTop">
 <p>
     {$lang.hello}<b>{$admin.user_name}</b>{$lang.welcome_to_ecmall}
@@ -37,21 +17,7 @@ alert(dangerous_apps);
     </ul>
 </dd>
 <!--{/if}-->
-<dt>{$lang.ecmall_news}</dt>
-<dd>
-    <ul id="news">
-    </ul>
-</dd>
-<!--{if $remind_info}-->
-<dt>{$lang.remind_info}</dt>
-<dd>
-    <ul>
-        <!--{foreach from=$remind_info item=remind}-->
-        <li>{$remind}</li>
-        <!--{/foreach}-->
-    </ul>
-</dd>
-<!--{/if}-->
+
 <dt>{$lang.news_in_a_week}</dt>
 <dd>
     <table>

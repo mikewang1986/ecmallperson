@@ -182,12 +182,49 @@ class BasePassportUser extends Object
     function _local_add($data)
     {
         $model_member =& m('member');
+		
+		if($_SESSION['tuijian_id'])
+		 {
+			$data['tuijian_id'] =$_SESSION['tuijian_id'];
+		  
+		 }
+		 
+		 if($_SESSION['name'])
+		 {
+			$data['tuijian_id'] =$_SESSION['name'];
+		  
+		 }
+		  
+		  
+		 
         $user_id = $model_member->add($data);
+		
+		
+		
         if (!$user_id)
         {
             $this->_errors = $model_member->get_error();
             return 0;
         }
+		 
+		$add_time = gmtime();
+		$deposit_account_mod = &m('deposit_account');
+		$datamod = array(
+				'user_id'		=>	 $user_id,
+				'account'		=>$data['email'],
+				'password'		=>$data['password'],
+				'real_name'		=>$data['user_name'],
+				'pay_status'	=>	'ON',
+				'add_time'		=>	$add_time,
+				//'last_update'	=> 	$add_time,
+			);
+		
+		$deposit_account_mod ->add($datamod);
+		
+		
+		
+		
+		
         return $user_id;
     }
 

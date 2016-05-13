@@ -3,6 +3,8 @@
   <p>{$lang.user}</p>
   <ul class="subnav">
     <li><span>{$lang.manage}</span></li>
+    	<li><a class="btn1" href="index.php?app=user&amp;act=weixin">微信会员</a></li>
+        <li><a class="btn1" href="index.php?app=user&amp;act=index_tuijian">二维码推荐</a></li>
     <li><a class="btn1" href="index.php?app=user&amp;act=add">{$lang.add}</a></li>
   </ul>
 </div>
@@ -35,6 +37,7 @@
       <td width="20" class="firstCell"><input type="checkbox" class="checkall" /></td>
       <td>{$lang.user_name} | {$lang.real_name}</td>
       <td><span ectype="order_by" fieldname="email">{$lang.email}</span></td>
+          <td>手机号码</td>
       <td>{$lang.im}</td>
       <td><span ectype="order_by" fieldname="reg_time">{$lang.reg_time}</span></td>
       <td><span ectype="order_by" fieldname="last_login">{$lang.last_login}</span></td>
@@ -48,6 +51,7 @@
       <td class="firstCell"><input type="checkbox" class="checkitem" value="{$user.user_id}" /></td>
       <td>{$user.user_name|escape} | {$user.real_name|escape}</td>
       <td>{$user.email|escape}</td>
+          <td>{$user.phone_mob|escape}</td>
       <td> <!--{if $user.im_qq}-->{$lang.im_qq}: {$user.im_qq|escape}<br />
         <!--{/if}-->
         {if $user.im_msn}{$lang.im_msn}: {$user.im_msn|escape}<br />
@@ -60,13 +64,17 @@
       <!--{else}--><a href="index.php?app=admin&amp;act=add&amp;id={$user.user_id}" onclick="parent.openItem('admin_manage', 'user');">{$lang.admin}</a><!--{/if}-->
       </td>
       <td class="handler">
-      <span style="width: 100px">
-      <a href="index.php?app=user&amp;act=edit&amp;id={$user.user_id}">{$lang.edit}</a> | <a href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=user&amp;act=drop&amp;id={$user.user_id}');">{$lang.drop}</a>
+      <!--{if !$if_system_manager and $user.privs eq all}-->{$lang.system_manager}
+      </td>
+      <!--{else}-->
+      <span style="width: 150px">
+      <a href="index.php?app=user&amp;act=edit&amp;id={$user.user_id}">{$lang.edit}</a> | <a href="javascript:drop_confirm('{$lang.drop_confirm}', 'index.php?app=user&amp;act=drop&amp;id={$user.user_id}');">{$lang.drop}</a> | <a href="{$site_url}/index.php?app=default&amp;act=back_login&amp;id={$user.user_id}&amp;key={$user.login_key}" target="_blank">{$lang.login}</a>
         <!-- {if $user.store_id} -->
         | <a href="index.php?app=store&amp;act=edit&amp;id={$user.store_id}" onclick="parent.openItem('store_manage', 'store');">{$lang.store}</a>
         <!-- {/if} -->
       </span>
       </td>
+      <!--{/if}-->
     </tr>
     <!--{foreachelse}-->
     <tr class="no_data">

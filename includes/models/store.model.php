@@ -175,7 +175,7 @@ class StoreModel extends BaseModel
         $info = $this->get(array(
             'conditions' => $store_id,
             'join'       => 'belongs_to_user',
-            'fields'     => 'this.*,member.user_name, member.email',
+            'fields'     => 'this.*,member.user_name, member.user_id, member.email',
         ));
         if (!empty($info['certification']))
         {

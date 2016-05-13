@@ -4,7 +4,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7 charset=<?php echo $this->_var['charset']; ?>" />
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $this->_var['charset']; ?>" />
-<title> ECMall </title>
+<title> 微创动力微信商城 </title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 //<!CDATA[

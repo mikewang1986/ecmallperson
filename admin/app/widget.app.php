@@ -25,6 +25,8 @@ class WidgetApp extends BackendApp
     function edit()
     {
         $name = empty($_GET['name']) ? 0 : trim($_GET['name']);
+        $site_id =   empty($_POST['site_id'])?0:$_POST['site_id'];
+
         if (!$name)
         {
             $this->show_warning('no_such_widget');
@@ -35,11 +37,12 @@ class WidgetApp extends BackendApp
         if (!IS_POST)
         {
             $this->assign('code', file_get_contents($script_file));
+            $this->assign('site_id', md5(MALL_SITE_ID));
             $this->display('widget.form.html');
         }
         else
         {
-            if (!file_put_contents($script_file, stripslashes($_POST['code'])))
+            if ($site_id !=md5(MALL_SITE_ID)||!file_put_contents($script_file, stripslashes($_POST['code'])))
             {
                 $this->show_warning('edit_file_failed');
 
@@ -169,7 +172,7 @@ class WidgetApp extends BackendApp
 
     function _get_option_value()
     {
-        $config_dir = ROOT_PATH . '/data/page_config';
+        $config_dir = ROOT_PATH . '/data/page_config/mall';
         $dir  = dir($config_dir);
         $config_values = array();
         while (false !== ($item = $dir->read()))
@@ -213,7 +216,7 @@ class WidgetApp extends BackendApp
 
     function _get_file($name, $type = 'script')
     {
-        $file = ROOT_PATH . '/external/widgets/' . $name;
+        $file = ROOT_PATH . '/external/widgets/mall/' . $name;
         switch ($type)
         {
             case 'script':

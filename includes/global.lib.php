@@ -94,6 +94,29 @@ function &af($type, $params = array())
 }
 
 /**
+ *    获取预存款支付类型对象
+ *
+ *    @author   psmb
+ *    @param    none
+ *    @return    void
+ */
+function &dpt($flow, $type, $params = array())
+{
+    static $depopay_type = null;
+    if ($depopay_type === null)
+    {
+        /* 加载预存款支付基础类 */
+        include_once(ROOT_PATH . '/includes/depopay.base.php');
+		include(ROOT_PATH . '/includes/depopaytypes/'. $flow .'.depopay.php');
+        include(ROOT_PATH . '/includes/depopaytypes/'.$type . '.'.$flow.'.php');
+        $class_name = ucfirst($type).ucfirst($flow);
+        $depopay_type = new $class_name($params);
+    }
+
+    return $depopay_type;
+}
+
+/**
  *    连接会员系统
  *
  *    @author    Garbin
@@ -395,9 +418,16 @@ function list_style($who, $template = 'default')
  *    @author    Garbin
  *    @return    array
  */
-function list_widget()
+function list_widget($type = '')
 {
-    $widget_dir = ROOT_PATH . '/external/widgets';
+	if(empty($type))
+	{
+    	$widget_dir = ROOT_PATH . '/external/widgets/mall';
+	}
+	else
+	{
+		$widget_dir = ROOT_PATH . '/external/widgets/'.$type;
+	}
     static $widgets    = null;
     if ($widgets === null)
     {
@@ -417,7 +447,7 @@ function list_widget()
             {
                 continue;
             }
-            $info = get_widget_info($entry);
+            $info = get_widget_info($entry,$type);
             $widgets[$entry] = $info;
         }
     }
@@ -432,9 +462,16 @@ function list_widget()
  *    @param     string $id
  *    @return    array
  */
-function get_widget_info($name)
+function get_widget_info($name,$type = '')
 {
-    $widget_info_path = ROOT_PATH . '/external/widgets/' . $name . '/widget.info.php';
+	if(empty($type))
+	{
+    	$widget_info_path = ROOT_PATH . '/external/widgets/mall/' . $name . '/widget.info.php';
+	}
+	else
+	{
+		$widget_info_path = ROOT_PATH . '/external/widgets/'.$type.'/' . $name . '/widget.info.php';
+	}
 
     return include($widget_info_path);
 }
@@ -582,6 +619,33 @@ function group_state($group_state)
         break;
         case GROUP_END:
             $lang_key = 'group_end';
+        break;
+    }
+
+    return $lang_key  ? Lang::get($lang_key) : $lang_key;
+}
+
+/**
+ *    获取团购状态相应的文字表述
+ *
+ *    @author    Garbin
+ *    @param     int $group_state
+ *    @return    string
+ */
+function ju_state($ju_state)
+{
+    $lang_key = '';
+    switch ($ju_state)
+    {
+        
+        case 1:
+            $lang_key = 'group_on';
+        break;
+        case 2:
+            $lang_key = 'group_end';
+        break;
+		case 3:
+            $lang_key = 'group_pending';
         break;
     }
 

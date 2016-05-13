@@ -4,7 +4,7 @@ define('THUMB_WIDTH', 300);
 define('THUMB_HEIGHT', 300);
 define('THUMB_QUALITY', 85);
 
-class ComuploadApp extends StoreadminbaseApp
+class ComuploadApp extends MemberbaseApp
 {
     var $id = 0;
     var $belong = 0;
@@ -31,8 +31,17 @@ class ComuploadApp extends StoreadminbaseApp
         {
             $this->instance = $_GET['instance'];
         }
-        $this->store_id = $this->visitor->get('manage_store');
-
+		/*  不需要是店家也能上传图片的，在这里设置 */
+		if(!in_array($this->belong, array(BELONG_SDEMAND,BELONG_ACTIVITY))){
+			if(!$this->visitor->get('manage_store')){
+				/* 您不是店铺管理员 */
+            	$this->show_warning('not_storeadmin','apply_now', 'index.php?app=apply',$ret_text, $ret_url);
+            	exit;
+			}
+		}
+		if(!$this->visitor->get('manage_store')){
+			$this->store_id = $this->visitor->get('user_id');
+		} else $this->store_id = $this->visitor->get('manage_store');
     }
 
     function view_iframe()
@@ -53,10 +62,18 @@ class ComuploadApp extends StoreadminbaseApp
             $uploader->allowed_size(SIZE_GOODS_IMAGE); // 2M
             $upload_mod =& m('uploadedfile');
             /* 取得剩余空间（单位：字节），false表示不限制 */
-            $store_mod  =& m('store');
-            $settings   = $store_mod->get_settings($this->store_id);
+            if($this->visitor->get('manage_store')) {
+				$store_mod  =& m('store');
+            	$settings   = $store_mod->get_settings($this->visitor->get('manage_store'));
 
-            $remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $upload_mod->get_file_size($this->store_id) : false;
+            	$remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $upload_mod->get_file_size($this->visitor->get('manage_store')) : false;
+			}
+			else
+			{
+				/*  不需要是店家就能上传图片，即不计算图片空间限制 */
+				$settings = array();
+				$remain = false;
+			}
 
             $files = $_FILES['file'];
             if ($files['error'] === UPLOAD_ERR_OK)
@@ -104,6 +121,16 @@ class ComuploadApp extends StoreadminbaseApp
                 {
                     $dirname = 'data/files/store_' . $this->visitor->get('manage_store').'/article';
                 }
+				//by andcpp
+				elseif ($this->belong == BELONG_GROUPBUY)
+                {
+                    $dirname = 'data/files/store_' . $this->visitor->get('manage_store').'/groupbuy';
+                }
+		
+				elseif($this->belong == BELONG_SDEMAND)
+		{
+			$dirname = 'data/files/mall/sdemand/user_'.$this->visitor->get('user_id');
+		}
 
                 $filename  = $uploader->random_filename();
                 $file_path = $uploader->save($dirname, $filename);
@@ -196,9 +223,20 @@ class ComuploadApp extends StoreadminbaseApp
         $uploader->allowed_size(SIZE_GOODS_IMAGE); // 2M
         $upload_mod =& m('uploadedfile');
         /* 取得剩余空间（单位：字节），false表示不限制 */
-        $store_mod  =& m('store');
-        $settings   = $store_mod->get_settings($this->store_id);
-        $remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $upload_mod->get_file_size($this->store_id) : false;
+		
+		if($this->visitor->get('manage_store'))
+		{
+        	$store_mod  =& m('store');
+        	$settings   = $store_mod->get_settings($this->visitor->get('manage_store'));
+        	$remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $upload_mod->get_file_size($this->visitor->get('manage_store')) : false;
+		}
+		else
+		{
+			/*  不需要是店家就能上传图片，即不计算图片空间限制 */
+			$settings = array();
+			$remain = false;
+		}
+		
         $uploader->root_dir(ROOT_PATH);
         $dirname = '';
         $remote_url = trim($_POST['remote_url']);
@@ -238,10 +276,19 @@ class ComuploadApp extends StoreadminbaseApp
                 {
                     $dirname = 'data/files/store_' . $this->visitor->get('manage_store') . '/other';
                 }
+				//add buy andcpp
+				elseif ($this->belong == BELONG_GROUPBUY)
+                {
+                    $dirname = 'data/files/store_' . $this->visitor->get('manage_store') . '/groupbuy';
+                }
                 elseif ($this->belong == BELONG_ARTICLE)
                 {
                     $dirname = 'data/files/store_' . $this->visitor->get('manage_store').'/article';
                 }
+		elseif($this->belong == BELONG_SDEMAND)
+		{
+			$dirname = 'data/files/mall/sdemand/user_'.$this->visitor->get('user_id');
+		}
                 $filename  = $uploader->random_filename();
                 $new_url = $dirname . '/' . $filename . '.' . substr($remote_url, strrpos($remote_url, '.')+1);
                 ecm_mkdir(ROOT_PATH . '/' . $dirname);

@@ -28,31 +28,28 @@ $(function(){
         replaceParam('cate_id', this.id);
         return false;
     });
-    $("ul[ectype='ul_brand'] a").click(function(){
-        replaceParam('brand', this.id);
-        return false;
-    });
-    $("ul[ectype='ul_price'] a").click(function(){
-        replaceParam('price', this.title);
-        return false;
-    });
-    $("#search_by_price").click(function(){
-        replaceParam('price', $(this).siblings("input:first").val() + '-' + $(this).siblings("input:last").val());
-        return false;
-    });
-    $("ul[ectype='ul_region'] a").click(function(){
-        replaceParam('region_id', this.id);
-        return false;
-    });
+
     $("li[ectype='li_filter'] img").click(function(){
         dropParam(this.title);
         return false;
     });
+	
+	/* sku tyioocom */
+	$("div[ectype='dl_props'] a").click(function(){
+		id = $(this).attr('selected_props')+this.id;
+		replaceParam('props',id);
+		return false;
+	});
+	$("div[ectype='attribute'] a").click(function(){
+		dropParam(this.title);
+		return false;
+	});
+	
     $("[ectype='order_by']").change(function(){
         replaceParam('order', this.value);
         return false;
     });
-
+	
     /* 下拉过滤器 */
     $("li[ectype='dropdown_filter_title'] a").click(function(){
         var jq_li = $(this).parents("li[ectype='dropdown_filter_title']");
@@ -60,11 +57,65 @@ $(function(){
         switch_filter(jq_li.attr("ecvalue"), status)
     });
 
-    /* 显示方式 */
-    $("[ectype='display_mode']").click(function(){
-        $("[ectype='current_display_mode']").attr('class', $(this).attr('ecvalue'));
-        $.setCookie('goodsDisplayMode', $(this).attr('ecvalue'));
+	
+    if($.getCookie("goodsDisplayMode")) {
+		$(".display_mod #"+$.getCookie('goodsDisplayMode')).addClass('filter-'+$.getCookie("goodsDisplayMode")+'-cur');
+	} else {
+		$(".display_mod #squares").addClass('filter-squares-cur');
+	}
+	$(".display_mod a").click(function(){
+		$("div[ectype='current_display_mode']").attr("class",this.id + " clearfix");
+		$(".display_mod a").each(function(){
+			$(this).removeClass('filter-'+this.id+'-cur');
+		});
+		$(".display_mod #"+this.id).addClass('filter-'+this.id+'-cur');
+		$.setCookie('goodsDisplayMode', this.id);
+	});
+	$('.sub-images img').hover(function(){
+		$(this).parent().find('img').each(function(){
+			$(this).css('border','1px #ddd solid');
+		});
+		$(this).css('border','1px #BF1B30 solid');
+		$('.dl-'+$(this).attr('goods_id')).find('dt img').attr('src',$(this).attr('image_url'));
+	});
+	
+	$("*[ectype='ul_cate'] a").click(function(){
+        replaceParam('cate_id', this.id);
+        return false;
     });
+    $("*[ectype='ul_brand'] a").click(function(){
+        replaceParam('brand', this.id);
+        return false;
+    });
+	
+    $("*[ectype='ul_price'] a").click(function(){
+        replaceParam('price', this.id);
+        return false;
+    });
+    $("#search_by_price").click(function(){
+        replaceParam('price', $(this).siblings("input:first").val() + '-' + $(this).siblings("input:last").val());
+        return false;
+    });
+    $("*[ectype='ul_region'] a").click(function(){
+        replaceParam('region_id', this.id);
+        return false;
+    });
+	
+	$(".selected-attr a").click(function(){
+		dropParam(this.id);
+		return false;
+	});
+	
+	$('.filter-price .ui-btn-s-primary').click(function(){
+		start_price = number_format($(this).parent().find('input[name="start_price"]').val(),0);
+		end_price   = number_format($(this).parent().find('input[name="end_price"]').val(),0);
+		if(start_price>=end_price){
+			end_price = Number(start_price) + 200;
+		}
+		replaceParam('price', start_price+'-'+end_price);
+		return false;
+	});
+	
 });
 
 /** 打开/关闭过滤器
@@ -126,10 +177,32 @@ function dropParam(key)
         {
             params[i] = 'page=1';
         }
-        if (pKey == key)
+		<!-- sku tyioocom -->
+		if (pKey == 'props' || pKey == 'brand')
+		{
+			//alert(arr[1].indexOf(key));
+			//params[i] = '6:5;20:41;';
+			//alert(key);
+			arr1 = arr[1];
+			arr1 = arr1.replace(key,'');
+			arr1 = arr1.replace(";;",';');
+			if(arr1.substr(0,1)==";") {
+				arr1 = arr1.substr(1,arr1.length-1);
+				//alert('ddd');
+			}
+			//alert(arr1);
+			if(arr1.substr(arr1.length-1,1) == ";") {
+				arr1 = arr1.substr(0,arr1.length-1);
+			}
+			params[i]=pKey + "=" + arr1;
+			
+			//alert(params[i]);
+		}
+        if (pKey == key || params[i]=='props=' || params[i]=='brand=')
         {
             params.splice(i, 1);
         }
+		<!-- end sku -->
     }
     location.assign(SITE_URL + '/index.php?' + params.join('&'));
 }

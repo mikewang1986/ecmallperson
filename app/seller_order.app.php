@@ -8,6 +8,18 @@
  */
 class Seller_orderApp extends StoreadminbaseApp
 {
+	function __construct()
+    {
+        $this->Seller_orderApp();
+    }
+
+    function Seller_orderApp()
+    {
+        parent::__construct();
+	        $this->mod_msg =& m('msg');
+		$this->mod_msglog =& m('msglog');
+    }
+	
     function index()
     {
         /* 获取订单列表 */
@@ -113,7 +125,11 @@ class Seller_orderApp extends StoreadminbaseApp
         {
             $order_detail['data']['goods_list'][$key]['sku'] = $spec_info[$goods['spec_id']]['sku'];
         }
-
+// 从订单ID查询快递公司和快递单号
+		$data =  $this->_hook('on_query_express',array('com'=>$order_info['express_company'],'nu'=>$order_info['invoice_no']));
+		
+		
+		$this->assign('kuaidi_info', $data);
         $this->assign('order', $order_info);
         $this->assign($order_detail['data']);
         $this->display('seller_order.view.html');
@@ -239,7 +255,10 @@ class Seller_orderApp extends StoreadminbaseApp
                     'shipped'
                 ), //可以取消可以发货
             );
-
+			
+			$user_mod=&m('member');
+			$user_mod->edit_growth($order_info['buyer_id'],'bought',$order_info['goods_amount']);
+			
             $this->pop_warning('ok');;
         }
     }
@@ -347,9 +366,14 @@ class Seller_orderApp extends StoreadminbaseApp
         }
         $model_order    =&  m('order');
         if (!IS_POST)
+		
+		
         {
             /* 显示发货表单 */
             header('Content-Type:text/html;charset=' . CHARSET);
+			if($this->_check_express_plugin()){
+				$this->assign('express_company',include(ROOT_PATH . '/data/express_company.inc.php'));
+			}
             $this->assign('order', $order_info);
             $this->display('seller_order.shipped.html');
         }
@@ -361,10 +385,26 @@ class Seller_orderApp extends StoreadminbaseApp
 
                 return;
             }
+			
+			
+			
             $edit_data = array('status' => ORDER_SHIPPED, 'invoice_no' => $_POST['invoice_no']);
+			
+			if($this->_check_express_plugin()){
+				$edit_data['express_company'] = trim($_POST['express_company']);
+			}
+			
+			
             $is_edit = true;
             if (empty($order_info['invoice_no']))
             {
+			/*站内宝v2.2.1 更新站内宝定单状态 开始*/
+			if($order_info['payment_code']=='sft' || $order_info['payment_code']=='chinabank' || $order_info['payment_code']=='alipay' || $order_info['payment_code']=='tenpay' || $order_info['payment_code']=='tenpay2')
+			{
+				$my_moneylog=& m('my_moneylog')->edit('order_id='.$order_id,array('caozuo'=>20));
+			}
+			/*站内宝v2.2.1  更新站内宝定单状态 结束*/
+			
                 /* 不是修改发货单号 */
                 $edit_data['ship_time'] = gmtime();
                 $is_edit = false;
@@ -376,6 +416,13 @@ class Seller_orderApp extends StoreadminbaseApp
 
                 return;
             }
+			
+			
+			if($order_info['payment_code'] == "deposit")
+			{
+				$deposit_record_mod = &m('deposit_record');
+				$deposit_record_mod->edit("order_sn='".$order_info['order_sn']."' AND party_id=".$this->visitor->get('user_id'), array('status' =>'SHIPPED'));
+			}
 
             #TODO 发邮件通知
             /* 记录订单操作日志 */
@@ -396,6 +443,94 @@ class Seller_orderApp extends StoreadminbaseApp
             $order_info['invoice_no'] = $edit_data['invoice_no'];
             $mail = get_mail('tobuyer_shipped_notify', array('order' => $order_info));
             $this->_mailto($buyer_info['email'], addslashes($mail['subject']), addslashes($mail['message']));
+				//发送短信给买家 by andcpp
+			$mod_order_extm =& m('orderextm');
+			$row_order_extm = $mod_order_extm->getrow("select * from ".DB_PREFIX."order_extm where order_id=".$order_id);
+			
+			$user_id = $order_info['seller_id'];
+			$user_name = $order_info['seller_name'];
+			$row_msg = $this->mod_msg->getrow("select * from ".DB_PREFIX."msg where user_id=".$user_id);
+			$mobile = $row_order_extm['phone_mob']; //在订单中取买家手机号
+			$smsText = "您的订单：".$order_info['order_sn'].",卖家：".$order_info['seller_name']."已经发货，请及时查收！";//内容
+			$time = time();
+			
+			$checked_functions = $functions = array();
+            $functions = $this->_get_functions();
+            $tmp = explode(',', $row_msg['functions']);
+            if ($functions)
+            {
+                foreach ($functions as $func)
+                {
+                    $checked_functions[$func] = in_array($func, $tmp);
+                }
+            }
+			
+			if($row_msg['state']==0)
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			if($checked_functions['send'] != 1)
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			if($row_msg['num']<=0)
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			if($mobile == '')
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			if($smsText == '')
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			$url='http://utf8.sms.webchinese.cn/?Uid='.SMS_UID.'&Key='.SMS_KEY.'&smsMob='.$mobile.'&smsText='.$smsText; 
+			$res = $this->Sms_Get($url);
+			if($res == '')
+			{
+				$this->pop_warning('ok');
+				return;
+			}
+			else if($res>0)
+			{
+				$num = $row_msg['num']-1;
+				$edit_msg = array(
+					'num' => $num,
+				);
+				$add_msglog = array(
+					'user_id' => $user_id,
+					'user_name' => $user_name,
+					'to_mobile' => $mobile,
+					'content' => $smsText,
+					'state' => $res,
+					'time' => $time,
+				);
+				$this->mod_msglog->add($add_msglog);
+				$this->mod_msg->edit('user_id='.$user_id,$edit_msg);
+				$this->pop_warning('ok');
+				return;
+			}
+			else
+			{
+				$add_msglog = array(
+					'user_id' => $user_id,
+					'user_name' => $user_name,
+					'to_mobile' => $mobile,
+					'content' => $content,
+					'state' => $res,
+					'time' => $time,
+				);
+				$this->mod_msglog->add($add_msglog);
+				$this->pop_warning('ok');
+				return;
+			}
+			// end
 
             $new_data = array(
                 'status'    => Lang::get('order_shipped'),
@@ -470,6 +605,32 @@ class Seller_orderApp extends StoreadminbaseApp
                     continue;
                 }
 
+				/*站内宝v2.2.1  更新站内宝定单状态 开始*/
+				$my_money_mod =& m('my_money');
+				$my_moneylog_mod =& m('my_moneylog');
+				$my_moneylog_row=$my_moneylog_mod->getrow("select * from ".DB_PREFIX."my_moneylog where order_id='$id' and (caozuo='10' or caozuo='20') and s_and_z=1");
+				$money=$my_moneylog_row['money'];//定单价格
+				$buy_user_id=$my_moneylog_row['buyer_id'];//买家ID
+				$sell_user_id=$my_moneylog_row['seller_id'];//卖家ID
+				if($my_moneylog_row['order_id']==$id)
+				{
+					$buy_money_row=$my_money_mod->getrow("select * from ".DB_PREFIX."my_money where user_id='$buy_user_id'");
+					$buy_money=$buy_money_row['money'];//买家的钱
+					
+					$sell_money_row=$my_money_mod->getrow("select * from ".DB_PREFIX."my_money where user_id='$sell_user_id'");
+					$sell_money=$sell_money_row['money_dj'];//卖家的冻结资金
+					
+					$new_buy_money = $buy_money+$money;
+					$new_sell_money = $sell_money-$money;
+					//更新数据
+					$my_money_mod->edit('user_id='.$buy_user_id,array('money'=>$new_buy_money));
+					$my_money_mod->edit('user_id='.$sell_user_id,array('money_dj'=>$new_sell_money));
+					//更新站内宝log为 定单已取消
+					$my_moneylog_mod->edit('order_id='.$id,array('caozuo'=>30));
+				}
+				/*站内宝v2.2.1  更新站内宝定单状态 结束*/
+
+
                 /* 加回订单商品库存 */
                 $model_order->change_stock('+', $id);
                 $cancel_reason = (!empty($_POST['remark'])) ? $_POST['remark'] : $_POST['cancel_reason'];
@@ -484,6 +645,30 @@ class Seller_orderApp extends StoreadminbaseApp
                     'log_time'  => gmtime(),
                 ));
 
+				if($order_info[$id]['payment_code']=='deposit')
+				{
+					$deposit_record_mod = &m('deposit_record');
+					$deposit_account_mod= &m('deposit_account');
+					$deposit_refund_mod = &m('deposit_refund');
+					if($deposit_record = $deposit_record_mod->get(array('conditions'=>"order_sn='".$order_info[$id]['order_sn']."' AND party_id=".$this->visitor->get('user_id'))))
+					{
+						
+						$deposit_record_mod->edit("order_sn='".$order_info[$id]['order_sn']."' AND user_id=".$order_info[$id]['buyer_id'], array('status' =>'CLOSED', 'end_time'=>gmtime()));
+					
+						
+						$data_refund = array(
+							'record_id'	=>	$deposit_record['record_id'],
+							'user_id'	=>	$order_info[$id]['buyer_id'],// 获得退款的用户ID
+							'amount'	=>	$deposit_record['amount'],
+							'status'	=>	'SUCCESS',
+							'remark'	=>	LANG::get('seller_cancel_order'),
+						);
+						$deposit_refund_mod->add($data_refund);
+						
+						
+						$deposit_account_mod->_update_deposit_money($order_info[$id]['buyer_id'], $deposit_record['amount'], 'add');
+					}
+				}
                 /* 发送给买家订单取消通知 */
                 $model_member =& m('member');
                 $buyer_info   = $model_member->get($order_info[$id]['buyer_id']);
@@ -574,6 +759,92 @@ class Seller_orderApp extends StoreadminbaseApp
         }
 
     }
+	
+	/*打印发货单*/
+   	function shipped_print()
+   	{
+	   	$order_ids = isset($_GET['order_id']) ? $_GET['order_id'] : 0;
+     	$order_id = explode(",",$order_ids);
+        if (!$order_id)
+        {
+          $this->show_message('no_such_order');	
+          return;
+        }
+     	$model_order = &m('order');
+     	$order_info = $model_order->findAll(array(
+            'fields'	=>'this.*,s.tel,shipping_fee,consignee,phone_tel,phone_mob,order_extm.region_name,order_extm.address',
+     		'conditions' =>  "order_alias.order_id" . db_create_in($order_id) . " AND seller_id=" . $this->visitor->get('manage_store'),
+     		'join'      => 'has_orderextm,belongs_to_store',
+			'include' => array('has_ordergoods'),
+           
+        ));
+     	//dump($order_info);
+		$goods_mod =  &m('goods');
+	
+        foreach($order_info as $k=>$v)
+        {
+	        if($v['order_goods'])
+	        {
+	        	foreach($v['order_goods'] as $key=>$value)
+		        {
+		        	$order_info[$k]['count_goods']+=$value['quantity'];
+		        	$goods_info = $goods_mod->get_list($value['goods_id']);
+		        	$order_info[$k]['order_goods'][$key]['sku'] = $goods_info[$value['goods_id']]['sku'];
+		        }
+	        }
+	        else
+	       {
+	       		$order_info[$k]['nogoods'] =1;
+	        }
+	       
+        }
+        //dump($order_info);
+        $this->assign('order_info',$order_info);
+        $this->display('shipped_print.html');
+   	}
+	
+	/*打印发货单*/
+   	function post_print()
+   	{
+	   	$order_ids = isset($_GET['order_id']) ? $_GET['order_id'] : 0;
+     	$order_id = explode(",",$order_ids);
+        if (!$order_id)
+        {
+          $this->show_message('no_such_order');	
+          return;
+        }
+     	$model_order = &m('order');
+     	$order_info = $model_order->findAll(array(
+            'fields'	=>'this.*,s.tel,shipping_fee,consignee,phone_tel,phone_mob,order_extm.region_name,order_extm.address',
+     		'conditions' =>  "order_alias.order_id" . db_create_in($order_id) . " AND seller_id=" . $this->visitor->get('manage_store'),
+     		'join'      => 'has_orderextm,belongs_to_store',
+			'include' => array('has_ordergoods'),
+           
+        ));
+     	//dump($order_info);
+		$goods_mod =  &m('goods');
+	
+        foreach($order_info as $k=>$v)
+        {
+	        if($v['order_goods'])
+	        {
+	        	foreach($v['order_goods'] as $key=>$value)
+		        {
+		        	$order_info[$k]['count_goods']+=$value['quantity'];
+		        	$goods_info = $goods_mod->get_list($value['goods_id']);
+		        	$order_info[$k]['order_goods'][$key]['sku'] = $goods_info[$value['goods_id']]['sku'];
+		        }
+	        }
+	        else
+	       {
+	       		$order_info[$k]['nogoods'] =1;
+	        }
+	       
+        }
+        //dump($order_info);
+        $this->assign('order_info',$order_info);
+        $this->display('post_print.html');
+   	}
 
     /**
      *    获取有效的订单信息
@@ -675,12 +946,30 @@ class Seller_orderApp extends StoreadminbaseApp
                 'has_ordergoods',       //取出商品
             ),
         ));
+		$refund_mod =& m('refund');
+		$member_mod =& m('member');
+        $model_spec =& m('goodsspec');
+		
         foreach ($orders as $key1 => $order)
         {
             foreach ($order['order_goods'] as $key2 => $goods)
             {
                 empty($goods['goods_image']) && $orders[$key1]['order_goods'][$key2]['goods_image'] = Conf::get('default_goods_image');
+				
+				$refund = $refund_mod->get(array(
+					'conditions'=>'order_id='.$goods['order_id'].' and goods_id='.$goods['goods_id'].' and spec_id='.$goods['spec_id'],
+					'fields'=>'status,order_id'
+				));
+				if($refund) {
+					$orders[$key1]['order_goods'][$key2]['refund_status'] = $refund['status'];
+					$orders[$key1]['order_goods'][$key2]['refund_id'] = $refund['refund_id'];
+				}
+				$spec = $model_spec->get(array('conditions'=>'spec_id='.$goods['spec_id'],'fields'=>'sku')); 
+				$orders[$key1]['order_goods'][$key2]['sku'] = $spec['sku'];
             }
+
+			$orders[$key1]['goods_quantities'] = count($order['order_goods']);
+			$orders[$key1]['buyer_info'] = $member_mod->get(array('conditions'=>'user_id='.$order['buyer_id'],'fields'=>'real_name,im_qq,im_aliww,im_msn'));
         }
 
         $page['item_count'] = $model_order->getCount();

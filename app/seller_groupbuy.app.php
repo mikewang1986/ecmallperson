@@ -218,6 +218,21 @@ class Seller_groupbuyApp extends StoreadminbaseApp
             );
         }
     }
+	/* 上传活动（团购）图片 tyioocom */
+	function _upload_group_image()
+    {
+        import('uploader.lib');
+        $file = $_FILES['group_image'];
+        if ($file['error'] == UPLOAD_ERR_OK)
+        {
+            $uploader = new Uploader();
+            $uploader->allowed_type(IMAGE_FILE_TYPE);
+            $uploader->addFile($file);
+            $uploader->root_dir(ROOT_PATH);
+            return $uploader->save('data/files/store_'.$this->_store_id.'/group', $uploader->random_filename());
+        }
+        return false;
+    }
 
     function drop()
     {
@@ -339,7 +354,7 @@ class Seller_groupbuyApp extends StoreadminbaseApp
         }
         else
         {
-            $this->_groupbuy_mod->edit($id, array('group_desc' => trim($_POST['group_desc'])));
+            $this->_groupbuy_mod->edit($id, array('group_desc' => html_script(trim($_POST['group_desc']))));
             if ($this->_groupbuy_mod->has_error())
             {
                 $this->show_warning($this->_groupbuy_mod->get_error());
@@ -493,7 +508,7 @@ class Seller_groupbuyApp extends StoreadminbaseApp
 
         $data = array(
             'group_name' => $post['group_name'],
-            'group_desc' => $post['group_desc'],
+            'group_desc' => html_script($post['group_desc']),
             'start_time' => $post['start_time'],
             'end_time'   => $post['end_time'] - 1,
             'goods_id'   => $post['goods_id'],
@@ -503,6 +518,10 @@ class Seller_groupbuyApp extends StoreadminbaseApp
             'state'        => $post['state'],
             'store_id'     => $this->_store_id
         );
+		$group_image = $this->_upload_group_image();
+		if ($group_image != false){
+			$data['group_image'] = $group_image;
+		}
         if ($id > 0)
         {
             $this->_groupbuy_mod->edit($id, $data);
@@ -639,6 +658,10 @@ class Seller_groupbuyApp extends StoreadminbaseApp
             array(
                 'name'  => 'groupbuy_list',
                 'url'   => 'index.php?app=seller_groupbuy',
+            ),
+			 array(
+                'name'  => 'add_groupbuy',
+                'url'   => 'index.php?app=seller_groupbuy&act=add',
             ),
         );
         if (ACT == 'add' || ACT == 'edit' || ACT == 'desc' || ACT == 'cancel')

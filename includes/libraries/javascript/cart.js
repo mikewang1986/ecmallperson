@@ -12,10 +12,31 @@ function drop_cart_item(store_id, rec_id){
                 tr.remove();        //移除
                 amount_span.html(price_format(result.retval.amount));  //刷新总费用
                 cart_goods_kinds.html(result.retval.cart.kinds);       //刷新商品种类
+				
+				//
+				$(".J_C_T_GoodsKinds").html(result.retval.cart.kinds);
+			    $(".J_C_T_Amount").html(price_format(result.retval.amount));
+				$("#cart_goods"+rec_id).remove();
+				// end
             }
         }
     });
 }
+// tyioocom 批量收藏，为了避免弹出多个确认框
+function batch_move_favorite(store_id,rec_id,goods_id,alt) {
+	$.getJSON('index.php?app=my_favorite&act=add&type=goods&item_id=' + goods_id, function(result){
+        if(result.done){
+           if(alt){ // 批量收藏的时候，只弹出一次确认对话框
+			   alert(result.msg);
+		   }
+        }
+        else{
+            alert(result.msg);
+        }
+
+    });
+}
+
 function move_favorite(store_id, rec_id, goods_id){
     var tr = $('#cart_item_' + rec_id);
     $.getJSON('index.php?app=my_favorite&act=add&type=goods&item_id=' + goods_id, function(result){
@@ -35,6 +56,8 @@ function change_quantity(store_id, rec_id, spec_id, input, orig){
     var amount_span = $('#cart' + store_id + '_amount');
     //暂存为局部变量，否则如果用户输入过快有可能造成前后值不一致的问题
     var _v = input.value;
+	if(_v < 1 || isNaN(_v)) {alert(lang.invalid_quantity); $(input).val($(input).attr('orig'));return false}
+	
     $.getJSON('index.php?app=cart&act=update&spec_id=' + spec_id + '&quantity=' + _v, function(result){
         if(result.done){
             //更新成功

@@ -3,18 +3,18 @@
 return array(
     'id' => 'open_email',
     'hook' => 'after_opening',
-    'name' => '�����ʼ�֪ͨ',
-    'desc' => '����ɹ�����������ʼ�֪ͨ',
-    'author' => 'ECMall Team',
+    'name' => '开店邮件通知',
+    'desc' => '开店成功后给店主发邮件通知',
+    'author' => 'ecmjx.jyds95.com',
     'version' => '1.0',
     'config' => array(
         'subject' => array(
             'type' => 'text',
-            'text' => '�ʼ�����'
+            'text' => '邮件标题'
         ),
         'content' => array(
             'type' => 'textarea',
-            'text' => '�ʼ�����'
+            'text' => '邮件内容'
         )
     )
 );

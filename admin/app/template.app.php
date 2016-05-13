@@ -261,7 +261,7 @@ class TemplateApp extends BackendApp
      */
     function _save_page_config($template_name, $page, $page_config)
     {
-        $page_config_file = ROOT_PATH . '/data/page_config/' . $template_name . '.' . $page . '.config.php';
+        $page_config_file = ROOT_PATH . '/data/page_config/mall/' . $template_name . '.' . $page . '.config.php';
         $php_data = "<?php\n\nreturn " . var_export($page_config, true) . ";\n\n?>";
 
         return file_put_contents($page_config_file, $php_data, LOCK_EX);
@@ -277,12 +277,19 @@ class TemplateApp extends BackendApp
     function _get_page_html($page)
     {
         $pages = $this->_get_editable_pages();
-        if (empty($pages[$page]))
-        {
+		
+		// modify tyioocom
+		$find = false;
+		foreach($pages as $key=>$val){
+			if($key==$page){
+				$find = true;
+				return file_get_contents($val['url']);
+				break;
+			}
+		}
+        if ($find === false){
             return false;
         }
-
-        return file_get_contents($pages[$page]);
     }
 
     /**
@@ -310,10 +317,31 @@ class TemplateApp extends BackendApp
     function _get_editable_pages()
     {
         $real_site_url = dirname(site_url());
-        return array(
-            'index' => $real_site_url . '/index.php',
-            'gcategory' => $real_site_url . '/index.php?app=category',
-        );
+
+		// modify tyioocom
+		$data['index'] 		= array('title'=>LANG::get('index'),'url'=> $real_site_url . '/index.php','action'=>array());
+		$data['gcategory'] 	= array('title'=>LANG::get('gcategory'),'url'=> $real_site_url . '/index.php?app=category','action'=>array());
+		//$data['scategory'] 	= array('title'=>LANG::get('scategory'),'url'=> $real_site_url . '/index.php?app=search&act=store', 'action'=>array());
+		$data['groupbuy'] 	= array('title'=>LANG::get('groupbuy'),'url'=> $real_site_url . '/index.php?app=search&act=groupbuy', 'action'=>array());
+		$data['ju'] 	= array('title'=>LANG::get('ju'),'url'=> $real_site_url . '/index.php?app=ju', 'action'=>array());
+		$data['ju_brand'] 	= array('title'=>LANG::get('ju_brand'),'url'=> $real_site_url . '/index.php?app=ju_brand', 'action'=>array());
+		$data['ju_mingpin'] 	= array('title'=>LANG::get('ju_mingpin'),'url'=> $real_site_url . '/index.php?app=ju_mingpin', 'action'=>array());
+		$data['ju_decoration'] 	= array('title'=>LANG::get('ju_decoration'),'url'=> $real_site_url . '/index.php?app=ju_decoration', 'action'=>array());
+		$data['ju_life'] 	= array('title'=>LANG::get('ju_life'),'url'=> $real_site_url . '/index.php?app=ju_life', 'action'=>array());
+		$data['ju_travel'] 	= array('title'=>LANG::get('ju_travel'),'url'=> $real_site_url . '/index.php?app=ju_travel', 'action'=>array());
+		$data['login'] 	= array('title'=>LANG::get('login'),'url'=> $real_site_url . '/index.php?app=member&act=login', 'action'=>array());
+		$data['find_password'] 	= array('title'=>LANG::get('find_password'),'url'=> $real_site_url . '/index.php?app=find_password', 'action'=>array());
+		
+		
+		$model_channel = &af('channels');
+        $channel = $model_channel->getAll(); //载入系统设置数据
+		
+		if($channel){
+			foreach($channel as $id=>$page){
+				$data[$id] = array('title'=>$page['title'],'url'=>$real_site_url.'/index.php?app=channel&id='.$id,'action'=>array('edit','drop'));
+			}
+		}
+		return $data;
     }
 }
 

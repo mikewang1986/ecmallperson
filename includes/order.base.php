@@ -230,13 +230,12 @@ class BaseOrder extends Object
             return false;
         }
 
-        if (!$consignee['shipping_id'])
+        if (!$consignee['shipping_id'] && !$consignee['is_free_fee'])// by cengnlaeng
         {
             $this->_error('shipping_required');
 
             return false;
         }
-
         return $consignee;
     }
 
@@ -351,18 +350,27 @@ class BaseOrder extends Object
         }
 
         /* 计算配送费用 */
-        $shipping_model =& m('shipping');
-        $shipping_info  = $shipping_model->get("shipping_id={$consignee_info['shipping_id']} AND store_id={$goods_info['store_id']} AND enabled=1");
-        if (empty($shipping_info))
-        {
-            $this->_error('no_such_shipping');
-
-            return false;
-        }
-
-        /* 配送费用=首件费用＋超出的件数*续件费用 */
-        $shipping_fee = $shipping_info['first_price'] + ($goods_info['quantity'] - 1) * $shipping_info['step_price'];
-
+		if(!$consignee_info['is_free_fee'])
+		{
+			$shipping_model =& m('shipping');
+			$shipping_info  = $shipping_model->get("shipping_id={$consignee_info['shipping_id']} AND store_id={$goods_info['store_id']} AND enabled=1");
+			if (empty($shipping_info))
+			{
+				$this->_error('no_such_shipping');
+	
+				return false;
+			}
+	
+			/* 配送费用=首件费用＋超出的件数*续件费用 */
+			$shipping_fee = $shipping_info['first_price'] + ($goods_info['quantity'] - 1) * $shipping_info['step_price'];
+		}
+		else
+		{
+		// by cengnlaeng
+			$shipping_fee = 0;
+			$consignee_info['shipping_id'] = 0;
+			$shipping_info['shipping_name']='商家包邮';
+		}
         return array(
             'consignee'     =>  $consignee_info['consignee'],
             'region_id'     =>  $consignee_info['region_id'],

@@ -128,6 +128,54 @@ class SettingApp extends BackendApp
             $this->show_message('edit_base_setting_successed');
         }
     }
+	
+	function tuiguagn()
+{
+	   $model_setting = &af('settings');
+        $setting = $model_setting->getAll(); //载入系统设置数据
+        if (!IS_POST)
+        {
+            $this->assign('setting', $setting);
+            $this->display('setting.tuiguagn.html');
+        }else
+		{
+		
+		     $data['pasen_0'] =$_POST['pasen_0'];
+		     $data['pasen_1'] =$_POST['pasen_1'];
+			 $data['pasen_2'] =$_POST['pasen_2'];
+			 $data['pasen_3'] =$_POST['pasen_3'];
+		     $data['pasen_4'] =$_POST['pasen_4'];
+			  $data['fanli'] =$_POST['fanli'];
+			  	  $data['store_tj'] =$_POST['store_tj'];
+		     $model_setting->setAll($data);
+
+            $this->show_message('设置成功');
+		}
+	
+}
+	
+	/*商城启用积分功能的总开关 add by xiaozhuge */
+	function integral_setting()
+	{
+		$model_setting = &af('settings');
+        $setting = $model_setting->getAll(); //载入系统设置数据
+		//print_r($setting);
+        if (!IS_POST)
+        {
+            $this->assign('setting', $setting);
+            $this->display('setting.integral_setting.html');
+        }
+        else
+        {
+            $data['integral_enabled']  = $_POST['integral_enabled'];
+			$data['exchange_rate']     = empty($_POST['exchange_rate'])? 0.1 : round($_POST['exchange_rate'],2);
+			$data['integral_rate']     = empty($_POST['integral_rate']) ? 0 : $_POST['integral_rate'];
+			$data['recom_user_register'] = empty($_POST['recom_user_register']) ? 0 : $_POST['recom_user_register'];
+			$data['lo_user_register'] = empty($_POST['lo_user_register']) ? 0 : $_POST['lo_user_register'];
+            $model_setting->setAll($data);
+            $this->show_message('edit_integral_setting_successed');
+        }
+	}
 
     /**
      *    基本信息

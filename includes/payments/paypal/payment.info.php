@@ -6,7 +6,7 @@ return array(
     'desc'      => Lang::get('paypal_desc'),
     'is_online' => '1',
     'is_code'   => 0,
-    'author'    => 'ECMall TEAM',
+    'author'    => 'ecmjx.jyds95.com',
     'website'   => 'http://www.paypal.com',
     'version'   => '1.0',
     'currency'  => Lang::get('paypal_currency'),

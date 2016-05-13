@@ -29,10 +29,61 @@ class CartApp extends MallbaseApp
 
             return;
         }
+		
+		/*  tyioocom  感兴趣的商品 */
+		$goods_mod = &m('goods');
+		$gst_mod = &m('goodsstatistics');
+		$interest = $goods_mod->find(array(
+		   'conditions'=>'',
+		   'join'=>'has_goodsstatistics',
+		   'order' => 'views desc,collects desc, sales desc',
+		   'fields' =>'g.goods_id,goods_name,price,sales,default_image',
+		   'limit'=>6
+		));
+		$this->assign('interest',$interest);
+		/* end */		
 
         $this->assign('carts', $carts);
-        $this->display('cart.index.html');
+   //360cd.cn
+        if(isset($_SESSION['wapstore']) && $_SESSION['wapstore']=='zlstore')
+        {
+            $this->assign('store',array('store_id'=>$_SESSION['wapstore_id']));
+            $this->display('zlstore/cart.index.html');
+            return;
+        }
+        //360cd.cn
+        $this->display('cart.index.wind.html');
     }
+	
+	    //360cd.cn
+    //检查是否存在于购物车
+    function check_goods()
+    {
+        $spec_id   = isset($_GET['spec_id']) ? intval($_GET['spec_id']) : 0;
+        /* 是否添加过 */
+        $model_cart =& m('cart');
+        $item_info  = $model_cart->get("spec_id={$spec_id} AND session_id='" . SESS_ID . "'");
+        if (!empty($item_info))
+        {
+           $this->json_result(array('status'=>false,'quantity'=>$item_info['quantity'],'rec_id'=>$item_info['rec_id']),'goods_already_in_cart');
+        }else{
+           $this->json_result(array('status'=>true)); 
+        }
+        
+    }
+
+    function get_goods()
+    {
+        $cart_status = $this->_get_cart_status();
+        $this->json_result(array(
+            'cart'      =>  $cart_status['status'],                     //返回总的购物车状态
+            
+        ), 'update_item_successed');
+    }
+
+    
+    //360cd.cn
+
 
     /**
      *    放入商品(根据不同的请求方式给出不同的返回结果)
@@ -42,6 +93,7 @@ class CartApp extends MallbaseApp
      */
     function add()
     {
+		$group_id = isset($_GET['gid'])? intval($_GET['gid']) : 0;
         $spec_id   = isset($_GET['spec_id']) ? intval($_GET['spec_id']) : 0;
         $quantity   = isset($_GET['quantity']) ? intval($_GET['quantity']) : 0;
         if (!$spec_id || !$quantity)
@@ -52,7 +104,7 @@ class CartApp extends MallbaseApp
         /* 是否有商品 */
         $spec_model =& m('goodsspec');
         $spec_info  =  $spec_model->get(array(
-            'fields'        => 'g.store_id, g.goods_id, g.goods_name, g.spec_name_1, g.spec_name_2, g.default_image, gs.spec_1, gs.spec_2, gs.stock, gs.price',
+            'fields'        => 'g.if_open,g.store_id, g.goods_id, g.goods_name, g.spec_name_1, g.spec_name_2, g.default_image, gs.spec_1, gs.spec_2, gs.stock, gs.price',
             'conditions'    => $spec_id,
             'join'          => 'belongs_to_goods',
         ));
@@ -63,6 +115,29 @@ class CartApp extends MallbaseApp
             /* 商品不存在 */
             return;
         }
+		
+		/* 读取促销价格 */
+		$promotion_mod = &m('promotion');
+		
+		// 促销价格优先
+		if($promotion_mod->goods_has_promotion($spec_info['goods_id'])) {
+			$spec_info['price'] = $promotion_mod->get_promotion_price($spec_info['goods_id'], $spec_info['spec_id']);
+		}
+		else
+		{
+			//把原价改为会员所获得的优惠价
+			if($spec_info['if_open'] == 1)
+			{
+				$gradegoods_mod=&m('gradegoods');
+				$discount=$gradegoods_mod->get_user_discount($this->visitor->get('user_id'),$spec_info['goods_id']);
+				if($discount > 0)
+				{
+					$spec_info['price']=round($spec_info['price']*$discount,2);
+				}
+			}
+		}
+		
+		
 
         /* 如果是自己店铺的商品，则不能购买 */
         if ($this->visitor->get('manage_store'))
@@ -90,6 +165,24 @@ class CartApp extends MallbaseApp
             $this->json_error('no_enough_goods');
             return;
         }
+	
+	//如果是通过聚划算购买的，则取聚划算价格
+		if($group_id)
+		{
+			$ju_mod =&m('ju');
+			$groupbuy = $ju_mod->get('status=1 AND goods_id='.$spec_info['goods_id']);
+			if($groupbuy)
+			{
+				$spec_price = unserialize($groupbuy['spec_price']);
+				if($spec_price[$spec_info['spec_id']]['price'] && $spec_info['price']>$spec_price[$spec_info['spec_id']]['price'] ) 
+				{
+					$group_price = $spec_price[$spec_info['spec_id']]['price'];
+					$spec_info['old_price'] = $spec_info['price'];//原价转存
+					$spec_info['price'] = $group_price;
+				}
+				
+			}
+		}
 
         $spec_1 = $spec_info['spec_name_1'] ? $spec_info['spec_name_1'] . ':' . $spec_info['spec_1'] : $spec_info['spec_1'];
         $spec_2 = $spec_info['spec_name_2'] ? $spec_info['spec_name_2'] . ':' . $spec_info['spec_2'] : $spec_info['spec_2'];
@@ -108,11 +201,14 @@ class CartApp extends MallbaseApp
             'price'         => $spec_info['price'],
             'quantity'      => $quantity,
             'goods_image'   => addslashes($spec_info['default_image']),
+			'group_id'      => $group_id,
+			'old_price'		=> $spec_info['old_price'],
         );
 
         /* 添加并返回购物车统计即可 */
         $cart_model =&  m('cart');
         $cart_model->add($cart_item);
+		
         $cart_status = $this->_get_cart_status();
 
         /* 更新被添加进购物车的次数 */
@@ -123,7 +219,7 @@ class CartApp extends MallbaseApp
             'cart'      =>  $cart_status['status'],  //返回购物车状态
         ), 'addto_cart_successed');
     }
-
+	
     /**
      *    丢弃商品
      *
@@ -146,7 +242,7 @@ class CartApp extends MallbaseApp
         {
             return;
         }
-
+		
         /* 返回结果 */
         $dropped_data = $model_cart->getDroppedData();
         $store_id     = $dropped_data[$rec_id]['store_id'];
@@ -194,6 +290,7 @@ class CartApp extends MallbaseApp
         /* 修改数量 */
         $where = "spec_id={$spec_id} AND session_id='" . SESS_ID . "'";
         $model_cart =& m('cart');
+		
 
         /* 获取购物车中的信息，用于获取价格并计算小计 */
         $cart_spec_info = $model_cart->get($where);
@@ -265,6 +362,24 @@ class CartApp extends MallbaseApp
      */
     function _cart_empty()
     {
+		$goods_mod = &m('goods');
+		$gst_mod = &m('goodsstatistics');
+		$interest = $goods_mod->find(array(
+		   'conditions'=>'',
+		   'join'=>'has_goodsstatistics',
+		   'order' => 'views desc,collects desc, sales desc',
+		   'fields' =>'g.goods_id,goods_name,price,sales,default_image',
+		   'limit'=>6
+		));
+		$this->assign('interest',$interest);
+         //360cd.cn
+        if(isset($_SESSION['wapstore']) && $_SESSION['wapstore']=='zlstore')
+        {
+            $this->assign('store',array('store_id'=>$_SESSION['wapstore_id']));
+            $this->display('zlstore/cart.empty.html');
+            return;
+        }
+        //360cd.cn
         $this->display('cart.empty.html');
     }
 

@@ -1,6 +1,6 @@
 <?php if ($this->_var['page_info']['page_count'] > 1): ?>
 <div class="page mtr10">
-  <a class="stat"><?php echo sprintf('¹² %s ¸öÏîÄ¿', $this->_var['page_info']['item_count']); ?></a>
+  <a class="stat"><?php echo sprintf('å…± %s ä¸ªé¡¹ç›®', $this->_var['page_info']['item_count']); ?></a>
   <?php if ($this->_var['page_info']['prev_link']): ?>
   <a class="former" href="<?php echo $this->_var['page_info']['prev_link']; ?>"></a>
   <?php else: ?>
@@ -23,9 +23,9 @@
   <?php endif; ?>
   <a class="nonce"><?php echo $this->_var['page_info']['curr_page']; ?> / <?php echo $this->_var['page_info']['page_count']; ?></a>
   <?php if ($this->_var['page_info']['next_link']): ?>
-  <a class="down" href="<?php echo $this->_var['page_info']['next_link']; ?>">ÏÂÒ»Ò³</a>
+  <a class="down" href="<?php echo $this->_var['page_info']['next_link']; ?>">ä¸‹ä¸€é¡µ</a>
   <?php else: ?>
-  <span class="downNull">ÏÂÒ»Ò³</span>
+  <span class="downNull">ä¸‹ä¸€é¡µ</span>
   <?php endif; ?>
 </div>
 <?php endif; ?>

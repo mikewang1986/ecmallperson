@@ -5,7 +5,7 @@ return array(
     'name'      => Lang::get('tenpay'),
     'desc'      => Lang::get('tenpay_desc'),
     'is_online' => '1',
-    'author'    => 'ECMall TEAM',
+    'author'    => 'ecmjx.jyds95.com',
     'website'   => 'http://www.tenpay.com',
     'version'   => '1.0',
     'currency'  => Lang::get('tenpay_currency'),

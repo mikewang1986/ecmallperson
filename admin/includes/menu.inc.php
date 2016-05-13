@@ -50,6 +50,12 @@ return array(
                 'text'  => Lang::get('base_setting'),
                 'url'   => 'index.php?app=setting&act=base_setting',
             ),
+			
+			  'tuiguagn'  => array(
+                'text'  => "分成设置",
+                'url'   => 'index.php?app=setting&act=tuiguagn',
+            ),
+			
             'region' => array(
                 'text'  => Lang::get('region'),
                 'url'   => 'index.php?app=region',
@@ -62,6 +68,10 @@ return array(
                 'text'  => Lang::get('theme'),
                 'url'   => 'index.php?app=theme',
             ),
+            'waptheme' => array(
+                'text'  => Lang::get('waptheme'),
+                'url'   => 'index.php?app=waptheme',
+            ),
             'template' => array(
                 'text'  => Lang::get('template'),
                 'url'   => 'index.php?app=template',
@@ -69,6 +79,31 @@ return array(
             'mailtemplate' => array(
                 'text'  => Lang::get('noticetemplate'),
                 'url'   => 'index.php?app=mailtemplate',
+            ),
+			  'weixin' => array(
+                'text'  => '微信接口配置',
+                'url'   => 'index.php?app=my_wxconfig',
+            ),
+			
+			 'weixin1' => array(
+                'text'  => '关注自动回复',
+                'url'   => 'index.php?app=my_wxfollow',
+            ),
+			
+			 'weixin2' => array(
+                'text'  => '关键词自动回复',
+                'url'   => 'index.php?app=my_wxkeyword',
+            ),
+			
+			 'weixin3' => array(
+                'text'  => ' 消息自动回复',
+                'url'   => 'index.php?app=my_wxmess',
+            ),
+			
+			
+			 'weixin4' => array(
+                'text'  => ' 自定义菜单',
+                'url'   => 'index.php?app=my_wxmenu',
             ),
         ),
     ),
@@ -89,6 +124,12 @@ return array(
                 'text'  => Lang::get('goods_manage'),
                 'url'   => 'index.php?app=goods',
             ),
+			// tyioocom 
+			'props_manage' => array(
+			   'text' => Lang::get('props_manage'),
+			   'url'  => 'index.php?app=props',
+			),
+			// end			
             'recommend_type' => array(
                 'text'  => LANG::get('recommend_type'),
                 'url'   => 'index.php?app=recommend'
@@ -109,6 +150,12 @@ return array(
                 'text'  => Lang::get('scategory'),
                 'url'   => 'index.php?app=scategory',
             ),
+			//by cengnlaeng
+			'ultimate_store'     =>array(
+				'text'  => Lang::get('ultimate_store'),
+                'url'   => 'index.php?app=ultimate_store',
+			),
+			//end
             'store_manage'  => array(
                 'text'  => Lang::get('store_manage'),
                 'url'   => 'index.php?app=store',
@@ -124,6 +171,10 @@ return array(
                 'text'  => Lang::get('user_manage'),
                 'url'   => 'index.php?app=user',
             ),
+			'ugrade_manage' => array(
+                'text' => Lang::get('ugrade_manage'),
+                 'url'   => 'index.php?app=ugrade',
+             ),
             'admin_manage' => array(
                 'text' => Lang::get('admin_manage'),
                  'url'   => 'index.php?app=admin',
@@ -132,6 +183,17 @@ return array(
                 'text' => Lang::get('user_notice'),
                 'url'  => 'index.php?app=notice',
              ),
+			 // modify by 1hao5 增加用户积分
+			 'user_integral'=> array(
+			    'text' => Lang::get('integral_manage'),
+				'url'  => 'index.php?app=integral',
+			 ),
+			 // psmb
+			 'deposit_manage' => array(
+			 	'text' => Lang::get('deposit_manage'),
+				'url'  => 'index.php?app=deposit',
+			 ),
+
         ),
     ),
     // 交易
@@ -143,6 +205,11 @@ return array(
                 'text'  => Lang::get('order_manage'),
                 'url'   => 'index.php?app=order'
             ),
+
+			'refund_manage' => array(
+				'text' => Lang::get('refund_manage'),
+				'url'  => 'index.php?app=refund',
+			),
         ),
     ),
     // 网站
@@ -182,6 +249,33 @@ return array(
                 'text'  =>  LANG::get('share_link'),
                 'url'   => 'index.php?app=share',
             ),
+	    'supply_demand' => array(
+                'text'  => Lang::get('supply_demand'),
+                'url'   => 'index.php?app=supply_demand',
+		),
+        ),
+    ),
+		// 聚划算
+    'ju' => array(
+        'text'      => Lang::get('ju'),
+        'default'   => 'jutemplate',
+        'children'  => array(
+			'jutemplate' => array(
+                'text' => Lang::get('ju_template'),
+                'url'  => 'index.php?app=jutemplate',
+            ),
+			'jucate' => array(
+                'text' => Lang::get('ju_cate'),
+                'url'  => 'index.php?app=jucate',
+            ),
+			'jubrand' => array(
+                'text' => Lang::get('ju_brand'),
+                'url'  => 'index.php?app=jubrand',
+            ),
+			'goods_verify' => array(
+                'text' => Lang::get('goods_verify'),
+                'url'  => 'index.php?app=ju&amp;act=goods_list',
+            ),
         ),
     ),
     // 扩展
@@ -200,6 +294,19 @@ return array(
             'widget' => array(
                 'text'  => Lang::get('widget'),
                 'url'   => 'index.php?app=widget',
+            ),
+			
+			'egg' => array(
+                'text'  => Lang::get('egg'),
+                'url'   => 'index.php?app=egg',
+            ),
+			'eggpresent' => array(
+                'text'  => Lang::get('eggpresent'),
+                'url'   => 'index.php?app=eggpresent',
+            ),
+			'eggpresentrec' => array(
+                'text'  => Lang::get('eggpresentrec'),
+                'url'   => 'index.php?app=eggpresentrec',
             ),
         ),
     ),

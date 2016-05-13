@@ -5,7 +5,7 @@ var style_name = '<?php echo $this->_var['curr_style_name']; ?>';
 function use_theme(template, style){
     if (template != template_name)
     {
-        if (!confirm('ÄúÑ¡ÔñµÄ¸ÃÖ÷ÌâÄ£°åÓëµ±Ç°Ê¹ÓÃµÄÖ÷ÌâÄ£°å²»Ò»ÖÂ£¬Òò´ËÄúµ±Ç°µÄ¹Ò¼şÉèÖÃ½«²»ÄÜÔÚĞÂÖ÷ÌâÖĞÏÔÊ¾£¬ÄúĞèÒªÖØĞÂÉèÖÃ£¬ÄúÈ·¶¨ÒªÊ¹ÓÃ¸ÃÄ£°åÂğ£¿'))
+        if (!confirm('æ‚¨é€‰æ‹©çš„è¯¥å•†åŸæ¨¡æ¿ä¸å½“å‰ä½¿ç”¨çš„å•†åŸæ¨¡æ¿ä¸ä¸€è‡´ï¼Œå› æ­¤æ‚¨å½“å‰çš„æŒ‚ä»¶è®¾ç½®å°†ä¸èƒ½åœ¨æ–°å•†åŸä¸­æ˜¾ç¤ºï¼Œæ‚¨éœ€è¦é‡æ–°è®¾ç½®ï¼Œæ‚¨ç¡®å®šè¦ä½¿ç”¨è¯¥æ¨¡æ¿å—ï¼Ÿ'))
         {
             return;
         }
@@ -35,8 +35,8 @@ body {background: none}
 </style>
 <div id="rightTop">
 <p>
-    <b>Ö÷ÌâÉèÖÃ</b><br />
-µ±Ç°ÄúÊ¹ÓÃµÄÖ÷ÌâÊÇ:<?php echo $this->_var['curr_template_name']; ?>&nbsp;<?php echo $this->_var['curr_style_name']; ?>
+    <b>å•†åŸæ¨¡æ¿è®¾ç½®</b><br />
+å½“å‰æ‚¨ä½¿ç”¨çš„å•†åŸæ¨¡æ¿æ˜¯:<?php echo $this->_var['curr_template_name']; ?>&nbsp;<?php echo $this->_var['curr_style_name']; ?>
 </p>
 
 </div>
@@ -52,10 +52,10 @@ body {background: none}
         <div class="templet_style"><img src="<?php echo $this->_var['site_url']; ?>/themes/mall/<?php echo $this->_var['template_name']; ?>/styles/<?php echo $this->_var['style_name']; ?>/preview.jpg" onclick="preview_theme('<?php echo $this->_var['template_name']; ?>', '<?php echo $this->_var['style_name']; ?>');" /></div>
         <div class="templet_btn">
         <?php if ($this->_var['curr_template_name'] != $this->_var['template_name'] || $this->_var['curr_style_name'] != $this->_var['style_name']): ?>
-        <input type="button" value="Ê¹ÓÃ" onclick="use_theme('<?php echo $this->_var['template_name']; ?>', '<?php echo $this->_var['style_name']; ?>');" class="formbtn" />&nbsp;&nbsp;
-        <input type="button" value="Ô¤ÀÀ" onclick="preview_theme('<?php echo $this->_var['template_name']; ?>', '<?php echo $this->_var['style_name']; ?>');" class="formbtn" />
+        <input type="button" value="ä½¿ç”¨" onclick="use_theme('<?php echo $this->_var['template_name']; ?>', '<?php echo $this->_var['style_name']; ?>');" class="formbtn" />&nbsp;&nbsp;
+        <input type="button" value="é¢„è§ˆ" onclick="preview_theme('<?php echo $this->_var['template_name']; ?>', '<?php echo $this->_var['style_name']; ?>');" class="formbtn" />
         <?php else: ?>
-        <input type="button" value="²é¿´ÉÌ³Ç" onclick="go_index()" class="formbtn" />
+        <input type="button" value="æŸ¥çœ‹å•†åŸ" onclick="go_index()" class="formbtn" />
         <?php endif; ?>
         </div>
     </li>

@@ -1,40 +1,40 @@
-<?php echo $this->fetch('header.html'); ?>
-<style>
-tr td.handler, th.handler {text-align: center; width: 180px;}
-</style>
-<div id="rightTop">
-    <p>Í¨ÖªÄ£°å</p>
-    <ul class="subnav">
-        <li><?php if ($this->_var['type'] == $this->_var['notice_mail']): ?><span>ÓÊ¼şÄ£°å</span><?php else: ?><a class="btn1" href="index.php?app=mailtemplate&amp;type=<?php echo $this->_var['notice_mail']; ?>">ÓÊ¼şÄ£°å</a><?php endif; ?></li>
-        <li><?php if ($this->_var['type'] == $this->_var['notice_msg']): ?><span>¶ÌÏûÏ¢Ä£°å</span><?php else: ?><a class="btn1" href="index.php?app=mailtemplate&amp;type=<?php echo $this->_var['notice_msg']; ?>">¶ÌÏûÏ¢Ä£°å</a><?php endif; ?></li>
-    </ul>
-</div>
-<div class="tdare info">
-    <table width="100%" cellspacing="0" class="dataTable">
-        <?php if ($this->_var['noticetemplates']): ?>
-        <tr class="tatr1">
-            <td  class="firstCell" align="left">Ä£°åÃèÊö</td>
-            <td class="handler">²Ù×÷</td>
-        </tr>
-        <?php endif; ?>
+<?php echo $this->fetch('header.html'); ?>
+<style>
+tr td.handler, th.handler {text-align: center; width: 180px;}
+</style>
+<div id="rightTop">
+    <p>é€šçŸ¥æ¨¡æ¿</p>
+    <ul class="subnav">
+        <li><?php if ($this->_var['type'] == $this->_var['notice_mail']): ?><span>é‚®ä»¶æ¨¡æ¿</span><?php else: ?><a class="btn1" href="index.php?app=mailtemplate&amp;type=<?php echo $this->_var['notice_mail']; ?>">é‚®ä»¶æ¨¡æ¿</a><?php endif; ?></li>
+        <li><?php if ($this->_var['type'] == $this->_var['notice_msg']): ?><span>çŸ­æ¶ˆæ¯æ¨¡æ¿</span><?php else: ?><a class="btn1" href="index.php?app=mailtemplate&amp;type=<?php echo $this->_var['notice_msg']; ?>">çŸ­æ¶ˆæ¯æ¨¡æ¿</a><?php endif; ?></li>
+    </ul>
+</div>
+<div class="tdare info">
+    <table width="100%" cellspacing="0" class="dataTable">
+        <?php if ($this->_var['noticetemplates']): ?>
+        <tr class="tatr1">
+            <td  class="firstCell" align="left">æ¨¡æ¿æè¿°</td>
+            <td class="handler">æ“ä½œ</td>
+        </tr>
+        <?php endif; ?>
         <?php $_from = $this->_var['noticetemplates']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('code', 'noticetemplate');if (count($_from)):
     foreach ($_from AS $this->_var['code'] => $this->_var['noticetemplate']):
-?>
-        <tr class="tatr2">
-            <td class="firstCell" align="left"><?php echo $this->_var['noticetemplate']['description']; ?></td>
-            <td class="handler">
-            <a href="index.php?app=mailtemplate&amp;act=<?php if ($this->_var['type'] == $this->_var['notice_mail']): ?>mail<?php endif; ?><?php if ($this->_var['type'] == $this->_var['notice_msg']): ?>msg<?php endif; ?>&amp;code=<?php echo $this->_var['code']; ?>&amp;type=<?php echo $this->_var['type']; ?>">±à¼­</a>
-            </td>
-        </tr>
-        <?php endforeach; else: ?>
-        <tr class="no_data">
-            <td colspan="3">Ã»ÓĞÍ¨ÖªÄ£°å</td>
-        </tr>
-        <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    </table>
-        <div id="dataFuncs">
-
-    </div>
-
-</div>
-<?php echo $this->fetch('footer.html'); ?>
+?>
+        <tr class="tatr2">
+            <td class="firstCell" align="left"><?php echo $this->_var['noticetemplate']['description']; ?></td>
+            <td class="handler">
+            <a href="index.php?app=mailtemplate&amp;act=<?php if ($this->_var['type'] == $this->_var['notice_mail']): ?>mail<?php endif; ?><?php if ($this->_var['type'] == $this->_var['notice_msg']): ?>msg<?php endif; ?>&amp;code=<?php echo $this->_var['code']; ?>&amp;type=<?php echo $this->_var['type']; ?>">ç¼–è¾‘</a>
+            </td>
+        </tr>
+        <?php endforeach; else: ?>
+        <tr class="no_data">
+            <td colspan="3">æ²¡æœ‰é€šçŸ¥æ¨¡æ¿</td>
+        </tr>
+        <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
+    </table>
+        <div id="dataFuncs">
+
+    </div>
+
+</div>
+<?php echo $this->fetch('footer.html'); ?>

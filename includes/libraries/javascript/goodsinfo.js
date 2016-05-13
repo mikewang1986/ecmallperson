@@ -1,11 +1,15 @@
 /* spec对象 */
-function spec(id, spec1, spec2, price, stock)
+function spec(id, spec1, spec2, price, stock,pro_price,is_pro,discount)
 {
     this.id    = id;
     this.spec1 = spec1;
     this.spec2 = spec2;
     this.price = price;
     this.stock = stock;
+	
+	this.pro_price = pro_price;
+	this.is_pro = is_pro;
+	this.discount=discount;
 }
 
 /* goodsspec对象 */
@@ -71,11 +75,11 @@ function goodsspec(specs, specQty, defSpec)
             {
                 if (spec1Values[i] == this.spec1)
                 {
-                    $(".handle ul:eq(0)").append("<li class='solid' onclick='selectSpec(1, this)'>" + spec1Values[i] + "</li>");
+                    $(".handle ul:eq(0)").append("<li class='solid' onclick='selectSpec(1, this)'><a href='javascript:;'><span>" + spec1Values[i] + "</span></a></li>");
                 }
                 else
                 {
-                    $(".handle ul:eq(0)").append("<li class='dotted' onclick='selectSpec(1, this)'>" + spec1Values[i] + "</li>");
+                    $(".handle ul:eq(0)").append("<li class='dotted' onclick='selectSpec(1, this)'><a href='javascript:;'><span>" + spec1Values[i] + "</span></a></li>");
                 }
             }
         }
@@ -86,11 +90,11 @@ function goodsspec(specs, specQty, defSpec)
             {
                 if (spec2Values[i] == this.spec2)
                 {
-                    $(".handle ul:eq(1)").append("<li class='solid' onclick='selectSpec(2, this)'>" + spec2Values[i] + "</li>");
+                    $(".handle ul:eq(1)").append("<li class='solid' onclick='selectSpec(2, this)'><a href='javascript:;'><span>" + spec2Values[i] + "</span></a></li>");
                 }
                 else
                 {
-                    $(".handle ul:eq(1)").append("<li class='dotted' onclick='selectSpec(2, this)'>" + spec2Values[i] + "</li>");
+                    $(".handle ul:eq(1)").append("<li class='dotted' onclick='selectSpec(2, this)'><a href='javascript:;'><span>" + spec2Values[i] + "</span></a></li>");
                 }
             }
         }
@@ -102,7 +106,9 @@ function goodsspec(specs, specQty, defSpec)
 /* 选中某规格 num=1,2 */
 function selectSpec(num, liObj)
 {
-    goodsspec['spec' + num] = $(liObj).html();
+	// tyioocom
+    goodsspec['spec' + num] = $(liObj).find('a span').html();
+	
     $(liObj).attr("class", "solid");
     $(liObj).siblings(".solid").attr("class", "dotted");
 
@@ -116,7 +122,7 @@ function selectSpec(num, liObj)
         var spec2Values = goodsspec.getDistinctValues('spec2', goodsspec.spec1);
         for (var i = 0; i < spec2Values.length; i++)
         {
-            $(".handle ul:eq(1)").append("<li class='dotted' onclick='selectSpec(2, this)'>" + spec2Values[i] + "</li>");
+            $(".handle ul:eq(1)").append("<li class='dotted' onclick='selectSpec(2, this)'><a href='javascript:;'><span>" + spec2Values[i] + "</span></a></li>");
         }
     }
     else
@@ -124,8 +130,23 @@ function selectSpec(num, liObj)
         var spec = goodsspec.getSpec();
         if (spec != null)
         {
+            //  edit  by  tyioocom 
             $("[ectype='current_spec']").html(spec.spec1 + ' ' + spec.spec2);
-            $("[ectype='goods_price']").html(price_format(spec.price));
+			if(spec.is_pro) {
+				$("#is_pro").css('display','block');
+				$("#not_pro").css('display','none');
+				$("[ectype='goods_price']").html('<del>'+price_format(spec.price)+'</del>');
+				$("[ectype='goods_pro_price']").html(price_format(spec.pro_price));
+			}else {
+				$("[ectype='goods_price']").html(price_format(spec.price));
+				$("#is_pro").css('display','none');
+				$("#not_pro").css('display','block');
+			}
+			// end tyioocom 
+			
+			if(spec.discount < 1 && spec.discount > 0){
+	    		$("[ectype='member_price']").html(price_format(spec.price*spec.discount));
+	   	 	}
             $("[ectype='goods_stock']").html(spec.stock);
         }
     }
@@ -140,7 +161,7 @@ $(function(){
     //放大镜效果/
     if ($(".jqzoom img").attr('jqimg'))
     {
-        $(".jqzoom").jqueryzoom({ xzoom: 430, yzoom: 300 });
+        $(".jqzoom").jqueryzoom({ xzoom: 425, yzoom: 310 });
     }
 
     // 图片替换效果

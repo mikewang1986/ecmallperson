@@ -383,7 +383,16 @@ class BaseModel extends Object
 
             return false;
         }
-
+		
+		if($relation_info['model']=='goodslimitbuy')
+		{
+		return false;
+		
+		}
+		
+	/*	print_r($relation_info);
+           print_r($relation_info['model']);*/
+		   
         /* 被关联模型的反向关联信息 */
         $model =& m($relation_info['model']);
         $be_related = $model->getRelation($relation_info['reverse']);
@@ -966,19 +975,21 @@ class BaseModel extends Object
                 /* 大小|长度限制 */
                 if ($type == 'string')
                 {
-                    $strlen = strlen($value);
-                    if ($min != 0 && $strlen < $min)
-                    {
-                        $this->_error('autov_length_lt_min', $_k);
-
-                        return false;
-                    }
-                    if ($max != 0 && $strlen > $max)
-                    {
-                        $this->_error('autov_length_gt_max', $_k);
-
-                        return false;
-                    }
+                    if(!is_array($value)){
+	                    $strlen = strlen($value);
+	                    if ($min != 0 && $strlen < $min)
+	                    {
+	                        $this->_error('autov_length_lt_min', $_k);
+	
+	                        return false;
+	                    }
+	                    if ($max != 0 && $strlen > $max)
+	                    {
+	                        $this->_error('autov_length_gt_max', $_k);
+	
+	                        return false;
+	                    }
+                	}
                 }
                 else
                 {

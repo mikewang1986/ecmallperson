@@ -88,7 +88,7 @@ class SessionProcessor
             }
             else
             {
-                // 形如ecmall.com这样的域名
+                // 形如vchuang.cn这样的域名
                 $cookie_domain = '.' . $tmp_arr['host'];
             }
             $this->session_cookie_domain = $cookie_domain;
@@ -132,8 +132,8 @@ class SessionProcessor
         {
             $this->gen_session_id();
             session_id($this->session_id . $this->gen_session_key($this->session_id));
-            /*setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0,
-                $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);*/
+            setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0,
+                $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
         }
 
     }
@@ -274,12 +274,12 @@ class SessionProcessor
     function gen_session_key($session_id)
     {
         static $ip = '';
-
+/*
         if ($ip == '')
         {
             $ip = substr($this->_ip, 0, strrpos($this->_ip, '.'));
         }
-
+*/
         return sprintf('%08x', crc32(!empty($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] . ROOT_PATH . $ip . $session_id : ROOT_PATH . $ip . $session_id));
     }
 
@@ -452,7 +452,7 @@ class MemcacheSession
             }
             else
             {
-                // 形如ecmall.com这样的域名
+                // 形如vchuang.cn这样的域名
                 $cookie_domain = '.' . $tmp_arr['host'];
             }
             $this->session_cookie_domain = $cookie_domain;
@@ -488,8 +488,8 @@ class MemcacheSession
         {
             $this->gen_session_id();
             session_id($this->session_id . $this->gen_session_key($this->session_id));
-            /*setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0,
-                $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);*/
+            setcookie($this->session_name, $this->session_id . $this->gen_session_key($this->session_id), 0,
+                $this->session_cookie_path, $this->session_cookie_domain, $this->session_cookie_secure);
         }
     }
     
@@ -599,12 +599,12 @@ class MemcacheSession
     function gen_session_key($session_id)
     {
         static $ip = '';
-
+/*
         if ($ip == '')
         {
             $ip = substr($this->_ip, 0, strrpos($this->_ip, '.'));
         }
-
+*/
         return sprintf('%08x', crc32(!empty($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] . ROOT_PATH . $ip . $session_id : ROOT_PATH . $ip . $session_id));
     }
     

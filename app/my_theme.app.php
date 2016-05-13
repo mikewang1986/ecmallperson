@@ -79,9 +79,48 @@ class My_themeApp extends StoreadminbaseApp
         }
         $model_store =& m('store');
         $model_store->edit($this->visitor->get('manage_store'), array('theme' => $theme));
+		if($template_name == 'colorful') //生成配置文件，暂时处理
+		{ 
+			$this->create_file($template_name,$style_name, $this->visitor->get('manage_store'));
+		}
 
         $this->json_result('', 'set_theme_successed');
     }
+	
+	function create_file($template_name,$style_name, $store_id)
+	{
+		$conf_name = array(
+			'index' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_index.config.php',
+			'search' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_search.config.php',
+			'credit' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_credit.config.php',
+			'groupbuy' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_groupbuy.config.php',
+			'article' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_article.config.php',
+			'groupbuyinfo' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_groupbuyinfo.config.php',
+			'goodsinfo' => $template_name . '.' . $style_name . '.' . 'store_'.$store_id . '_goodsinfo.config.php',
+		);
+		foreach($conf_name as $key => $conf)
+		{
+			if(!file_exists(ROOT_PATH . '/data/page_config/store/'.$conf))
+			{
+				if(file_exists($this->_get_default_conf($key))){
+					$html =  file_get_contents($this->_get_default_conf($key));
+				} else {
+					$html = "<?php return array('config' =>array(),'widgets' =>array(),);?>";
+				}
+				
+				if(!file_put_contents(ROOT_PATH . '/data/page_config/store/' . $conf, $html)){
+					$this->json_error('create file error!');
+				}
+			}
+		}
+	}
+	function _get_default_conf($page)
+	{
+		if(!$page){
+			return '';
+		}
+		return ROOT_PATH . '/data/page_config/store/default.default.' .$page . '.config.php';
+	}
 
     function _get_themes()
     {

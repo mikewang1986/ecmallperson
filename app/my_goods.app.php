@@ -18,6 +18,9 @@ class My_goodsApp extends StoreadminbaseApp
     var $_store_id;
     var $_brand_mod;
     var $_last_update_id;
+	var $_promotion_mod;
+		var $_gradegoods_mod; //by cngnlaeng
+		var $_ju_mod;
 
     /* 构造函数 */
     function __construct()
@@ -35,6 +38,9 @@ class My_goodsApp extends StoreadminbaseApp
         $this->_image_mod =& m('goodsimage');
         $this->_uploadedfile_mod =& m('uploadedfile');
         $this->_brand_mod =& m('brand');
+	$this->_ju_mod    =& m('ju');
+		$this->_promotion_mod =&m('promotion');
+				$this->_gradegoods_mod=&m('gradegoods');//by cengnlaeng
     }
 
     function index()
@@ -142,6 +148,11 @@ class My_goodsApp extends StoreadminbaseApp
         if (isset($_GET['sort']) && isset($_GET['order']))
         {
             $sort  = strtolower(trim($_GET['sort']));
+            if (!in_array($sort,array('goods_name','cate_id','brand','price','stock','if_show','recommended','closed')))
+            {
+                $sort  = 'goods_id';
+                $order = 'desc';
+            }
             $order = strtolower(trim($_GET['order']));
             if (!in_array($order,array('asc','desc')))
             {
@@ -215,7 +226,7 @@ class My_goodsApp extends StoreadminbaseApp
              /* 取得商品分类 */
              $this->assign('mgcategories', $this->_get_mgcategory_options(0)); // 商城分类第一级
              $this->assign('sgcategories', $this->_get_sgcategory_options());  // 店铺分类
-
+		     $this->assign('ugrades', $this->_gradegoods_mod->get_grade_goods_info(0));  // 会员等级
              /* 当前页面信息 */
              $this->_curlocal(LANG::get('member_center'), 'index.php?app=member',
                               LANG::get('my_goods'), 'index.php?app=my_goods',
@@ -241,6 +252,7 @@ class My_goodsApp extends StoreadminbaseApp
                      ),
                  ),
              ));
+			  $this->assign('integral_open',Conf::get('integral_enabled')); // by 1hao5 判断系统是否开启积分功能
              $this->display('my_goods.batch.html');
         }
         else
@@ -279,12 +291,24 @@ class My_goodsApp extends StoreadminbaseApp
              {
                  $data['recommended'] = $_POST['recommended'] ? 1 : 0;
              }
+			 //by cengnlaeng
+			 if ($_POST['if_open'] >= 0)
+             {
+                 $data['if_open'] = intval($_POST['if_open']);
+             }
              if ($data)
              {
                  $this->_goods_mod->edit($ids, $data);
              }
-
+			//编辑会员折扣
              // edit category_goods
+			 $grade_discount=$this->_gradegoods_mod->get_post_grade_info($_POST['grade_id'],$_POST['grade'],$_POST['grade_discount']);
+			 if($grade_discount)
+			 {
+				 foreach($ids as $id){
+					$this->_gradegoods_mod->save_grade_info($id,$grade_discount);
+				 }
+			 }
              $cate_ids = array();
              foreach ($_POST['sgcate_id'] as $cate_id)
              {
@@ -348,7 +372,56 @@ class My_goodsApp extends StoreadminbaseApp
              {
                  $this->_spec_mod->edit("goods_id" . db_create_in($ids), $sql);
              }
+			   /*如果商品开启了积分功能，则可以批量编辑积分最多抵扣额度 by xiaozhuge */
+			 if(Conf::get('integral_enabled'))
+			 {
+			 $goods_integral_mod = &m('goods_integral');
+			 $sql = "";
+			 $delta_integral = intval($_POST['max_exchange']); // 积分最大抵扣变化量
+             if ($_POST['integral_change'])
+             {
+                 switch ($_POST['integral_change'])
+                 {
+                     case 'change_to':
+                         $sql .= "max_exchange = '" . $delta_integral . "'";
+                         break;
+                     case 'inc_by':
+                         $sql .= "max_exchange = max_exchange + '" . $delta_integral . "'";
+                         break;
+                     case 'dec_by':
+                         $sql .= "max_exchange = IF((max_exchange - '" . $delta_integral . "') <0 , 0, max_exchange - '" . $delta_integral . "')";
+                         break;
+					case 'perc_by':
+                         $sql .= "max_exchange = max_exchange * '".$delta_integral."'";
+                         break;
+                 }
 
+             }
+             if ($sql)
+             {
+				 $ids_edit = array();
+				 $data_add = array();
+				 foreach($ids as $id)
+				 {
+					 if($goods_integral_mod->get($id))
+					 {
+						 $ids_edit[] = $id;
+					 }
+					 else
+					 {
+						 $data_add[] = array('goods_id'=>$id,'has_integral'=>0,'max_exchange'=>($_POST['integral_change'] == 'dec_by') ? 0 : $delta_integral);
+					 }
+				 }
+				 //print_r($ids_edit);
+                 $goods_integral_mod->edit($ids_edit, $sql);
+				 $goods_integral_mod->add($data_add);
+             }
+			 }
+			/* end  xiaozhuge */
+			 
+			$cache_server =& cache_server();
+        	$cache_server->clear();
+				
              $ret_page = isset($_GET['ret_page']) ? intval($_GET['ret_page']) : 1;
              $this->show_message('edit_ok',
                  'back_list', 'index.php?app=my_goods&page=' . $ret_page);
@@ -532,7 +605,7 @@ class My_goodsApp extends StoreadminbaseApp
                  'name' => 'description',
                  'content_css' => SITE_URL . "/themes/store/{$template_name}/styles/{$style_name}" . '/shop.css', // for preview
              )));
-             
+              $this->assign('integral_open',Conf::get('integral_enabled')); // by 1hao5 判断系统是否开启积分功能
              $this->display('my_goods.form.html');
         }
         else
@@ -568,7 +641,30 @@ class My_goodsApp extends StoreadminbaseApp
                     'images' => $feed_images
                 ));
             }
-
+			
+			//  sku tyioocom  保存商品属性
+			if(isset($_POST['props']))
+			{
+				$goods_pvs_mod = &m('goods_pvs');
+				
+				// 空值处理
+				foreach($_POST['props'] as $key=>$val){
+					if(empty($val)){
+						unset($_POST['props'][$key]);
+					}
+				}
+				
+				// 生成如 6:1;20:4 的字符串
+				$prop_str = implode(';',$_POST['props']);
+				
+				$goods_pvs = array(
+				   'goods_id'=> $goods_info['goods_id'],
+				   'pvs'     => $prop_str
+				);
+				$goods_pvs_mod->add($goods_pvs);
+			}
+			//  end  sku
+			
             $this->show_message('add_ok',
                 'back_list', 'index.php?app=my_goods',
                 'continue_add', 'index.php?app=my_goods&amp;act=add'
@@ -698,7 +794,75 @@ class My_goodsApp extends StoreadminbaseApp
                 'name' => 'description',
                 'content_css' => SITE_URL . "/themes/store/{$template_name}/styles/{$style_name}" . '/shop.css', // for preview
             )));
-             
+			
+			//  初始化商品属性  sku tyioocom 
+			$cate_pvs_mod = &m('cate_pvs');
+			$goods_pvs_mod = &m('goods_pvs');
+			$props_mod = &m('props');
+			$prop_value_mod = &m('prop_value');
+			$cate_pvs = $cate_pvs_mod->get($goods['cate_id']);
+			$goods_pvs = $goods_pvs_mod->get($goods['goods_id']);
+			//$cpvs = $cate_pvs['pvs']; // 取出该分类的所有可用属性
+			$prop_list = array();
+			if(!empty($goods_pvs['pvs']) && !empty($cate_pvs['pvs']))
+			{
+				$gpvs = explode(';',$goods_pvs['pvs']);// 取出该商品的所有属性  $cpvs >= $gpvs,用来设置 checked=checked
+			    $pv_arr = explode(';',$cate_pvs['pvs']);
+			    $i=0;
+			    // 属性数组拼装处理，返回  array([pid]=>1...[values]=>array([vid]=>1...))
+				
+				
+				/* 检查属性名和属性值是否存在，有可能是之前有，但后面删除了 */
+				foreach($pv_arr as $key=>$pv)
+				{
+					if($pv)
+				 	{
+					   	$item = explode(':',$pv);
+					    $check_prop = $props_mod->get(array('conditions'=>'pid='.$item[0].' AND status=1','fields'=>'pid'));
+					   
+					   	// 如果属性名存在，则检查该属性名下的当前属性值是否存在
+					   	if($check_prop)
+					   	{
+						   	$check_prop_value = $prop_value_mod->get(array('conditions'=>'pid='.$item[0].' AND vid='.$item[1].' and status=1','fields'=>'vid'));
+						   	if(!$check_prop_value){
+							   	unset($pv_arr[$key]);
+						   	}
+					   	} else {
+						   	unset($pv_arr[$key]);
+					  	}
+					  }
+				 }
+			  
+			  
+			  // print_r($pv_arr);exit;
+			   foreach($pv_arr as $key=>$pv)
+			   {
+				   $item = explode(':',$pv);
+				   $props = $props_mod->get(array('conditions'=>'status=1 and pid='.$item[0],'fields'=>'name,pid'));
+				   $prop_list[$item[0]] = $props;
+				   if ($pid!=$item[0]) { // 不是同一个 pid 的属性值，不做累加
+				      $prop_value = array();
+					  $pid = $item[0];
+					  $i=0;
+				   }
+				   $prop_value[] = $prop_value_mod->get(array('conditions'=>'status=1 and vid='.$item[1],'fields'=>'prop_value,vid,pid'));
+				   if(in_array($pv,$gpvs)) {
+				      $prop_value[$i++]['selected'] =1;
+				   }
+				   else{
+					   $prop_value[$i++]['selected'] =0;
+				   }
+				   $prop_list[$item[0]] += array('value'=>$prop_value);
+			   }
+			}
+			//print_r($props_list);exit;
+			$this->assign('prop_list',$prop_list);
+			
+			
+			// end sku
+			
+			
+             $this->assign('integral_open',Conf::get('integral_enabled')); // by 1hao5 判断系统是否开启积分功能
             $this->display('my_goods.form.html');
         }
         else
@@ -718,9 +882,40 @@ class My_goodsApp extends StoreadminbaseApp
                 $this->show_warning($this->get_error());
                 return;
             }
-
+			//  sku tyioocom  保存商品属性
+			if(isset($_POST['props']))
+			{
+				$goods_pvs_mod = &m('goods_pvs');
+				
+				// 空值处理
+				foreach($_POST['props'] as $key=>$val){
+					if(empty($val)){
+						unset($_POST['props'][$key]);
+					}
+				}
+				
+				// 生成如 6:1;20:4 的字符串
+				$prop_str = implode(';',$_POST['props']);
+				
+				$goods_pvs = array(
+				   'goods_id'=> $id,
+				   'pvs'     => $prop_str
+				);
+				if($goods_pvs_mod->get($id)) {
+					$goods_pvs_mod->edit($id,$goods_pvs);
+				}
+				else {
+					$goods_pvs_mod->add($goods_pvs);
+				}
+			}
+			//  end  sku
+			
+			$cache_server =& cache_server();
+        	$cache_server->delete('page_of_goods_'.$id);
+			
+			$ret_page = isset($_GET['ret_page']) ? intval($_GET['ret_page']) : 1;
             $this->show_message('edit_ok',
-                'back_list', 'index.php?app=my_goods',
+                'back_list', 'index.php?app=my_goods&page='.$ret_page,
                 'edit_again', 'index.php?app=my_goods&amp;act=edit&amp;id=' . $id);
         }
     }
@@ -1236,6 +1431,8 @@ class My_goodsApp extends StoreadminbaseApp
                         $fields_cols = $this->_taobao_fields_cols($title_arr, $import_fields);
                         if (count($fields_cols) != count($import_fields))
                         {
+                            $csv_string = substr($csv_string,$pos - $title_pos);
+                            continue;
                             $this->_error('csv_fields_error'); // 欲导入的字段列数跟实际CSV文件中列数不符
                             return false;
                         }
@@ -1549,21 +1746,7 @@ class My_goodsApp extends StoreadminbaseApp
 
     function _get_member_submenu()
     {
-        if (ACT == 'index')
-        {
-            $menus = array(
-                array(
-                    'name' => 'goods_list',
-                    'url'  => 'index.php?app=my_goods',
-                ),
-                array(
-                    'name' => 'brand_apply_list',
-                    'url' => 'index.php?app=my_goods&amp;act=brand_list'
-                ),
-            );
-        }
-        else
-        {
+
              $menus = array(
                  array(
                      'name' => 'goods_list',
@@ -1581,6 +1764,16 @@ class My_goodsApp extends StoreadminbaseApp
                     'name' => 'brand_apply_list',
                     'url' => 'index.php?app=my_goods&amp;act=brand_list'
                 ),
+				array(
+					'name' => 'recommend_list',
+					'url'  => 'index.php?app=my_recommend',
+				),
+             );
+		if (ACT == 'recommend')
+        {
+            $menus[] = array(
+                 'name' => 'recommend',
+                 'url' => ''
              );
         }
         if (ACT == 'batch_edit')
@@ -1749,13 +1942,13 @@ class My_goodsApp extends StoreadminbaseApp
      */
     function _addible()
     {
-        $payment_mod =& m('payment');
+      /*  $payment_mod =& m('payment');
         $payments = $payment_mod->get_enabled($this->_store_id);
         if (empty($payments))
         {
             $this->show_warning('please_install_payment', 'go_payment', 'index.php?app=my_payment');
                   return false;
-        }
+        }*/
 
         $shipping_mod =& m('shipping');
         $shippings = $shipping_mod->find("store_id = '{$this->_store_id}' AND enabled = 1");
@@ -1859,12 +2052,23 @@ class My_goodsApp extends StoreadminbaseApp
                 'default_goods_image' => $default_goods_image,
             );
         }
+		//读取会员等级及对应的会员折扣 by cengnlaeng
+		$goods_info['ugrades']=$this->_gradegoods_mod->get_grade_goods_info($id);
+		//
         $goods_info['spec_json'] = ecm_json_encode(array(
             'spec_qty' => $goods_info['spec_qty'],
             'spec_name_1' => isset($goods_info['spec_name_1']) ? $goods_info['spec_name_1'] : '',
             'spec_name_2' => isset($goods_info['spec_name_2']) ? $goods_info['spec_name_2'] : '',
             'specs' => $goods_info['_specs'],
         ));
+		/* 如果开启积分功能，则：读取商品积分设置 add by 1hao5 */
+		if(Conf::get('integral_enabled'))
+		{
+			$goods_integral_mod =& m('goods_integral');
+			$goods_integral = $goods_integral_mod->get($id);
+			$goods_info += $goods_integral ? $goods_integral : array();
+		}
+		/*end by 1ho5*/
         return $goods_info;
     }
 
@@ -1873,13 +2077,27 @@ class My_goodsApp extends StoreadminbaseApp
      */
     function _get_post_data($id = 0)
     {
+		
+		if($_POST['recom'])
+		{
+		if($_POST['recom'] >  1)
+		{
+		$this->show_warning('分成不能大于1');
+             return false;
+		}
+		
+		}
+		
+		
         $goods = array(
             'goods_name'       => $_POST['goods_name'],
             'description'      => $_POST['description'],
             'cate_id'             => $_POST['cate_id'],
             'cate_name'        => $_POST['cate_name'],
+			   'recom'        =>$_POST['recom'],
             'brand'                  => $_POST['brand'],
             'if_show'             => $_POST['if_show'],
+			'if_open'             => $_POST['if_open'],// by cengnlaeng
             'last_update'      => gmtime(),
             'recommended'      => $_POST['recommended'],
             'tags'             => trim($_POST['tags']),
@@ -2010,9 +2228,24 @@ class My_goodsApp extends StoreadminbaseApp
                 );
             }
         }
-
-        return array('goods' => $goods, 'specs' => $specs, 'cates' => $cates, 'goods_file_id' => $goods_file_id, 'desc_file_id' => $desc_file_id);
+		/*获取递交的会员折扣的信息*/
+		$gradegoods = $this->_gradegoods_mod->get_post_grade_info($_POST['grade_id'],$_POST['grade'],$_POST['grade_discount']); 
+		/* 如果开启积分功能，则：  增加积分设置 edit by xiaozhuge */
+		if(Conf::get('integral_enabled'))
+		{
+			$goods_integral = array(
+		      'has_integral' => $_POST['has_integral'],
+		      'max_exchange' => $_POST['max_exchange']
+		    );
+			return array('goods_integral'=>$goods_integral,'goods' => $goods, 'gradegoods'=>$gradegoods, 'specs' => $specs, 'cates' => $cates, 'goods_file_id' => $goods_file_id, 'desc_file_id' => $desc_file_id);
+		}
+		else // 原来官方的写法
+		{
+			return array('goods' => $goods,  'gradegoods'=>$gradegoods, 'specs' => $specs, 'cates' => $cates, 'goods_file_id' => $goods_file_id, 'desc_file_id' => $desc_file_id);
+		}
     }
+		
+
 
     /**
      * 检查提交的数据
@@ -2041,8 +2274,41 @@ class My_goodsApp extends StoreadminbaseApp
             return false;
         }
 
+            /* 如果开启积分功能，则： 检查店家是否拥有足够的积分  by xiaozhuge */
+		if(Conf::get('integral_enabled'))
+		{
+			$total_integral = $this->_get_owner_total_integral($id);
+			$stock = 0;
+			foreach($data['specs'] as $spec) // 计算设置的库存量
+			{
+				$stock += $spec['stock'];
+			}
+			if($total_integral < $data['goods_integral']['has_integral'] * $stock) // 如果店家拥有的积分 小于 赠送的积分
+			{
+				$this->_error('你设置的赠送积分 '.$data['goods_integral']['has_integral'].'（积分） * '.$stock.'（库存） = '.$data['goods_integral']['has_integral'] * $stock.' 大于你账号中的积分总额：'.$total_integral);
+				return false;
+			}
+		}
+		/* 检查店家是否拥有足够的积分  end */
+
         return true;
     }
+	/* 获取店家的总积分  by xiaozhuge */
+	function _get_owner_total_integral($id)
+	{
+		$total_integral = 0;
+		if ($id>0) // 如果是编辑商品，那么释放该商品对应的赠送积分值，以便累加到总积分中
+		{
+			$_goods_integral_mod = & m('goods_integral');
+			$goods_integral = $_goods_integral_mod->get($id);
+			$total_integral += $goods_integral['has_integral'];
+		}
+		$_integral_mod = & m('my_money');
+		$integral = $_integral_mod->get("user_id=".$this->visitor->get('user_id'));
+		$total_integral += $integral['jifen'];
+		return $total_integral;		
+	}
+	/* 获取店家的总积分 end */
 
     function _format_goods_tags($tags)
     {
@@ -2086,11 +2352,13 @@ class My_goodsApp extends StoreadminbaseApp
             }
 
             $goods_id = $id;
+				if(Conf::get('integral_enabled')){$this->_save_goods_integral($goods_id,$data['goods_integral'],'edit');} // 如果开启积分功能，则：更新商品积分设置  by  1hao5
         }
         else
         {
             // add
             $goods_id = $this->_goods_mod->add($data['goods']);
+			if(Conf::get('integral_enabled')){$this->_save_goods_integral($goods_id,$data['goods_integral']);} //如果开启积分功能，则： 添加商品积分设置 by  1hao5
             if (!$goods_id)
             {
                 $this->_error($this->_goods_mod->get_error());
@@ -2106,13 +2374,16 @@ class My_goodsApp extends StoreadminbaseApp
                 $this->_image_mod->edit(db_create_in($data['goods_file_id'], 'file_id'), array('goods_id' => $goods_id));
             }
         }
+		/*保存会员价折扣 by cengnlaeng*/
+		$this->_gradegoods_mod->save_grade_info($goods_id,$data['gradegoods']);
+		//
         /* 保存规格 */
         if ($id > 0)
         {
             /* 删除的规格 */
             $goods_specs = $this->_spec_mod->find(array(
                 'conditions' => "goods_id = '{$id}'",
-                'fields' => 'spec_id'
+                'fields' => 'spec_id, price' // 促销功能,需要price字段 tyioocom
             ));
             $drop_spec_ids = array_diff(array_keys($goods_specs), array_keys($data['specs']));
             if (!empty($drop_spec_ids))
@@ -2173,6 +2444,21 @@ class My_goodsApp extends StoreadminbaseApp
 
         return true;
     }
+	
+	/* 保存商品积分设置 add by 1hao5 */
+	function _save_goods_integral($goods_id,$data)
+	{
+		$goods_integral_mod =& m('goods_integral');
+		if ($goods_integral_mod->get($goods_id)) // 积分设置已经存在，则修改积分设置
+		{
+			$goods_integral_mod->edit($goods_id,$data);
+		}
+		else
+		{
+			$data['goods_id'] = $goods_id;
+			$goods_integral_mod->add($data);
+		}
+	}
 
     //品牌申请列表
     function brand_list()
@@ -2424,6 +2710,119 @@ class My_goodsApp extends StoreadminbaseApp
     function _filter_price($price)
     {
         return abs(floatval($price));
+    }
+	
+	//  sku tyioocom  
+	
+	// 异步加载指定商品分类 cate_id 下的属性列表
+	function ajax_props()
+	{
+		$cate_pvs_mod = &m('cate_pvs');
+		$props_mod = &m('props');
+		$prop_value_mod = &m('prop_value');
+		$cate_id = empty($_GET['cate_id']) ? 0 : $_GET['cate_id'];
+		$cate_pvs = $cate_pvs_mod->get($cate_id);
+		$pv_arr = explode(';',$cate_pvs['pvs']);
+		$data = array();
+		$pid = '';
+		//  先排序
+		foreach ($pv_arr as $key => $row) {
+			$volume[$key]  = $row[0];
+		}
+		array_multisort($volume,SORT_DESC,$pv_arr); // 排序后才能做以下 $pid!=$item[0] 的判断
+		
+		
+		/* 检查属性名和属性值是否存在，有可能是之前有，但后面删除了 */
+		foreach($pv_arr as $key=>$pv)
+		{
+			if($pv)
+			{
+				$item = explode(':',$pv);
+				$check_prop = $props_mod->get(array('conditions'=>'pid='.$item[0].' AND status=1','fields'=>'pid'));
+					   
+				// 如果属性名存在，则检查该属性名下的当前属性值是否存在
+				if($check_prop)
+				{
+					$check_prop_value = $prop_value_mod->get(array('conditions'=>'pid='.$item[0].' AND vid='.$item[1].' and status=1','fields'=>'vid'));
+						if(!$check_prop_value){
+							unset($pv_arr[$key]);
+						}
+				} else {
+					unset($pv_arr[$key]);
+				}
+			}
+		}
+		
+		
+		// 解析每一项属性名和属性值
+		if(!empty($cate_pvs))
+		{
+			foreach($pv_arr as $key=>$pv)
+			{
+				$item = explode(':',$pv);
+				$props = $props_mod->get(array('conditions'=>'status=1 and pid='.$item[0],'fields'=>'name,pid'));
+				$data[$item[0]] = $props;
+			
+				if ($pid!=$item[0]) { // 不是同一个 pid 的属性值，不做累加
+			    	$prop_value = array();
+					$pid = $item[0];
+				}
+				$prop_value[] = $prop_value_mod->get(array('conditions'=>'status=1 and pid='.$item[0].' and vid='.$item[1],'fields'=>'prop_value,vid,pid'));;
+				$data[$item[0]] += array('value'=>$prop_value);
+				
+			}
+			//print_r($this->json_result(array_values($data)));exit;
+		}
+		$this->json_result(array_values($data));
+		
+	}
+	// end sku
+	
+		/* 推荐商品到 */
+    function recommend()
+    {
+        if (!IS_POST)
+        {
+			$this->_curlocal(LANG::get('member_center'), 'index.php?app=member',
+                         LANG::get('my_goods'), 'index.php?app=my_goods',
+                         LANG::get('recommend'));
+        	$this->_curitem('my_goods');
+        	$this->_curmenu('recommend');
+            /* 取得推荐类型 */
+            $recommend_mod =& bm('recommend', array('_store_id' => $this->_store_id));
+            $recommends = $recommend_mod->get_options();
+            if (!$recommends)
+            {
+                $this->show_warning('no_recommends', 'go_back', 'javascript:history.go(-1);', 'set_recommend', 'index.php?app=my_recommend');
+                return;
+            }
+            $this->assign('recommends', $recommends);
+            $this->display('my_goods.recom.html');
+        }
+        else
+        {
+            $id = isset($_GET['id']) ? trim($_GET['id']) : '';
+            if (!$id)
+            {
+                $this->show_warning('Hacking Attempt');
+                return;
+            }
+
+            $recom_id = empty($_POST['recom_id']) ? 0 : intval($_POST['recom_id']);
+            if (!$recom_id)
+            {
+                $this->show_warning('recommend_required');
+                return;
+            }
+
+            $ids = explode(',', $id);
+            $recom_mod =& bm('recommend', array('_store_id' => $this->_store_id));
+            $recom_mod->createRelation('recommend_goods', $recom_id, $ids);
+            $ret_page = isset($_GET['ret_page']) ? intval($_GET['ret_page']) : 1;
+            $this->show_message('recommend_ok',
+                'back_list', 'index.php?app=my_goods&page=' . $ret_page,
+                'view_recommended_goods', 'index.php?app=my_recommend&amp;act=view_goods&amp;id=' . $recom_id);
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 return array (
-  'version' => '2.3.0',
-  'release' => '20120918',
+  'version' => 'Vmall3.0',
+  'release' => '20141216',
 ); 
 ?>

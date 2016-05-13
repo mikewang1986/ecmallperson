@@ -123,6 +123,9 @@ function getFullPath(obj)
         if (window.navigator.userAgent.indexOf("MSIE")>=1)
         {
             obj.select();
+            if(window.navigator.userAgent.indexOf("MSIE") == 25){
+            	obj.blur();
+            }
             return document.selection.createRange().text;
         }
         //firefox
@@ -130,13 +133,16 @@ function getFullPath(obj)
         {
             if(obj.files)
             {
-                return obj.files.item(0).getAsDataURL();
+                //return obj.files.item(0).getAsDataURL();
+            	return window.URL.createObjectURL(obj.files.item(0)); 
             }
             return obj.value;
         }
+		
         return obj.value;
     }
 }
+
 
 /**
  *    启动邮件队列

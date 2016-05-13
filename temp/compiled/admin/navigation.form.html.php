@@ -1,120 +1,120 @@
-<?php echo $this->fetch('header.html'); ?>
-<script type="text/javascript" src="index.php?act=jslang"></script>
-
-<script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/navigation.js'; ?>" charset="utf-8"></script>
-<script type="text/javascript">
-$(function(){
-       $('#navigation_form').validate({
-        errorPlacement: function(error, element){
-            $(element).next('.field_notice').hide();
-            $(element).after(error);
-        },
-        success       : function(label){
-            label.addClass('right').text('OK!');
-        },
-        rules : {
-            title : {
-                required : true
-            },
-            sort_order:{
-               number   : true
-            }
-        },
-        messages : {
-            title : {
-                required : '±êÌâ²»ÄÜÎª¿Õ'
-            },
-            sort_order  : {
-                number   : '´ËÏî½öÄÜÎªÊı×Ö'
-            }
-        }
-    });
-      $('#diy').click (
-        function()
-        {
-            on('diy');
-            $('#link').attr('disabled',false);
-            $('#link').val("<?php echo htmlspecialchars($this->_var['navigation']['link']); ?>");
-            $('#gcategory_cate_id').val('');
-        }
-    );
-});
-
-</script>
-<div id="rightTop">
-    <p>Ò³Ãæµ¼º½</p>
-    <ul class="subnav">
-        <li><a class="btn1" href="index.php?app=navigation">¹ÜÀí</a></li>
-        <?php if ($this->_var['navigation']['nav_id']): ?>
-        <li><a class="btn1" href="index.php?app=navigation&amp;act=add">ĞÂÔö</a></li>
-        <?php else: ?>
-        <li><span>ĞÂÔö</span></li>
-        <?php endif; ?>
-    </ul>
-</div>
-
-<div class="info">
-    <form method="post" enctype="multipart/form-data" id="navigation_form">
-        <table class="infoTable">
-            <tr>
-                <th class="paddingT15">
-                    µ¼º½ÀàĞÍ</th>
-                <td class="paddingT15 wordSpacing5">
-                    <input id="diy" type="radio" name="nav_type" value="diy" checked="checked" /><label for="diy">×Ô¶¨Òåµ¼º½</label>
-                    <input id="gcategory" type="radio" name="nav_type" value="gcategory" />
-                    <label for="gcategory">ÉÌÆ··ÖÀà</label>
-                    <input type="hidden" id="gcategory_cate_id" name="gcategory_cate_id" class="mls_id" />
-                    <span id='select_gcategory'>
-                    <select><option value="">ÇëÑ¡Ôñ...</option><?php echo $this->html_options(array('options'=>$this->_var['gcategory_options'])); ?></select>
-                    </span>
-                    <input id="acategory" type="radio" name="nav_type" value="acategory" />
-                    <label for="acategory">ÎÄÕÂ·ÖÀà</label>
-                    <select id="acategory_cate_id" name="acategory_cate_id"><option value="">ÇëÑ¡Ôñ...</option><?php echo $this->html_options(array('options'=>$this->_var['acategory_options'])); ?></select>
-                </td>
-            </tr>
-            <tr>
-                <th class="paddingT15">
-                    ±êÌâ:</th>
-                <td class="paddingT15 wordSpacing5">
-                    <input class="mls_name infoTableInput2" id="title" type="text" name="title" value="<?php echo htmlspecialchars($this->_var['navigation']['title']); ?>" />
-                </td>
-            </tr>
-            <tr>
-                <th class="paddingT15">
-                    Á´½Ó:</th>
-                <td class="paddingT15 wordSpacing5">
-                    <input class="infoTableInput" id="link" type="text" name="link" value="<?php echo htmlspecialchars($this->_var['navigation']['link']); ?>" />
-                </td>
-            </tr>
-            <tr>
-                <th class="paddingT15">
-                    <label for="type">ËùÔÚÎ»ÖÃ:</label></th>
-                <td class="paddingT15 wordSpacing5">
-                    <?php echo $this->html_radios(array('options'=>$this->_var['type'],'checked'=>$this->_var['navigation']['type'],'name'=>'type')); ?>
-                </td>
-            </tr>
-            <tr>
-                <th class="paddingT15">
-                    <label>ĞÂ´°¿Ú´ò¿ª:</label></th>
-                <td class="paddingT15 wordSpacing5">
-                    <?php echo $this->html_radios(array('options'=>$this->_var['open_new'],'checked'=>$this->_var['navigation']['open_new'],'name'=>'open_new')); ?>
-                </td>
-            </tr>
-            <tr>
-                <th class="paddingT15">
-                    ÅÅĞò:</th>
-                <td class="paddingT15 wordSpacing5">
-                    <input class="sort_order" id="sort_order" type="text" name="sort_order" value="<?php echo $this->_var['navigation']['sort_order']; ?>" />
-                </td>
-            </tr>
-        <tr>
-            <th></th>
-            <td class="ptb20">
-                <input class="formbtn" type="submit" name="Submit" value="Ìá½»" />
-                <input class="formbtn" type="reset" name="Submit2" value="ÖØÖÃ" />
-            </td>
-        </tr>
-        </table>
-    </form>
-</div>
-<?php echo $this->fetch('footer.html'); ?>
+<?php echo $this->fetch('header.html'); ?>
+<script type="text/javascript" src="index.php?act=jslang"></script>
+
+<script type="text/javascript" src="<?php echo $this->res_base . "/" . 'js/navigation.js'; ?>" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+       $('#navigation_form').validate({
+        errorPlacement: function(error, element){
+            $(element).next('.field_notice').hide();
+            $(element).after(error);
+        },
+        success       : function(label){
+            label.addClass('right').text('OK!');
+        },
+        rules : {
+            title : {
+                required : true
+            },
+            sort_order:{
+               number   : true
+            }
+        },
+        messages : {
+            title : {
+                required : 'æ ‡é¢˜ä¸èƒ½ä¸ºç©º'
+            },
+            sort_order  : {
+                number   : 'æ­¤é¡¹ä»…èƒ½ä¸ºæ•°å­—'
+            }
+        }
+    });
+      $('#diy').click (
+        function()
+        {
+            on('diy');
+            $('#link').attr('disabled',false);
+            $('#link').val("<?php echo htmlspecialchars($this->_var['navigation']['link']); ?>");
+            $('#gcategory_cate_id').val('');
+        }
+    );
+});
+
+</script>
+<div id="rightTop">
+    <p>é¡µé¢å¯¼èˆª</p>
+    <ul class="subnav">
+        <li><a class="btn1" href="index.php?app=navigation">ç®¡ç†</a></li>
+        <?php if ($this->_var['navigation']['nav_id']): ?>
+        <li><a class="btn1" href="index.php?app=navigation&amp;act=add">æ–°å¢</a></li>
+        <?php else: ?>
+        <li><span>æ–°å¢</span></li>
+        <?php endif; ?>
+    </ul>
+</div>
+
+<div class="info">
+    <form method="post" enctype="multipart/form-data" id="navigation_form">
+        <table class="infoTable">
+            <tr>
+                <th class="paddingT15">
+                    å¯¼èˆªç±»å‹</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input id="diy" type="radio" name="nav_type" value="diy" checked="checked" /><label for="diy">è‡ªå®šä¹‰å¯¼èˆª</label>
+                    <input id="gcategory" type="radio" name="nav_type" value="gcategory" />
+                    <label for="gcategory">å•†å“åˆ†ç±»</label>
+                    <input type="hidden" id="gcategory_cate_id" name="gcategory_cate_id" class="mls_id" />
+                    <span id='select_gcategory'>
+                    <select><option value="">è¯·é€‰æ‹©...</option><?php echo $this->html_options(array('options'=>$this->_var['gcategory_options'])); ?></select>
+                    </span>
+                    <input id="acategory" type="radio" name="nav_type" value="acategory" />
+                    <label for="acategory">æ–‡ç« åˆ†ç±»</label>
+                    <select id="acategory_cate_id" name="acategory_cate_id"><option value="">è¯·é€‰æ‹©...</option><?php echo $this->html_options(array('options'=>$this->_var['acategory_options'])); ?></select>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    æ ‡é¢˜:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="mls_name infoTableInput2" id="title" type="text" name="title" value="<?php echo htmlspecialchars($this->_var['navigation']['title']); ?>" />
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    é“¾æ¥:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="infoTableInput" id="link" type="text" name="link" value="<?php echo htmlspecialchars($this->_var['navigation']['link']); ?>" />
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    <label for="type">æ‰€åœ¨ä½ç½®:</label></th>
+                <td class="paddingT15 wordSpacing5">
+                    <?php echo $this->html_radios(array('options'=>$this->_var['type'],'checked'=>$this->_var['navigation']['type'],'name'=>'type')); ?>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    <label>æ–°çª—å£æ‰“å¼€:</label></th>
+                <td class="paddingT15 wordSpacing5">
+                    <?php echo $this->html_radios(array('options'=>$this->_var['open_new'],'checked'=>$this->_var['navigation']['open_new'],'name'=>'open_new')); ?>
+                </td>
+            </tr>
+            <tr>
+                <th class="paddingT15">
+                    æ’åº:</th>
+                <td class="paddingT15 wordSpacing5">
+                    <input class="sort_order" id="sort_order" type="text" name="sort_order" value="<?php echo $this->_var['navigation']['sort_order']; ?>" />
+                </td>
+            </tr>
+        <tr>
+            <th></th>
+            <td class="ptb20">
+                <input class="formbtn" type="submit" name="Submit" value="æäº¤" />
+                <input class="formbtn" type="reset" name="Submit2" value="é‡ç½®" />
+            </td>
+        </tr>
+        </table>
+    </form>
+</div>
+<?php echo $this->fetch('footer.html'); ?>

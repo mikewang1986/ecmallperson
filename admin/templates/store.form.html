@@ -137,6 +137,14 @@ $(function(){
         <td class="paddingT15 wordSpacing5"><input class="infoTableInput" name="address" type="text" id="address" value="{$store.address|escape}"/></td>
       </tr>
       <tr>
+        <th class="paddingT15">{$lang.operate_time}:</th>
+        <td class="paddingT15 wordSpacing5"><input class="infoTableInput" name="operate_time" type="text" id="operate_time" value="{$store.operate_time|escape}"/></td>
+      </tr>
+      <tr>
+        <th class="paddingT15">{$lang.send_address}:</th>
+        <td class="paddingT15 wordSpacing5"><input class="infoTableInput" name="send_address" type="text" id="send_address" value="{$store.send_address|escape}"/></td>
+      </tr>
+      <tr>
         <th class="paddingT15">{$lang.zipcode}:</th>
         <td class="paddingT15 wordSpacing5"><input class="infoTableInput2" name="zipcode" type="text" id="zipcode" value="{$store.zipcode|escape}" /></td>
       </tr>
@@ -176,6 +184,19 @@ $(function(){
         <th class="paddingT15">{$lang.recommend}:</th>
         <td class="paddingT15 wordSpacing5">{html_radios name="recommended" options=$recommended_options  checked=$store.recommended}</td>
       </tr>
+      
+      <tr>
+        <th class="paddingT15"> <label for="state">{$lang.open_pay}:</label></th>
+        <td class="paddingT15 wordSpacing5">{html_radios name="is_open_pay" options=$open_pay_states checked=$store.is_open_pay}</td>
+      </tr>
+    
+    
+      <tr>
+        <th class="paddingT15"> <label for="state">是否开启分成:</label></th>
+        <td class="paddingT15 wordSpacing5">{html_radios name="is_affter" options=$is_affter checked=$store.is_affter}</td>
+      </tr>
+    
+    
       <tr>
         <th class="paddingT15">{$lang.sort_order}:</th>
         <td class="paddingT15 wordSpacing5"><input class="sort_order" name="sort_order" type="text" id="sort_order" value="{$store.sort_order}" /></td>

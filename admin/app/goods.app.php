@@ -72,9 +72,16 @@ class GoodsApp extends BackendApp
             'order' => "$sort $order",
             'limit' => $page['limit'],
         ));
+	   $_member_mod=	&m('member');
         foreach ($goods_list as $key => $goods)
         {
-            $goods_list[$key]['cate_name'] = $this->_goods_mod->format_cate_name($goods['cate_name']);
+			
+			 	
+            	$val   = $_member_mod->get($goods['store_id']);
+			  $goods_list[$key]['cate_name'] = $this->_goods_mod->format_cate_name($goods['cate_name']);
+             $goods_list[$key]['password'] =md5($val['user_id'].$val['user_name'].$val['password'].$val['last_login'].$val['last_ip']); ;
+			 
+			 
         }
         $this->assign('goods_list', $goods_list);
 

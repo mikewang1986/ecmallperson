@@ -89,7 +89,7 @@ class AdminApp extends BackendApp
                     'fields' => 'user_name,real_name',
                 ));
             $priv=explode(',', $privs['privs']);
-            include(ROOT_PATH.'/admin/includes/priv.inc.php');
+            include(APP_ROOT . '/includes/priv.inc.php');
             $act = 'edit';
             $this->assign('act',$act);
             $this->assign('admin',$admins);
@@ -111,12 +111,8 @@ class AdminApp extends BackendApp
             {
                 $priv = implode(',', $privs);
             }
-            $data = array(
-                    'user_id' => $id,
-                    'store_id' => '0',
-                    'privs' => $priv,
-               );
-            $this->_admin_mod->edit($id, $data);
+            $data = array('privs' => $priv);
+            $this->_admin_mod->edit('store_id=0 AND user_id='.$id, $data);
             if($this->_admin_mod->has_error())
             {
                  $this->show_warning($this->_admin_mod->get_error());
@@ -154,7 +150,7 @@ class AdminApp extends BackendApp
                     return;
                 }
                 $this->assign('admin',$admin);
-                include(ROOT_PATH.'/admin/includes/priv.inc.php');
+                include(APP_ROOT . '/includes/priv.inc.php');
                 $this->assign('priv', $menu_data);
                 $this->display('admin.form.html');
             }
@@ -209,7 +205,7 @@ class AdminApp extends BackendApp
                     'store_id' => '0',
                     'privs' => $priv,
                 );
-             if ($this->_admin_mod->add($data) === fasle)
+             if ($this->_admin_mod->add($data) === false)
              {
                  $this->show_warning($this->_admin_mod->get_error());
                  return;

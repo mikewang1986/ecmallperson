@@ -91,7 +91,7 @@ ul, ol { list-style-type:none; }
  * -------------------------------------------------------
  */
 
-#head { width: 1000px; height: 110px; position: relative; margin: 0 auto; }
+#head { width: 1000px; height: 110px; position: relative; margin: 0 auto; z-index:999 }
 #head h1 { position: absolute; top: 15px; left: 0; }
 
 #subnav { position: absolute; top: 5px; right: 0; word-spacing: 3px; }
@@ -107,7 +107,7 @@ ul, ol { list-style-type:none; }
 #subnav .help { height: 15px; line-height: 15px; float: left; padding-left: 20px; background: url(images/ico.gif) 0 -75px; }
 .user_defined { float: left; }
 
-#topbtn { position: absolute; top: 32px; right: 0; width: 212px; height: 21px; background: url(images/topbtn.gif); line-height: 21px; text-align: center; word-spacing: 2px; }
+#topbtn { position: absolute; top: 32px; right: 0; width: 212px; height: 21px; background: url(images/topbtn.gif); line-height: 21px; text-align: center; word-spacing: 2px; z-index:999 }
 .topbtn1 { position: absolute; top: 0; left: 0; width: 3px; height: 21px; background: url(images/topbtn.gif) no-repeat 0 -44px; }
 .topbtn2 { position: absolute; top: 0; right: 0; width: 3px; height: 21px; background: url(images/topbtn.gif) no-repeat 0 -22px; }
 #topbtn a { color: #000; text-decoration: none; }
@@ -125,6 +125,12 @@ ul, ol { list-style-type:none; }
 .select1 { padding: 2px; margin-right: 2px; }
 .search334 { width: 334px; padding: 2px; +padding: 2px 2px 0; }
 .search_btn { float: left; background: url(images/search_btn.gif) no-repeat; border: 0; width: 71px; height: 34px; }
+
+#float_layer { position: absolute; top: 21px; right: 117px; width: 95px; line-height: 20px; background: url(images/float_layer.gif) repeat-y -95px 0; z-index: 1; display: none; }
+#float_layer a { text-decoration: none; color: #333; }
+#float_layer a:hover { text-decoration: underline; }
+#float_layer #adorn1 { width: 95px; height: 3px; overflow: hidden; background: url(images/float_layer.gif) no-repeat 0 0; position: absolute; bottom: -3px; left: 0; }
+#float_layer #adorn2 { width: 94px; height: 3px; overflow: hidden; background: url(images/float_layer.gif) no-repeat right 0; position: absolute; top: -3px; left: 0; }
 
 /*
  * -------------------------------------------------------
@@ -301,12 +307,23 @@ ul, ol { list-style-type:none; }
 .ware_title { text-align: center; color: #3e3e3e; line-height: 40px; border-bottom: 1px solid #ddd; margin-bottom: 25px; }
 .ware_info { width: 740px; margin: 0 auto 20px; }
 .ware_pic { float: left; width: 300px; }
-.ware_text { float: right; width: 380px; position: relative; z-index: 10; }
+.ware_text { float: right; width: 395px; position: relative; z-index: 10; }
+.ware_text .wx{width:150px;text-align:center;}
 
 .big_pic { width: 300px; height: 300px; background: #f1f1f1; margin-left: 20px; }
 
 .bottom_btn { width: 340px; height: 64px; position: relative; }
 .collect { width: 27px; height: 128px; background: url(images/btn.gif) 0 -113px; position: absolute; top: -300px; left: 322px; }
+
+#btn_list { padding-top: 20px; position: relative; left: 20px; z-index:999 }
+#btn_list1 , #btn_list2 { width: 146px; height: 29px; float: left; position: relative; cursor: pointer; }
+#btn_list1 { background: url(images/btn_list.gif) no-repeat; }
+#btn_list2 { background: url(images/btn_list.gif) no-repeat right 0; left: 10px; }
+#btn_list .drop_down { position: absolute; top: 29px; left: 0; width: 138px; padding: 6px 0 10px; border: 4px solid #dadada; background: #fff; display: none; }
+#btn_list .drop_down li { height: 30px; }
+#btn_list .drop_down li img { float: left; width: 16px; height: 16px; position: relative; top: 6px; left: 20px;}
+#btn_list .drop_down li a { color: #3e3e3e; float: left; height: 30px; line-height: 30px; padding-left: 30px; }
+#btn_list .drop_down li a:hover { color: #f00; font-weight: bold; }
 
 .left_btn { width: 8px; height: 53px; border: 1px solid #ccc; background: #f7f4f0 url(images/left_btn.gif) no-repeat center center; position: absolute; bottom: 0; left: 6px; cursor: pointer; }
 .right_btn { width: 8px; height: 53px; border: 1px solid #ccc; background: #f7f4f0 url(images/right_btn.gif) no-repeat center center; position: absolute; bottom: 0; right: 3px; cursor: pointer; }
@@ -317,14 +334,17 @@ ul, ol { list-style-type:none; }
 
 .ware_pic_hover { background: url(images/ware_pic_hover.gif); }
 
-.rate { color: #666; line-height: 30px; width: 360px; padding-left: 20px; margin-bottom: 10px; overflow: hidden; }
+.rate { color: #666; line-height: 30px; width: 395px; margin-bottom: 10px; overflow: hidden; }
 
 .handle { width: 340px; padding: 10px 20px; background: #f6f6f6; border: 1px solid #e8e8e8; overflow: hidden; }
 .handle ul { width: 360px; overflow: hidden; color: #7a7a7a; margin-bottom: 10px;}
 .handle li { float: left; cursor: pointer; }
-.handle_title { padding-top: 3px; }
+.handle li a{ text-decoration:none}
+.handle_title {padding-top: 3px; }
 .solid { padding: 2px 4px; border: 1px solid #52b1e9; color: #fff; margin-right: 8px; background: #80c4f1; }
+.solid a{ text-decoration:none; color:#fff;}
 .dotted { padding: 2px 4px; border: 1px dotted #c4c4c4; margin-right: 8px; background: #fff; }
+.dotted a{ text-decoration:none;color:#7A7A7A;}
 .aggregate { color: #c558d2; }
 
 .ware_btn { width: 380px; margin-top: 20px; position: relative; }

@@ -8,6 +8,23 @@
  */
 class Buyer_orderApp extends MemberbaseApp
 {
+	var $_deposit_recharge_mod;
+	var $_deposit_record_mod;
+	 function __construct()
+    {
+        $this->Buyer_orderApp();
+    }
+
+    function Buyer_orderApp()
+    {
+		
+		
+        parent::__construct();
+	
+		$this->_deposit_record_mod   = &m('deposit_record');
+		$this->_deposit_recharge_mod = &m('deposit_recharge');
+    }
+	
     function index()
     {
         /* 获取订单列表 */
@@ -207,49 +224,332 @@ class Buyer_orderApp extends MemberbaseApp
         }
         else
         {
-            $model_order->edit($order_id, array('status' => ORDER_FINISHED, 'finished_time' => gmtime()));
-            if ($model_order->has_error())
+			$change_order_status = true;
+				
+			
+			$refund_mod 	= &m('refund');
+			$refund = $refund_mod->find(array('conditions'=>"order_id=".$order_id." and (status !='SUCCESS' and status !='CLOSED') ",'fields'=>'refund_id,status'));
+				
+			
+			if(!empty($refund) && count($refund) > 0) {
+				$change_order_status = false;
+			}
+			
+	
+			if($change_order_status === true)
+			{
+				/* 更新订单状态 */
+         	$model_order->edit($order_id, array('status' => ORDER_FINISHED, 'finished_time' => gmtime()));
+            	if ($model_order->has_error())
+            	{
+                	$this->pop_warning($model_order->get_error());
+
+                	return;
+            	}
+
+            	/* 记录订单操作日志 */
+           	 	$order_log =& m('orderlog');
+           	 	$order_log->add(array(
+                	'order_id'  => $order_id,
+                	'operator'  => addslashes($this->visitor->get('user_name')),
+                	'order_status' => order_status($order_info['status']),
+                	'changed_status' => order_status(ORDER_FINISHED),
+                	'remark'    => Lang::get('buyer_confirm'),
+                	'log_time'  => gmtime(),
+            	));
+
+            	/* 发送给卖家买家确认收货邮件，交易完成 */
+           	 	$model_member =& m('member');
+            	$seller_info   = $model_member->get($order_info['seller_id']);
+            	$mail = get_mail('toseller_finish_notify', array('order' => $order_info));
+            	$this->_mailto($seller_info['email'], addslashes($mail['subject']), addslashes($mail['message']));
+				
+				//发送短信给买家 by andcpp
+				$filename = ROOT_PATH . '/data/msg.inc.php';
+				if (file_exists($filename))
+				{
+					$mod_msg = &m('msg');
+					$user_id = $order_info['seller_id'];
+					$row_msg = $mod_msg->get(array(
+						'conditions' => 'msg.user_id='.$user_id,
+						'join' => 'belongs_to_user',
+						'fields' => 'this.*,phone_mob'
+					));
+					$mobile = $row_msg['phone_mob']; //手机号
+					$smsText = sprintf(Lang::get('sms_check'),$order_info['order_sn'],$order_info['buyer_name']);
+					$checked_functions = $functions = array();
+					$functions = $this->_get_msg_functions();
+					$tmp = explode(',', $row_msg['functions']);
+					if ($functions)
+					{
+						foreach ($functions as $func)
+						{
+							$checked_functions[$func] = in_array($func, $tmp);
+						}
+					}
+					if($row_msg['state'] == 1 && $checked_functions['check'] == 1 && $row_msg['num']>0 && !empty($mobile) && !empty($smsText))
+					{
+						$this->Sms_Get('SMS_Send',$mobile,$smsText,$user_id);
+					}
+				}
+				//end by psmb
+				
+            	$new_data = array(
+                	'status'    => Lang::get('order_finished'),
+                	'actions'   => array('evaluate'),
+            	);
+			}
+			
+			$ordergoods_mod =& m('ordergoods');
+            $order_goods = $ordergoods_mod->find("order_id={$order_id}");
+			
+			$order_amount = $order_info['order_amount'];
+			$confirm_ordergoods = $order_goods;
+				
+			
+			$adjust_rate = $ordergoods_mod->get_order_adjust_rate($order_info);
+			
+			
+			$goods_can_confirm = $refund_mod->get_order_can_confirm_goods($order_info, $adjust_rate);
+			$order_amount = $goods_can_confirm['confirm_order_amount']; 
+			$confirm_ordergoods = $goods_can_confirm['confirm_ordergoods'];
+			
+			
+			//三级分成
+			
+			$deposit_account = &m('deposit_account');
+			$user_mod =& m('member');
+			$userinfo = $user_mod->get("user_id=".$order_info['buyer_id']);
+		    $store_mod =& m('store');
+			
+            $storeinfo = $store_mod->get_info($order_info['seller_id']);
+		 if($storeinfo['is_affter'])
+	 {
+		
+    $fengc = & m('fengc');
+	$fenglist= $fengc->find(array(
+	      'conditions' => "1=1 and store_id=".$order_info['seller_id'],
+			 
+		   )); 	
+	
+			if(is_array($fenglist))
+		{
+		
+		  foreach($fenglist as $val)
+			 {
+				 
+				$row[]= $val;
+			 }
+			
+	    }   
+		
+		
+	
+		for($i=0;$i<3;$i++)
+		{
+		
+		
+		 $affiliate[$i]['pasen'] = (float)$row[$i]['pasen'];
+		 
+		      if ($affiliate[$i]['pasen'])
+                {
+                     $affiliate[$i]['pasen'] /= 100;
+                }
+        
+	
+
+
+		$setmoney = round($order_info['order_amount'] * Conf::get('pasen_'.$i)/100, 2);
+		if(!empty($userinfo['tuijian_id']))
+		{
+			
+			
+	 $userinfo = $user_mod->get($userinfo['tuijian_id']);
+	  $up_uid = $userinfo['user_id'];
+		}else{
+			 break;
+			}
+
+
+	
+		
+			
+		   if (empty($up_uid) || empty($userinfo['user_name'])  )
+           {
+                    break;
+           }	
+	
+	   if($setmoney)
+	   {
+		   
+		
+		   
+	  $this->fengc($up_uid,$userinfo['user_name'],$order_info['buyer_id'],$order_info['buyer_name'],$order_info['seller_id'], $order_info['seller_name'], $setmoney,$order_info['order_sn'],'推荐注册分成');   
+		}
+
+		
+		
+		
+		
+	  }	
+		
+	
+	
+	
+	
+	 foreach ($order_goods as $goods)
             {
-                $this->pop_warning($model_order->get_error());
-
-                return;
-            }
-
-            /* 记录订单操作日志 */
-            $order_log =& m('orderlog');
-            $order_log->add(array(
-                'order_id'  => $order_id,
-                'operator'  => addslashes($this->visitor->get('user_name')),
-                'order_status' => order_status($order_info['status']),
-                'changed_status' => order_status(ORDER_FINISHED),
-                'remark'    => Lang::get('buyer_confirm'),
-                'log_time'  => gmtime(),
-            ));
-
-            /* 发送给卖家买家确认收货邮件，交易完成 */
-            $model_member =& m('member');
-            $seller_info   = $model_member->get($order_info['seller_id']);
-            $mail = get_mail('toseller_finish_notify', array('order' => $order_info));
-            $this->_mailto($seller_info['email'], addslashes($mail['subject']), addslashes($mail['message']));
-
-            $new_data = array(
-                'status'    => Lang::get('order_finished'),
-                'actions'   => array('evaluate'),
-            );
-
-            /* 更新累计销售件数 */
+			if($goods['recom'] && $goods['name'] && $goods['name']!=$order_info['seller_id'])
+			{
+				
+				$setmoney=$goods['recom'];
+				 $tinfo = $user_mod->get("user_id=".$goods['name']);
+				  $this->fengc($tinfo['user_id'],$tinfo['user_name'],$order_info['buyer_id'],$order_info['buyer_name'],$order_info['seller_id'], $order_info['seller_name'], $setmoney,$order_info['order_sn'],'推荐商品分成,'.$goods['goods_name']); 
+			
+			}	
+				
+				
+			
+			}
+	
+	
+	
+		}
+			
+			
+			
+			//end
+			if(empty($confirm_ordergoods)) {
+				$this->pop_warning('no_confirm_goods');
+				return;
+			}
+			
+			
+			if($order_info['payment_code']=='deposit')
+			{
+				
+				$depopay_type    =&  dpt('income', 'sellgoods');
+				$tradesn 		= $depopay_type->submit(array(
+					'trade_info' =>  array('user_id'=>$order_info['seller_id'], 'party_id'=>$order_info['buyer_id'], 'amount'=>$order_amount),
+					'extra_info' =>  $order_info + array('change_order_status' => $change_order_status),
+					'post'		 =>	 $_POST,
+				));
+				if(!$tradesn)
+				{
+					$this->pop_warning('error');
+					return;
+				}
+			}
+			/* 如果还有其他的虚拟货币支付方式，则需单独进行处理资金情况 */
+			/* 
+				TODO
+			*/
+			
+			
+			
             $model_goodsstatistics =& m('goodsstatistics');
-            $model_ordergoods =& m('ordergoods');
-            $order_goods = $model_ordergoods->find("order_id={$order_id}");
-            foreach ($order_goods as $goods)
+            	
+            foreach ($confirm_ordergoods as $key=>$goods)
             {
-                $model_goodsstatistics->edit($goods['goods_id'], "sales=sales+{$goods['quantity']}");
+				$model_goodsstatistics->edit($goods['goods_id'], "sales=sales+{$goods['quantity']}");
+				$ordergoods_mod->edit($goods['rec_id'], array('status'=>'SUCCESS'));
             }
-
-            $this->pop_warning('ok','','index.php?app=buyer_order&act=evaluate&order_id='.$order_id);;
+			
+			if($change_order_status === true) {
+				$ret_url = 'index.php?app=buyer_order&act=evaluate&order_id='.$order_id;
+			} else $ret_url = 'index.php?app=buyer_order';
+			
+            $this->pop_warning('ok','',$ret_url);
         }
 
     }
+
+
+function fengc($tid,$tname,$buyer_id,$buyer_name,$bid,$seller_name,$uere_amount,$order_sn,$leixing='推荐分成' ,$diaid='')
+{
+
+				$deposit_account = &m('deposit_account');
+			$user_mod =& m('member');
+					  
+		$deposit_account->edit('user_id='.$tid, "money=money+$uere_amount");
+		$deposit_account->edit('user_id='.$bid, "money=money-$uere_amount");
+					   
+					   /*推荐者名称*/
+					  
+		 $real_name =$deposit_account->get("user_id =".$tid);
+					   
+					   /*店铺 */
+		 $real_name2 =$deposit_account->get("user_id =".$bid);
+					   
+					   
+		  $time = gmtime();
+		  $tradesn = $this->_deposit_record_mod->_gen_trade_sn();
+  
+		  $balance   = $real_name['money']+$uere_amount;
+		  $balance2 = $real_name2['money']-$uere_amount;
+		
+		
+          $data_record = array(
+					'tradesn'	=>	$tradesn,
+					'user_id'	=>	$bid,
+					'party_id'	=>	0,
+					'amount'	=>	$uere_amount,
+					'balance'	=>	$balance2,
+					'flow'		=>	'outlay',
+					'purpose'	=>	'recharge',
+					'status'	=>	'SUCCESS',
+					'payway'	=>	$real_name['real_name'],
+					'name'		=>	$leixing,
+					'remark'	=>	"",
+					'add_time'	=>	$time,
+					'pay_time'	=>	$time,
+					'end_time'	=>	$time,
+				);		
+				
+				
+			 $data_record2 = array(
+					'tradesn'	=>	$tradesn,
+					'user_id'	=>	$tid,
+					'party_id'	=>	0,
+					'amount'	=>	$uere_amount,
+					'balance'	=>	$balance,
+					'flow'		=>	'income',
+					'purpose'	=>	'recharge',
+					'status'	=>	'SUCCESS',
+					'payway'	=>	$real_name2['real_name'],
+					'name'		=>	$leixing,
+					'remark'	=>	"",
+					'add_time'	=>	$time,
+					'pay_time'	=>	$time,
+					'end_time'	=>	$time,
+				);	
+							 
+					
+				 $this->_deposit_record_mod->add($data_record);	
+				 $this->_deposit_record_mod->add($data_record2);		
+					 
+					  $affiliate =& m('affiliate');
+					  $affiliate_date=array(
+					  'order_id'=>$order_sn,
+					  'time'=>$time,
+					  'user_id'=>$tid,
+					  'tname'=>$tname,
+					  'buyer_id'=>$buyer_id,
+					  'user_name '=>$buyer_name,
+					  'store'=>$bid,
+					  'store_name'=>$seller_name,
+					  'money '=>$uere_amount,
+					  'leixing'=>$leixing,
+					   'daiid'=>$diaid,
+					 );
+					   
+				 
+					 $affiliate->add($affiliate_date);
+				 /*    $order_amount=$order_amount-$uere_amount;*/
+
+	 
+}
+
 
     /**
      *    给卖家评价
@@ -337,7 +637,7 @@ class Buyer_orderApp extends MemberbaseApp
                 }
                 $evaluations[intval($rec_id)] = array(
                     'evaluation'    => $evaluation['evaluation'],
-                    'comment'       => $evaluation['comment'],
+                    'comment'       => addslashes($evaluation['comment']),
                     'credit_value'  => $credit_value
                 );
             }
@@ -440,14 +740,23 @@ class Buyer_orderApp extends MemberbaseApp
                 'has_ordergoods',       //取出商品
             ),
         ));
+		
+		$refund_mod = &m('refund');
         foreach ($orders as $key1 => $order)
         {
             foreach ($order['order_goods'] as $key2 => $goods)
             {
                 empty($goods['goods_image']) && $orders[$key1]['order_goods'][$key2]['goods_image'] = Conf::get('default_goods_image');
+				
+				/* 是否申请过退款 */
+				$refund = $refund_mod->get(array('conditions'=>'order_id='.$goods['order_id'].' and goods_id='.$goods['goods_id'].' and spec_id='.$goods['spec_id'],'fields'=>'status,order_id'));
+				if($refund) {
+					$orders[$key1]['order_goods'][$key2]['refund_status'] = $refund['status'];
+					$orders[$key1]['order_goods'][$key2]['refund_id'] = $refund['refund_id'];
+				}
             }
         }
-
+		
         $page['item_count'] = $model_order->getCount();
         $this->assign('types', array('all'     => Lang::get('all_orders'),
                                      'pending' => Lang::get('pending_orders'),

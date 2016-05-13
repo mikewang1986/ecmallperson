@@ -15,6 +15,31 @@ class OrdergoodsModel extends BaseModel
             'reverse'       => 'has_ordergoods',
         ),
     );
+	
+	
+	function get_order_adjust_rate($order_info)
+	{
+		$goods_amount_after_adjust = $order_info['goods_amount']; 
+		$goods_amount_before_adjust = $adjust_fee = 0;
+			
+		$ordergoods = parent::find(array('conditions'=>"order_id=".$order_info['order_id'],'fields'=>'price,quantity'));
+		foreach($ordergoods as $goods){
+			$goods_amount_before_adjust += $goods['price'] * $goods['quantity'];
+		}
+		$adjust_fee = $goods_amount_before_adjust - $goods_amount_after_adjust; 
+
+		if($adjust_fee !=0){ 
+			if($goods_amount_before_adjust >0) { 
+				$adjust_rate = 1 - round($adjust_fee / $goods_amount_before_adjust, 6);
+			}
+			else $adjust_rate = -1;
+		} 
+		else {
+			$adjust_rate = 1;
+		}
+		
+		return $adjust_rate;
+	}
 }
 
 ?>

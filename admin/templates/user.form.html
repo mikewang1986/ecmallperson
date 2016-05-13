@@ -25,6 +25,11 @@ $(function(){
                     }
                 }
             },
+			//by cengnlaeng
+			grade_id  : {
+                required : true
+            },
+			//end
             password: {
                 <!--{if $smarty.get.act eq 'add'}-->
                 required : true,
@@ -49,6 +54,11 @@ $(function(){
                 byteRange: '{$lang.user_length_limit}',
                 remote   : '{$lang.name_exist}'
             },
+			//by cengnlaeng
+			grade_id: {
+                required : '{$lang.grade_empty}',
+            },
+			//end
             password : {
                 <!--{if $smarty.get.act eq 'add'}-->
                 required : '{$lang.password_empty}',
@@ -68,6 +78,13 @@ $(function(){
             {/if}
         }
     });
+	
+	$('.edit_grade').click(function(){
+		$(this).next('select').show();
+		$(this).parent('td').children('.ugrade').remove();
+		$(this).parent('td').children('span').remove();
+		$(this).remove();
+	})
 });
 </script>
 <div id="rightTop">
@@ -102,6 +119,22 @@ $(function(){
           <span class="grey">{$lang.note_password}</span>
           <!-- {/if} -->        </td>
       </tr>
+      <!-- by cengnlaeng-->
+      <tr>
+        <th class="paddingT15"> {$lang.ugrade}:</th>
+        <td class="paddingT15 wordSpacing5"><span>{$user.grade_name|escape}</span>
+        	<input type="hidden" value="{$user.ugrade}" name="grade_id" class="ugrade"/>
+            <input type="button" value="{$lang.edit}" class="edit_grade" />
+            <select style="display:none" name="grade_id" id="grade_id">
+              <option value=''>{$lang.select_pls}</option>
+              {html_options options=$ugrades selected=$user.ugrade}
+            </select></td>
+      </tr>
+      <tr>
+        <th class="paddingT15"> {$lang.growth}:</th>
+        <td class="paddingT15 wordSpacing5"> {$user.growth}</td>
+      </tr>
+      <!--end-->
       <tr>
         <th class="paddingT15"> {$lang.email}:</th>
         <td class="paddingT15 wordSpacing5"><input class="infoTableInput2" name="email" type="text" id="email" value="{$user.email|escape}" />

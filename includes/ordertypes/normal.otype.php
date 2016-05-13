@@ -49,7 +49,7 @@ class NormalOrder extends BaseOrder
     function get_order_form($store_id)
     {
         $data = array();
-        $template = 'order.form.html';
+        $template = 'order.form.wind.html';
 
         $visitor =& env('visitor');
 
@@ -135,6 +135,14 @@ class NormalOrder extends BaseOrder
         $goods_items = array();
         foreach ($goods_info['items'] as $key => $value)
         {
+			
+		
+			$goods_mod =& m('goods');
+			$goods_info= $goods_mod->get($value['goods_id']);
+			$value['recom']=$goods_info['recom'];
+			
+		
+			
             $goods_items[] = array(
                 'order_id'      =>  $order_id,
                 'goods_id'      =>  $value['goods_id'],
@@ -144,8 +152,12 @@ class NormalOrder extends BaseOrder
                 'price'         =>  $value['price'],
                 'quantity'      =>  $value['quantity'],
                 'goods_image'   =>  $value['goods_image'],
+				'recom'=>$value['recom'],
+				'name'=>$value['name'],
             );
         }
+		
+		
         $order_goods_model =& m('ordergoods');
         $order_goods_model->add(addslashes_deep($goods_items)); //防止二次注入
 

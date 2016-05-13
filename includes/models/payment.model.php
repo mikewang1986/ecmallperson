@@ -9,7 +9,7 @@ class PaymentModel extends BaseModel
 
     var $_autov     =   array(
         'store_id'  =>  array(
-            'required'  =>  true,
+//            'required'  =>  true,
             'filter'    => 'intval',
         ),
         'payment_code'  => array(
@@ -36,12 +36,12 @@ class PaymentModel extends BaseModel
 
     var $_relation  =   array(
         // 一个支付方式只能属于一个店铺
-        'belongs_to_store' => array(
-            'model'         => 'store',
-            'type'          => BELONGS_TO,
-            'foreign_key'   => 'store_id',
-            'reverse'       => 'has_payment',
-        ),
+//        'belongs_to_store' => array(
+//            'model'         => 'store',
+//            'type'          => BELONGS_TO,
+//            'foreign_key'   => 'store_id',
+//            'reverse'       => 'has_payment',
+//        ),
     );
 
 

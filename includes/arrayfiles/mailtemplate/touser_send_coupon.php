@@ -1,16 +1,16 @@
 <?php 
 return array (
   'version' => '1.0',
-  'subject' => 'Äú»ñµÃÁËÀ´×Ô{$coupon.store_name}µÄÓÅ»İÈ¯',
-  'content' => '<p>×ğ¾´µÄ{$user.user_name}£¬</p>
-<p>&nbsp;&nbsp;&nbsp; ÄúºÃ£¬¹§Ï²Äú»ñµÃÁËÒ»¸öÀ´×Ô{$coupon.store_name}µêÆÌµÄÓÅ»İÈ¯¡£</p>
-<p>&nbsp;&nbsp;&nbsp; ÓÅ»İ½ğ¶î£º{$coupon.coupon_value|price}</p>
-<p>&nbsp;&nbsp;&nbsp; ÓĞĞ§ÆÚ£º{$coupon.start_time|date}ÖÁ{$coupon.end_time|date}</p>
-<p>&nbsp;&nbsp;&nbsp; ÓÅ»İÈ¯ºÅÂë£º{$user.coupon.coupon_sn}</p>
-<p>&nbsp;&nbsp;&nbsp; Ê¹ÓÃÌõ¼ş£º¹ºÎïÂú{$coupon.min_amount|price}¼´¿ÉÊ¹ÓÃ</p>
-<p>&nbsp;&nbsp;&nbsp; µêÆÌµØÖ·£º<a href="{$site_url}/index.php?app=store&amp;id={$coupon.store_id}">{$coupon.store_name}</a></p>
+  'subject' => 'æ‚¨è·å¾—äº†æ¥è‡ª{$coupon.store_name}çš„ä¼˜æƒ åˆ¸',
+  'content' => '<p>å°Šæ•¬çš„{$user.user_name}ï¼Œ</p>
+<p>&nbsp;&nbsp;&nbsp; æ‚¨å¥½ï¼Œæ­å–œæ‚¨è·å¾—äº†ä¸€ä¸ªæ¥è‡ª{$coupon.store_name}åº—é“ºçš„ä¼˜æƒ åˆ¸ã€‚</p>
+<p>&nbsp;&nbsp;&nbsp; ä¼˜æƒ é‡‘é¢ï¼š{$coupon.coupon_value|price}</p>
+<p>&nbsp;&nbsp;&nbsp; æœ‰æ•ˆæœŸï¼š{$coupon.start_time|date}è‡³{$coupon.end_time|date}</p>
+<p>&nbsp;&nbsp;&nbsp; ä¼˜æƒ åˆ¸å·ç ï¼š{$user.coupon.coupon_sn}</p>
+<p>&nbsp;&nbsp;&nbsp; ä½¿ç”¨æ¡ä»¶ï¼šè´­ç‰©æ»¡{$coupon.min_amount|price}å³å¯ä½¿ç”¨</p>
+<p>&nbsp;&nbsp;&nbsp; åº—é“ºåœ°å€ï¼š<a href="{$site_url}/index.php?app=store&amp;id={$coupon.store_id}">{$coupon.store_name}</a></p>
 <p style="padding-left: 30px;">&nbsp;</p>
-<p style="text-align: right;">ÍøÕ¾Ãû³Æ£º{$site_name}</p>
-<p style="text-align: right;">ÈÕÆÚ£º{$mail_send_time}</p>',
+<p style="text-align: right;">ç½‘ç«™åç§°ï¼š{$site_name}</p>
+<p style="text-align: right;">æ—¥æœŸï¼š{$mail_send_time}</p>',
 );
 ?>

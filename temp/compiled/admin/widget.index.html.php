@@ -1,60 +1,65 @@
-<?php echo $this->fetch('header.html'); ?>
-<script type="text/javascript">
-function clean_file()
-{
-    $.getJSON('index.php?app=widget&act=clean_file', function(data){
-        if (!data.done)
-        {
-            alert(data.msg);
-
-            return;
-        }
-        else
-        {
-            if (confirm(data.msg))
-            {
-                $.getJSON('index.php?app=widget&act=clean_file&continue', function(rzt){
-                    alert(rzt.msg);
-                });
-            }
-        }
-
-    });
-}
-</script>
-<div id="rightTop">
-    <p><strong>¹Ò¼ş¹ÜÀí</strong>[<a href="javascript:void(0);" onclick="clean_file();" title="¹ÂÁ¢ÎÄ¼şÊÇÖ¸±»ÉÏ´«µ½·şÎñÆ÷ÉÏ£¬µ«Êµ¼Ê²¢Ã»ÓĞ±»ÒıÓÃµÄÎÄ¼ş£¬ÖØ¸´ÅäÖÃÓĞÉÏ´«ÎÄ¼şµÄ¹Ò¼ş£¬»á²úÉú¹ÂÁ¢ÎÄ¼ş£¬Òò´ËĞèÒª¶¨Ê±ÇåÀíÕâĞ©ÎÄ¼şÒÔÊÍ·ÅÓ²ÅÌ¿Õ¼ä">ÇåÀí¹ÂÁ¢ÎÄ¼ş</a>]</p>
-</div>
-<div class="tdare info">
-    <table width="100%" cellspacing="0">
-        <?php if ($this->_var['widgets']): ?>
-        <tr class="tatr1">
-            <td width="15%">¹Ò¼şÃû³Æ</td>
-            <td align="left">¹Ò¼şÃèÊö</td>
-            <td width="10%">×÷Õß</td>
-            <td width="50">°æ±¾</td>
-            <td class="handler" style="width:150px;">²Ù×÷</td>
-        </tr>
-        <?php endif; ?>
+<?php echo $this->fetch('header.html'); ?>
+<script type="text/javascript">
+function clean_file()
+{
+    $.getJSON('index.php?app=widget&act=clean_file', function(data){
+        if (!data.done)
+        {
+            alert(data.msg);
+
+            return;
+        }
+        else
+        {
+            if (confirm(data.msg))
+            {
+                $.getJSON('index.php?app=widget&act=clean_file&continue', function(rzt){
+                    alert(rzt.msg);
+                });
+            }
+        }
+
+    });
+}
+</script>
+<div id="rightTop">
+    <p>æŒ‚ä»¶ç®¡ç†</p>
+    <ul class="subnav">
+        <li><span>å•†åŸæŒ‚ä»¶</span></li>
+        <li><a class="btn1" href="index.php?app=widget_store">åº—é“ºæŒ‚ä»¶</a></li>
+        <li>[<a href="javascript:void(0);" onclick="clean_file();" title="å­¤ç«‹æ–‡ä»¶æ˜¯æŒ‡è¢«ä¸Šä¼ åˆ°æœåŠ¡å™¨ä¸Šï¼Œä½†å®é™…å¹¶æ²¡æœ‰è¢«å¼•ç”¨çš„æ–‡ä»¶ï¼Œé‡å¤é…ç½®æœ‰ä¸Šä¼ æ–‡ä»¶çš„æŒ‚ä»¶ï¼Œä¼šäº§ç”Ÿå­¤ç«‹æ–‡ä»¶ï¼Œå› æ­¤éœ€è¦å®šæ—¶æ¸…ç†è¿™äº›æ–‡ä»¶ä»¥é‡Šæ”¾ç¡¬ç›˜ç©ºé—´">æ¸…ç†å­¤ç«‹æ–‡ä»¶</a>]</li>
+    </ul>
+</div>
+<div class="tdare info">
+    <table width="100%" cellspacing="0">
+        <?php if ($this->_var['widgets']): ?>
+        <tr class="tatr1">
+            <td width="15%">æŒ‚ä»¶åç§°</td>
+            <td align="left">æŒ‚ä»¶æè¿°</td>
+            <td width="10%">ä½œè€…</td>
+            <td width="50">ç‰ˆæœ¬</td>
+            <td class="handler" style="width:150px;">æ“ä½œ</td>
+        </tr>
+        <?php endif; ?>
         <?php $_from = $this->_var['widgets']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'widget');if (count($_from)):
     foreach ($_from AS $this->_var['widget']):
-?>
-        <tr class="tatr2">
-            <td><?php echo htmlspecialchars($this->_var['widget']['display_name']); ?></td>
-            <td align="left"><?php echo htmlspecialchars($this->_var['widget']['desc']); ?></td>
-            <td><a href="<?php echo $this->_var['widget']['website']; ?>" target="_blank" title="×÷ÕßÁ´½Ó"><?php echo htmlspecialchars($this->_var['widget']['author']); ?></a></td>
-            <td><?php echo htmlspecialchars($this->_var['widget']['version']); ?></td>
-            <td class="handler">
-                <a href="index.php?app=widget&amp;act=edit&name=<?php echo $this->_var['widget']['name']; ?>&file=script">±à¼­½Å±¾</a>
-                |
-                <a href="index.php?app=widget&amp;act=edit&name=<?php echo $this->_var['widget']['name']; ?>&file=template">±à¼­Ä£°å</a>
-                </td>
-        </tr>
-        <?php endforeach; else: ?>
-        <tr class="no_data">
-            <td colspan="5">ÉĞÎ´°²×°ÈÎºÎ¹Ò¼ş</td>
-        </tr>
-        <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    </table>
-</div>
-<?php echo $this->fetch('footer.html'); ?>
+?>
+        <tr class="tatr2">
+            <td><?php echo htmlspecialchars($this->_var['widget']['display_name']); ?></td>
+            <td align="left"><?php echo htmlspecialchars($this->_var['widget']['desc']); ?></td>
+            <td><a href="<?php echo $this->_var['widget']['website']; ?>" target="_blank" title="ä½œè€…é“¾æ¥"><?php echo htmlspecialchars($this->_var['widget']['author']); ?></a></td>
+            <td><?php echo htmlspecialchars($this->_var['widget']['version']); ?></td>
+            <td class="handler">
+                <a href="index.php?app=widget&amp;act=edit&name=<?php echo $this->_var['widget']['name']; ?>&file=script">ç¼–è¾‘è„šæœ¬</a>
+                |
+                <a href="index.php?app=widget&amp;act=edit&name=<?php echo $this->_var['widget']['name']; ?>&file=template">ç¼–è¾‘æ¨¡æ¿</a>
+                </td>
+        </tr>
+        <?php endforeach; else: ?>
+        <tr class="no_data">
+            <td colspan="5">å°šæœªå®‰è£…ä»»ä½•æŒ‚ä»¶</td>
+        </tr>
+        <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
+    </table>
+</div>
+<?php echo $this->fetch('footer.html'); ?>

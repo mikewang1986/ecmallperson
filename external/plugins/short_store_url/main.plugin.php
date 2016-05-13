@@ -1,7 +1,7 @@
 <?php
 
 /**
- * µêÆÌµØÖ·¼òÐ´²å¼þ
+ * åº—é“ºåœ°å€ç®€å†™æ’ä»¶
  *
  * @return  array
  */
@@ -11,7 +11,7 @@ class Short_store_urlPlugin extends BasePlugin
     {
         if (defined('IN_BACKEND') && IN_BACKEND === true)
         {
-            return; // ºóÌ¨ÎÞÐèÖ´ÐÐ
+            return; // åŽå°æ— éœ€æ‰§è¡Œ
         }
         elseif($store_id = intval(current(array_keys($_GET))))
         {

@@ -352,8 +352,8 @@ class ecsTemplate
         {
             $source = $this->smarty_prefilter_preCompile($source);
         }
-        return preg_replace_callback("/{([^\}\{\n]*)}/", function($r) { return $this->select($r[1]); }, $source);
-       // return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+
+        return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
     }
 
     /**
@@ -658,6 +658,9 @@ class ecsTemplate
                 case 'url':
                     $str = str_replace('index.php?', '', substr($tag, 4));
                     $str = str_replace('&amp;', '&', $str);
+                    if($_GET['Debug']=='Wap'){
+                        $str .='&Debug=Wap';
+                    }
                     $tmp = explode('&', $str);
                     $arr = array();
 
@@ -1374,7 +1377,7 @@ class ecsTemplate
             $tmp_dir = "themes/mall/skin/" . $this->skin . '/' ;
         }
 
-       /* $pattern = array(
+        $pattern = array(
             '/<!--[^>|\n]*?({.+?})[^<|{|\n]*?-->/', // 替换smarty注释
             '/<!--[^<|>|{|\n]*?-->/',               // 替换不换行的html注释
             '/(href=["|\'])\.\.\/(.*?)(["|\'])/i',  // 替换相对链接
@@ -1391,32 +1394,7 @@ class ecsTemplate
             "'{insert name=\"nocache\" ' . '" . $this->_echash . "' . base64_encode('\\1') . '}'",
             );
 
-        return preg_replace($pattern, $replace, $source);*/
-        $pattern = array(
-            '/<!--[^>|\n]*?({.+?})[^<|{|\n]*?-->/', // 替换smarty注释
-            '/<!--[^<|>|{|\n]*?-->/',               // 替换不换行的html注释
-            '/(href=["|\'])\.\.\/(.*?)(["|\'])/i',  // 替换相对链接
-            '/((?:background|src)\s*=\s*["|\'])(?:\.\/|\.\.\/)?(images\/.*?["|\'])/is', // 在images前加上 $tmp_dir
-            '/((?:background|background-image):\s*?url\()(?:\.\/|\.\.\/)?(images\/)/is', // 在images前加上 $tmp_dir
-            //'/{nocache}(.+?){\/nocache}/ise', //无缓存模块
-            '/{nocache}(.+?){\/nocache}/', //无缓存模块
-        );
-        $replace = array(
-            '\1',
-            '',
-            '\1\2\3',
-            '\1' . $tmp_dir . '\2',
-            '\1' . $tmp_dir . '\2',
-            "'{insert name=\"nocache\" ' . '" . $this->_echash . "' . base64_encode('\\1') . '}'",
-        );
-        $source = preg_replace_callback($pattern[0], function($match){return $match[1];}, $source);
-        $source = preg_replace_callback($pattern[1], function($match){return '';}, $source);
-        $source = preg_replace_callback($pattern[2], function($match){return $match[1].$match[2].$match[3];}, $source);
-        $source = preg_replace_callback($pattern[3], function($match){return $match[1]. $tmp_dir .$match[2];}, $source);
-        $source = preg_replace_callback($pattern[4], function($match){return $match[1]. $tmp_dir .$match[2];}, $source);
-        $source = preg_replace_callback($pattern[5], function($match){return "'{insert name=\"nocache\" ' . '" . $this->_echash . "' . base64_encode($match[1]) . '}'";}, $source);
-        return $source ;
-        //return preg_replace_callback($pattern, $replace, $source);
+        return preg_replace($pattern, $replace, $source);
     }
 
     /*

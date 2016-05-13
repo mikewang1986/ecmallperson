@@ -61,7 +61,7 @@ class BrandApp extends MallbaseApp
         {
             $brands_sort[$key] = $brands[$key];
         }
-        $this->assign('brands', $brands_sort);
+        $this->assign('brand_list', $brands_sort);
         $this->_config_seo('title', Lang::get('all_brands'));
         $this->display('brand.index.html');
     }

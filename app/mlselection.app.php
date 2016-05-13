@@ -5,7 +5,7 @@ class MlselectionApp extends MallbaseApp
 {
     function index()
     {
-        in_array($_GET['type'], array('region', 'gcategory')) or $this->json_error('invalid type');
+        in_array($_GET['type'], array('region', 'gcategory','jucategory','sdcategory')) or $this->json_error('invalid type');
         $pid = empty($_GET['pid']) ? 0 : $_GET['pid'];
 
         switch ($_GET['type'])
@@ -27,6 +27,24 @@ class MlselectionApp extends MallbaseApp
                     $cates[$key]['cate_name'] = htmlspecialchars($cate['cate_name']);
                 }
                 $this->json_result(array_values($cates));
+                break;
+			case 'jucategory':
+                $mod_jucategory =& m('jucate');
+                $jucates = $mod_jucategory->get_list($pid, true);
+                foreach ($jucates as $key => $jucate)
+                {
+                    $jucates[$key]['cate_name'] = htmlspecialchars($jucate['cate_name']);
+                }
+                $this->json_result(array_values($jucates));
+                break;
+		case 'sdcategory':
+                $mod_sdcategory =& m('sdcategory');
+                $sdcates = $mod_sdcategory->get_list($pid, true);
+                foreach ($sdcates as $key => $sdcate)
+                {
+                    $sdcates[$key]['cate_name'] = htmlspecialchars($sdcate['cate_name']);
+                }
+                $this->json_result(array_values($sdcates));
                 break;
         }
     }

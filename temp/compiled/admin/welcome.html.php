@@ -1,36 +1,14 @@
 <?php echo $this->fetch('header.html'); ?>
-<script language="javascript">
-$(function(){
-    $.getJSON('<?php echo $this->_var['spt']; ?>&jsoncallback=?',function(){});
-    $.getJSON('http://ecmall.shopex.cn/system/notice2.php?charset=<?php echo $this->_var['cur_lang']; ?>&uniqueid=<?php echo $this->_var['uniqueid']; ?>&jsoncallback=?',function(data){
-        var message='';
-        $.each(data,function(i){
-            message += '<li>' + data[i] + '</li>';
-        });
-        $('#news').html(message);
-    }
-);
-});
-<?php if ($this->_var['dangerous_apps']): ?>
-var dangerous_apps = '';
-<?php $_from = $this->_var['dangerous_apps']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'da');if (count($_from)):
-    foreach ($_from AS $this->_var['da']):
-?>
-dangerous_apps += "<?php echo $this->_var['da']; ?>\r\n";
-<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-alert(dangerous_apps);
-<?php endif; ?>
-</script>
 <div id="rightTop">
 <p>
-    ÄúºÃ£¬<b><?php echo $this->_var['admin']['user_name']; ?></b>£¬»¶Ó­Ê¹ÓÃ ECMall¡£
-    <!--[ <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=message&amp;act=inbox" class="tidings">ĞÂÏûÏ¢</a>: <?php echo $this->_var['new']['total']; ?> ]
--->    ÄúÉÏ´ÎµÇÂ¼µÄÊ±¼äÊÇ <?php echo local_date("Y-m-d H:i:s",$this->_var['admin']['last_login']); ?> £¬IP ÊÇ <?php echo $this->_var['admin']['last_ip']; ?>
+    æ‚¨å¥½ï¼Œ<b><?php echo $this->_var['admin']['user_name']; ?></b>ï¼Œæ¬¢è¿ä½¿ç”¨ Vmallã€‚
+    <!--[ <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=message&amp;act=inbox" class="tidings">æ–°æ¶ˆæ¯</a>: <?php echo $this->_var['new']['total']; ?> ]
+-->    æ‚¨ä¸Šæ¬¡ç™»å½•çš„æ—¶é—´æ˜¯ <?php echo local_date("Y-m-d H:i:s",$this->_var['admin']['last_login']); ?> ï¼ŒIP æ˜¯ <?php echo $this->_var['admin']['last_ip']; ?>
 </p>
 </div>
 <dl id="rightCon">
 <?php if ($this->_var['dangerous_apps']): ?>
-<dt>¾¯¸æ£¡£¡£¡</dt>
+<dt>è­¦å‘Šï¼ï¼ï¼</dt>
 <dd>
     <ul style="color:red; font-weight:bold;">
         <?php $_from = $this->_var['dangerous_apps']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'da');if (count($_from)):
@@ -41,82 +19,66 @@ alert(dangerous_apps);
     </ul>
 </dd>
 <?php endif; ?>
-<dt>ECMall ¶¯Ì¬</dt>
-<dd>
-    <ul id="news">
-    </ul>
-</dd>
-<?php if ($this->_var['remind_info']): ?>
-<dt>Õ¾³¤ÌáĞÑ</dt>
-<dd>
-    <ul>
-        <?php $_from = $this->_var['remind_info']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'remind');if (count($_from)):
-    foreach ($_from AS $this->_var['remind']):
-?>
-        <li><?php echo $this->_var['remind']; ?></li>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    </ul>
-</dd>
-<?php endif; ?>
-<dt>Ò»ÖÜ¶¯Ì¬</dt>
+
+<dt>ä¸€å‘¨åŠ¨æ€</dt>
 <dd>
     <table>
         <tr>
-            <th>ĞÂÔö»áÔ±Êı:</th>
+            <th>æ–°å¢ä¼šå‘˜æ•°:</th>
             <td class="td"><?php echo $this->_var['news_in_a_week']['new_user_qty']; ?></td>
-            <th>ĞÂÔöµêÆÌÊı/ÉêÇëÊı:</th>
+            <th>æ–°å¢åº—é“ºæ•°/ç”³è¯·æ•°:</th>
             <td class="td"><?php echo $this->_var['news_in_a_week']['new_store_qty']; ?>/<?php echo $this->_var['news_in_a_week']['new_apply_qty']; ?></td>
         </tr>
         <tr>
-            <th>ĞÂÔöÉÌÆ·Êı:</th>
+            <th>æ–°å¢å•†å“æ•°:</th>
             <td class="td"><?php echo $this->_var['news_in_a_week']['new_goods_qty']; ?></td>
-            <th>ĞÂÔö¶©µ¥Êı:</th>
+            <th>æ–°å¢è®¢å•æ•°:</th>
             <td class="td"><?php echo $this->_var['news_in_a_week']['new_order_qty']; ?></td>
         </tr>
     </table>
 </dd>
-<dt>Í³¼ÆĞÅÏ¢</dt>
+<dt>ç»Ÿè®¡ä¿¡æ¯</dt>
 <dd>
     <table>
         <tr>
-            <th>»áÔ±×ÜÊı:</th>
+            <th>ä¼šå‘˜æ€»æ•°:</th>
             <td class="td"><?php echo $this->_var['stats']['user_qty']; ?></td>
-            <th>µêÆÌ×ÜÊı/ÉêÇë×ÜÊı:</th>
+            <th>åº—é“ºæ€»æ•°/ç”³è¯·æ€»æ•°:</th>
             <td class="td"><?php echo $this->_var['stats']['store_qty']; ?>/<?php echo $this->_var['stats']['apply_qty']; ?></td>
         </tr>
         <tr>
-            <th>ÉÌÆ·×ÜÊı:</th>
+            <th>å•†å“æ€»æ•°:</th>
             <td class="td"><?php echo $this->_var['stats']['goods_qty']; ?></td>
-            <th>¶©µ¥×ÜÊı:</th>
+            <th>è®¢å•æ€»æ•°:</th>
             <td class="td"><?php echo $this->_var['stats']['order_qty']; ?></td>
         </tr>
         <tr>
-            <th>¶©µ¥×Ü½ğ¶î:</th>
+            <th>è®¢å•æ€»é‡‘é¢:</th>
             <td class="td"><?php echo price_format($this->_var['stats']['order_amount']); ?></td>
             <th></th>
             <td class="td"></td>
         </tr>
     </table>
 </dd>
-<dt>ÏµÍ³ĞÅÏ¢</dt>
+<dt>ç³»ç»Ÿä¿¡æ¯</dt>
 <dd>
     <table>
         <tr>
-            <th>·şÎñÆ÷²Ù×÷ÏµÍ³:</th>
+            <th>æœåŠ¡å™¨æ“ä½œç³»ç»Ÿ:</th>
             <td class="td"><?php echo $this->_var['sys_info']['server_os']; ?></td>
-            <th>WEB ·şÎñÆ÷:</th>
+            <th>WEB æœåŠ¡å™¨:</th>
             <td class="td"><?php echo $this->_var['sys_info']['web_server']; ?></td>
         </tr>
         <tr>
-            <th>PHP °æ±¾:</th>
+            <th>PHP ç‰ˆæœ¬:</th>
             <td class="td"><?php echo $this->_var['sys_info']['php_version']; ?></td>
-            <th>MYSQL °æ±¾:</th>
+            <th>MYSQL ç‰ˆæœ¬:</th>
             <td class="td"><?php echo $this->_var['sys_info']['mysql_version']; ?></td>
         </tr>
         <tr>
-            <th>ECMall °æ±¾:</th>
+            <th>å•†åŸ ç‰ˆæœ¬:</th>
             <td class="td"><?php echo $this->_var['sys_info']['ecmall_version']; ?></td>
-            <th>°²×°ÈÕÆÚ:</th>
+            <th>å®‰è£…æ—¥æœŸ:</th>
             <td class="td"><?php echo $this->_var['sys_info']['install_date']; ?></td>
         </tr>
     </table>

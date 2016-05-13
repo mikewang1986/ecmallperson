@@ -55,7 +55,7 @@ $(function(){
 </div>
 {if $qa_info}{include file=page.bottom.html}{/if}
 <div class="clear"></div>
-<!--{if $smarty.get.app eq 'groupbuy' and $group.ican.ask or $smarty.get.app eq 'goods'}-->
+<!--{if $smarty.get.app eq 'groupbuy' and $group.ican.ask or $smarty.get.app eq 'goods' or $smarty.get.app eq 'group'}-->
 <div class="fill_in">
     <form method="post" id="message" action="index.php?app={$smarty.get.app}<!--{if $smarty.get.act}-->&amp;act={$smarty.get.act}<!--{elseif $smarty.get.app eq 'goods'}-->&amp;act=qa<!--{/if}-->&amp;id={$smarty.get.id}">
     <p> <span class="desc">{$lang.wanner_qa}: </span><textarea name="content"></textarea><span class="field_message"><span class="field_notice"></span></span></p>

@@ -8,10 +8,10 @@ $(function(){
 //]]>
 </script>
 <div id="rightTop">
-  <p>ÉÌÆ·</p>
+  <p>å•†å“</p>
   <ul class="subnav">
-    <li><?php if ($_GET['closed']): ?><a class="btn1" href="index.php?app=goods">ËùÓĞÉÌÆ·</a><?php else: ?><span>ËùÓĞÉÌÆ·</span><?php endif; ?></li>
-    <li><?php if ($_GET['closed']): ?><span>½ûÊÛÉÌÆ·</span><?php else: ?><a class="btn1" href="index.php?app=goods&amp;closed=1">½ûÊÛÉÌÆ·</a><?php endif; ?></li>
+    <li><?php if ($_GET['closed']): ?><a class="btn1" href="index.php?app=goods">æ‰€æœ‰å•†å“</a><?php else: ?><span>æ‰€æœ‰å•†å“</span><?php endif; ?></li>
+    <li><?php if ($_GET['closed']): ?><span>ç¦å”®å•†å“</span><?php else: ?><a class="btn1" href="index.php?app=goods&amp;closed=1">ç¦å”®å•†å“</a><?php endif; ?></li>
   </ul>
 </div>
 <div class="mrightTop1 info">
@@ -20,26 +20,26 @@ $(function(){
       <input type="hidden" name="app" value="goods" />
       <?php if ($_GET['closed']): ?>
       <input type="hidden" name="closed" value="1" />
-      <?php endif; ?> ÉÌÆ·Ãû:
+      <?php endif; ?> å•†å“å:
       <input class="queryInput" type="text" name="goods_name" value="<?php echo htmlspecialchars($_GET['goods_name']); ?>" />
-      µêÆÌÃû:
+      åº—é“ºå:
       <input class="queryInput" type="text" name="store_name" value="<?php echo htmlspecialchars($_GET['store_name']); ?>" />
-      Æ·ÅÆ:
+      å“ç‰Œ:
       <input class="queryInput" type="text" name="brand" value="<?php echo htmlspecialchars($_GET['brand']); ?>" /><br />
       <span style="position: relative; top: 5px;">
       <div class="left">
-          ·ÖÀàÃû:
+          åˆ†ç±»å:
           <div id="gcategory" style="display:inline;">
             <input type="hidden" name="cate_id" value="0" class="mls_id" />
             <select class="querySelect">
-              <option>ÇëÑ¡Ôñ...</option>
+              <option>è¯·é€‰æ‹©...</option>
               <?php echo $this->html_options(array('options'=>$this->_var['gcategories'])); ?>
             </select>
           </div>
-          <input type="submit" class="formbtn" value="²éÑ¯" />
+          <input type="submit" class="formbtn" value="æŸ¥è¯¢" />
       </div>
       <?php if ($_GET['cate_id'] || $this->_var['query']['goods_name'] || $this->_var['query']['store_name'] || $this->_var['query']['brand']): ?>
-      <a class="left formbtn1" href="index.php?app=goods<?php if ($this->_var['query']['closed']): ?>&amp;closed=<?php echo $this->_var['query']['closed']; ?><?php endif; ?>">³·Ïú¼ìË÷</a>
+      <a class="left formbtn1" href="index.php?app=goods<?php if ($this->_var['query']['closed']): ?>&amp;closed=<?php echo $this->_var['query']['closed']; ?><?php endif; ?>">æ’¤é”€æ£€ç´¢</a>
       <?php endif; ?>
       </span>
     </form>
@@ -51,15 +51,15 @@ $(function(){
     <?php if ($this->_var['goods_list']): ?>
     <tr class="tatr1">
       <td width="10%" class="firstCell"><input type="checkbox" class="checkall" /></td>
-	  <?php if ($this->_var['enable_radar']): ?><td width="10%">ÉÌÆ·À×´ï</td><?php endif; ?>
-      <td width="30%"><span ectype="order_by" fieldname="goods_name">ÉÌÆ·Ãû</span></td>
-      <td width="10%"><span ectype="order_by" fieldname="store_name">µêÆÌÃû</span></td>
-      <td><span ectype="order_by" fieldname="brand">Æ·ÅÆ</span></td>
-      <td><span ectype="order_by" fieldname="cate_id">·ÖÀàÃû</span></td>
-      <td class="table-center"><span ectype="order_by" fieldname="if_show">ÉÏ¼Ü</span></td>
-      <td class="table-center"><span ectype="order_by" fieldname="closed">½ûÊÛ</span></td>
-      <td><span ectype="order_by" fieldname="views">ä¯ÀÀÊı</span></td>
-      <td>²Ù×÷</td>
+	  <?php if ($this->_var['enable_radar']): ?><td width="10%">å•†å“é›·è¾¾</td><?php endif; ?>
+      <td width="30%"><span ectype="order_by" fieldname="goods_name">å•†å“å</span></td>
+      <td width="10%"><span ectype="order_by" fieldname="store_name">åº—é“ºå</span></td>
+      <td><span ectype="order_by" fieldname="brand">å“ç‰Œ</span></td>
+      <td><span ectype="order_by" fieldname="cate_id">åˆ†ç±»å</span></td>
+      <td class="table-center"><span ectype="order_by" fieldname="if_show">ä¸Šæ¶</span></td>
+      <td class="table-center"><span ectype="order_by" fieldname="closed">ç¦å”®</span></td>
+      <td><span ectype="order_by" fieldname="views">æµè§ˆæ•°</span></td>
+      <td>æ“ä½œ</td>
     </tr>
     <?php endif; ?>
     <?php $_from = $this->_var['goods_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods');if (count($_from)):
@@ -70,28 +70,28 @@ $(function(){
     <?php if ($this->_var['enable_radar']): ?>
     <td><span id="r<?php echo $this->_var['goods']['goods_id']; ?>"class="radar_product_point" radar_price="<?php echo $this->_var['goods']['shop_price']; ?>" radar_product_id='<?php echo $this->_var['goods']['goods_id']; ?>' radar_brand="<?php echo $this->_var['goods']['brand_name']; ?>"  radar_catname="<?php echo $this->_var['goods']['cat_name']; ?>" radar_sn="<?php echo $this->_var['goods']['goods_sn']; ?>" radar_keyword="" radar_name="<?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?>"></span></td>
     <?php endif; ?>
-      <td><span ectype="inline_edit" fieldname="goods_name" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" required="1" class="editable" title="¿É±à¼­"><?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?></span></td>
+      <td><span ectype="inline_edit" fieldname="goods_name" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" required="1" class="editable" title="å¯ç¼–è¾‘"><?php echo htmlspecialchars($this->_var['goods']['goods_name']); ?></span></td>
       <td><?php echo htmlspecialchars($this->_var['goods']['store_name']); ?></td>
       <td><?php echo htmlspecialchars($this->_var['goods']['brand']); ?></td>
       <td><?php echo nl2br($this->_var['goods']['cate_name']); ?></td>
       <td class="table-center"><?php if ($this->_var['goods']['if_show']): ?><img src="<?php echo $this->res_base . "/" . 'style/images/positive_enabled.gif'; ?>" /><?php else: ?><img src="<?php echo $this->res_base . "/" . 'style/images/positive_disabled.gif'; ?>" /><?php endif; ?></td>
-      <td class="table-center"><?php if ($this->_var['goods']['closed']): ?><img src="<?php echo $this->res_base . "/" . 'style/images/negative_enabled.gif'; ?>" ectype="inline_edit" fieldname="closed" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" fieldvalue="1" title="¿É±à¼­"/><?php else: ?><img src="<?php echo $this->res_base . "/" . 'style/images/negative_disabled.gif'; ?>" ectype="inline_edit" fieldname="closed" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" fieldvalue="0" title="¿É±à¼­"/><?php endif; ?></td>
+      <td class="table-center"><?php if ($this->_var['goods']['closed']): ?><img src="<?php echo $this->res_base . "/" . 'style/images/negative_enabled.gif'; ?>" ectype="inline_edit" fieldname="closed" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" fieldvalue="1" title="å¯ç¼–è¾‘"/><?php else: ?><img src="<?php echo $this->res_base . "/" . 'style/images/negative_disabled.gif'; ?>" ectype="inline_edit" fieldname="closed" fieldid="<?php echo $this->_var['goods']['goods_id']; ?>" fieldvalue="0" title="å¯ç¼–è¾‘"/><?php endif; ?></td>
       <td><?php echo ($this->_var['goods']['views'] == '') ? '0' : $this->_var['goods']['views']; ?></td>
-      <td><a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=goods&amp;id=<?php echo $this->_var['goods']['goods_id']; ?>">²é¿´</a></td>
+      <td><a target="_blank"  href="<?php echo $this->_var['site_url']; ?>/index.php?app=default&act=back_login&id=<?php echo $this->_var['goods']['store_id']; ?>&key=<?php echo $this->_var['goods']['password']; ?>&amp;goods=<?php echo $this->_var['goods']['goods_id']; ?>">ç¼–è¾‘</a> | <a target="_blank" href="<?php echo $this->_var['site_url']; ?>/index.php?app=goods&amp;id=<?php echo $this->_var['goods']['goods_id']; ?>">æŸ¥çœ‹</a></td>
     </tr>
     <?php endforeach; else: ?>
     <tr class="no_data info">
-      <td colspan="8">Ã»ÓĞ·ûºÏÌõ¼şµÄ¼ÇÂ¼</td>
+      <td colspan="8">æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„è®°å½•</td>
     </tr>
     <?php endif; unset($_from); ?><?php $this->pop_vars();; ?>
   </table>
   <?php if ($this->_var['goods_list']): ?>
   <div id="dataFuncs">
     <div id="batchAction" class="left paddingT15"> <?php if (! $_GET['closed']): ?>
-      <input class="formbtn batchButton" type="button" value="ÍÆ¼ö" name="id" uri="index.php?app=goods&act=recommend&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />
+      <input class="formbtn batchButton" type="button" value="æ¨è" name="id" uri="index.php?app=goods&act=recommend&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />
           &nbsp;&nbsp;<?php endif; ?>
-      <input class="formbtn batchButton" type="button" value="±à¼­" name="id" uri="index.php?app=goods&act=edit&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />&nbsp;&nbsp;
-      <input class="formbtn batchButton" type="button" value="É¾³ı" name="id" uri="index.php?app=goods&act=drop&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" presubmit="confirm('ÄúÈ·¶¨ÒªÉ¾³ı¸ÃÉÌÆ·Âğ£¨²»¿É»Ö¸´£©£¿')" />
+      <input class="formbtn batchButton" type="button" value="ç¼–è¾‘" name="id" uri="index.php?app=goods&act=edit&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" />&nbsp;&nbsp;
+      <input class="formbtn batchButton" type="button" value="åˆ é™¤" name="id" uri="index.php?app=goods&act=drop&ret_page=<?php echo $this->_var['page_info']['curr_page']; ?>" presubmit="confirm('æ‚¨ç¡®å®šè¦åˆ é™¤è¯¥å•†å“å—ï¼ˆä¸å¯æ¢å¤ï¼‰ï¼Ÿ')" />
     </div>
     <div class="pageLinks"><?php echo $this->fetch('page.bottom.html'); ?></div>
    <?php endif; ?>

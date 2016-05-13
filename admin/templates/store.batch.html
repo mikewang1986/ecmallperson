@@ -74,6 +74,20 @@ $(function(){
           </p></td>
       </tr>
       <tr>
+        <th class="paddingT15">{$lang.open_pay}:</th>
+        <td class="paddingT15 wordSpacing5"><p>
+            <label>
+            <input name="is_open_pay" type="radio" value="-1" checked="checked" />
+            {$lang.no_change}</label>
+            <label>
+            <input type="radio" name="is_open_pay" value="1" />
+            {$lang.open}</label>
+            <label>
+            <input type="radio" name="is_open_pay" value="0" />
+            {$lang.close}</label>
+          </p></td>
+      </tr>
+      <tr>
         <th class="paddingT15">{$lang.sort_order}:</th>
         <td class="paddingT15 wordSpacing5"><input name="sort_order" type="text" id="sort_order" />
           <span class="grey">{$lang.note_for_input}</span></td>

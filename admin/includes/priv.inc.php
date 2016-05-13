@@ -46,7 +46,9 @@ $menu_data = array
     (
         'user'  => 'user|all',//会员管理
         'admin' => 'admin|all',//管理员管理
+		'vip_manage' => 'ugrade|all',//管理员管理
         'notice' => 'notice|all',//会员通知
+		'user_integral' => 'user_integral|all',//积分管理
     ),
     'order' => array
     (
@@ -62,8 +64,10 @@ $menu_data = array
         'groupbuy'     => 'groupbuy|all',//团购
         'consulting'   => 'consulting|all',//咨询
         'share_link'   => 'share|all',//分享管理
+		'supply_demand'   => 'supply_demand|all',
 
     ),
+	
 
     'external' => array
     (

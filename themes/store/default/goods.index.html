@@ -20,6 +20,20 @@
         </ul>
 
         <div class="option_box">
+           
+            <!-- sku tyioocom  -->
+            {if $props}
+            <div style="background:#F5F5F5;margin-bottom:20px;margin-top:10px;border:1px #E2E2E2 solid;">
+               {foreach from=$props item=prop}
+               <div style="float:left;width:32%;padding:5px; height:20px; line-height:20px;background:#F5F5F5">
+                  {$prop.name}：{$prop.value}
+               </div>
+               {/foreach}
+               <div style="clear:both;height:0; display:block; overflow:hidden"></div>
+            </div>
+            {/if}
+            <!-- sku tyioocom -->
+            
             <div class="default">{$goods.description|escape:editor}</div>
         </div>
         <!--{if $goods.related_info.count gt 0}-->

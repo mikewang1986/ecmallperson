@@ -11,7 +11,7 @@ define('THUMB_QUALITY', 85);
  *    @usage    none
  */
 
-class SwfuploadApp extends StoreadminbaseApp
+class SwfuploadApp extends MemberbaseApp
 {
     var $belong; // 上传的文件所属的模型
     var $mod_uploadedfile; //上传文件模型
@@ -71,15 +71,30 @@ class SwfuploadApp extends StoreadminbaseApp
             $this->instance = $_GET['instance'];
         }
 
-        $this->store_id = $this->visitor->get('manage_store');
+        /*  不需要是店家也能上传图片的，在这里设置 */
+		if(!in_array($this->belong, array(BELONG_SDEMAND,BELONG_ACTIVITY))){
+			if(!$this->visitor->get('manage_store')){
+				/* 您不是店铺管理员 */
+            	$this->show_warning('not_storeadmin','apply_now', 'index.php?app=apply',$ret_text, $ret_url);
+            	exit;
+			}
+		}
+		if(!$this->visitor->get('manage_store')){
+			$this->store_id = $this->visitor->get('user_id');
+		} else $this->store_id = $this->visitor->get('manage_store');
+		
         switch ($this->belong)
         {
             case BELONG_ARTICLE :   $this->save_path = 'data/files/store_' . $this->store_id . '/article';
             break;
             case BELONG_STORE :     $this->save_path = 'data/files/store_' . $this->store_id . '/other';
             break;
+			case BELONG_GROUPBUY :     $this->save_path = 'data/files/store_' . $this->store_id . '/groupbuy';//add bay andcpp
+            break;
             case BELONG_GOODS :     $this->save_path = 'data/files/store_' . $this->store_id . '/goods_' . (time() % 200);
             break;
+	    case BELONG_SDEMAND :   $this->save_path = 'data/files/mall/sdemand/user_'.$this->visitor->get('user_id');
+	    break;
         }
 
         $this->mod_uploadedfile = &m('uploadedfile');
@@ -143,8 +158,8 @@ class SwfuploadApp extends StoreadminbaseApp
             static $uploaded_file = NULL;
             /* 取得剩余空间（单位：字节），false表示不限制 */
             $store_mod  =& m('store');
-            $settings   = $store_mod->get_settings($this->store_id);
-            $remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $this->mod_uploadedfile->get_file_size($this->store_id) : false;
+            $settings   = $store_mod->get_settings($this->visitor->get('manage_store'));
+            $remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $this->mod_uploadedfile->get_file_size($this->visitor->get('manage_store')) : false;
 
             /* 判断能否上传 */
             if ($remain !== false)
@@ -172,7 +187,7 @@ class SwfuploadApp extends StoreadminbaseApp
             }
             else
             {
-                $this->save_path = 'data/files/store_' . $this->store_id . '/goods_' . (time() % 200);
+                $this->save_path = 'data/files/store_' . $this->visitor->get('manage_store') . '/goods_' . (time() % 200);
                 $file_content = file_get_contents(ROOT_PATH. '/' . $uploaded_file);
                 $file_path = $this->save_path . '/' . $filename . '.' . $file['extension'];
                 file_put_contents($file_path, $file_content);
@@ -254,9 +269,16 @@ class SwfuploadApp extends StoreadminbaseApp
         }
 
         /* 取得剩余空间（单位：字节），false表示不限制 */
-        $store_mod  =& m('store');
-        $settings   = $store_mod->get_settings($this->store_id);
-        $remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $this->mod_uploadedfile->get_file_size($this->store_id) : false;
+		if($this->visitor->get('manage_store')) {
+        	$store_mod  =& m('store');
+        	$settings   = $store_mod->get_settings($this->visitor->get('manage_store'));
+        	$remain     = $settings['space_limit'] > 0 ? $settings['space_limit'] * 1024 * 1024 - $this->mod_uploadedfile->get_file_size($this->visitor->get('manage_store')) : false;
+		}
+		else
+		{
+			$settings = array();
+			$remain = false;
+		}
 
         /* 判断能否上传 */
         if ($remain !== false)

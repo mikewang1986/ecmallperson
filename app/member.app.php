@@ -28,10 +28,26 @@ class MemberApp extends MemberbaseApp
 
         $user = $this->visitor->get();
         $user_mod =& m('member');
+		$my_money_model = & m('my_money');
         $info = $user_mod->get_info($user['user_id']);
         $user['portrait'] = portrait($user['user_id'], $info['portrait'], 'middle');
+		//获取会员等级的信息
+		$user['ugrade']=$user_mod->get_grade_info($user['user_id']);
+		$my_money_info = $my_money_model->get("user_id=".$user['user_id']);
+        $user['jifen'] = $my_money_info['jifen'];
         $this->assign('user', $user);
-
+		
+			$weixin_user =& m('weixinuser');
+             
+		$weixin_user_info=$weixin_user->get("user_id=".$user['user_id']);
+		
+	//	print_r($weixin_user_info);
+	$wxchqr_mod= &m('wxchqr');
+	$wxchqr_info=$wxchqr_mod->get("scene_id=".$user['user_id']);
+	//print_r($wxchqr_info);
+	  $this->assign('wxchqr_info', $wxchqr_info);	  
+   $this->assign('weixin_user_info', $weixin_user_info);
+			// print_r($weixin_user_info);
         /* 店铺信用和好评率 */
         if ($user['has_store'])
         {
@@ -114,6 +130,9 @@ class MemberApp extends MemberbaseApp
         {
             $this->assign('applying', 1);
         }
+		
+		$this->assign('system_notice', $this->_get_system_notice($_SESSION['member_role']));
+		
         /* 当前位置 */
         $this->_curlocal(LANG::get('member_center'),    url('app=member'),
                          LANG::get('overview'));
@@ -123,6 +142,43 @@ class MemberApp extends MemberbaseApp
         $this->_config_seo('title', Lang::get('member_center'));
         $this->display('member.index.html');
     }
+	
+	function wxdorp()
+	{
+	
+	  $id=$_GET['id'];
+	  $wxchqr_mod= &m('wxchqr');
+		
+	  $wxchqr_mod->drop($id);
+	
+	}
+	
+	function _get_system_notice($member_role='buyer_admin')
+	{
+		// 根据不同的用户角色（卖家或买家），在用户中心首页显示不同的文章
+		if($member_role=='seller_admin'){
+			$article_cate_id = 2;
+		} else {
+			$article_cate_id = 1;
+		}
+		$article_mod = &m('article');
+		$acategory_mod = &m('acategory');
+		
+		$cate_ids = $acategory_mod->get_descendant($article_cate_id);
+		if($cate_ids){
+			$conditions = ' AND cate_id ' . db_create_in($cate_ids);
+		} else {
+			$conditions = '';
+		}
+		
+		$data = $article_mod->find(array(
+			'conditions'=>'code = "" AND if_show=1 AND store_id=0 ' . $conditions,
+			'fields'=>'article_id, title',
+			'limit'=> 5,
+			'order'=>'sort_order ASC, article_id DESC'
+		));
+		return $data;
+	}
 
     /**
      *    注册一个新用户
@@ -164,8 +220,11 @@ class MemberApp extends MemberbaseApp
                 $this->assign('captcha', 1);
             }
 
-            /* 导入jQuery的表单验证插件 */
-            $this->import_resource('jquery.plugins/jquery.validate.js');
+            /* 导入jQuery的表单验证插件  tyioocom */
+            $this->import_resource(array(
+            	'script' => 'jquery.plugins/jquery.validate.js,jquery.plugins/poshy_tip/jquery.poshytip.js',
+            	'style'  => 'jquery.plugins/poshy_tip/tip-yellowsimple/tip-yellowsimple.css')
+			);
             $this->display('member.register.html');
         }
         else
@@ -193,7 +252,10 @@ class MemberApp extends MemberbaseApp
             $password  = $_POST['password'];
             $email     = trim($_POST['email']);
             $passlen = strlen($password);
+			
             $user_name_len = strlen($user_name);
+			
+			  $tname  = $_POST['tname'];
             if ($user_name_len < 3 || $user_name_len > 25)
             {
                 $this->show_warning('user_name_length_error');
@@ -212,7 +274,32 @@ class MemberApp extends MemberbaseApp
 
                 return;
             }
+			
+			if($tname)
+			{
+			$user_mod =& m('member');
+			$tname_info=$user_mod->get("user_name='$tname'");
+		    if(!$tname_info)
+			{
+			  $this->show_warning('推荐人不存在');
 
+              return;
+			
+			}else
+			{
+			
+			$_SESSION['tuijian_id']=$tname_info['user_id'];
+		
+			
+			$_SESSION['referid']=$tname_info['user_id'];
+			}
+			
+			
+			
+			}
+			
+			
+           
             $ms =& ms(); //连接用户中心
             $user_id = $ms->user->register($user_name, $password, $email);
 
@@ -223,11 +310,49 @@ class MemberApp extends MemberbaseApp
                 return;
             }
             $this->_hook('after_register', array('user_id' => $user_id));
+            $this->_do_wxloginrelation($user_id);
             //登录
             $this->_do_login($user_id);
-            
+			    
+			//修改成长值和会员等级 by cengnlaeng
+			$user_mod=&m('member');
+			$user_mod->edit_growth($user_id,'register');	
+             
             /* 同步登陆外部系统 */
             $synlogin = $ms->user->synlogin($user_id);
+			
+			/*给推荐人添加积分*/
+            if($_SESSION['referid']!=null && $_SESSION['referid']!=''){
+            	$invite_record_mod = & m('invite_record');
+				$user_mod =& m('member');
+				$info = $user_mod->get_info($_SESSION['referid']);
+				$real_ip = real_ip();
+				$result = $invite_record_mod->get_repeat_cord($real_ip,$_SESSION['referid']);
+				if(empty($result)){
+					$invite_data = array(
+						'user_id' => $user_id,
+						'user_name' => $user_name,
+						'invite_id' => $_SESSION['referid'],
+						'invite_name' => $info['user_name'],
+						'user_ip' => $real_ip,
+						'start_time' => gmtime(),
+					);
+					$invite_record_mod->add($invite_data);
+					//给邀请人送积分
+					$my_money_model = & m('my_money');
+					$my_money_info = $my_money_model->get("user_id=".$_SESSION['referid']);
+					$my_money_model->edit("user_id=".$_SESSION['referid'],array(
+						'jifen' => $my_money_info['jifen'] + Conf::get('recom_user_register'),
+					));
+				}
+            }
+			
+			        //注册送积分			  
+					$my_money_model = & m('my_money');
+					$my_money_info = $my_money_model->get("user_id=".$user_id);
+					$my_money_model->edit("user_id=".$user_id,array(
+						'jifen' => $my_money_info['jifen'] + Conf::get('lo_user_register'),
+					));	
 
             #TODO 可能还会发送欢迎邮件
 
@@ -448,6 +573,42 @@ class MemberApp extends MemberbaseApp
             }
 
             $this->show_message('edit_email_successed');
+        }
+    }
+    function map_location()
+    {
+        $user_id = $this->visitor->get('user_id');
+        $member_mod = & m('member');
+        
+        if (!IS_POST){
+            $member_info = $member_mod->get($user_id);
+            
+            if ($member_info['lng']=='0' || $member_info['lat'] =='0') {
+                //根据IP 获取经纬度
+                $data = $this->get_ip_location();
+                $member_info = array_merge($member_info,$data);
+            }
+            
+            /* 当前位置 */
+            $this->_curlocal(LANG::get('member_center'),  'index.php?app=member',
+                             LANG::get('map_location'));
+            /* 当前用户中心菜单 */
+            $this->_curitem('my_profile');
+            /* 当前所处子菜单 */
+            $this->_curmenu('map_location');
+            $this->_config_seo('title', Lang::get('member_center') . ' - ' . Lang::get('map_location'));
+            
+            $this->assign('baidu_ak', Conf::get('baidu_ak'));
+            $this->assign('member_info', $member_info);
+            $this->display('member.map_location.html');
+        }else{
+            $data= array(
+                'lng'=>$_POST['lng'],
+                'lat'=>$_POST['lat'],
+                'zoom'=>$_POST['zoom'],
+            );
+            $member_mod->edit($user_id , $data);
+            $this->show_message('edit_map_location_successed');	
         }
     }
 

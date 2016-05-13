@@ -322,7 +322,8 @@ ul, ol { list-style-type:none; }
 .ware_title { text-align: center; color: #3e3e3c; line-height: 40px; border-bottom: 1px solid #b9a396; margin: 0 10px 25px; }
 .ware_info { width: 740px; margin: 0 auto 20px; position: relative; z-index: 1; }
 .ware_pic { float: left; width: 300px; }
-.ware_text { float: right; width: 380px; position: relative; z-index: 10; }
+.ware_text { float: right; width: 395px; position: relative; z-index: 10; }
+.ware_text .wx{width:150px;text-align:center;}
 
 .info_particular { width: 100%; border-bottom: 1px solid #ccc; overflow: hidden; }
 .info_particular ul { width: 100%; overflow: hidden; }
@@ -378,14 +379,16 @@ ul, ol { list-style-type:none; }
 
 .ware_pic_hover { background: url(images/ware_pic_hover.gif); }
 
-.rate { color: #3e3e3c; line-height: 30px; width: 360px; padding-left: 20px; margin-bottom: 10px; overflow: hidden; }
+.rate { color: #3e3e3c; line-height: 30px; width: 395px; margin-bottom: 10px; overflow: hidden; }
 
 .handle { width: 340px; padding: 10px 20px; background: url(images/handle.gif); border: 1px solid #c9bbb2; overflow: hidden; }
 .handle ul { width: 360px; overflow: hidden; color: #3b3f3e; margin-bottom: 10px;}
 .handle li { float: left; cursor: pointer; }
 .handle_title { padding-top: 3px; }
 .solid { padding: 2px 4px; border: 1px solid #b90101; color: #fff; margin-right: 8px; background: #e35152; }
+.solid a{ text-decoration:none; color:#fff;}
 .dotted { padding: 2px 4px; border: 1px dotted #ac9082; margin-right: 8px; background: #fff; }
+.dotted a{ text-decoration:none;color:#7A7A7A;}
 .aggregate { color: #ba0100; }
 
 .ware_btn { width: 380px; margin-top: 20px; position: relative; }

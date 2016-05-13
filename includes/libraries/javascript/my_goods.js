@@ -138,12 +138,12 @@ function spec_editor(){
 
     // 创建规格编辑对话框
     var _d = DialogManager.create('spec_editor');
-    _d.setTitle('{$lang.edit}{$lang.specification}');
+    _d.setTitle($('*[ectype="dialog_contents"]').attr('dialog_title'));
     _d.setContents($('*[ectype="dialog_contents"]').children().clone(true));
     _d.setStyle('add_spec');
-    _d.setStyle({'padding' : '0'});
-    _d.setWidth(550);
-    ScreenLocker.style.opacity = 0;
+    //_d.setStyle({'padding' : '0'});
+    _d.setWidth(350);
+    //ScreenLocker.style.opacity = 0;
     _d.show('center');
     hide_drop_button();
 

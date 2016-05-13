@@ -23,6 +23,7 @@ $(function(){
     <li><a class="btn1" href="index.php?app=setting&amp;act=store_setting">{$lang.store_setting}</a></li>
     <li><a class="btn1" href="index.php?app=setting&amp;act=credit_setting">{$lang.credit_setting}</a></li>
     <li><a class="btn1" href="index.php?app=setting&amp;act=subdomain_setting">{$lang.subdomain_setting}</a></li>
+    <li><a class="btn1" href="index.php?app=setting&amp;act=integral_setting">{$lang.integral_setting}</a></li>
   </ul>
 </div>
 <div class="info">
@@ -97,6 +98,11 @@ $(function(){
         <label class="field_notice">{$lang.hot_search_note}</label></td>
       </tr>
       <tr>
+        <th class="paddingT15"> <label for="baidu_ak">百度AK密钥:</label></th>
+        <td class="paddingT15 wordSpacing5"><input id="baidu_ak" type="text" name="baidu_ak" value="{$setting.baidu_ak}" class="infoTableInput"/></td>
+      </tr>
+      <tr>
+
         <th></th>
         <td class="ptb20"><input class="formbtn" type="submit" name="Submit" value="{$lang.submit}" />
           <input class="formbtn" type="reset" name="Submit2" value="{$lang.reset}" />        </td>

@@ -75,6 +75,24 @@ class GcategoryModel extends BaseModel
 
         return $options;
     }
+	
+	/* 获取某分类及子分类的商品总数 tyioocom  */
+	function get_cat_goods_total($cate_id)
+	{
+		$goods_mod = &m('goods');
+		$gcategory_mod = &bm('gcategory');
+		$cate_ids = implode(",",$gcategory_mod->get_descendant_ids($cate_id));
+		if($cate_id>0){
+			$conditions = " AND cate_id IN (".$cate_ids.")";
+		} else {
+			$conditions = '';
+		}
+		$goods = $goods_mod->find(array(
+			'conditions'=>'if_show=1 and closed=0 ' . $conditions,
+			'fields'    => 'goods_id'
+		));
+		return count($goods);
+	}
 
     /**
      * 取得某分类的所有子孙分类id（不推荐使用，但是因为调用模块和专题模块中用到了，所以暂时保留，推荐使用业务模型中的相关函数）

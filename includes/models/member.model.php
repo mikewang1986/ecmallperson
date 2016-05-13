@@ -16,6 +16,28 @@ class MemberModel extends BaseModel
             'foreign_key' => 'store_id',    //外键名
             'dependent'   => true           //依赖
         ),
+		
+		     // 一个会员拥有一个店铺，id相同
+       'has_wx' => array(
+            'model'       => 'weixinuser',       //模型的名称
+            'type'        => HAS_ONE,       //关系类型
+            'foreign_key' => 'user_id',    //外键名
+            'dependent'   => true           //依赖
+        ),
+		
+		'has_msg' => array(
+            'model'       => 'msg',       //模型的名称
+            'type'        => HAS_ONE,       //关系类型
+            'foreign_key' => 'user_id',    //外键名
+            'dependent'   => true           //依赖
+        ),
+		// 一个会员有多条供求信息
+        'has_sdinfo' => array(
+            'model'         => 'sdinfo',
+            'type'          => HAS_MANY,
+            'foreign_key' => 'user_id',
+            'dependent' => true
+        ),
         'manage_mall'   =>  array(
             'model'       => 'userpriv',
             'type'        => HAS_ONE,
@@ -26,6 +48,12 @@ class MemberModel extends BaseModel
         // 一个会员拥有多个收货地址
         'has_address' => array(
             'model'       => 'address',
+            'type'        => HAS_MANY,
+            'foreign_key' => 'user_id',
+            'dependent'   => true
+        ),
+        'has_msglog' => array(
+            'model'       => 'msglog',
             'type'        => HAS_MANY,
             'foreign_key' => 'user_id',
             'dependent'   => true
@@ -60,6 +88,12 @@ class MemberModel extends BaseModel
             'ext_limit'    => array('type' => 'goods'),
             'reverse'      => 'be_collect', //反向关系名称
         ),
+		
+
+		
+		
+		
+
         // 会员和店铺是多对多的关系（会员收藏店铺）
         'collect_store' => array(
             'model'        => 'store',
@@ -122,6 +156,16 @@ class MemberModel extends BaseModel
             'foreign_key'   => 'store_id',
             'dependent'   => true
         ),
+		
+		
+	'has_sent_refund' => array(
+	    				'model' => 'refund',
+	    				'type' => HAS_MANY,
+	    				'foreign_key' => 'from_id',
+	    	),
+		
+		
+		
     );
 
     var $_autov = array(
@@ -135,7 +179,53 @@ class MemberModel extends BaseModel
             'min'      => 6,
         ),
     );
-
+	//获取会员等级信息 by cengnlaeng
+	function get_grade_info($user_id)
+	{
+		if(!$user_id)
+		{
+			return;
+		}
+		$user=$this->get($user_id);
+		$ugrade_mod=&m('ugrade');
+		$ugrade=$ugrade_mod->get(array('conditions'=>'grade='.$user['ugrade']));
+		$higher_grade=$ugrade_mod->get(array(
+			'conditions'=>'grade='.($ugrade['grade']+1),
+		));
+		$data=array(
+			'distant_growth'=>$higher_grade['floor_growth']-$user['growth'],
+			'grade_name'=>$ugrade['grade_name'],
+			'grade_icon'=>$ugrade['grade_icon'],
+			'growth' =>$user['growth'],
+			'higher_grade_name'=>$higher_grade['grade_name']
+		);
+		return $data;
+	}
+	//修改会员的成长值和会员等级
+	function edit_growth($user_id,$behave,$order_amount='')
+	{
+		$growth_value=0;
+		$model_growth = &af('growth');
+        $growth = $model_growth->getAll();
+		switch($behave){
+		   case 'register':	
+		   $growth_value=$growth['register_growth'];
+		   break;
+		   case 'bought':
+		   $growth_value=$growth['bought_growth']*$order_amount;
+		   break;
+		   case 'comment':
+		   $growth_value=$growth['comment_growth'];
+		   break;
+		}
+		$user=$this->get($user_id);
+		$this->edit($user['user_id'],array('growth'=>$growth_value+$user['growth']));//更新成长值
+		$user=$this->get($user_id);//重新读取member表的数据
+		$ugrade_mod=&m('ugrade');
+		$ugrade=$ugrade_mod->get(array('conditions'=>"floor_growth <= ".$user['growth']." AND (top_growth IS NULL || top_growth > ".$user['growth']." )",'field'=>'grade'));
+		$this->edit($user['user_id'],array('ugrade'=>$ugrade['grade']));//更新等级
+	}
+	//end by cengnlaeng
     /*
      * 判断名称是否唯一
      */
@@ -148,10 +238,17 @@ class MemberModel extends BaseModel
 
     function drop($conditions, $fields = 'portrait')
     {
+		
+	
+			
+			
+			
         if ($droped_rows = parent::drop($conditions, $fields))
         {
             restore_error_handler();
             $droped_data = $this->getDroppedData();
+			
+			
             foreach ($droped_data as $row)
             {
                 $row['portrait'] && @unlink(ROOT_PATH . '/' . $row['portrait']);
